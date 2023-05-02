@@ -4,39 +4,48 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 
-	"github.com/gorilla/websocket"
+	ws "github.com/gorilla/websocket"
 )
 
-var upgrader = websocket.Upgrader{
+var upgrader = ws.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
 }
 
 func main() {
-	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
-		conn, _ := upgrader.Upgrade(w, r, nil) // error ignored for sake of simplicity
 
+	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
+
+		fmt.Println("conn!")
+		conn, err := upgrader.Upgrade(w, r, nil)
+		if err != nil {
+			fmt.Println("err conn")
+			return
+		}
+		i := 0
 		for {
-			// Read message from browser
-			msgType, msg, err := conn.ReadMessage()
-			if err != nil {
-				return
-			}
-
-			// Print the message to the console
-			fmt.Printf("%s sent: %s\n", conn.RemoteAddr(), string(msg))
+			//_, _, err = conn.ReadMessage()
+			//if err != nil {
+			//	return
+			//}
+			//fmt.Println("got msg")
 
 			// Write message back to browser
-			if err = conn.WriteMessage(msgType, msg); err != nil {
+			time.Sleep(1 * time.Second)
+			if err = conn.WriteMessage(ws.TextMessage, []byte("message")); err != nil {
+				fmt.Println("send failed")
 				return
 			}
+			fmt.Println("send msg")
+			if i > 5 {
+				conn.Close()
+				return
+			}
+			i++
 		}
 	})
-
-	//http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-	//	http.ServeFile(w, r, "page/ws2.html")
-	//})
 
 	http.Handle("/", http.FileServer(http.Dir("page")))
 

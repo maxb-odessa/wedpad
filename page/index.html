@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>EdPad</title>
-    <link rel="stylesheet" href="ws2.css">
+    <link rel="stylesheet" href="wedpad.css">
 </head>
 
 <body onload="init();">
@@ -24,8 +24,14 @@
     <div class="nav-button" id="nav-signals" onClick="activeButton('signals');"><b>SIGNALS</b><span id="signals-button-text">3 sigs and many more other</span></div>
 </div>
 
+<!-- SCRIPTS -->
 
 <script>
+
+function init() {
+    activeButton("log");
+};
+
 function activeButton(id) {
     document.getElementById("nav-log").setAttribute("class", "nav-button");
     document.getElementById("nav-system").setAttribute("class", "nav-button");
@@ -38,35 +44,31 @@ function activeButton(id) {
     document.getElementById("main-bodies").style.display = 'none';
     document.getElementById("main-signals").style.display = 'none';
     document.getElementById("main-"+id).style.display = 'block';
-}
+};
 
-function init() {
-    activeButton("log");
-}
-</script>
-<!--
-<input id="input" type="text" />
-<button onclick="send()">Send</button>
-<pre id="output"></pre>
-<script>
-    var input = document.getElementById("input");
-    var output = document.getElementById("output");
-    var socket = new WebSocket("ws://localhost:8080/echo");
+var wsUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/ws";
+var socket = new WebSocket(wsUrl);
 
-    socket.onopen = function () {
-        output.innerHTML += "Status: Connected\n";
-    };
+var output = document.getElementById("main-log");
 
-    socket.onmessage = function (e) {
-        output.innerHTML += "Server: " + e.data + "\n";
-    };
+socket.onopen = function() {
+    output.innerHTML = "CONNECTED!" + "<br>";
+};
 
-    function send() {
-        socket.send(input.value);
-        input.value = "";
+socket.onmessage = function(msg) {
+    output.innerHTML += "MSG: " + msg.data + "<br>";
+    output.scrollBy(0, 500);
+};
+
+socket.onclose = function(ev) {
+    output.innerHTML = "";
+    if (ev.wasClean != true) {
+        output.innerHTML = "UNEXPECTED CLOSE!" + "<br>";
     }
+    output.innerHTML += "CLOSED: " + ev.reason + "<br>";
+};
+
 </script>
--->
 
 
 </body>
