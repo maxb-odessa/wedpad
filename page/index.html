@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>EdPad</title>
+    <link rel="stylesheet" href="ws2.css">
+</head>
+
+<body onload="init();">
+
+<div id="left">
+    <div id="top"></div>
+    <div class="main-view" id="main-log">log</div>
+    <div class="main-view" id="main-system">sys</div>
+    <div class="main-view" id="main-bodies">bod</div>
+    <div class="main-view" id="main-signals">sig</div>
+    <div class="main" id="bottom"></div>
+</div>
+
+<div id="right">
+    <div class="nav-button" id="nav-log" onClick="activeButton('log');"><b>LOG</b><span id="log-button-text">log text here</span></div>
+    <div class="nav-button" id="nav-system" onClick="activeButton('system');"><b>SYSTEM</b><span id="system-button-text">bodies: 1/2</span></div>
+    <div class="nav-button" id="nav-bodies" onClick="activeButton('bodies');"><b>BODIES</b><span id="bodies-button-text">ww:1,elw:2</span></div>
+    <div class="nav-button" id="nav-signals" onClick="activeButton('signals');"><b>SIGNALS</b><span id="signals-button-text">3 sigs and many more other</span></div>
+</div>
+
+
+<script>
+function activeButton(id) {
+    document.getElementById("nav-log").setAttribute("class", "nav-button");
+    document.getElementById("nav-system").setAttribute("class", "nav-button");
+    document.getElementById("nav-bodies").setAttribute("class", "nav-button");
+    document.getElementById("nav-signals").setAttribute("class", "nav-button");
+    document.getElementById("nav-"+id).setAttribute("class", "nav-button-active");
+
+    document.getElementById("main-log").style.display = 'none';
+    document.getElementById("main-system").style.display = 'none';
+    document.getElementById("main-bodies").style.display = 'none';
+    document.getElementById("main-signals").style.display = 'none';
+    document.getElementById("main-"+id).style.display = 'block';
+}
+
+function init() {
+    activeButton("log");
+}
+</script>
+<!--
+<input id="input" type="text" />
+<button onclick="send()">Send</button>
+<pre id="output"></pre>
+<script>
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+    var socket = new WebSocket("ws://localhost:8080/echo");
+
+    socket.onopen = function () {
+        output.innerHTML += "Status: Connected\n";
+    };
+
+    socket.onmessage = function (e) {
+        output.innerHTML += "Server: " + e.data + "\n";
+    };
+
+    function send() {
+        socket.send(input.value);
+        input.value = "";
+    }
+</script>
+-->
+
+
+</body>
+
+</html>
