@@ -2,26 +2,26 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>EdPad</title>
+    <title>WEdPad - Web: Elite Dangerous Pad</title>
     <link rel="stylesheet" href="wedpad.css">
 </head>
 
 <body onload="init();">
 
 <div id="left">
-    <div id="top"></div>
-    <div class="main-view" id="main-log">log</div>
-    <div class="main-view" id="main-system">sys</div>
-    <div class="main-view" id="main-bodies">bod</div>
-    <div class="main-view" id="main-signals">sig</div>
-    <div class="main" id="bottom"></div>
+    <div class="view-top"    id="view-top"></div>
+    <div class="view-main"   id="view-log"></div>
+    <div class="view-main"   id="view-system"></div>
+    <div class="view-main"   id="view-bodies"></div>
+    <div class="view-main"   id="view-signals"></div>
+    <div class="view-bottom" id="view-bottom"></div>
 </div>
 
 <div id="right">
-    <div class="nav-button" id="nav-log" onClick="activeButton('log');"><b>LOG</b><span id="log-button-text">log text here</span></div>
-    <div class="nav-button" id="nav-system" onClick="activeButton('system');"><b>SYSTEM</b><span id="system-button-text">bodies: 1/2</span></div>
-    <div class="nav-button" id="nav-bodies" onClick="activeButton('bodies');"><b>BODIES</b><span id="bodies-button-text">ww:1,elw:2</span></div>
-    <div class="nav-button" id="nav-signals" onClick="activeButton('signals');"><b>SIGNALS</b><span id="signals-button-text">3 sigs and many more other</span></div>
+    <div class="button" id="button-log" onClick="switchView('log');"><b>LOG</b><span id="button-log-text"></span></div>
+    <div class="button" id="button-system" onClick="switchView('system');"><b>SYSTEM</b><span id="button-system-text"></span></div>
+    <div class="button" id="button-bodies" onClick="switchView('bodies');"><b>BODIES</b><span id="button-bodies-text"></span></div>
+    <div class="button" id="button-signals" onClick="switchView('signals');"><b>SIGNALS</b><span id="button-signals-text"></span></div>
 </div>
 
 <!-- SCRIPTS -->
@@ -29,43 +29,71 @@
 <script>
 
 function init() {
-    activeButton("log");
+    switchView("log");
 };
 
-function activeButton(id) {
-    document.getElementById("nav-log").setAttribute("class", "nav-button");
-    document.getElementById("nav-system").setAttribute("class", "nav-button");
-    document.getElementById("nav-bodies").setAttribute("class", "nav-button");
-    document.getElementById("nav-signals").setAttribute("class", "nav-button");
-    document.getElementById("nav-"+id).setAttribute("class", "nav-button-active");
+function switchView(id) {
+    document.getElementById("button-log").setAttribute("class", "button");
+    document.getElementById("button-system").setAttribute("class", "button");
+    document.getElementById("button-bodies").setAttribute("class", "button");
+    document.getElementById("button-signals").setAttribute("class", "button");
+    document.getElementById("button-" + id).setAttribute("class", "button button-active");
 
-    document.getElementById("main-log").style.display = 'none';
-    document.getElementById("main-system").style.display = 'none';
-    document.getElementById("main-bodies").style.display = 'none';
-    document.getElementById("main-signals").style.display = 'none';
-    document.getElementById("main-"+id).style.display = 'block';
+    document.getElementById("view-log").style.display = 'none';
+    document.getElementById("view-system").style.display = 'none';
+    document.getElementById("view-bodies").style.display = 'none';
+    document.getElementById("view-signals").style.display = 'none';
+    document.getElementById("view-" + id).style.display = 'block';
 };
+
+var logView = document.getElementById("view-log");
 
 var wsUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/ws";
 var socket = new WebSocket(wsUrl);
 
-var output = document.getElementById("main-log");
-
 socket.onopen = function() {
-    output.innerHTML = "CONNECTED!" + "<br>";
+    logView.innerHTML = "<h1>CONNECTED!</h1>";
 };
 
 socket.onmessage = function(msg) {
-    output.innerHTML += "MSG: " + msg.data + "<br>";
-    output.scrollBy(0, 500);
+
+    const obj = JSON.parse(msg.data);
+
+    var action = obj.Action;
+    var target = obj.Target;
+    var otype = obj.Type;
+    var data = obj.Data;
+
+    var output;
+    if (otype === "view") {
+        output = document.getElementById("view-" + target);
+    } else if (otype === "button") {
+        output = document.getElementById("button-" + target + "-text");
+    }
+
+    if (action === "replace") {
+            output.innerHTML = "<p>"+data;
+    } else if (action === "append") {
+            output.innerHTML += data;
+    } else if (action === "clean") {
+            output.innerHTML = "";
+    }
+
+    if (otype === "button") {
+        if (action === "attention") {
+            document.getElementById(otype + "-" + target).setAttribute("class", "button button-attention");
+        }
+    }
+
+    <!-- target.scrollBy(0, 500); -->
+
 };
 
 socket.onclose = function(ev) {
-    output.innerHTML = "";
-    if (ev.wasClean != true) {
-        output.innerHTML = "UNEXPECTED CLOSE!" + "<br>";
+    if (ev.wasClean === false) {
+        logView.innerHTML += "<p><h1>UNEXPECTED CONNECTION CLOSE!</h1>";
     }
-    output.innerHTML += "CLOSED: " + ev.reason + "<br>";
+    logView.innerHTML += "<p><h1>CONNECTION CLOSED: " + "Clean:" + ev.wasClean + " Reason:" + ev.reason + " Code:" + ev.code + "</h1>";
 };
 
 </script>

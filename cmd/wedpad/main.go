@@ -2,52 +2,53 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"time"
+	"os"
 
-	ws "github.com/gorilla/websocket"
+	"github.com/maxb-odessa/sconf"
+	"github.com/maxb-odessa/slog"
+	"github.com/pborman/getopt/v2"
+
+	"wedpad/internal/msg"
+	"wedpad/internal/server"
 )
-
-var upgrader = ws.Upgrader{
-	ReadBufferSize:  1024,
-	WriteBufferSize: 1024,
-}
 
 func main() {
 
-	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
+	// get cmdline args and parse them
+	help := false
+	debug := 0
+	configFile := os.ExpandEnv("$HOME/.local/etc/wedpad.conf")
+	getopt.HelpColumn = 0
+	getopt.FlagLong(&help, "help", 'h', "Show this help")
+	getopt.FlagLong(&debug, "debug", 'd', "Set debug log level")
+	getopt.FlagLong(&configFile, "config", 'c', "Path to config file")
+	getopt.Parse()
 
-		fmt.Println("conn!")
-		conn, err := upgrader.Upgrade(w, r, nil)
-		if err != nil {
-			fmt.Println("err conn")
-			return
-		}
-		i := 0
-		for {
-			//_, _, err = conn.ReadMessage()
-			//if err != nil {
-			//	return
-			//}
-			//fmt.Println("got msg")
+	// help-only requested
+	if help {
+		getopt.Usage()
+		return
+	}
 
-			// Write message back to browser
-			time.Sleep(1 * time.Second)
-			if err = conn.WriteMessage(ws.TextMessage, []byte("message")); err != nil {
-				fmt.Println("send failed")
-				return
-			}
-			fmt.Println("send msg")
-			if i > 5 {
-				conn.Close()
-				return
-			}
-			i++
-		}
-	})
+	// setup logger
+	slog.Init("wedpad", debug, "2006-01-02 15:04:05")
 
-	http.Handle("/", http.FileServer(http.Dir("page")))
+	slog.Info("Started")
 
-	http.ListenAndServe(":8080", nil)
+	// read config file
+	if err := sconf.Read(configFile); err != nil {
+		slog.Fatal("Config failed: %s", err)
+	}
+
+	// init journal subsystem
+
+	// init messaging subsystem
+	if err := msg.Init(); err != nil {
+		slog.Warn("Messages system init is incomplete: %s", err)
+	}
+
+	// init audio sybsytem
+
+	// run http subsystem
+	server.Run()
 }
