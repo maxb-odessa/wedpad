@@ -16,7 +16,8 @@ type evReceiveText struct {
 }
 
 // ReceiveText event handler
-func ReceiveText(e interface{}) {
-    // ev := e.(evReceiveText)
+func ReceiveText(eventData map[string]interface{}) {
+    // ev := new(evReceiveText)
+    // mapstructure.Decode(eventData, ev)
 }
 

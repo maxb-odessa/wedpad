@@ -18,7 +18,8 @@ type evSupercruiseExit struct {
 }
 
 // SupercruiseExit event handler
-func SupercruiseExit(e interface{}) {
-    // ev := e.(evSupercruiseExit)
+func SupercruiseExit(eventData map[string]interface{}) {
+    // ev := new(evSupercruiseExit)
+    // mapstructure.Decode(eventData, ev)
 }
 

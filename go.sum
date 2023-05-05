@@ -8,6 +8,8 @@ github.com/maxb-odessa/sconf v0.0.2 h1:0LYwMXYRHtCxHipsG7t9NBSf09zZXC4zK6gPlnOgS
 github.com/maxb-odessa/sconf v0.0.2/go.mod h1:9YtVGmd04i0zuET91rbGRbjKWfJ2xplF1Po0Y2O7Bm0=
 github.com/maxb-odessa/slog v0.0.2 h1:/cpII6+/JnMxeOKkxnQp6LZ4Tpqclan9J2bTyc6XgVU=
 github.com/maxb-odessa/slog v0.0.2/go.mod h1:eUBS6Exy35SDbJpU0InWujgG8A2wf1M+qA9j7o3a+Fs=
+github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
+github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/nxadm/tail v1.4.8 h1:nPr65rt6Y5JFSKQO7qToXr7pePgD6Gwiw05lkbyAQTE=
 github.com/nxadm/tail v1.4.8/go.mod h1:+ncqLTQzXmGhMZNUePPaPqPvBxHAIsmXswZKocGu+AU=
 github.com/pborman/getopt/v2 v2.1.0 h1:eNfR+r+dWLdWmV8g5OlpyrTYHkhVNxHBdN2cCrJmOEA=

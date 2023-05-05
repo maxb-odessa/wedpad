@@ -20,7 +20,8 @@ type evSellOrganicData struct {
 }
 
 // SellOrganicData event handler
-func SellOrganicData(e interface{}) {
-    // ev := e.(evSellOrganicData)
+func SellOrganicData(eventData map[string]interface{}) {
+    // ev := new(evSellOrganicData)
+    // mapstructure.Decode(eventData, ev)
 }
 

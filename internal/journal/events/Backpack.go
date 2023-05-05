@@ -15,7 +15,8 @@ type evBackpack struct {
 }
 
 // Backpack event handler
-func Backpack(e interface{}) {
-    // ev := e.(evBackpack)
+func Backpack(eventData map[string]interface{}) {
+    // ev := new(evBackpack)
+    // mapstructure.Decode(eventData, ev)
 }
 

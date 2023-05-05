@@ -15,7 +15,8 @@ type evApproachBody struct {
 }
 
 // ApproachBody event handler
-func ApproachBody(e interface{}) {
-    // ev := e.(evApproachBody)
+func ApproachBody(eventData map[string]interface{}) {
+    // ev := new(evApproachBody)
+    // mapstructure.Decode(eventData, ev)
 }
 

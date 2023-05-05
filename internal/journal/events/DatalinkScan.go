@@ -13,7 +13,8 @@ type evDatalinkScan struct {
 }
 
 // DatalinkScan event handler
-func DatalinkScan(e interface{}) {
-    // ev := e.(evDatalinkScan)
+func DatalinkScan(eventData map[string]interface{}) {
+    // ev := new(evDatalinkScan)
+    // mapstructure.Decode(eventData, ev)
 }
 

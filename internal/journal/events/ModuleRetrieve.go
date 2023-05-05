@@ -23,7 +23,8 @@ type evModuleRetrieve struct {
 }
 
 // ModuleRetrieve event handler
-func ModuleRetrieve(e interface{}) {
-    // ev := e.(evModuleRetrieve)
+func ModuleRetrieve(eventData map[string]interface{}) {
+    // ev := new(evModuleRetrieve)
+    // mapstructure.Decode(eventData, ev)
 }
 

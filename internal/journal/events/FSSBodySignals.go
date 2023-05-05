@@ -19,7 +19,8 @@ type evFSSBodySignals struct {
 }
 
 // FSSBodySignals event handler
-func FSSBodySignals(e interface{}) {
-    // ev := e.(evFSSBodySignals)
+func FSSBodySignals(eventData map[string]interface{}) {
+    // ev := new(evFSSBodySignals)
+    // mapstructure.Decode(eventData, ev)
 }
 

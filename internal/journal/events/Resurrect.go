@@ -14,7 +14,8 @@ type evResurrect struct {
 }
 
 // Resurrect event handler
-func Resurrect(e interface{}) {
-    // ev := e.(evResurrect)
+func Resurrect(eventData map[string]interface{}) {
+    // ev := new(evResurrect)
+    // mapstructure.Decode(eventData, ev)
 }
 

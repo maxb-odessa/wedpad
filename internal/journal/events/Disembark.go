@@ -24,7 +24,8 @@ type evDisembark struct {
 }
 
 // Disembark event handler
-func Disembark(e interface{}) {
-    // ev := e.(evDisembark)
+func Disembark(eventData map[string]interface{}) {
+    // ev := new(evDisembark)
+    // mapstructure.Decode(eventData, ev)
 }
 

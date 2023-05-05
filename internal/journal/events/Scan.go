@@ -73,7 +73,8 @@ type evScan struct {
 }
 
 // Scan event handler
-func Scan(e interface{}) {
-    // ev := e.(evScan)
+func Scan(eventData map[string]interface{}) {
+    // ev := new(evScan)
+    // mapstructure.Decode(eventData, ev)
 }
 

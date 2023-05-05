@@ -16,7 +16,8 @@ type evMarketBuy struct {
 }
 
 // MarketBuy event handler
-func MarketBuy(e interface{}) {
-    // ev := e.(evMarketBuy)
+func MarketBuy(eventData map[string]interface{}) {
+    // ev := new(evMarketBuy)
+    // mapstructure.Decode(eventData, ev)
 }
 

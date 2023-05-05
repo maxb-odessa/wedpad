@@ -16,7 +16,8 @@ type evUndocked struct {
 }
 
 // Undocked event handler
-func Undocked(e interface{}) {
-    // ev := e.(evUndocked)
+func Undocked(eventData map[string]interface{}) {
+    // ev := new(evUndocked)
+    // mapstructure.Decode(eventData, ev)
 }
 

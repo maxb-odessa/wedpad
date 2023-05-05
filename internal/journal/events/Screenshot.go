@@ -16,7 +16,8 @@ type evScreenshot struct {
 }
 
 // Screenshot event handler
-func Screenshot(e interface{}) {
-    // ev := e.(evScreenshot)
+func Screenshot(eventData map[string]interface{}) {
+    // ev := new(evScreenshot)
+    // mapstructure.Decode(eventData, ev)
 }
 

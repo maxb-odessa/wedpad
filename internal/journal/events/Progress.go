@@ -19,7 +19,8 @@ type evProgress struct {
 }
 
 // Progress event handler
-func Progress(e interface{}) {
-    // ev := e.(evProgress)
+func Progress(eventData map[string]interface{}) {
+    // ev := new(evProgress)
+    // mapstructure.Decode(eventData, ev)
 }
 

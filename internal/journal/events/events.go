@@ -2,7 +2,7 @@ package events
 
 import "github.com/maxb-odessa/slog"
 
-type eventHandlersFunc func(interface{})
+type eventHandlersFunc func(map[string]interface{})
 
 var eventHandlers map[string]eventHandlersFunc
 
@@ -141,9 +141,10 @@ func init() {
 	eventHandlers["USSDrop"] = USSDrop
 }
 
-func Handle(event string, data interface{}) {
-	if h, ok := eventHandlers[event]; ok {
-		h(data)
+func Handle(event string, data map[string]interface{}) {
+	if handler, ok := eventHandlers[event]; ok {
+		slog.Debug(9, "handling event '%s'", event)
+		handler(data)
 	} else {
 		slog.Err("Undefined event '%s', can't handle", event)
 	}

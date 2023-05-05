@@ -16,7 +16,8 @@ type evCarrierBankTransfer struct {
 }
 
 // CarrierBankTransfer event handler
-func CarrierBankTransfer(e interface{}) {
-    // ev := e.(evCarrierBankTransfer)
+func CarrierBankTransfer(eventData map[string]interface{}) {
+    // ev := new(evCarrierBankTransfer)
+    // mapstructure.Decode(eventData, ev)
 }
 

@@ -16,7 +16,8 @@ type evFSSDiscoveryScan struct {
 }
 
 // FSSDiscoveryScan event handler
-func FSSDiscoveryScan(e interface{}) {
-    // ev := e.(evFSSDiscoveryScan)
+func FSSDiscoveryScan(eventData map[string]interface{}) {
+    // ev := new(evFSSDiscoveryScan)
+    // mapstructure.Decode(eventData, ev)
 }
 

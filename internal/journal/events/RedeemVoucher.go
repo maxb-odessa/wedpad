@@ -14,7 +14,8 @@ type evRedeemVoucher struct {
 }
 
 // RedeemVoucher event handler
-func RedeemVoucher(e interface{}) {
-    // ev := e.(evRedeemVoucher)
+func RedeemVoucher(eventData map[string]interface{}) {
+    // ev := new(evRedeemVoucher)
+    // mapstructure.Decode(eventData, ev)
 }
 

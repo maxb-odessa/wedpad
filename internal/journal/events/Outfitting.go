@@ -16,7 +16,8 @@ type evOutfitting struct {
 }
 
 // Outfitting event handler
-func Outfitting(e interface{}) {
-    // ev := e.(evOutfitting)
+func Outfitting(eventData map[string]interface{}) {
+    // ev := new(evOutfitting)
+    // mapstructure.Decode(eventData, ev)
 }
 

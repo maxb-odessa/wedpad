@@ -41,7 +41,8 @@ type evMissionCompleted struct {
 }
 
 // MissionCompleted event handler
-func MissionCompleted(e interface{}) {
-    // ev := e.(evMissionCompleted)
+func MissionCompleted(eventData map[string]interface{}) {
+    // ev := new(evMissionCompleted)
+    // mapstructure.Decode(eventData, ev)
 }
 

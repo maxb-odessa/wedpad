@@ -17,7 +17,8 @@ type evBuyMicroResources struct {
 }
 
 // BuyMicroResources event handler
-func BuyMicroResources(e interface{}) {
-    // ev := e.(evBuyMicroResources)
+func BuyMicroResources(eventData map[string]interface{}) {
+    // ev := new(evBuyMicroResources)
+    // mapstructure.Decode(eventData, ev)
 }
 

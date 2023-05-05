@@ -15,7 +15,8 @@ type evSetUserShipName struct {
 }
 
 // SetUserShipName event handler
-func SetUserShipName(e interface{}) {
-    // ev := e.(evSetUserShipName)
+func SetUserShipName(eventData map[string]interface{}) {
+    // ev := new(evSetUserShipName)
+    // mapstructure.Decode(eventData, ev)
 }
 

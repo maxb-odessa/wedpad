@@ -13,7 +13,8 @@ type evDataScanned struct {
 }
 
 // DataScanned event handler
-func DataScanned(e interface{}) {
-    // ev := e.(evDataScanned)
+func DataScanned(eventData map[string]interface{}) {
+    // ev := new(evDataScanned)
+    // mapstructure.Decode(eventData, ev)
 }
 

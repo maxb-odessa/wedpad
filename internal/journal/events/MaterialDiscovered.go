@@ -15,7 +15,8 @@ type evMaterialDiscovered struct {
 }
 
 // MaterialDiscovered event handler
-func MaterialDiscovered(e interface{}) {
-    // ev := e.(evMaterialDiscovered)
+func MaterialDiscovered(eventData map[string]interface{}) {
+    // ev := new(evMaterialDiscovered)
+    // mapstructure.Decode(eventData, ev)
 }
 

@@ -18,7 +18,8 @@ type evApproachSettlement struct {
 }
 
 // ApproachSettlement event handler
-func ApproachSettlement(e interface{}) {
-    // ev := e.(evApproachSettlement)
+func ApproachSettlement(eventData map[string]interface{}) {
+    // ev := new(evApproachSettlement)
+    // mapstructure.Decode(eventData, ev)
 }
 

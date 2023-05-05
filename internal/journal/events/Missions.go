@@ -14,7 +14,8 @@ type evMissions struct {
 }
 
 // Missions event handler
-func Missions(e interface{}) {
-    // ev := e.(evMissions)
+func Missions(eventData map[string]interface{}) {
+    // ev := new(evMissions)
+    // mapstructure.Decode(eventData, ev)
 }
 

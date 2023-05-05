@@ -17,7 +17,8 @@ type evMissionRedirected struct {
 }
 
 // MissionRedirected event handler
-func MissionRedirected(e interface{}) {
-    // ev := e.(evMissionRedirected)
+func MissionRedirected(eventData map[string]interface{}) {
+    // ev := new(evMissionRedirected)
+    // mapstructure.Decode(eventData, ev)
 }
 

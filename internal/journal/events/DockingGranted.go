@@ -15,7 +15,8 @@ type evDockingGranted struct {
 }
 
 // DockingGranted event handler
-func DockingGranted(e interface{}) {
-    // ev := e.(evDockingGranted)
+func DockingGranted(eventData map[string]interface{}) {
+    // ev := new(evDockingGranted)
+    // mapstructure.Decode(eventData, ev)
 }
 

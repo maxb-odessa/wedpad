@@ -18,7 +18,8 @@ type evSwitchSuitLoadout struct {
 }
 
 // SwitchSuitLoadout event handler
-func SwitchSuitLoadout(e interface{}) {
-    // ev := e.(evSwitchSuitLoadout)
+func SwitchSuitLoadout(eventData map[string]interface{}) {
+    // ev := new(evSwitchSuitLoadout)
+    // mapstructure.Decode(eventData, ev)
 }
 

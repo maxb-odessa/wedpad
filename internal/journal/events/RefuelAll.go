@@ -13,7 +13,8 @@ type evRefuelAll struct {
 }
 
 // RefuelAll event handler
-func RefuelAll(e interface{}) {
-    // ev := e.(evRefuelAll)
+func RefuelAll(eventData map[string]interface{}) {
+    // ev := new(evRefuelAll)
+    // mapstructure.Decode(eventData, ev)
 }
 

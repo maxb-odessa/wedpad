@@ -16,7 +16,8 @@ type evLaunchSRV struct {
 }
 
 // LaunchSRV event handler
-func LaunchSRV(e interface{}) {
-    // ev := e.(evLaunchSRV)
+func LaunchSRV(eventData map[string]interface{}) {
+    // ev := new(evLaunchSRV)
+    // mapstructure.Decode(eventData, ev)
 }
 

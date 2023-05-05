@@ -52,7 +52,8 @@ type evLoadout struct {
 }
 
 // Loadout event handler
-func Loadout(e interface{}) {
-    // ev := e.(evLoadout)
+func Loadout(eventData map[string]interface{}) {
+    // ev := new(evLoadout)
+    // mapstructure.Decode(eventData, ev)
 }
 

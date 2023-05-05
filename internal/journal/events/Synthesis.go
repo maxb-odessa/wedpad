@@ -17,7 +17,8 @@ type evSynthesis struct {
 }
 
 // Synthesis event handler
-func Synthesis(e interface{}) {
-    // ev := e.(evSynthesis)
+func Synthesis(eventData map[string]interface{}) {
+    // ev := new(evSynthesis)
+    // mapstructure.Decode(eventData, ev)
 }
 

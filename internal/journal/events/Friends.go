@@ -13,7 +13,8 @@ type evFriends struct {
 }
 
 // Friends event handler
-func Friends(e interface{}) {
-    // ev := e.(evFriends)
+func Friends(eventData map[string]interface{}) {
+    // ev := new(evFriends)
+    // mapstructure.Decode(eventData, ev)
 }
 

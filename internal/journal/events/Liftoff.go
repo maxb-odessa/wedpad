@@ -23,7 +23,8 @@ type evLiftoff struct {
 }
 
 // Liftoff event handler
-func Liftoff(e interface{}) {
-    // ev := e.(evLiftoff)
+func Liftoff(eventData map[string]interface{}) {
+    // ev := new(evLiftoff)
+    // mapstructure.Decode(eventData, ev)
 }
 

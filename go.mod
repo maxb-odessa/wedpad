@@ -7,6 +7,7 @@ require (
 	github.com/gorilla/websocket v1.5.0
 	github.com/maxb-odessa/sconf v0.0.2
 	github.com/maxb-odessa/slog v0.0.2
+	github.com/mitchellh/mapstructure v1.5.0
 	github.com/nxadm/tail v1.4.8
 	github.com/pborman/getopt/v2 v2.1.0
 	github.com/radovskyb/watcher v1.0.7

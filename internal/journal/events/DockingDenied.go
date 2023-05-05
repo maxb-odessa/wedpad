@@ -15,7 +15,8 @@ type evDockingDenied struct {
 }
 
 // DockingDenied event handler
-func DockingDenied(e interface{}) {
-    // ev := e.(evDockingDenied)
+func DockingDenied(eventData map[string]interface{}) {
+    // ev := new(evDockingDenied)
+    // mapstructure.Decode(eventData, ev)
 }
 

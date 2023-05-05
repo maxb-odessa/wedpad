@@ -14,7 +14,8 @@ type evSendText struct {
 }
 
 // SendText event handler
-func SendText(e interface{}) {
-    // ev := e.(evSendText)
+func SendText(eventData map[string]interface{}) {
+    // ev := new(evSendText)
+    // mapstructure.Decode(eventData, ev)
 }
 

@@ -34,7 +34,7 @@ func run() {
 		}
 
 		if e, ok := mData["event"]; ok {
-			events.Handle(e.(string), e)
+			events.Handle(e.(string), mData)
 		}
 	}
 }

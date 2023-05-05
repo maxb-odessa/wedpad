@@ -17,7 +17,8 @@ type evNavRoute struct {
 }
 
 // NavRoute event handler
-func NavRoute(e interface{}) {
-    // ev := e.(evNavRoute)
+func NavRoute(eventData map[string]interface{}) {
+    // ev := new(evNavRoute)
+    // mapstructure.Decode(eventData, ev)
 }
 

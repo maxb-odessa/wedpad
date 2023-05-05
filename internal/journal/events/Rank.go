@@ -19,7 +19,8 @@ type evRank struct {
 }
 
 // Rank event handler
-func Rank(e interface{}) {
-    // ev := e.(evRank)
+func Rank(eventData map[string]interface{}) {
+    // ev := new(evRank)
+    // mapstructure.Decode(eventData, ev)
 }
 

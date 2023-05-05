@@ -12,7 +12,8 @@ type evShieldState struct {
 }
 
 // ShieldState event handler
-func ShieldState(e interface{}) {
-    // ev := e.(evShieldState)
+func ShieldState(eventData map[string]interface{}) {
+    // ev := new(evShieldState)
+    // mapstructure.Decode(eventData, ev)
 }
 

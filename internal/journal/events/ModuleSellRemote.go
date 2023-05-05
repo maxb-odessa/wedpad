@@ -18,7 +18,8 @@ type evModuleSellRemote struct {
 }
 
 // ModuleSellRemote event handler
-func ModuleSellRemote(e interface{}) {
-    // ev := e.(evModuleSellRemote)
+func ModuleSellRemote(eventData map[string]interface{}) {
+    // ev := new(evModuleSellRemote)
+    // mapstructure.Decode(eventData, ev)
 }
 

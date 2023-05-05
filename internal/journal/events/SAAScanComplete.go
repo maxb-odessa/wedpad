@@ -16,7 +16,8 @@ type evSAAScanComplete struct {
 }
 
 // SAAScanComplete event handler
-func SAAScanComplete(e interface{}) {
-    // ev := e.(evSAAScanComplete)
+func SAAScanComplete(eventData map[string]interface{}) {
+    // ev := new(evSAAScanComplete)
+    // mapstructure.Decode(eventData, ev)
 }
 

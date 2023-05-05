@@ -14,7 +14,8 @@ type evFSSAllBodiesFound struct {
 }
 
 // FSSAllBodiesFound event handler
-func FSSAllBodiesFound(e interface{}) {
-    // ev := e.(evFSSAllBodiesFound)
+func FSSAllBodiesFound(eventData map[string]interface{}) {
+    // ev := new(evFSSAllBodiesFound)
+    // mapstructure.Decode(eventData, ev)
 }
 

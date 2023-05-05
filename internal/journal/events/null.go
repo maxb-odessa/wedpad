@@ -4,7 +4,8 @@ package events
 type evnull interface{}
 
 // null event handler
-func null(e interface{}) {
-    // ev := e.(evnull)
+func null(eventData map[string]interface{}) {
+    // ev := new(evnull)
+    // mapstructure.Decode(eventData, ev)
 }
 

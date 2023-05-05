@@ -39,7 +39,8 @@ type evDocked struct {
 }
 
 // Docked event handler
-func Docked(e interface{}) {
-    // ev := e.(evDocked)
+func Docked(eventData map[string]interface{}) {
+    // ev := new(evDocked)
+    // mapstructure.Decode(eventData, ev)
 }
 

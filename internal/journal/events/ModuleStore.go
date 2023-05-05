@@ -21,7 +21,8 @@ type evModuleStore struct {
 }
 
 // ModuleStore event handler
-func ModuleStore(e interface{}) {
-    // ev := e.(evModuleStore)
+func ModuleStore(eventData map[string]interface{}) {
+    // ev := new(evModuleStore)
+    // mapstructure.Decode(eventData, ev)
 }
 
