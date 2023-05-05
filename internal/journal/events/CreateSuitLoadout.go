@@ -1,0 +1,24 @@
+package events
+
+import (
+	"time"
+)
+
+// CreateSuitLoadout event structure
+type evCreateSuitLoadout struct {
+	LoadoutID         int           `mapstructure:"LoadoutID"`
+	LoadoutName       string        `mapstructure:"LoadoutName"`
+	Modules           []interface{} `mapstructure:"Modules"`
+	SuitID            int           `mapstructure:"SuitID"`
+	SuitMods          []string      `mapstructure:"SuitMods"`
+	SuitName          string        `mapstructure:"SuitName"`
+	SuitNameLocalised string        `mapstructure:"SuitName_Localised"`
+	Event             string        `mapstructure:"event"`
+	Timestamp         time.Time     `mapstructure:"timestamp"`
+}
+
+// CreateSuitLoadout event handler
+func CreateSuitLoadout(e interface{}) {
+    // ev := e.(evCreateSuitLoadout)
+}
+

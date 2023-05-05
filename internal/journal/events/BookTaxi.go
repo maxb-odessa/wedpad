@@ -1,0 +1,20 @@
+package events
+
+import (
+	"time"
+)
+
+// BookTaxi event structure
+type evBookTaxi struct {
+	Cost                int       `mapstructure:"Cost"`
+	DestinationLocation string    `mapstructure:"DestinationLocation"`
+	DestinationSystem   string    `mapstructure:"DestinationSystem"`
+	Event               string    `mapstructure:"event"`
+	Timestamp           time.Time `mapstructure:"timestamp"`
+}
+
+// BookTaxi event handler
+func BookTaxi(e interface{}) {
+    // ev := e.(evBookTaxi)
+}
+

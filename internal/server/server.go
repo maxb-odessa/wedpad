@@ -19,7 +19,7 @@ func Send(s []byte) {
 	select {
 	case toClient <- s:
 	default:
-		slog.Debug(5, "Client is not connected, discarding the message")
+		slog.Debug(5, "client is not connected, discarding the message")
 	}
 }
 
@@ -78,7 +78,7 @@ func Run() {
 					slog.Err("Websocket send() failed: %s", err)
 					return
 				} else {
-					slog.Debug(5, "Websocket sent: %q", string(msg))
+					slog.Debug(5, "ws sent: %q", string(msg))
 				}
 			}
 		}
