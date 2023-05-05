@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="wedpad.css">
 </head>
 
-<body onload="init();">
+<body>
 
 <div id="left">
     <div class="view-top"    id="view-top"></div>
@@ -28,7 +28,7 @@
 
 <script>
 
-function init() {
+window.onload = function () {
     switchView("log");
 };
 
@@ -53,6 +53,7 @@ var socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
     logView.innerHTML = "<h1>CONNECTED!</h1>";
+    socket.send("connected");
 };
 
 socket.onmessage = function(msg) {
@@ -85,6 +86,8 @@ socket.onmessage = function(msg) {
         }
     }
 
+    socket.send("ack");
+
     <!-- target.scrollBy(0, 500); -->
 
 };
@@ -94,6 +97,7 @@ socket.onclose = function(ev) {
         logView.innerHTML += "<p><h1>UNEXPECTED CONNECTION CLOSE!</h1>";
     }
     logView.innerHTML += "<p><h1>CONNECTION CLOSED: " + "Clean:" + ev.wasClean + " Reason:" + ev.reason + " Code:" + ev.code + "</h1>";
+    socket.send("closed");
 };
 
 </script>

@@ -65,7 +65,7 @@ func Init() error {
 		}
 	}
 
-	server.OnConnect(showGreeting)
+	server.SetOnConnect(showGreeting)
 
 	return nil
 }
@@ -73,33 +73,16 @@ func Init() error {
 func showGreeting() {
 
 	data := make(map[string]string)
-	data["text"] = "Hello!"
+	data["text"] = "WEdPad - Web based Elite Dangerous Pad"
 
-	msg1 := &Message{
+	msg := &Message{
 		Action: ACTION_REPLACE,
 		Target: TARGET_LOG,
 		Type:   TYPE_VIEW,
 		Data:   data,
 	}
 
-	msg1.Send()
-
-	msg2 := &Message{
-		Action: ACTION_ATTENTION,
-		Target: TARGET_LOG,
-		Type:   TYPE_BUTTON,
-		Data:   data,
-	}
-	msg2.Send()
-
-	msg3 := &Message{
-		Action: ACTION_REPLACE,
-		Target: TARGET_LOG,
-		Type:   TYPE_BUTTON,
-		Data:   data,
-	}
-
-	msg3.Send()
+	msg.Send()
 
 }
 

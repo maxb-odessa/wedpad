@@ -25,18 +25,18 @@ func Send(s []byte) {
 
 var onConnectCb func()
 
-func OnConnect(f func()) {
+func SetOnConnect(f func()) {
 	onConnectCb = f
 }
 
 func Run() {
 
-	var upgrader = ws.Upgrader{
-		ReadBufferSize:  8192,
-		WriteBufferSize: 8192,
-	}
-
 	wsHandler := func(w http.ResponseWriter, r *http.Request) {
+
+		var upgrader = ws.Upgrader{
+			ReadBufferSize:  1024,
+			WriteBufferSize: 1024,
+		}
 
 		conn, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
@@ -46,10 +46,6 @@ func Run() {
 
 		slog.Info("Websocket connected: %s", conn.RemoteAddr())
 
-		if onConnectCb != nil {
-			onConnectCb()
-		}
-
 		defer func() {
 			slog.Info("Websocket connection closed: %s", conn.RemoteAddr())
 			conn.Close()
@@ -58,14 +54,18 @@ func Run() {
 		reader := func() {
 			for {
 				// catch remote connection close
-				_, _, err := conn.ReadMessage()
-				if err != nil {
+				mtype, _, err := conn.ReadMessage()
+				if err != nil || mtype == ws.CloseMessage {
 					return
 				}
 			}
 		}
 
 		go reader()
+
+		if onConnectCb != nil {
+			onConnectCb()
+		}
 
 		for {
 
@@ -84,11 +84,11 @@ func Run() {
 		}
 	}
 
-	http.HandleFunc("/ws", wsHandler)
-
 	pageDir := sconf.StrDef("paths", "page", "page")
 	slog.Debug(9, "Serving HTTP dir: %s", pageDir)
 	http.Handle("/", http.FileServer(http.Dir(pageDir)))
+
+	http.HandleFunc("/ws", wsHandler)
 
 	http.ListenAndServe(sconf.StrDef("net", "listen", "localhost:8080"), nil)
 }
