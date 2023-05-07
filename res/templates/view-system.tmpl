@@ -1,12 +1,12 @@
-<table class="stars">
-<caption>
-    SYSTEM NAME HERE
+<table class="stars-table">
+<caption class="stars-caption">
+    {{ .SystemName }}
 </caption>
 <thead>
-    <tr >
-        <th>Type</th>
-        <th>Class</th>
-        <th>Lum</th>
+    <tr class="stars-th">
+        <th id="stars-type">Type,</th>
+        <th id="stars-subclass">C</th>
+        <th id="stars-luminosity">L</th>
         <th>Dist(Ls)</th>
         <th>Rad(Sol)</th>
         <th>Mass(Sol)</th>
@@ -18,11 +18,17 @@
 </thead>
 
 <tbody>
-{{ range $i, $v := . }}
-    <tr>
-        <td><font color="{{$v.Type.Color}}">{{ $v.Type.Str }}</font></td>
-        <td>{{ $v.Subclass }}</td>
-        <td>{{ $v.Luminosity }}</td>
+{{- $odd := false}}
+{{ range $i, $v := .Data }}
+    {{ $odd = not $odd }}
+    {{ if $odd }}
+    <tr id="tr-odd">
+    {{ else }}
+    <tr id="tr-even">
+    {{ end }}
+        <td id="stars-type"><font color="{{$v.Type.Color}}">{{ $v.Type.Str }}</font></td>
+        <td id="stars-subclass"><font color="{{$v.Type.Color}}">{{ $v.Subclass }}</font></td>
+        <td id="stars-luminosity"><font color="{{$v.Type.Color}}">{{ $v.Luminosity }}</font></td>
         <td>{{ $v.DistanceLs }}</td>
         <td>{{ $v.RadiusS }}</td>
         <td>{{ $v.MassS }}</td>

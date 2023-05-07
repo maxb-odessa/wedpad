@@ -18,6 +18,10 @@ type CurrentSystemT struct {
 
 var CurrentSystem *CurrentSystemT
 
+func (cs *CurrentSystemT) String() string {
+	return cs.Name
+}
+
 // TODO name, sector, etc
 func (cs *CurrentSystemT) Clean(what string) {
 	switch strings.ToLower(what) {
@@ -72,14 +76,32 @@ func (cs *CurrentSystemT) ShowStars() {
 		stars = append(stars, star)
 	}
 
-	m := &msg.Message{
+	type withSystemName struct {
+		SystemName string
+		Data       interface{}
+	}
+	Data := &withSystemName{
+		SystemName: CurrentSystem.String(),
+		Data:       stars,
+	}
+
+	mv := &msg.Message{
 		Action: msg.ACTION_REPLACE,
 		Target: msg.TARGET_SYSTEM,
 		Type:   msg.TYPE_VIEW,
-		Data:   stars,
+		Data:   Data,
 	}
 
-	m.Send()
+	mv.Send()
+
+	mb := &msg.Message{
+		Action: msg.ACTION_ATTENTION,
+		Target: msg.TARGET_SYSTEM,
+		Type:   msg.TYPE_VIEW,
+		Data:   "",
+	}
+
+	mb.Send()
 }
 
 // in meters

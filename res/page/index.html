@@ -73,16 +73,16 @@ socket.onmessage = function(msg) {
     }
 
     if (action === "replace") {
-            output.innerHTML = "<p>"+data;
+            output.innerHTML = data;
     } else if (action === "append") {
             output.innerHTML += data;
     } else if (action === "clean") {
             output.innerHTML = "";
-    }
-
-    if (otype === "button") {
-        if (action === "attention") {
+    } else if (action === "attention") {
+        if (otype === "button") {
             document.getElementById(otype + "-" + target).setAttribute("class", "button button-attention");
+        } else if (otype === "view") {
+            switchView(target)
         }
     }
 

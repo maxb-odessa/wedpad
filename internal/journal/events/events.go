@@ -10,6 +10,7 @@ type EventHandler struct{}
 
 func (evHandler EventHandler) Init() {
 	CurrentSystem = new(CurrentSystemT)
+	CurrentSystem.Name = "none yet"
 	CurrentSystem.Clean("all")
 }
 
