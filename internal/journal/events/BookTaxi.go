@@ -5,7 +5,7 @@ import (
 )
 
 // BookTaxi event structure
-type evBookTaxi struct {
+type BookTaxiT struct {
 	Cost                int       `mapstructure:"Cost"`
 	DestinationLocation string    `mapstructure:"DestinationLocation"`
 	DestinationSystem   string    `mapstructure:"DestinationSystem"`
@@ -15,7 +15,7 @@ type evBookTaxi struct {
 
 // BookTaxi event handler
 func (evHandler EventHandler) BookTaxi(eventData map[string]interface{}) {
-    // ev := new(evBookTaxi)
+    // ev := new(BookTaxiT)
     // mapstructure.Decode(eventData, ev)
 }
 

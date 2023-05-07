@@ -5,7 +5,7 @@ import (
 )
 
 // Materials event structure
-type evMaterials struct {
+type MaterialsT struct {
 	Encoded []struct {
 		Count         int    `mapstructure:"Count"`
 		Name          string `mapstructure:"Name"`
@@ -26,7 +26,7 @@ type evMaterials struct {
 
 // Materials event handler
 func (evHandler EventHandler) Materials(eventData map[string]interface{}) {
-    // ev := new(evMaterials)
+    // ev := new(MaterialsT)
     // mapstructure.Decode(eventData, ev)
 }
 

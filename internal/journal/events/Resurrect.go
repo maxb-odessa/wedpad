@@ -5,7 +5,7 @@ import (
 )
 
 // Resurrect event structure
-type evResurrect struct {
+type ResurrectT struct {
 	Bankrupt  bool      `mapstructure:"Bankrupt"`
 	Cost      int       `mapstructure:"Cost"`
 	Option    string    `mapstructure:"Option"`
@@ -15,7 +15,7 @@ type evResurrect struct {
 
 // Resurrect event handler
 func (evHandler EventHandler) Resurrect(eventData map[string]interface{}) {
-    // ev := new(evResurrect)
+    // ev := new(ResurrectT)
     // mapstructure.Decode(eventData, ev)
 }
 

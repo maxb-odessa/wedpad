@@ -5,7 +5,7 @@ import (
 )
 
 // DiscoveryScan event structure
-type evDiscoveryScan struct {
+type DiscoveryScanT struct {
 	Bodies        int       `mapstructure:"Bodies"`
 	SystemAddress int       `mapstructure:"SystemAddress"`
 	Event         string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evDiscoveryScan struct {
 
 // DiscoveryScan event handler
 func (evHandler EventHandler) DiscoveryScan(eventData map[string]interface{}) {
-    // ev := new(evDiscoveryScan)
+    // ev := new(DiscoveryScanT)
     // mapstructure.Decode(eventData, ev)
 }
 

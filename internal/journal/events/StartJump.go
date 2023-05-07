@@ -5,7 +5,7 @@ import (
 )
 
 // StartJump event structure
-type evStartJump struct {
+type StartJumpT struct {
 	JumpType      string    `mapstructure:"JumpType"`
 	StarClass     string    `mapstructure:"StarClass"`
 	StarSystem    string    `mapstructure:"StarSystem"`
@@ -16,7 +16,7 @@ type evStartJump struct {
 
 // StartJump event handler
 func (evHandler EventHandler) StartJump(eventData map[string]interface{}) {
-    // ev := new(evStartJump)
+    // ev := new(StartJumpT)
     // mapstructure.Decode(eventData, ev)
 }
 

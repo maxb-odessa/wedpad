@@ -5,7 +5,7 @@ import (
 )
 
 // ScanOrganic event structure
-type evScanOrganic struct {
+type ScanOrganicT struct {
 	Body             int       `mapstructure:"Body"`
 	Genus            string    `mapstructure:"Genus"`
 	GenusLocalised   string    `mapstructure:"Genus_Localised"`
@@ -19,7 +19,7 @@ type evScanOrganic struct {
 
 // ScanOrganic event handler
 func (evHandler EventHandler) ScanOrganic(eventData map[string]interface{}) {
-    // ev := new(evScanOrganic)
+    // ev := new(ScanOrganicT)
     // mapstructure.Decode(eventData, ev)
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 // ModuleRetrieve event structure
-type evModuleRetrieve struct {
+type ModuleRetrieveT struct {
 	EngineerModifications  string    `mapstructure:"EngineerModifications"`
 	Hot                    bool      `mapstructure:"Hot"`
 	Level                  int       `mapstructure:"Level"`
@@ -24,7 +24,7 @@ type evModuleRetrieve struct {
 
 // ModuleRetrieve event handler
 func (evHandler EventHandler) ModuleRetrieve(eventData map[string]interface{}) {
-    // ev := new(evModuleRetrieve)
+    // ev := new(ModuleRetrieveT)
     // mapstructure.Decode(eventData, ev)
 }
 

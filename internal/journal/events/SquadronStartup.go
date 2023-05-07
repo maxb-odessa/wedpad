@@ -5,7 +5,7 @@ import (
 )
 
 // SquadronStartup event structure
-type evSquadronStartup struct {
+type SquadronStartupT struct {
 	CurrentRank  int       `mapstructure:"CurrentRank"`
 	SquadronName string    `mapstructure:"SquadronName"`
 	Event        string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evSquadronStartup struct {
 
 // SquadronStartup event handler
 func (evHandler EventHandler) SquadronStartup(eventData map[string]interface{}) {
-    // ev := new(evSquadronStartup)
+    // ev := new(SquadronStartupT)
     // mapstructure.Decode(eventData, ev)
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 // Undocked event structure
-type evUndocked struct {
+type UndockedT struct {
 	MarketID    int       `mapstructure:"MarketID"`
 	Multicrew   bool      `mapstructure:"Multicrew"`
 	StationName string    `mapstructure:"StationName"`
@@ -17,7 +17,7 @@ type evUndocked struct {
 
 // Undocked event handler
 func (evHandler EventHandler) Undocked(eventData map[string]interface{}) {
-    // ev := new(evUndocked)
+    // ev := new(UndockedT)
     // mapstructure.Decode(eventData, ev)
 }
 

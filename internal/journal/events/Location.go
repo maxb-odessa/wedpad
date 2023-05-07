@@ -5,7 +5,7 @@ import (
 )
 
 // Location event structure
-type evLocation struct {
+type LocationT struct {
 	Body      string `mapstructure:"Body"`
 	BodyID    int    `mapstructure:"BodyID"`
 	BodyType  string `mapstructure:"BodyType"`
@@ -92,7 +92,7 @@ type evLocation struct {
 
 // Location event handler
 func (evHandler EventHandler) Location(eventData map[string]interface{}) {
-    // ev := new(evLocation)
+    // ev := new(LocationT)
     // mapstructure.Decode(eventData, ev)
 }
 

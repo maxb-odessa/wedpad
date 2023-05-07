@@ -5,7 +5,7 @@ import (
 )
 
 // LeaveBody event structure
-type evLeaveBody struct {
+type LeaveBodyT struct {
 	Body          string    `mapstructure:"Body"`
 	BodyID        int       `mapstructure:"BodyID"`
 	StarSystem    string    `mapstructure:"StarSystem"`
@@ -16,7 +16,7 @@ type evLeaveBody struct {
 
 // LeaveBody event handler
 func (evHandler EventHandler) LeaveBody(eventData map[string]interface{}) {
-    // ev := new(evLeaveBody)
+    // ev := new(LeaveBodyT)
     // mapstructure.Decode(eventData, ev)
 }
 

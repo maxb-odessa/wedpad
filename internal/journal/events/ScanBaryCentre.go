@@ -5,7 +5,7 @@ import (
 )
 
 // ScanBaryCentre event structure
-type evScanBaryCentre struct {
+type ScanBaryCentreT struct {
 	AscendingNode      float64   `mapstructure:"AscendingNode"`
 	BodyID             int       `mapstructure:"BodyID"`
 	Eccentricity       float64   `mapstructure:"Eccentricity"`
@@ -22,7 +22,7 @@ type evScanBaryCentre struct {
 
 // ScanBaryCentre event handler
 func (evHandler EventHandler) ScanBaryCentre(eventData map[string]interface{}) {
-    // ev := new(evScanBaryCentre)
+    // ev := new(ScanBaryCentreT)
     // mapstructure.Decode(eventData, ev)
 }
 

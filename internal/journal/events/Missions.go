@@ -5,7 +5,7 @@ import (
 )
 
 // Missions event structure
-type evMissions struct {
+type MissionsT struct {
 	Active    []interface{} `mapstructure:"Active"`
 	Complete  []interface{} `mapstructure:"Complete"`
 	Failed    []interface{} `mapstructure:"Failed"`
@@ -15,7 +15,7 @@ type evMissions struct {
 
 // Missions event handler
 func (evHandler EventHandler) Missions(eventData map[string]interface{}) {
-    // ev := new(evMissions)
+    // ev := new(MissionsT)
     // mapstructure.Decode(eventData, ev)
 }
 

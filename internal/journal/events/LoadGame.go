@@ -5,7 +5,7 @@ import (
 )
 
 // LoadGame event structure
-type evLoadGame struct {
+type LoadGameT struct {
 	Commander     string    `mapstructure:"Commander"`
 	Credits       int       `mapstructure:"Credits"`
 	Fid           string    `mapstructure:"FID"`
@@ -30,7 +30,7 @@ type evLoadGame struct {
 
 // LoadGame event handler
 func (evHandler EventHandler) LoadGame(eventData map[string]interface{}) {
-    // ev := new(evLoadGame)
+    // ev := new(LoadGameT)
     // mapstructure.Decode(eventData, ev)
 }
 

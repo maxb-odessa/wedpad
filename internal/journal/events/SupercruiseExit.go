@@ -5,7 +5,7 @@ import (
 )
 
 // SupercruiseExit event structure
-type evSupercruiseExit struct {
+type SupercruiseExitT struct {
 	Body          string    `mapstructure:"Body"`
 	BodyID        int       `mapstructure:"BodyID"`
 	BodyType      string    `mapstructure:"BodyType"`
@@ -19,7 +19,7 @@ type evSupercruiseExit struct {
 
 // SupercruiseExit event handler
 func (evHandler EventHandler) SupercruiseExit(eventData map[string]interface{}) {
-    // ev := new(evSupercruiseExit)
+    // ev := new(SupercruiseExitT)
     // mapstructure.Decode(eventData, ev)
 }
 

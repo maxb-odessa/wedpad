@@ -5,7 +5,7 @@ import (
 )
 
 // CargoTransfer event structure
-type evCargoTransfer struct {
+type CargoTransferT struct {
 	Transfers []struct {
 		Count     int    `mapstructure:"Count"`
 		Direction string `mapstructure:"Direction"`
@@ -17,7 +17,7 @@ type evCargoTransfer struct {
 
 // CargoTransfer event handler
 func (evHandler EventHandler) CargoTransfer(eventData map[string]interface{}) {
-    // ev := new(evCargoTransfer)
+    // ev := new(CargoTransferT)
     // mapstructure.Decode(eventData, ev)
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 // FCMaterials event structure
-type evFCMaterials struct {
+type FCMaterialsT struct {
 	CarrierID   string        `mapstructure:"CarrierID"`
 	CarrierName string        `mapstructure:"CarrierName"`
 	Items       []interface{} `mapstructure:"Items"`
@@ -16,7 +16,7 @@ type evFCMaterials struct {
 
 // FCMaterials event handler
 func (evHandler EventHandler) FCMaterials(eventData map[string]interface{}) {
-    // ev := new(evFCMaterials)
+    // ev := new(FCMaterialsT)
     // mapstructure.Decode(eventData, ev)
 }
 

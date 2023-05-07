@@ -5,7 +5,7 @@ import (
 )
 
 // ApproachSettlement event structure
-type evApproachSettlement struct {
+type ApproachSettlementT struct {
 	BodyID        int       `mapstructure:"BodyID"`
 	BodyName      string    `mapstructure:"BodyName"`
 	Latitude      float64   `mapstructure:"Latitude"`
@@ -19,7 +19,7 @@ type evApproachSettlement struct {
 
 // ApproachSettlement event handler
 func (evHandler EventHandler) ApproachSettlement(eventData map[string]interface{}) {
-    // ev := new(evApproachSettlement)
+    // ev := new(ApproachSettlementT)
     // mapstructure.Decode(eventData, ev)
 }
 

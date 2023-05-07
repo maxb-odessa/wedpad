@@ -5,7 +5,7 @@ import (
 )
 
 // SupercruiseEntry event structure
-type evSupercruiseEntry struct {
+type SupercruiseEntryT struct {
 	Multicrew     bool      `mapstructure:"Multicrew"`
 	StarSystem    string    `mapstructure:"StarSystem"`
 	SystemAddress int       `mapstructure:"SystemAddress"`
@@ -16,7 +16,7 @@ type evSupercruiseEntry struct {
 
 // SupercruiseEntry event handler
 func (evHandler EventHandler) SupercruiseEntry(eventData map[string]interface{}) {
-    // ev := new(evSupercruiseEntry)
+    // ev := new(SupercruiseEntryT)
     // mapstructure.Decode(eventData, ev)
 }
 

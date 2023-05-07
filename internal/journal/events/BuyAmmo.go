@@ -5,7 +5,7 @@ import (
 )
 
 // BuyAmmo event structure
-type evBuyAmmo struct {
+type BuyAmmoT struct {
 	Cost      int       `mapstructure:"Cost"`
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evBuyAmmo struct {
 
 // BuyAmmo event handler
 func (evHandler EventHandler) BuyAmmo(eventData map[string]interface{}) {
-    // ev := new(evBuyAmmo)
+    // ev := new(BuyAmmoT)
     // mapstructure.Decode(eventData, ev)
 }
 

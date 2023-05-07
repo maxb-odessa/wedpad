@@ -5,7 +5,7 @@ import (
 )
 
 // Rank event structure
-type evRank struct {
+type RankT struct {
 	Cqc          int       `mapstructure:"CQC"`
 	Combat       int       `mapstructure:"Combat"`
 	Empire       int       `mapstructure:"Empire"`
@@ -20,7 +20,7 @@ type evRank struct {
 
 // Rank event handler
 func (evHandler EventHandler) Rank(eventData map[string]interface{}) {
-    // ev := new(evRank)
+    // ev := new(RankT)
     // mapstructure.Decode(eventData, ev)
 }
 

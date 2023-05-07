@@ -5,7 +5,7 @@ import (
 )
 
 // Market event structure
-type evMarket struct {
+type MarketT struct {
 	CarrierDockingAccess string `mapstructure:"CarrierDockingAccess"`
 	Items                []struct {
 		BuyPrice          int    `mapstructure:"BuyPrice"`
@@ -34,7 +34,7 @@ type evMarket struct {
 
 // Market event handler
 func (evHandler EventHandler) Market(eventData map[string]interface{}) {
-    // ev := new(evMarket)
+    // ev := new(MarketT)
     // mapstructure.Decode(eventData, ev)
 }
 

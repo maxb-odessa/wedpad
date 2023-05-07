@@ -5,7 +5,7 @@ import (
 )
 
 // FetchRemoteModule event structure
-type evFetchRemoteModule struct {
+type FetchRemoteModuleT struct {
 	ServerID            int       `mapstructure:"ServerId"`
 	Ship                string    `mapstructure:"Ship"`
 	ShipID              int       `mapstructure:"ShipID"`
@@ -20,7 +20,7 @@ type evFetchRemoteModule struct {
 
 // FetchRemoteModule event handler
 func (evHandler EventHandler) FetchRemoteModule(eventData map[string]interface{}) {
-    // ev := new(evFetchRemoteModule)
+    // ev := new(FetchRemoteModuleT)
     // mapstructure.Decode(eventData, ev)
 }
 

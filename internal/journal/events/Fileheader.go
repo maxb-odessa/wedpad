@@ -5,7 +5,7 @@ import (
 )
 
 // Fileheader event structure
-type evFileheader struct {
+type FileheaderT struct {
 	Odyssey     bool      `mapstructure:"Odyssey"`
 	Build       string    `mapstructure:"build"`
 	Event       string    `mapstructure:"event"`
@@ -17,7 +17,7 @@ type evFileheader struct {
 
 // Fileheader event handler
 func (evHandler EventHandler) Fileheader(eventData map[string]interface{}) {
-    // ev := new(evFileheader)
+    // ev := new(FileheaderT)
     // mapstructure.Decode(eventData, ev)
 }
 

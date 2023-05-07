@@ -5,7 +5,7 @@ import (
 )
 
 // Progress event structure
-type evProgress struct {
+type ProgressT struct {
 	Cqc          int       `mapstructure:"CQC"`
 	Combat       int       `mapstructure:"Combat"`
 	Empire       int       `mapstructure:"Empire"`
@@ -20,7 +20,7 @@ type evProgress struct {
 
 // Progress event handler
 func (evHandler EventHandler) Progress(eventData map[string]interface{}) {
-    // ev := new(evProgress)
+    // ev := new(ProgressT)
     // mapstructure.Decode(eventData, ev)
 }
 

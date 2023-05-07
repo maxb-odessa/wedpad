@@ -5,7 +5,7 @@ import (
 )
 
 // Backpack event structure
-type evBackpack struct {
+type BackpackT struct {
 	Components  []interface{} `mapstructure:"Components"`
 	Consumables []interface{} `mapstructure:"Consumables"`
 	Data        []interface{} `mapstructure:"Data"`
@@ -16,7 +16,7 @@ type evBackpack struct {
 
 // Backpack event handler
 func (evHandler EventHandler) Backpack(eventData map[string]interface{}) {
-    // ev := new(evBackpack)
+    // ev := new(BackpackT)
     // mapstructure.Decode(eventData, ev)
 }
 

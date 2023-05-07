@@ -5,7 +5,7 @@ import (
 )
 
 // ApproachBody event structure
-type evApproachBody struct {
+type ApproachBodyT struct {
 	Body          string    `mapstructure:"Body"`
 	BodyID        int       `mapstructure:"BodyID"`
 	StarSystem    string    `mapstructure:"StarSystem"`
@@ -16,7 +16,7 @@ type evApproachBody struct {
 
 // ApproachBody event handler
 func (evHandler EventHandler) ApproachBody(eventData map[string]interface{}) {
-    // ev := new(evApproachBody)
+    // ev := new(ApproachBodyT)
     // mapstructure.Decode(eventData, ev)
 }
 

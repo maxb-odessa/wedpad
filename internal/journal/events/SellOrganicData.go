@@ -5,7 +5,7 @@ import (
 )
 
 // SellOrganicData event structure
-type evSellOrganicData struct {
+type SellOrganicDataT struct {
 	BioData []struct {
 		Bonus            int    `mapstructure:"Bonus"`
 		Genus            string `mapstructure:"Genus"`
@@ -21,7 +21,7 @@ type evSellOrganicData struct {
 
 // SellOrganicData event handler
 func (evHandler EventHandler) SellOrganicData(eventData map[string]interface{}) {
-    // ev := new(evSellOrganicData)
+    // ev := new(SellOrganicDataT)
     // mapstructure.Decode(eventData, ev)
 }
 

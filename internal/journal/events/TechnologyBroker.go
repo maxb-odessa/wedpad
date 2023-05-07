@@ -5,7 +5,7 @@ import (
 )
 
 // TechnologyBroker event structure
-type evTechnologyBroker struct {
+type TechnologyBrokerT struct {
 	BrokerType    string        `mapstructure:"BrokerType"`
 	Commodities   []interface{} `mapstructure:"Commodities"`
 	ItemsUnlocked []struct {
@@ -25,7 +25,7 @@ type evTechnologyBroker struct {
 
 // TechnologyBroker event handler
 func (evHandler EventHandler) TechnologyBroker(eventData map[string]interface{}) {
-    // ev := new(evTechnologyBroker)
+    // ev := new(TechnologyBrokerT)
     // mapstructure.Decode(eventData, ev)
 }
 

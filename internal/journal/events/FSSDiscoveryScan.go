@@ -5,7 +5,7 @@ import (
 )
 
 // FSSDiscoveryScan event structure
-type evFSSDiscoveryScan struct {
+type FSSDiscoveryScanT struct {
 	BodyCount     int       `mapstructure:"BodyCount"`
 	NonBodyCount  int       `mapstructure:"NonBodyCount"`
 	Progress      float64   `mapstructure:"Progress"`
@@ -17,7 +17,7 @@ type evFSSDiscoveryScan struct {
 
 // FSSDiscoveryScan event handler
 func (evHandler EventHandler) FSSDiscoveryScan(eventData map[string]interface{}) {
-    // ev := new(evFSSDiscoveryScan)
+    // ev := new(FSSDiscoveryScanT)
     // mapstructure.Decode(eventData, ev)
 }
 

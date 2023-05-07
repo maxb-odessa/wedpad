@@ -5,7 +5,7 @@ import (
 )
 
 // ShipLocker event structure
-type evShipLocker struct {
+type ShipLockerT struct {
 	Components  []interface{} `mapstructure:"Components"`
 	Consumables []struct {
 		Count         int    `mapstructure:"Count"`
@@ -21,7 +21,7 @@ type evShipLocker struct {
 
 // ShipLocker event handler
 func (evHandler EventHandler) ShipLocker(eventData map[string]interface{}) {
-    // ev := new(evShipLocker)
+    // ev := new(ShipLockerT)
     // mapstructure.Decode(eventData, ev)
 }
 

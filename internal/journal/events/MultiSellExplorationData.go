@@ -5,7 +5,7 @@ import (
 )
 
 // MultiSellExplorationData event structure
-type evMultiSellExplorationData struct {
+type MultiSellExplorationDataT struct {
 	BaseValue  int `mapstructure:"BaseValue"`
 	Bonus      int `mapstructure:"Bonus"`
 	Discovered []struct {
@@ -20,7 +20,7 @@ type evMultiSellExplorationData struct {
 
 // MultiSellExplorationData event handler
 func (evHandler EventHandler) MultiSellExplorationData(eventData map[string]interface{}) {
-    // ev := new(evMultiSellExplorationData)
+    // ev := new(MultiSellExplorationDataT)
     // mapstructure.Decode(eventData, ev)
 }
 

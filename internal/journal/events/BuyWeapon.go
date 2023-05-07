@@ -5,7 +5,7 @@ import (
 )
 
 // BuyWeapon event structure
-type evBuyWeapon struct {
+type BuyWeaponT struct {
 	Class         int           `mapstructure:"Class"`
 	Name          string        `mapstructure:"Name"`
 	NameLocalised string        `mapstructure:"Name_Localised"`
@@ -18,7 +18,7 @@ type evBuyWeapon struct {
 
 // BuyWeapon event handler
 func (evHandler EventHandler) BuyWeapon(eventData map[string]interface{}) {
-    // ev := new(evBuyWeapon)
+    // ev := new(BuyWeaponT)
     // mapstructure.Decode(eventData, ev)
 }
 

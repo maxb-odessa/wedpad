@@ -5,7 +5,7 @@ import (
 )
 
 // BuyMicroResources event structure
-type evBuyMicroResources struct {
+type BuyMicroResourcesT struct {
 	Category      string    `mapstructure:"Category"`
 	Count         int       `mapstructure:"Count"`
 	MarketID      int       `mapstructure:"MarketID"`
@@ -18,7 +18,7 @@ type evBuyMicroResources struct {
 
 // BuyMicroResources event handler
 func (evHandler EventHandler) BuyMicroResources(eventData map[string]interface{}) {
-    // ev := new(evBuyMicroResources)
+    // ev := new(BuyMicroResourcesT)
     // mapstructure.Decode(eventData, ev)
 }
 

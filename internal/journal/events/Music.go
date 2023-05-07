@@ -5,7 +5,7 @@ import (
 )
 
 // Music event structure
-type evMusic struct {
+type MusicT struct {
 	MusicTrack string    `mapstructure:"MusicTrack"`
 	Event      string    `mapstructure:"event"`
 	Timestamp  time.Time `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evMusic struct {
 
 // Music event handler
 func (evHandler EventHandler) Music(eventData map[string]interface{}) {
-    // ev := new(evMusic)
+    // ev := new(MusicT)
     // mapstructure.Decode(eventData, ev)
 }
 

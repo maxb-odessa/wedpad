@@ -5,7 +5,7 @@ import (
 )
 
 // CodexEntry event structure
-type evCodexEntry struct {
+type CodexEntryT struct {
 	BodyID                      int       `mapstructure:"BodyID"`
 	Category                    string    `mapstructure:"Category"`
 	CategoryLocalised           string    `mapstructure:"Category_Localised"`
@@ -30,7 +30,7 @@ type evCodexEntry struct {
 
 // CodexEntry event handler
 func (evHandler EventHandler) CodexEntry(eventData map[string]interface{}) {
-    // ev := new(evCodexEntry)
+    // ev := new(CodexEntryT)
     // mapstructure.Decode(eventData, ev)
 }
 

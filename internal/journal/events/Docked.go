@@ -5,7 +5,7 @@ import (
 )
 
 // Docked event structure
-type evDocked struct {
+type DockedT struct {
 	DistFromStarLs float64 `mapstructure:"DistFromStarLS"`
 	LandingPads    struct {
 		Large  int `mapstructure:"Large"`
@@ -40,7 +40,7 @@ type evDocked struct {
 
 // Docked event handler
 func (evHandler EventHandler) Docked(eventData map[string]interface{}) {
-    // ev := new(evDocked)
+    // ev := new(DockedT)
     // mapstructure.Decode(eventData, ev)
 }
 

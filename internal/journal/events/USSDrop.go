@@ -5,7 +5,7 @@ import (
 )
 
 // USSDrop event structure
-type evUSSDrop struct {
+type USSDropT struct {
 	UssThreat        int       `mapstructure:"USSThreat"`
 	UssType          string    `mapstructure:"USSType"`
 	USSTypeLocalised string    `mapstructure:"USSType_Localised"`
@@ -15,7 +15,7 @@ type evUSSDrop struct {
 
 // USSDrop event handler
 func (evHandler EventHandler) USSDrop(eventData map[string]interface{}) {
-    // ev := new(evUSSDrop)
+    // ev := new(USSDropT)
     // mapstructure.Decode(eventData, ev)
 }
 

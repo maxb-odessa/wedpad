@@ -5,7 +5,7 @@ import (
 )
 
 // DataScanned event structure
-type evDataScanned struct {
+type DataScannedT struct {
 	Type          string    `mapstructure:"Type"`
 	TypeLocalised string    `mapstructure:"Type_Localised"`
 	Event         string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evDataScanned struct {
 
 // DataScanned event handler
 func (evHandler EventHandler) DataScanned(eventData map[string]interface{}) {
-    // ev := new(evDataScanned)
+    // ev := new(DataScannedT)
     // mapstructure.Decode(eventData, ev)
 }
 

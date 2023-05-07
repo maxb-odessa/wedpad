@@ -5,7 +5,7 @@ import (
 )
 
 // SetUserShipName event structure
-type evSetUserShipName struct {
+type SetUserShipNameT struct {
 	Ship         string    `mapstructure:"Ship"`
 	ShipID       int       `mapstructure:"ShipID"`
 	UserShipID   string    `mapstructure:"UserShipId"`
@@ -16,7 +16,7 @@ type evSetUserShipName struct {
 
 // SetUserShipName event handler
 func (evHandler EventHandler) SetUserShipName(eventData map[string]interface{}) {
-    // ev := new(evSetUserShipName)
+    // ev := new(SetUserShipNameT)
     // mapstructure.Decode(eventData, ev)
 }
 

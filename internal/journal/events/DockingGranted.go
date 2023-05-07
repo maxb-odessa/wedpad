@@ -5,7 +5,7 @@ import (
 )
 
 // DockingGranted event structure
-type evDockingGranted struct {
+type DockingGrantedT struct {
 	LandingPad  int       `mapstructure:"LandingPad"`
 	MarketID    int       `mapstructure:"MarketID"`
 	StationName string    `mapstructure:"StationName"`
@@ -16,7 +16,7 @@ type evDockingGranted struct {
 
 // DockingGranted event handler
 func (evHandler EventHandler) DockingGranted(eventData map[string]interface{}) {
-    // ev := new(evDockingGranted)
+    // ev := new(DockingGrantedT)
     // mapstructure.Decode(eventData, ev)
 }
 

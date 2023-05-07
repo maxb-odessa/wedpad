@@ -5,7 +5,7 @@ import (
 )
 
 // Repair event structure
-type evRepair struct {
+type RepairT struct {
 	Cost      int       `mapstructure:"Cost"`
 	Items     []string  `mapstructure:"Items"`
 	Event     string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evRepair struct {
 
 // Repair event handler
 func (evHandler EventHandler) Repair(eventData map[string]interface{}) {
-    // ev := new(evRepair)
+    // ev := new(RepairT)
     // mapstructure.Decode(eventData, ev)
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 // SAASignalsFound event structure
-type evSAASignalsFound struct {
+type SAASignalsFoundT struct {
 	BodyID   int    `mapstructure:"BodyID"`
 	BodyName string `mapstructure:"BodyName"`
 	Genuses  []struct {
@@ -24,7 +24,7 @@ type evSAASignalsFound struct {
 
 // SAASignalsFound event handler
 func (evHandler EventHandler) SAASignalsFound(eventData map[string]interface{}) {
-    // ev := new(evSAASignalsFound)
+    // ev := new(SAASignalsFoundT)
     // mapstructure.Decode(eventData, ev)
 }
 

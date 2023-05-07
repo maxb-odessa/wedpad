@@ -5,7 +5,7 @@ import (
 )
 
 // ModuleStore event structure
-type evModuleStore struct {
+type ModuleStoreT struct {
 	EngineerModifications string    `mapstructure:"EngineerModifications"`
 	Hot                   bool      `mapstructure:"Hot"`
 	Level                 int       `mapstructure:"Level"`
@@ -22,7 +22,7 @@ type evModuleStore struct {
 
 // ModuleStore event handler
 func (evHandler EventHandler) ModuleStore(eventData map[string]interface{}) {
-    // ev := new(evModuleStore)
+    // ev := new(ModuleStoreT)
     // mapstructure.Decode(eventData, ev)
 }
 

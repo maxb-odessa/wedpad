@@ -5,7 +5,7 @@ import (
 )
 
 // FuelScoop event structure
-type evFuelScoop struct {
+type FuelScoopT struct {
 	Scooped   float64   `mapstructure:"Scooped"`
 	Total     float64   `mapstructure:"Total"`
 	Event     string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evFuelScoop struct {
 
 // FuelScoop event handler
 func (evHandler EventHandler) FuelScoop(eventData map[string]interface{}) {
-    // ev := new(evFuelScoop)
+    // ev := new(FuelScoopT)
     // mapstructure.Decode(eventData, ev)
 }
 

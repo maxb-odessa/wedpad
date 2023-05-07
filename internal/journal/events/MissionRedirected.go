@@ -5,7 +5,7 @@ import (
 )
 
 // MissionRedirected event structure
-type evMissionRedirected struct {
+type MissionRedirectedT struct {
 	MissionID             int       `mapstructure:"MissionID"`
 	Name                  string    `mapstructure:"Name"`
 	NewDestinationStation string    `mapstructure:"NewDestinationStation"`
@@ -18,7 +18,7 @@ type evMissionRedirected struct {
 
 // MissionRedirected event handler
 func (evHandler EventHandler) MissionRedirected(eventData map[string]interface{}) {
-    // ev := new(evMissionRedirected)
+    // ev := new(MissionRedirectedT)
     // mapstructure.Decode(eventData, ev)
 }
 

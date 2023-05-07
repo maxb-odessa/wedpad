@@ -5,7 +5,7 @@ import (
 )
 
 // ModuleSellRemote event structure
-type evModuleSellRemote struct {
+type ModuleSellRemoteT struct {
 	SellItem          string    `mapstructure:"SellItem"`
 	SellItemLocalised string    `mapstructure:"SellItem_Localised"`
 	SellPrice         int       `mapstructure:"SellPrice"`
@@ -19,7 +19,7 @@ type evModuleSellRemote struct {
 
 // ModuleSellRemote event handler
 func (evHandler EventHandler) ModuleSellRemote(eventData map[string]interface{}) {
-    // ev := new(evModuleSellRemote)
+    // ev := new(ModuleSellRemoteT)
     // mapstructure.Decode(eventData, ev)
 }
 

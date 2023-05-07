@@ -5,7 +5,7 @@ import (
 )
 
 // Statistics event structure
-type evStatistics struct {
+type StatisticsT struct {
 	BankAccount struct {
 		CurrentWealth          int `mapstructure:"Current_Wealth"`
 		InsuranceClaims        int `mapstructure:"Insurance_Claims"`
@@ -222,7 +222,7 @@ type evStatistics struct {
 
 // Statistics event handler
 func (evHandler EventHandler) Statistics(eventData map[string]interface{}) {
-    // ev := new(evStatistics)
+    // ev := new(StatisticsT)
     // mapstructure.Decode(eventData, ev)
 }
 

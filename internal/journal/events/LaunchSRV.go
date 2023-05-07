@@ -5,7 +5,7 @@ import (
 )
 
 // LaunchSRV event structure
-type evLaunchSRV struct {
+type LaunchSRVT struct {
 	ID               int       `mapstructure:"ID"`
 	Loadout          string    `mapstructure:"Loadout"`
 	PlayerControlled bool      `mapstructure:"PlayerControlled"`
@@ -17,7 +17,7 @@ type evLaunchSRV struct {
 
 // LaunchSRV event handler
 func (evHandler EventHandler) LaunchSRV(eventData map[string]interface{}) {
-    // ev := new(evLaunchSRV)
+    // ev := new(LaunchSRVT)
     // mapstructure.Decode(eventData, ev)
 }
 

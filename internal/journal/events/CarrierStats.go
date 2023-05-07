@@ -5,7 +5,7 @@ import (
 )
 
 // CarrierStats event structure
-type evCarrierStats struct {
+type CarrierStatsT struct {
 	AllowNotorious bool   `mapstructure:"AllowNotorious"`
 	Callsign       string `mapstructure:"Callsign"`
 	CarrierID      int    `mapstructure:"CarrierID"`
@@ -47,7 +47,7 @@ type evCarrierStats struct {
 
 // CarrierStats event handler
 func (evHandler EventHandler) CarrierStats(eventData map[string]interface{}) {
-    // ev := new(evCarrierStats)
+    // ev := new(CarrierStatsT)
     // mapstructure.Decode(eventData, ev)
 }
 

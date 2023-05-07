@@ -5,7 +5,7 @@ import (
 )
 
 // DockingRequested event structure
-type evDockingRequested struct {
+type DockingRequestedT struct {
 	LandingPads struct {
 		Large  int `mapstructure:"Large"`
 		Medium int `mapstructure:"Medium"`
@@ -20,7 +20,7 @@ type evDockingRequested struct {
 
 // DockingRequested event handler
 func (evHandler EventHandler) DockingRequested(eventData map[string]interface{}) {
-    // ev := new(evDockingRequested)
+    // ev := new(DockingRequestedT)
     // mapstructure.Decode(eventData, ev)
 }
 

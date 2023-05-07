@@ -5,7 +5,7 @@ import (
 )
 
 // Cargo event structure
-type evCargo struct {
+type CargoT struct {
 	Count     int           `mapstructure:"Count"`
 	Inventory []interface{} `mapstructure:"Inventory"`
 	Vessel    string        `mapstructure:"Vessel"`
@@ -15,7 +15,7 @@ type evCargo struct {
 
 // Cargo event handler
 func (evHandler EventHandler) Cargo(eventData map[string]interface{}) {
-    // ev := new(evCargo)
+    // ev := new(CargoT)
     // mapstructure.Decode(eventData, ev)
 }
 

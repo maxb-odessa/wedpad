@@ -5,7 +5,7 @@ import (
 )
 
 // MissionAccepted event structure
-type evMissionAccepted struct {
+type MissionAcceptedT struct {
 	Commodity          string    `mapstructure:"Commodity"`
 	CommodityLocalised string    `mapstructure:"Commodity_Localised"`
 	Count              int       `mapstructure:"Count"`
@@ -29,7 +29,7 @@ type evMissionAccepted struct {
 
 // MissionAccepted event handler
 func (evHandler EventHandler) MissionAccepted(eventData map[string]interface{}) {
-    // ev := new(evMissionAccepted)
+    // ev := new(MissionAcceptedT)
     // mapstructure.Decode(eventData, ev)
 }
 

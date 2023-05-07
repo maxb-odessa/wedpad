@@ -5,7 +5,7 @@ import (
 )
 
 // ShipTargeted event structure
-type evShipTargeted struct {
+type ShipTargetedT struct {
 	Faction            string    `mapstructure:"Faction"`
 	HullHealth         float64   `mapstructure:"HullHealth"`
 	LegalStatus        string    `mapstructure:"LegalStatus"`
@@ -24,7 +24,7 @@ type evShipTargeted struct {
 
 // ShipTargeted event handler
 func (evHandler EventHandler) ShipTargeted(eventData map[string]interface{}) {
-    // ev := new(evShipTargeted)
+    // ev := new(ShipTargetedT)
     // mapstructure.Decode(eventData, ev)
 }
 

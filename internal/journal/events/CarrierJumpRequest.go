@@ -5,7 +5,7 @@ import (
 )
 
 // CarrierJumpRequest event structure
-type evCarrierJumpRequest struct {
+type CarrierJumpRequestT struct {
 	Body          string    `mapstructure:"Body"`
 	BodyID        int       `mapstructure:"BodyID"`
 	CarrierID     int       `mapstructure:"CarrierID"`
@@ -18,7 +18,7 @@ type evCarrierJumpRequest struct {
 
 // CarrierJumpRequest event handler
 func (evHandler EventHandler) CarrierJumpRequest(eventData map[string]interface{}) {
-    // ev := new(evCarrierJumpRequest)
+    // ev := new(CarrierJumpRequestT)
     // mapstructure.Decode(eventData, ev)
 }
 

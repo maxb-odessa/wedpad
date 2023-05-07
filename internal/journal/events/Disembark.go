@@ -5,7 +5,7 @@ import (
 )
 
 // Disembark event structure
-type evDisembark struct {
+type DisembarkT struct {
 	Body          string    `mapstructure:"Body"`
 	BodyID        int       `mapstructure:"BodyID"`
 	ID            int       `mapstructure:"ID"`
@@ -25,7 +25,7 @@ type evDisembark struct {
 
 // Disembark event handler
 func (evHandler EventHandler) Disembark(eventData map[string]interface{}) {
-    // ev := new(evDisembark)
+    // ev := new(DisembarkT)
     // mapstructure.Decode(eventData, ev)
 }
 

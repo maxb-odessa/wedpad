@@ -14,6 +14,8 @@ func Init() error {
 }
 
 func run() {
+	evh := new(events.EventHandler)
+	evh.Init()
 
 	for {
 
@@ -32,8 +34,6 @@ func run() {
 			slog.Warn("Journal entry json unmarshal failed: %s", err)
 			continue
 		}
-
-		evh := new(events.EventHandler)
 
 		if e, ok := mData["event"]; ok {
 			evh.Handle(e.(string), mData)

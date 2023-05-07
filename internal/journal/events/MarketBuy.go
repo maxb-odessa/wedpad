@@ -5,7 +5,7 @@ import (
 )
 
 // MarketBuy event structure
-type evMarketBuy struct {
+type MarketBuyT struct {
 	BuyPrice  int       `mapstructure:"BuyPrice"`
 	Count     int       `mapstructure:"Count"`
 	MarketID  int       `mapstructure:"MarketID"`
@@ -17,7 +17,7 @@ type evMarketBuy struct {
 
 // MarketBuy event handler
 func (evHandler EventHandler) MarketBuy(eventData map[string]interface{}) {
-    // ev := new(evMarketBuy)
+    // ev := new(MarketBuyT)
     // mapstructure.Decode(eventData, ev)
 }
 

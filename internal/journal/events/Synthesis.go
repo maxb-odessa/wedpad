@@ -5,7 +5,7 @@ import (
 )
 
 // Synthesis event structure
-type evSynthesis struct {
+type SynthesisT struct {
 	Materials []struct {
 		Count         int    `mapstructure:"Count"`
 		Name          string `mapstructure:"Name"`
@@ -18,7 +18,7 @@ type evSynthesis struct {
 
 // Synthesis event handler
 func (evHandler EventHandler) Synthesis(eventData map[string]interface{}) {
-    // ev := new(evSynthesis)
+    // ev := new(SynthesisT)
     // mapstructure.Decode(eventData, ev)
 }
 

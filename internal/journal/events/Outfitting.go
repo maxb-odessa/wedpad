@@ -5,7 +5,7 @@ import (
 )
 
 // Outfitting event structure
-type evOutfitting struct {
+type OutfittingT struct {
 	Horizons    bool          `mapstructure:"Horizons"`
 	Items       []interface{} `mapstructure:"Items"`
 	MarketID    int           `mapstructure:"MarketID"`
@@ -17,7 +17,7 @@ type evOutfitting struct {
 
 // Outfitting event handler
 func (evHandler EventHandler) Outfitting(eventData map[string]interface{}) {
-    // ev := new(evOutfitting)
+    // ev := new(OutfittingT)
     // mapstructure.Decode(eventData, ev)
 }
 

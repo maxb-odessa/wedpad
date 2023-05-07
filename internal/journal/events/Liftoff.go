@@ -5,7 +5,7 @@ import (
 )
 
 // Liftoff event structure
-type evLiftoff struct {
+type LiftoffT struct {
 	Body               string    `mapstructure:"Body"`
 	BodyID             int       `mapstructure:"BodyID"`
 	Latitude           float64   `mapstructure:"Latitude"`
@@ -24,7 +24,7 @@ type evLiftoff struct {
 
 // Liftoff event handler
 func (evHandler EventHandler) Liftoff(eventData map[string]interface{}) {
-    // ev := new(evLiftoff)
+    // ev := new(LiftoffT)
     // mapstructure.Decode(eventData, ev)
 }
 

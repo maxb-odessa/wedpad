@@ -5,7 +5,7 @@ import (
 )
 
 // StoredModules event structure
-type evStoredModules struct {
+type StoredModulesT struct {
 	Items []struct {
 		BuyPrice              int     `mapstructure:"BuyPrice"`
 		EngineerModifications string  `mapstructure:"EngineerModifications"`
@@ -30,7 +30,7 @@ type evStoredModules struct {
 
 // StoredModules event handler
 func (evHandler EventHandler) StoredModules(eventData map[string]interface{}) {
-    // ev := new(evStoredModules)
+    // ev := new(StoredModulesT)
     // mapstructure.Decode(eventData, ev)
 }
 

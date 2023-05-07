@@ -5,7 +5,7 @@ import (
 )
 
 // ModuleBuyAndStore event structure
-type evModuleBuyAndStore struct {
+type ModuleBuyAndStoreT struct {
 	BuyItem          string    `mapstructure:"BuyItem"`
 	BuyItemLocalised string    `mapstructure:"BuyItem_Localised"`
 	BuyPrice         int       `mapstructure:"BuyPrice"`
@@ -18,7 +18,7 @@ type evModuleBuyAndStore struct {
 
 // ModuleBuyAndStore event handler
 func (evHandler EventHandler) ModuleBuyAndStore(eventData map[string]interface{}) {
-    // ev := new(evModuleBuyAndStore)
+    // ev := new(ModuleBuyAndStoreT)
     // mapstructure.Decode(eventData, ev)
 }
 

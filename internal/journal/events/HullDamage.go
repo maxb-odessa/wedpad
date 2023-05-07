@@ -5,7 +5,7 @@ import (
 )
 
 // HullDamage event structure
-type evHullDamage struct {
+type HullDamageT struct {
 	Fighter     bool      `mapstructure:"Fighter"`
 	Health      float64   `mapstructure:"Health"`
 	PlayerPilot bool      `mapstructure:"PlayerPilot"`
@@ -15,7 +15,7 @@ type evHullDamage struct {
 
 // HullDamage event handler
 func (evHandler EventHandler) HullDamage(eventData map[string]interface{}) {
-    // ev := new(evHullDamage)
+    // ev := new(HullDamageT)
     // mapstructure.Decode(eventData, ev)
 }
 

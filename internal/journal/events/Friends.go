@@ -5,7 +5,7 @@ import (
 )
 
 // Friends event structure
-type evFriends struct {
+type FriendsT struct {
 	Name      string    `mapstructure:"Name"`
 	Status    string    `mapstructure:"Status"`
 	Event     string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evFriends struct {
 
 // Friends event handler
 func (evHandler EventHandler) Friends(eventData map[string]interface{}) {
-    // ev := new(evFriends)
+    // ev := new(FriendsT)
     // mapstructure.Decode(eventData, ev)
 }
 

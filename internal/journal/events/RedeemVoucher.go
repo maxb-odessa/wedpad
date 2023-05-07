@@ -5,7 +5,7 @@ import (
 )
 
 // RedeemVoucher event structure
-type evRedeemVoucher struct {
+type RedeemVoucherT struct {
 	Amount           int       `mapstructure:"Amount"`
 	BrokerPercentage float64   `mapstructure:"BrokerPercentage"`
 	Type             string    `mapstructure:"Type"`
@@ -15,7 +15,7 @@ type evRedeemVoucher struct {
 
 // RedeemVoucher event handler
 func (evHandler EventHandler) RedeemVoucher(eventData map[string]interface{}) {
-    // ev := new(evRedeemVoucher)
+    // ev := new(RedeemVoucherT)
     // mapstructure.Decode(eventData, ev)
 }
 

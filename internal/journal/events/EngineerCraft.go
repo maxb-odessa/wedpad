@@ -5,7 +5,7 @@ import (
 )
 
 // EngineerCraft event structure
-type evEngineerCraft struct {
+type EngineerCraftT struct {
 	ApplyExperimentalEffect     string `mapstructure:"ApplyExperimentalEffect"`
 	BlueprintID                 int    `mapstructure:"BlueprintID"`
 	BlueprintName               string `mapstructure:"BlueprintName"`
@@ -34,7 +34,7 @@ type evEngineerCraft struct {
 
 // EngineerCraft event handler
 func (evHandler EventHandler) EngineerCraft(eventData map[string]interface{}) {
-    // ev := new(evEngineerCraft)
+    // ev := new(EngineerCraftT)
     // mapstructure.Decode(eventData, ev)
 }
 

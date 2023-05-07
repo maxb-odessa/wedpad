@@ -5,7 +5,7 @@ import (
 )
 
 // JetConeBoost event structure
-type evJetConeBoost struct {
+type JetConeBoostT struct {
 	BoostValue float64   `mapstructure:"BoostValue"`
 	Event      string    `mapstructure:"event"`
 	Timestamp  time.Time `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evJetConeBoost struct {
 
 // JetConeBoost event handler
 func (evHandler EventHandler) JetConeBoost(eventData map[string]interface{}) {
-    // ev := new(evJetConeBoost)
+    // ev := new(JetConeBoostT)
     // mapstructure.Decode(eventData, ev)
 }
 

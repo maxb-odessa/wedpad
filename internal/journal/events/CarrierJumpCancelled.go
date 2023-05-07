@@ -5,7 +5,7 @@ import (
 )
 
 // CarrierJumpCancelled event structure
-type evCarrierJumpCancelled struct {
+type CarrierJumpCancelledT struct {
 	CarrierID int       `mapstructure:"CarrierID"`
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evCarrierJumpCancelled struct {
 
 // CarrierJumpCancelled event handler
 func (evHandler EventHandler) CarrierJumpCancelled(eventData map[string]interface{}) {
-    // ev := new(evCarrierJumpCancelled)
+    // ev := new(CarrierJumpCancelledT)
     // mapstructure.Decode(eventData, ev)
 }
 

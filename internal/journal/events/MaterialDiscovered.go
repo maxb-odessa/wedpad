@@ -5,7 +5,7 @@ import (
 )
 
 // MaterialDiscovered event structure
-type evMaterialDiscovered struct {
+type MaterialDiscoveredT struct {
 	Category        string    `mapstructure:"Category"`
 	DiscoveryNumber int       `mapstructure:"DiscoveryNumber"`
 	Name            string    `mapstructure:"Name"`
@@ -16,7 +16,7 @@ type evMaterialDiscovered struct {
 
 // MaterialDiscovered event handler
 func (evHandler EventHandler) MaterialDiscovered(eventData map[string]interface{}) {
-    // ev := new(evMaterialDiscovered)
+    // ev := new(MaterialDiscoveredT)
     // mapstructure.Decode(eventData, ev)
 }
 

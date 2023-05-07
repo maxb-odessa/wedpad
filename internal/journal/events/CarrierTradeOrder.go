@@ -5,7 +5,7 @@ import (
 )
 
 // CarrierTradeOrder event structure
-type evCarrierTradeOrder struct {
+type CarrierTradeOrderT struct {
 	BlackMarket   bool      `mapstructure:"BlackMarket"`
 	CancelTrade   bool      `mapstructure:"CancelTrade"`
 	CarrierID     int       `mapstructure:"CarrierID"`
@@ -18,7 +18,7 @@ type evCarrierTradeOrder struct {
 
 // CarrierTradeOrder event handler
 func (evHandler EventHandler) CarrierTradeOrder(eventData map[string]interface{}) {
-    // ev := new(evCarrierTradeOrder)
+    // ev := new(CarrierTradeOrderT)
     // mapstructure.Decode(eventData, ev)
 }
 

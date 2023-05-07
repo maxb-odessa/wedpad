@@ -8,6 +8,12 @@ import (
 
 type EventHandler struct{}
 
+func (evHandler EventHandler) Init() {
+	cleanStars()
+	cleanPlanets()
+	cleanBaryCentres()
+}
+
 func (evHandler EventHandler) Handle(evName string, evData map[string]interface{}) {
 	in := make([]reflect.Value, 1)
 	in[0] = reflect.ValueOf(evData)

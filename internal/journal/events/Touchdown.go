@@ -5,7 +5,7 @@ import (
 )
 
 // Touchdown event structure
-type evTouchdown struct {
+type TouchdownT struct {
 	Body               string    `mapstructure:"Body"`
 	BodyID             int       `mapstructure:"BodyID"`
 	Latitude           float64   `mapstructure:"Latitude"`
@@ -24,7 +24,7 @@ type evTouchdown struct {
 
 // Touchdown event handler
 func (evHandler EventHandler) Touchdown(eventData map[string]interface{}) {
-    // ev := new(evTouchdown)
+    // ev := new(TouchdownT)
     // mapstructure.Decode(eventData, ev)
 }
 

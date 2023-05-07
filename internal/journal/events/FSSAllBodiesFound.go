@@ -5,7 +5,7 @@ import (
 )
 
 // FSSAllBodiesFound event structure
-type evFSSAllBodiesFound struct {
+type FSSAllBodiesFoundT struct {
 	Count         int       `mapstructure:"Count"`
 	SystemAddress int       `mapstructure:"SystemAddress"`
 	SystemName    string    `mapstructure:"SystemName"`
@@ -15,7 +15,7 @@ type evFSSAllBodiesFound struct {
 
 // FSSAllBodiesFound event handler
 func (evHandler EventHandler) FSSAllBodiesFound(eventData map[string]interface{}) {
-    // ev := new(evFSSAllBodiesFound)
+    // ev := new(FSSAllBodiesFoundT)
     // mapstructure.Decode(eventData, ev)
 }
 

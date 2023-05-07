@@ -5,7 +5,7 @@ import (
 )
 
 // Screenshot event structure
-type evScreenshot struct {
+type ScreenshotT struct {
 	Body      string    `mapstructure:"Body"`
 	Filename  string    `mapstructure:"Filename"`
 	Height    int       `mapstructure:"Height"`
@@ -17,7 +17,7 @@ type evScreenshot struct {
 
 // Screenshot event handler
 func (evHandler EventHandler) Screenshot(eventData map[string]interface{}) {
-    // ev := new(evScreenshot)
+    // ev := new(ScreenshotT)
     // mapstructure.Decode(eventData, ev)
 }
 

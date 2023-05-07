@@ -5,7 +5,7 @@ import (
 )
 
 // Promotion event structure
-type evPromotion struct {
+type PromotionT struct {
 	Exobiologist int       `mapstructure:"Exobiologist"`
 	Explore      int       `mapstructure:"Explore"`
 	Event        string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evPromotion struct {
 
 // Promotion event handler
 func (evHandler EventHandler) Promotion(eventData map[string]interface{}) {
-    // ev := new(evPromotion)
+    // ev := new(PromotionT)
     // mapstructure.Decode(eventData, ev)
 }
 

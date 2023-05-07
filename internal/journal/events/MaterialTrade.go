@@ -5,7 +5,7 @@ import (
 )
 
 // MaterialTrade event structure
-type evMaterialTrade struct {
+type MaterialTradeT struct {
 	MarketID int `mapstructure:"MarketID"`
 	Paid     struct {
 		Category          string `mapstructure:"Category"`
@@ -26,7 +26,7 @@ type evMaterialTrade struct {
 
 // MaterialTrade event handler
 func (evHandler EventHandler) MaterialTrade(eventData map[string]interface{}) {
-    // ev := new(evMaterialTrade)
+    // ev := new(MaterialTradeT)
     // mapstructure.Decode(eventData, ev)
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 // FSDTarget event structure
-type evFSDTarget struct {
+type FSDTargetT struct {
 	Name                  string    `mapstructure:"Name"`
 	RemainingJumpsInRoute int       `mapstructure:"RemainingJumpsInRoute"`
 	StarClass             string    `mapstructure:"StarClass"`
@@ -16,7 +16,7 @@ type evFSDTarget struct {
 
 // FSDTarget event handler
 func (evHandler EventHandler) FSDTarget(eventData map[string]interface{}) {
-    // ev := new(evFSDTarget)
+    // ev := new(FSDTargetT)
     // mapstructure.Decode(eventData, ev)
 }
 

@@ -5,7 +5,7 @@ import (
 )
 
 // RestockVehicle event structure
-type evRestockVehicle struct {
+type RestockVehicleT struct {
 	Cost          int       `mapstructure:"Cost"`
 	Count         int       `mapstructure:"Count"`
 	ID            int       `mapstructure:"ID"`
@@ -18,7 +18,7 @@ type evRestockVehicle struct {
 
 // RestockVehicle event handler
 func (evHandler EventHandler) RestockVehicle(eventData map[string]interface{}) {
-    // ev := new(evRestockVehicle)
+    // ev := new(RestockVehicleT)
     // mapstructure.Decode(eventData, ev)
 }
 

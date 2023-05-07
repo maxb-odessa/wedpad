@@ -5,7 +5,7 @@ import (
 )
 
 // NavRoute event structure
-type evNavRoute struct {
+type NavRouteT struct {
 	Route     []interface{} `mapstructure:"Route"`
 	Event     string        `mapstructure:"event"`
 	Timestamp time.Time     `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evNavRoute struct {
 
 // NavRoute event handler
 func (evHandler EventHandler) NavRoute(eventData map[string]interface{}) {
-    // ev := new(evNavRoute)
+    // ev := new(NavRouteT)
     // mapstructure.Decode(eventData, ev)
 }
 

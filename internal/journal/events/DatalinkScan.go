@@ -5,7 +5,7 @@ import (
 )
 
 // DatalinkScan event structure
-type evDatalinkScan struct {
+type DatalinkScanT struct {
 	Message          string    `mapstructure:"Message"`
 	MessageLocalised string    `mapstructure:"Message_Localised"`
 	Event            string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evDatalinkScan struct {
 
 // DatalinkScan event handler
 func (evHandler EventHandler) DatalinkScan(eventData map[string]interface{}) {
-    // ev := new(evDatalinkScan)
+    // ev := new(DatalinkScanT)
     // mapstructure.Decode(eventData, ev)
 }
 

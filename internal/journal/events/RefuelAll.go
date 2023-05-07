@@ -5,7 +5,7 @@ import (
 )
 
 // RefuelAll event structure
-type evRefuelAll struct {
+type RefuelAllT struct {
 	Amount    float64   `mapstructure:"Amount"`
 	Cost      int       `mapstructure:"Cost"`
 	Event     string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evRefuelAll struct {
 
 // RefuelAll event handler
 func (evHandler EventHandler) RefuelAll(eventData map[string]interface{}) {
-    // ev := new(evRefuelAll)
+    // ev := new(RefuelAllT)
     // mapstructure.Decode(eventData, ev)
 }
 

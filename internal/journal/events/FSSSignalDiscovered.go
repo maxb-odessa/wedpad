@@ -5,7 +5,7 @@ import (
 )
 
 // FSSSignalDiscovered event structure
-type evFSSSignalDiscovered struct {
+type FSSSignalDiscoveredT struct {
 	IsStation                bool      `mapstructure:"IsStation"`
 	SignalName               string    `mapstructure:"SignalName"`
 	SignalNameLocalised      string    `mapstructure:"SignalName_Localised"`
@@ -24,7 +24,7 @@ type evFSSSignalDiscovered struct {
 
 // FSSSignalDiscovered event handler
 func (evHandler EventHandler) FSSSignalDiscovered(eventData map[string]interface{}) {
-    // ev := new(evFSSSignalDiscovered)
+    // ev := new(FSSSignalDiscoveredT)
     // mapstructure.Decode(eventData, ev)
 }
 

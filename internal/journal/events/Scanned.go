@@ -5,7 +5,7 @@ import (
 )
 
 // Scanned event structure
-type evScanned struct {
+type ScannedT struct {
 	ScanType  string    `mapstructure:"ScanType"`
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evScanned struct {
 
 // Scanned event handler
 func (evHandler EventHandler) Scanned(eventData map[string]interface{}) {
-    // ev := new(evScanned)
+    // ev := new(ScannedT)
     // mapstructure.Decode(eventData, ev)
 }
 

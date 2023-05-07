@@ -5,7 +5,7 @@ import (
 )
 
 // CarrierDepositFuel event structure
-type evCarrierDepositFuel struct {
+type CarrierDepositFuelT struct {
 	Amount    int       `mapstructure:"Amount"`
 	CarrierID int       `mapstructure:"CarrierID"`
 	Total     int       `mapstructure:"Total"`
@@ -15,7 +15,7 @@ type evCarrierDepositFuel struct {
 
 // CarrierDepositFuel event handler
 func (evHandler EventHandler) CarrierDepositFuel(eventData map[string]interface{}) {
-    // ev := new(evCarrierDepositFuel)
+    // ev := new(CarrierDepositFuelT)
     // mapstructure.Decode(eventData, ev)
 }
 

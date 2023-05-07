@@ -5,7 +5,7 @@ import (
 )
 
 // AfmuRepairs event structure
-type evAfmuRepairs struct {
+type AfmuRepairsT struct {
 	FullyRepaired   bool      `mapstructure:"FullyRepaired"`
 	Health          float64   `mapstructure:"Health"`
 	Module          string    `mapstructure:"Module"`
@@ -16,7 +16,7 @@ type evAfmuRepairs struct {
 
 // AfmuRepairs event handler
 func (evHandler EventHandler) AfmuRepairs(eventData map[string]interface{}) {
-    // ev := new(evAfmuRepairs)
+    // ev := new(AfmuRepairsT)
     // mapstructure.Decode(eventData, ev)
 }
 

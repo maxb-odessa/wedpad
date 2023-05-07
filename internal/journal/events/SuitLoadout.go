@@ -5,7 +5,7 @@ import (
 )
 
 // SuitLoadout event structure
-type evSuitLoadout struct {
+type SuitLoadoutT struct {
 	LoadoutID         int           `mapstructure:"LoadoutID"`
 	LoadoutName       string        `mapstructure:"LoadoutName"`
 	Modules           []interface{} `mapstructure:"Modules"`
@@ -19,7 +19,7 @@ type evSuitLoadout struct {
 
 // SuitLoadout event handler
 func (evHandler EventHandler) SuitLoadout(eventData map[string]interface{}) {
-    // ev := new(evSuitLoadout)
+    // ev := new(SuitLoadoutT)
     // mapstructure.Decode(eventData, ev)
 }
 

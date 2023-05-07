@@ -5,7 +5,7 @@ import (
 )
 
 // StoredShips event structure
-type evStoredShips struct {
+type StoredShipsT struct {
 	MarketID  int `mapstructure:"MarketID"`
 	ShipsHere []struct {
 		Hot               bool   `mapstructure:"Hot"`
@@ -36,7 +36,7 @@ type evStoredShips struct {
 
 // StoredShips event handler
 func (evHandler EventHandler) StoredShips(eventData map[string]interface{}) {
-    // ev := new(evStoredShips)
+    // ev := new(StoredShipsT)
     // mapstructure.Decode(eventData, ev)
 }
 

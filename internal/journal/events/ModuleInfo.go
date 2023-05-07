@@ -5,14 +5,14 @@ import (
 )
 
 // ModuleInfo event structure
-type evModuleInfo struct {
+type ModuleInfoT struct {
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
 }
 
 // ModuleInfo event handler
 func (evHandler EventHandler) ModuleInfo(eventData map[string]interface{}) {
-    // ev := new(evModuleInfo)
+    // ev := new(ModuleInfoT)
     // mapstructure.Decode(eventData, ev)
 }
 

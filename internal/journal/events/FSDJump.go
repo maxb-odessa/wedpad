@@ -5,7 +5,7 @@ import (
 )
 
 // FSDJump event structure
-type evFSDJump struct {
+type FSDJumpT struct {
 	Body      string `mapstructure:"Body"`
 	BodyID    int    `mapstructure:"BodyID"`
 	BodyType  string `mapstructure:"BodyType"`
@@ -73,7 +73,7 @@ type evFSDJump struct {
 
 // FSDJump event handler
 func (evHandler EventHandler) FSDJump(eventData map[string]interface{}) {
-    // ev := new(evFSDJump)
+    // ev := new(FSDJumpT)
     // mapstructure.Decode(eventData, ev)
 }
 

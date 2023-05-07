@@ -5,14 +5,14 @@ import (
 )
 
 // Shutdown event structure
-type evShutdown struct {
+type ShutdownT struct {
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
 }
 
 // Shutdown event handler
 func (evHandler EventHandler) Shutdown(eventData map[string]interface{}) {
-    // ev := new(evShutdown)
+    // ev := new(ShutdownT)
     // mapstructure.Decode(eventData, ev)
 }
 

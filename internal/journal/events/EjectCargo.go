@@ -5,7 +5,7 @@ import (
 )
 
 // EjectCargo event structure
-type evEjectCargo struct {
+type EjectCargoT struct {
 	Abandoned     bool      `mapstructure:"Abandoned"`
 	Count         int       `mapstructure:"Count"`
 	Type          string    `mapstructure:"Type"`
@@ -16,7 +16,7 @@ type evEjectCargo struct {
 
 // EjectCargo event handler
 func (evHandler EventHandler) EjectCargo(eventData map[string]interface{}) {
-    // ev := new(evEjectCargo)
+    // ev := new(EjectCargoT)
     // mapstructure.Decode(eventData, ev)
 }
 

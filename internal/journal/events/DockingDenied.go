@@ -5,7 +5,7 @@ import (
 )
 
 // DockingDenied event structure
-type evDockingDenied struct {
+type DockingDeniedT struct {
 	MarketID    int       `mapstructure:"MarketID"`
 	Reason      string    `mapstructure:"Reason"`
 	StationName string    `mapstructure:"StationName"`
@@ -16,7 +16,7 @@ type evDockingDenied struct {
 
 // DockingDenied event handler
 func (evHandler EventHandler) DockingDenied(eventData map[string]interface{}) {
-    // ev := new(evDockingDenied)
+    // ev := new(DockingDeniedT)
     // mapstructure.Decode(eventData, ev)
 }
 

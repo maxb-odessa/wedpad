@@ -5,7 +5,7 @@ import (
 )
 
 // ShipyardTransfer event structure
-type evShipyardTransfer struct {
+type ShipyardTransferT struct {
 	Distance          float64   `mapstructure:"Distance"`
 	MarketID          int       `mapstructure:"MarketID"`
 	ShipID            int       `mapstructure:"ShipID"`
@@ -21,7 +21,7 @@ type evShipyardTransfer struct {
 
 // ShipyardTransfer event handler
 func (evHandler EventHandler) ShipyardTransfer(eventData map[string]interface{}) {
-    // ev := new(evShipyardTransfer)
+    // ev := new(ShipyardTransferT)
     // mapstructure.Decode(eventData, ev)
 }
 

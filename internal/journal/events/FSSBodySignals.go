@@ -5,7 +5,7 @@ import (
 )
 
 // FSSBodySignals event structure
-type evFSSBodySignals struct {
+type FSSBodySignalsT struct {
 	BodyID   int    `mapstructure:"BodyID"`
 	BodyName string `mapstructure:"BodyName"`
 	Signals  []struct {
@@ -20,7 +20,7 @@ type evFSSBodySignals struct {
 
 // FSSBodySignals event handler
 func (evHandler EventHandler) FSSBodySignals(eventData map[string]interface{}) {
-    // ev := new(evFSSBodySignals)
+    // ev := new(FSSBodySignalsT)
     // mapstructure.Decode(eventData, ev)
 }
 

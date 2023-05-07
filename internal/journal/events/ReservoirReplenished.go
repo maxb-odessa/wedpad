@@ -5,7 +5,7 @@ import (
 )
 
 // ReservoirReplenished event structure
-type evReservoirReplenished struct {
+type ReservoirReplenishedT struct {
 	FuelMain      float64   `mapstructure:"FuelMain"`
 	FuelReservoir float64   `mapstructure:"FuelReservoir"`
 	Event         string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evReservoirReplenished struct {
 
 // ReservoirReplenished event handler
 func (evHandler EventHandler) ReservoirReplenished(eventData map[string]interface{}) {
-    // ev := new(evReservoirReplenished)
+    // ev := new(ReservoirReplenishedT)
     // mapstructure.Decode(eventData, ev)
 }
 

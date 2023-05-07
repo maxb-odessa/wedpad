@@ -5,7 +5,7 @@ import (
 )
 
 // ModuleSell event structure
-type evModuleSell struct {
+type ModuleSellT struct {
 	MarketID          int       `mapstructure:"MarketID"`
 	SellItem          string    `mapstructure:"SellItem"`
 	SellItemLocalised string    `mapstructure:"SellItem_Localised"`
@@ -19,7 +19,7 @@ type evModuleSell struct {
 
 // ModuleSell event handler
 func (evHandler EventHandler) ModuleSell(eventData map[string]interface{}) {
-    // ev := new(evModuleSell)
+    // ev := new(ModuleSellT)
     // mapstructure.Decode(eventData, ev)
 }
 

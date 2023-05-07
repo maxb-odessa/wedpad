@@ -5,7 +5,7 @@ import (
 )
 
 // CollectCargo event structure
-type evCollectCargo struct {
+type CollectCargoT struct {
 	Stolen        bool      `mapstructure:"Stolen"`
 	Type          string    `mapstructure:"Type"`
 	TypeLocalised string    `mapstructure:"Type_Localised"`
@@ -15,7 +15,7 @@ type evCollectCargo struct {
 
 // CollectCargo event handler
 func (evHandler EventHandler) CollectCargo(eventData map[string]interface{}) {
-    // ev := new(evCollectCargo)
+    // ev := new(CollectCargoT)
     // mapstructure.Decode(eventData, ev)
 }
 

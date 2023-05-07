@@ -5,7 +5,7 @@ import (
 )
 
 // CarrierCrewServices event structure
-type evCarrierCrewServices struct {
+type CarrierCrewServicesT struct {
 	CarrierID int       `mapstructure:"CarrierID"`
 	CrewName  string    `mapstructure:"CrewName"`
 	CrewRole  string    `mapstructure:"CrewRole"`
@@ -16,7 +16,7 @@ type evCarrierCrewServices struct {
 
 // CarrierCrewServices event handler
 func (evHandler EventHandler) CarrierCrewServices(eventData map[string]interface{}) {
-    // ev := new(evCarrierCrewServices)
+    // ev := new(CarrierCrewServicesT)
     // mapstructure.Decode(eventData, ev)
 }
 

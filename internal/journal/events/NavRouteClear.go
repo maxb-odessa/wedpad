@@ -5,14 +5,14 @@ import (
 )
 
 // NavRouteClear event structure
-type evNavRouteClear struct {
+type NavRouteClearT struct {
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
 }
 
 // NavRouteClear event handler
 func (evHandler EventHandler) NavRouteClear(eventData map[string]interface{}) {
-    // ev := new(evNavRouteClear)
+    // ev := new(NavRouteClearT)
     // mapstructure.Decode(eventData, ev)
 }
 

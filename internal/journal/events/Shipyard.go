@@ -5,7 +5,7 @@ import (
 )
 
 // Shipyard event structure
-type evShipyard struct {
+type ShipyardT struct {
 	AllowCobraMkIv bool          `mapstructure:"AllowCobraMkIV"`
 	Horizons       bool          `mapstructure:"Horizons"`
 	MarketID       int           `mapstructure:"MarketID"`
@@ -18,7 +18,7 @@ type evShipyard struct {
 
 // Shipyard event handler
 func (evHandler EventHandler) Shipyard(eventData map[string]interface{}) {
-    // ev := new(evShipyard)
+    // ev := new(ShipyardT)
     // mapstructure.Decode(eventData, ev)
 }
 

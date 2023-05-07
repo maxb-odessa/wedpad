@@ -5,7 +5,7 @@ import (
 )
 
 // Interdicted event structure
-type evInterdicted struct {
+type InterdictedT struct {
 	Faction     string    `mapstructure:"Faction"`
 	Interdictor string    `mapstructure:"Interdictor"`
 	IsPlayer    bool      `mapstructure:"IsPlayer"`
@@ -16,7 +16,7 @@ type evInterdicted struct {
 
 // Interdicted event handler
 func (evHandler EventHandler) Interdicted(eventData map[string]interface{}) {
-    // ev := new(evInterdicted)
+    // ev := new(InterdictedT)
     // mapstructure.Decode(eventData, ev)
 }
 

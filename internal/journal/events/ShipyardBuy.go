@@ -5,7 +5,7 @@ import (
 )
 
 // ShipyardBuy event structure
-type evShipyardBuy struct {
+type ShipyardBuyT struct {
 	MarketID          int       `mapstructure:"MarketID"`
 	ShipPrice         int       `mapstructure:"ShipPrice"`
 	ShipType          string    `mapstructure:"ShipType"`
@@ -18,7 +18,7 @@ type evShipyardBuy struct {
 
 // ShipyardBuy event handler
 func (evHandler EventHandler) ShipyardBuy(eventData map[string]interface{}) {
-    // ev := new(evShipyardBuy)
+    // ev := new(ShipyardBuyT)
     // mapstructure.Decode(eventData, ev)
 }
 

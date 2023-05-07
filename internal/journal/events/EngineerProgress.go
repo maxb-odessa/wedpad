@@ -5,7 +5,7 @@ import (
 )
 
 // EngineerProgress event structure
-type evEngineerProgress struct {
+type EngineerProgressT struct {
 	Engineer   string `mapstructure:"Engineer"`
 	EngineerID int    `mapstructure:"EngineerID"`
 	Engineers  []struct {
@@ -22,7 +22,7 @@ type evEngineerProgress struct {
 
 // EngineerProgress event handler
 func (evHandler EventHandler) EngineerProgress(eventData map[string]interface{}) {
-    // ev := new(evEngineerProgress)
+    // ev := new(EngineerProgressT)
     // mapstructure.Decode(eventData, ev)
 }
 

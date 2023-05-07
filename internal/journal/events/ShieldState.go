@@ -5,7 +5,7 @@ import (
 )
 
 // ShieldState event structure
-type evShieldState struct {
+type ShieldStateT struct {
 	ShieldsUp bool      `mapstructure:"ShieldsUp"`
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
@@ -13,7 +13,7 @@ type evShieldState struct {
 
 // ShieldState event handler
 func (evHandler EventHandler) ShieldState(eventData map[string]interface{}) {
-    // ev := new(evShieldState)
+    // ev := new(ShieldStateT)
     // mapstructure.Decode(eventData, ev)
 }
 

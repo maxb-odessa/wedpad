@@ -5,7 +5,7 @@ import (
 )
 
 // Commander event structure
-type evCommander struct {
+type CommanderT struct {
 	Fid       string    `mapstructure:"FID"`
 	Name      string    `mapstructure:"Name"`
 	Event     string    `mapstructure:"event"`
@@ -14,7 +14,7 @@ type evCommander struct {
 
 // Commander event handler
 func (evHandler EventHandler) Commander(eventData map[string]interface{}) {
-    // ev := new(evCommander)
+    // ev := new(CommanderT)
     // mapstructure.Decode(eventData, ev)
 }
 

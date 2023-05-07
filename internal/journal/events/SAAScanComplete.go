@@ -5,7 +5,7 @@ import (
 )
 
 // SAAScanComplete event structure
-type evSAAScanComplete struct {
+type SAAScanCompleteT struct {
 	BodyID           int       `mapstructure:"BodyID"`
 	BodyName         string    `mapstructure:"BodyName"`
 	EfficiencyTarget int       `mapstructure:"EfficiencyTarget"`
@@ -17,7 +17,7 @@ type evSAAScanComplete struct {
 
 // SAAScanComplete event handler
 func (evHandler EventHandler) SAAScanComplete(eventData map[string]interface{}) {
-    // ev := new(evSAAScanComplete)
+    // ev := new(SAAScanCompleteT)
     // mapstructure.Decode(eventData, ev)
 }
 

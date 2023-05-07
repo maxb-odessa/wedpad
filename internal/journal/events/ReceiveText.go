@@ -5,7 +5,7 @@ import (
 )
 
 // ReceiveText event structure
-type evReceiveText struct {
+type ReceiveTextT struct {
 	Channel          string    `mapstructure:"Channel"`
 	From             string    `mapstructure:"From"`
 	FromLocalised    string    `mapstructure:"From_Localised"`
@@ -17,7 +17,7 @@ type evReceiveText struct {
 
 // ReceiveText event handler
 func (evHandler EventHandler) ReceiveText(eventData map[string]interface{}) {
-    // ev := new(evReceiveText)
+    // ev := new(ReceiveTextT)
     // mapstructure.Decode(eventData, ev)
 }
 

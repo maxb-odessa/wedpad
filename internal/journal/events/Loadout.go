@@ -5,7 +5,7 @@ import (
 )
 
 // Loadout event structure
-type evLoadout struct {
+type LoadoutT struct {
 	CargoCapacity int `mapstructure:"CargoCapacity"`
 	FuelCapacity  struct {
 		Main    float64 `mapstructure:"Main"`
@@ -53,7 +53,7 @@ type evLoadout struct {
 
 // Loadout event handler
 func (evHandler EventHandler) Loadout(eventData map[string]interface{}) {
-    // ev := new(evLoadout)
+    // ev := new(LoadoutT)
     // mapstructure.Decode(eventData, ev)
 }
 

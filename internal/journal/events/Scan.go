@@ -2,10 +2,13 @@ package events
 
 import (
 	"time"
+
+	"github.com/maxb-odessa/slog"
+	"github.com/mitchellh/mapstructure"
 )
 
 // Scan event structure
-type evScan struct {
+type ScanT struct {
 	AbsoluteMagnitude     float64 `mapstructure:"AbsoluteMagnitude"`
 	AgeMy                 int     `mapstructure:"Age_MY"`
 	AscendingNode         float64 `mapstructure:"AscendingNode"`
@@ -74,7 +77,20 @@ type evScan struct {
 
 // Scan event handler
 func (evHandler EventHandler) Scan(eventData map[string]interface{}) {
-    // ev := new(evScan)
-    // mapstructure.Decode(eventData, ev)
+	ev := new(ScanT)
+	mapstructure.Decode(eventData, ev)
+
+	if ev.StarType != "" {
+		evHandler.scanStar(ev)
+	} else if ev.PlanetClass != "" {
+		evHandler.scanPlanet(ev)
+	} else {
+		slog.Warn("Unknown 'Scan' type: not Star nor Planet, ignored")
+	}
 }
 
+func (evHandler EventHandler) scanStar(ev *ScanT) {
+}
+
+func (evHandler EventHandler) scanPlanet(ev *ScanT) {
+}

@@ -5,14 +5,14 @@ import (
 )
 
 // HeatWarning event structure
-type evHeatWarning struct {
+type HeatWarningT struct {
 	Event     string    `mapstructure:"event"`
 	Timestamp time.Time `mapstructure:"timestamp"`
 }
 
 // HeatWarning event handler
 func (evHandler EventHandler) HeatWarning(eventData map[string]interface{}) {
-    // ev := new(evHeatWarning)
+    // ev := new(HeatWarningT)
     // mapstructure.Decode(eventData, ev)
 }
 

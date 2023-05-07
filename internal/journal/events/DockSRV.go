@@ -5,7 +5,7 @@ import (
 )
 
 // DockSRV event structure
-type evDockSRV struct {
+type DockSRVT struct {
 	ID               int       `mapstructure:"ID"`
 	SrvType          string    `mapstructure:"SRVType"`
 	SRVTypeLocalised string    `mapstructure:"SRVType_Localised"`
@@ -15,7 +15,7 @@ type evDockSRV struct {
 
 // DockSRV event handler
 func (evHandler EventHandler) DockSRV(eventData map[string]interface{}) {
-    // ev := new(evDockSRV)
+    // ev := new(DockSRVT)
     // mapstructure.Decode(eventData, ev)
 }
 
