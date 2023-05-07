@@ -20,7 +20,7 @@ type evShipyardTransfer struct {
 }
 
 // ShipyardTransfer event handler
-func ShipyardTransfer(eventData map[string]interface{}) {
+func (evHandler EventHandler) ShipyardTransfer(eventData map[string]interface{}) {
     // ev := new(evShipyardTransfer)
     // mapstructure.Decode(eventData, ev)
 }

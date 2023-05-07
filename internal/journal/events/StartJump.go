@@ -15,7 +15,7 @@ type evStartJump struct {
 }
 
 // StartJump event handler
-func StartJump(eventData map[string]interface{}) {
+func (evHandler EventHandler) StartJump(eventData map[string]interface{}) {
     // ev := new(evStartJump)
     // mapstructure.Decode(eventData, ev)
 }

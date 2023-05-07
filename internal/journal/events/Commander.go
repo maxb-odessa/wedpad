@@ -13,7 +13,7 @@ type evCommander struct {
 }
 
 // Commander event handler
-func Commander(eventData map[string]interface{}) {
+func (evHandler EventHandler) Commander(eventData map[string]interface{}) {
     // ev := new(evCommander)
     // mapstructure.Decode(eventData, ev)
 }

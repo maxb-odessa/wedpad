@@ -13,7 +13,7 @@ type evReservoirReplenished struct {
 }
 
 // ReservoirReplenished event handler
-func ReservoirReplenished(eventData map[string]interface{}) {
+func (evHandler EventHandler) ReservoirReplenished(eventData map[string]interface{}) {
     // ev := new(evReservoirReplenished)
     // mapstructure.Decode(eventData, ev)
 }

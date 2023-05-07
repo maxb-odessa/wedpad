@@ -12,7 +12,7 @@ type evCarrierJumpCancelled struct {
 }
 
 // CarrierJumpCancelled event handler
-func CarrierJumpCancelled(eventData map[string]interface{}) {
+func (evHandler EventHandler) CarrierJumpCancelled(eventData map[string]interface{}) {
     // ev := new(evCarrierJumpCancelled)
     // mapstructure.Decode(eventData, ev)
 }

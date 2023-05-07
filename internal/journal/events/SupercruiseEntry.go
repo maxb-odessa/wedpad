@@ -15,7 +15,7 @@ type evSupercruiseEntry struct {
 }
 
 // SupercruiseEntry event handler
-func SupercruiseEntry(eventData map[string]interface{}) {
+func (evHandler EventHandler) SupercruiseEntry(eventData map[string]interface{}) {
     // ev := new(evSupercruiseEntry)
     // mapstructure.Decode(eventData, ev)
 }

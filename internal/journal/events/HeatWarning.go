@@ -11,7 +11,7 @@ type evHeatWarning struct {
 }
 
 // HeatWarning event handler
-func HeatWarning(eventData map[string]interface{}) {
+func (evHandler EventHandler) HeatWarning(eventData map[string]interface{}) {
     // ev := new(evHeatWarning)
     // mapstructure.Decode(eventData, ev)
 }

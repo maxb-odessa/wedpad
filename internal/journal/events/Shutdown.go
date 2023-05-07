@@ -11,7 +11,7 @@ type evShutdown struct {
 }
 
 // Shutdown event handler
-func Shutdown(eventData map[string]interface{}) {
+func (evHandler EventHandler) Shutdown(eventData map[string]interface{}) {
     // ev := new(evShutdown)
     // mapstructure.Decode(eventData, ev)
 }

@@ -11,7 +11,7 @@ type evModuleInfo struct {
 }
 
 // ModuleInfo event handler
-func ModuleInfo(eventData map[string]interface{}) {
+func (evHandler EventHandler) ModuleInfo(eventData map[string]interface{}) {
     // ev := new(evModuleInfo)
     // mapstructure.Decode(eventData, ev)
 }

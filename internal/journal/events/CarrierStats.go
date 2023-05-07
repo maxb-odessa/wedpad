@@ -46,7 +46,7 @@ type evCarrierStats struct {
 }
 
 // CarrierStats event handler
-func CarrierStats(eventData map[string]interface{}) {
+func (evHandler EventHandler) CarrierStats(eventData map[string]interface{}) {
     // ev := new(evCarrierStats)
     // mapstructure.Decode(eventData, ev)
 }

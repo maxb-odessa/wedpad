@@ -15,7 +15,7 @@ type evFSDTarget struct {
 }
 
 // FSDTarget event handler
-func FSDTarget(eventData map[string]interface{}) {
+func (evHandler EventHandler) FSDTarget(eventData map[string]interface{}) {
     // ev := new(evFSDTarget)
     // mapstructure.Decode(eventData, ev)
 }

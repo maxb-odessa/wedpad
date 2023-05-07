@@ -13,7 +13,7 @@ type evDiscoveryScan struct {
 }
 
 // DiscoveryScan event handler
-func DiscoveryScan(eventData map[string]interface{}) {
+func (evHandler EventHandler) DiscoveryScan(eventData map[string]interface{}) {
     // ev := new(evDiscoveryScan)
     // mapstructure.Decode(eventData, ev)
 }

@@ -24,7 +24,7 @@ type evTechnologyBroker struct {
 }
 
 // TechnologyBroker event handler
-func TechnologyBroker(eventData map[string]interface{}) {
+func (evHandler EventHandler) TechnologyBroker(eventData map[string]interface{}) {
     // ev := new(evTechnologyBroker)
     // mapstructure.Decode(eventData, ev)
 }

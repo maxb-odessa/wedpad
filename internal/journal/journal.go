@@ -33,8 +33,10 @@ func run() {
 			continue
 		}
 
+		evh := new(events.EventHandler)
+
 		if e, ok := mData["event"]; ok {
-			events.Handle(e.(string), mData)
+			evh.Handle(e.(string), mData)
 		}
 	}
 }

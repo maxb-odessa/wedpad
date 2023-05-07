@@ -20,7 +20,7 @@ type evShipLocker struct {
 }
 
 // ShipLocker event handler
-func ShipLocker(eventData map[string]interface{}) {
+func (evHandler EventHandler) ShipLocker(eventData map[string]interface{}) {
     // ev := new(evShipLocker)
     // mapstructure.Decode(eventData, ev)
 }

@@ -72,7 +72,7 @@ type evFSDJump struct {
 }
 
 // FSDJump event handler
-func FSDJump(eventData map[string]interface{}) {
+func (evHandler EventHandler) FSDJump(eventData map[string]interface{}) {
     // ev := new(evFSDJump)
     // mapstructure.Decode(eventData, ev)
 }

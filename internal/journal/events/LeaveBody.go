@@ -15,7 +15,7 @@ type evLeaveBody struct {
 }
 
 // LeaveBody event handler
-func LeaveBody(eventData map[string]interface{}) {
+func (evHandler EventHandler) LeaveBody(eventData map[string]interface{}) {
     // ev := new(evLeaveBody)
     // mapstructure.Decode(eventData, ev)
 }

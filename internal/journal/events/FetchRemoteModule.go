@@ -19,7 +19,7 @@ type evFetchRemoteModule struct {
 }
 
 // FetchRemoteModule event handler
-func FetchRemoteModule(eventData map[string]interface{}) {
+func (evHandler EventHandler) FetchRemoteModule(eventData map[string]interface{}) {
     // ev := new(evFetchRemoteModule)
     // mapstructure.Decode(eventData, ev)
 }

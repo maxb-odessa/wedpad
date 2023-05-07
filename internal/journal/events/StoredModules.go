@@ -29,7 +29,7 @@ type evStoredModules struct {
 }
 
 // StoredModules event handler
-func StoredModules(eventData map[string]interface{}) {
+func (evHandler EventHandler) StoredModules(eventData map[string]interface{}) {
     // ev := new(evStoredModules)
     // mapstructure.Decode(eventData, ev)
 }

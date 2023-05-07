@@ -91,7 +91,7 @@ type evLocation struct {
 }
 
 // Location event handler
-func Location(eventData map[string]interface{}) {
+func (evHandler EventHandler) Location(eventData map[string]interface{}) {
     // ev := new(evLocation)
     // mapstructure.Decode(eventData, ev)
 }

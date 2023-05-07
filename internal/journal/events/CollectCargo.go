@@ -14,7 +14,7 @@ type evCollectCargo struct {
 }
 
 // CollectCargo event handler
-func CollectCargo(eventData map[string]interface{}) {
+func (evHandler EventHandler) CollectCargo(eventData map[string]interface{}) {
     // ev := new(evCollectCargo)
     // mapstructure.Decode(eventData, ev)
 }

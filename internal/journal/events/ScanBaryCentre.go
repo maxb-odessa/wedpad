@@ -21,7 +21,7 @@ type evScanBaryCentre struct {
 }
 
 // ScanBaryCentre event handler
-func ScanBaryCentre(eventData map[string]interface{}) {
+func (evHandler EventHandler) ScanBaryCentre(eventData map[string]interface{}) {
     // ev := new(evScanBaryCentre)
     // mapstructure.Decode(eventData, ev)
 }

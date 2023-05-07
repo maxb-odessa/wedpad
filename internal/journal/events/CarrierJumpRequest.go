@@ -17,7 +17,7 @@ type evCarrierJumpRequest struct {
 }
 
 // CarrierJumpRequest event handler
-func CarrierJumpRequest(eventData map[string]interface{}) {
+func (evHandler EventHandler) CarrierJumpRequest(eventData map[string]interface{}) {
     // ev := new(evCarrierJumpRequest)
     // mapstructure.Decode(eventData, ev)
 }

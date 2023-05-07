@@ -24,7 +24,7 @@ type evEmbark struct {
 }
 
 // Embark event handler
-func Embark(eventData map[string]interface{}) {
+func (evHandler EventHandler) Embark(eventData map[string]interface{}) {
     // ev := new(evEmbark)
     // mapstructure.Decode(eventData, ev)
 }

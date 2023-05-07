@@ -33,7 +33,7 @@ type evMarket struct {
 }
 
 // Market event handler
-func Market(eventData map[string]interface{}) {
+func (evHandler EventHandler) Market(eventData map[string]interface{}) {
     // ev := new(evMarket)
     // mapstructure.Decode(eventData, ev)
 }

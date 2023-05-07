@@ -11,7 +11,7 @@ type evNavRouteClear struct {
 }
 
 // NavRouteClear event handler
-func NavRouteClear(eventData map[string]interface{}) {
+func (evHandler EventHandler) NavRouteClear(eventData map[string]interface{}) {
     // ev := new(evNavRouteClear)
     // mapstructure.Decode(eventData, ev)
 }

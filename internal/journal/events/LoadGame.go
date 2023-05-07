@@ -29,7 +29,7 @@ type evLoadGame struct {
 }
 
 // LoadGame event handler
-func LoadGame(eventData map[string]interface{}) {
+func (evHandler EventHandler) LoadGame(eventData map[string]interface{}) {
     // ev := new(evLoadGame)
     // mapstructure.Decode(eventData, ev)
 }

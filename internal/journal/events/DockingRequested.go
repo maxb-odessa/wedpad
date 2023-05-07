@@ -19,7 +19,7 @@ type evDockingRequested struct {
 }
 
 // DockingRequested event handler
-func DockingRequested(eventData map[string]interface{}) {
+func (evHandler EventHandler) DockingRequested(eventData map[string]interface{}) {
     // ev := new(evDockingRequested)
     // mapstructure.Decode(eventData, ev)
 }

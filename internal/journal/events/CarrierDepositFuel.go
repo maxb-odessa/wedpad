@@ -14,7 +14,7 @@ type evCarrierDepositFuel struct {
 }
 
 // CarrierDepositFuel event handler
-func CarrierDepositFuel(eventData map[string]interface{}) {
+func (evHandler EventHandler) CarrierDepositFuel(eventData map[string]interface{}) {
     // ev := new(evCarrierDepositFuel)
     // mapstructure.Decode(eventData, ev)
 }

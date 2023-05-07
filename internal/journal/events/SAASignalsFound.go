@@ -23,7 +23,7 @@ type evSAASignalsFound struct {
 }
 
 // SAASignalsFound event handler
-func SAASignalsFound(eventData map[string]interface{}) {
+func (evHandler EventHandler) SAASignalsFound(eventData map[string]interface{}) {
     // ev := new(evSAASignalsFound)
     // mapstructure.Decode(eventData, ev)
 }

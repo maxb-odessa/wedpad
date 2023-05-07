@@ -17,7 +17,7 @@ type evRestockVehicle struct {
 }
 
 // RestockVehicle event handler
-func RestockVehicle(eventData map[string]interface{}) {
+func (evHandler EventHandler) RestockVehicle(eventData map[string]interface{}) {
     // ev := new(evRestockVehicle)
     // mapstructure.Decode(eventData, ev)
 }

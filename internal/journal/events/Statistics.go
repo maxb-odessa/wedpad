@@ -221,7 +221,7 @@ type evStatistics struct {
 }
 
 // Statistics event handler
-func Statistics(eventData map[string]interface{}) {
+func (evHandler EventHandler) Statistics(eventData map[string]interface{}) {
     // ev := new(evStatistics)
     // mapstructure.Decode(eventData, ev)
 }

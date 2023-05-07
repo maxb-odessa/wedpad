@@ -12,7 +12,7 @@ type evStatus struct {
 }
 
 // Status event handler
-func Status(eventData map[string]interface{}) {
+func (evHandler EventHandler) Status(eventData map[string]interface{}) {
     // ev := new(evStatus)
     // mapstructure.Decode(eventData, ev)
 }

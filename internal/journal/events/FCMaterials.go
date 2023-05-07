@@ -15,7 +15,7 @@ type evFCMaterials struct {
 }
 
 // FCMaterials event handler
-func FCMaterials(eventData map[string]interface{}) {
+func (evHandler EventHandler) FCMaterials(eventData map[string]interface{}) {
     // ev := new(evFCMaterials)
     // mapstructure.Decode(eventData, ev)
 }

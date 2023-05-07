@@ -15,7 +15,7 @@ type evCarrierCrewServices struct {
 }
 
 // CarrierCrewServices event handler
-func CarrierCrewServices(eventData map[string]interface{}) {
+func (evHandler EventHandler) CarrierCrewServices(eventData map[string]interface{}) {
     // ev := new(evCarrierCrewServices)
     // mapstructure.Decode(eventData, ev)
 }

@@ -23,7 +23,7 @@ type evFSSSignalDiscovered struct {
 }
 
 // FSSSignalDiscovered event handler
-func FSSSignalDiscovered(eventData map[string]interface{}) {
+func (evHandler EventHandler) FSSSignalDiscovered(eventData map[string]interface{}) {
     // ev := new(evFSSSignalDiscovered)
     // mapstructure.Decode(eventData, ev)
 }

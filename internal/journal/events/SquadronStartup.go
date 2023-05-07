@@ -13,7 +13,7 @@ type evSquadronStartup struct {
 }
 
 // SquadronStartup event handler
-func SquadronStartup(eventData map[string]interface{}) {
+func (evHandler EventHandler) SquadronStartup(eventData map[string]interface{}) {
     // ev := new(evSquadronStartup)
     // mapstructure.Decode(eventData, ev)
 }
