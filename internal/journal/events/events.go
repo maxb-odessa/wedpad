@@ -9,9 +9,8 @@ import (
 type EventHandler struct{}
 
 func (evHandler EventHandler) Init() {
-	cleanStars()
-	cleanPlanets()
-	cleanBaryCentres()
+	CurrentSystem = new(CurrentSystemT)
+	CurrentSystem.Clean("all")
 }
 
 func (evHandler EventHandler) Handle(evName string, evData map[string]interface{}) {

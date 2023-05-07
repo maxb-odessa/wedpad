@@ -90,7 +90,11 @@ func (evHandler EventHandler) Scan(eventData map[string]interface{}) {
 }
 
 func (evHandler EventHandler) scanStar(ev *ScanT) {
+	CurrentSystem.Stars[ev.BodyID] = ev
+	CurrentSystem.ShowStars()
 }
 
 func (evHandler EventHandler) scanPlanet(ev *ScanT) {
+	CurrentSystem.Planets[ev.BodyID] = ev
+	//showPlanets()
 }

@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // ScanBaryCentre event structure
@@ -22,7 +24,8 @@ type ScanBaryCentreT struct {
 
 // ScanBaryCentre event handler
 func (evHandler EventHandler) ScanBaryCentre(eventData map[string]interface{}) {
-    // ev := new(ScanBaryCentreT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(ScanBaryCentreT)
+	mapstructure.Decode(eventData, ev)
 
+	CurrentSystem.BaryCentres[ev.BodyID] = ev
+}
