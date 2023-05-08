@@ -9,9 +9,8 @@ import (
 type EventHandler struct{}
 
 func (evHandler EventHandler) Init() {
-	CurrentSystem = new(CurrentSystemT)
-	CurrentSystem.Name = "none yet"
-	CurrentSystem.Clean("all")
+	cs := new(CurrentSystemT)
+	cs.Init()
 }
 
 func (evHandler EventHandler) Handle(evName string, evData map[string]interface{}) {

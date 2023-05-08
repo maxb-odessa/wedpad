@@ -80,6 +80,8 @@ func (evHandler EventHandler) Scan(eventData map[string]interface{}) {
 	ev := new(ScanT)
 	mapstructure.Decode(eventData, ev)
 
+	CurrentSystem.Name = ev.StarSystem
+
 	if ev.StarType != "" {
 		evHandler.scanStar(ev)
 	} else if ev.PlanetClass != "" {

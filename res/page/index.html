@@ -64,8 +64,8 @@ socket.onmessage = function(msg) {
     var target = obj.Target;
     var otype = obj.Type;
     var data = obj.Data;
-
     var output;
+
     if (otype === "view") {
         output = document.getElementById("view-" + target);
     } else if (otype === "button") {

@@ -8,6 +8,8 @@ import (
 type CurrentSystemT struct {
 	Name          string
 	Sector        string
+	MainStarID    int
+	MainStarType  string
 	Stars         map[int]*ScanT
 	Planets       map[int]*ScanT
 	BaryCentres   map[int]*ScanBaryCentreT
@@ -17,12 +19,20 @@ type CurrentSystemT struct {
 
 var CurrentSystem *CurrentSystemT
 
+func (cs *CurrentSystemT) Init() {
+	cs.Clean("all")
+	CurrentSystem = cs
+}
+
 func (cs *CurrentSystemT) String() string {
 	return cs.Name
 }
 
 // TODO name, sector, etc
 func (cs *CurrentSystemT) Clean(what string) {
+	cs.Name = "(somewhere in space)"
+	cs.Sector = ""
+	cs.MainStarID = 0
 	switch strings.ToLower(what) {
 	case "stars":
 		cs.Stars = make(map[int]*ScanT)
@@ -133,14 +143,24 @@ var StarTypes = map[string]StarTypeColorPair{
 	"WNC":                   {"WNC", "#E0E0E0"},
 	"WO":                    {"WO", "#E0E0E0"},
 	"Y":                     {"Y", "#FF2080"},
+	// special: undefined star type
+	"?": {"(UNK)", "#A0A0A0"},
 }
 
 func StarTypeColor(t string) StarTypeColorPair {
 	if st, ok := StarTypes[t]; ok {
 		return st
 	}
+	// star type is new to us!
 	return StarTypeColorPair{
 		Type:  t + "(?!)",
 		Color: "#FFFF00",
 	}
+}
+
+func (cs *CurrentSystemT) MainStarType() string {
+	if s, ok := cs.Stars[cs.MainStarID]; ok {
+		return s.StarType
+	}
+	return "?"
 }

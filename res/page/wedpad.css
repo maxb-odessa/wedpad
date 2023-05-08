@@ -18,9 +18,13 @@ body {
 
 #view-top {
     border-radius: 8px;
-    display: inline;
+    display: flex;
     background-color: rgba(0, 0, 0, 0.7);
     margin: 0;
+    text-align: center;
+    font-family: courier;
+    justify-content: center;
+    align-items: center;
 }
 
 .view-main {
@@ -109,6 +113,7 @@ body {
 
 #button-bodies {
 }
+
 #button-signals {
 }
 
@@ -124,9 +129,9 @@ body {
 .stars-caption {
     color: white;
     font-weight: bold;
-    font-style: italic;
     font-size: larger;
     text-align: center;
+    font-family: courier;
 }
 
 .stars-th {
@@ -152,10 +157,12 @@ body {
 }
 
 #stars-discovered-true {
+    text-align: center;
     color: yellow;
 }
 
 #stars-discovered-false {
+    text-align: center;
     color: gray;
 }
 

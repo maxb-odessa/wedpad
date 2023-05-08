@@ -1,0 +1,19 @@
+<table style="color: gray; width: 100%; border: 0; padding: 0;">
+<tr>
+    <td style="text-align: right;">
+        {{ .PrevSystem }}
+    </td>
+    <td style="text-align: right; color: {{ .PrevStar.Color }}; font-weight: bold; width: 10%;">
+        {{ .PrevStar.Type }}
+    </td>
+    <td style="text-align: center; color: white; width: 5%;">
+        &raquo;&nbsp;{{ .Jumps }}&nbsp;&raquo;
+    </td>
+    <td style="text-align: left; color: {{ .NextStar.Color }}; font-weight: bold; width: 10%;">
+        {{ .NextStar.Type }}
+    </td>
+    <td style="text-align: left;">
+        {{ .NextSystem }}
+    </td>
+</tr>
+</table>

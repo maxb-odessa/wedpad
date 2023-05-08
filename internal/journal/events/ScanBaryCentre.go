@@ -27,5 +27,7 @@ func (evHandler EventHandler) ScanBaryCentre(eventData map[string]interface{}) {
 	ev := new(ScanBaryCentreT)
 	mapstructure.Decode(eventData, ev)
 
+	CurrentSystem.Name = ev.StarSystem
+
 	CurrentSystem.BaryCentres[ev.BodyID] = ev
 }

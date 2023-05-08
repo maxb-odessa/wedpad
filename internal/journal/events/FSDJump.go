@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // FSDJump event structure
@@ -73,7 +75,12 @@ type FSDJumpT struct {
 
 // FSDJump event handler
 func (evHandler EventHandler) FSDJump(eventData map[string]interface{}) {
-    // ev := new(FSDJumpT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(FSDJumpT)
+	mapstructure.Decode(eventData, ev)
 
+	cs := CurrentSystem
+	cs.Clean("all")
+
+	cs.Name = ev.StarSystem
+	cs.MainStarID = ev.BodyID
+}

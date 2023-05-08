@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // Location event structure
@@ -92,7 +94,8 @@ type LocationT struct {
 
 // Location event handler
 func (evHandler EventHandler) Location(eventData map[string]interface{}) {
-    // ev := new(LocationT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(LocationT)
+	mapstructure.Decode(eventData, ev)
 
+	CurrentSystem.Name = ev.StarSystem
+}
