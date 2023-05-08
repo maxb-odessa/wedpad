@@ -118,18 +118,25 @@ body {
     width: 100%;
     /*table-layout: fixed;*/
     overflow-wrap: break-word;
-    text-align: center;
+    text-align: right;
 }
 
 .stars-caption {
     color: white;
     font-weight: bold;
     font-style: italic;
+    font-size: larger;
+    text-align: center;
 }
 
 .stars-th {
     font-size: smaller;
     color: gray;
+}
+
+#stars-links {
+    text-align: right;
+    font-family: monospace;
 }
 
 #stars-type {
@@ -144,11 +151,19 @@ body {
     text-align: left;
 }
 
+#stars-discovered-true {
+    color: yellow;
+}
+
+#stars-discovered-false {
+    color: gray;
+}
+
 #tr-odd {
-    background-color: rgba(250, 250, 250, 0.12);
+    background-color: rgba(250, 250, 250, 0.10);
 }
 
 #tr-even {
-    background-color: rgba(250, 250, 250, 0.07);
+    background-color: rgba(250, 250, 250, 0.05);
 }
 
