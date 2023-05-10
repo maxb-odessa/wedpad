@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // StartJump event structure
@@ -16,7 +18,12 @@ type StartJumpT struct {
 
 // StartJump event handler
 func (evHandler EventHandler) StartJump(eventData map[string]interface{}) {
-    // ev := new(StartJumpT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(StartJumpT)
+	mapstructure.Decode(eventData, ev)
 
+	cs := CurrentSystem
+	if ev.JumpType == "Hyperspace" {
+		cs.Name = ev.StarSystem
+		cs.MainStarType = ev.StarClass
+	}
+}

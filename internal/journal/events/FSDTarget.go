@@ -32,7 +32,7 @@ func (evHandler EventHandler) FSDTarget(eventData map[string]interface{}) {
 
 	Data := &JumpRoute{
 		PrevSystem: cs.Name,
-		PrevStar:   StarTypeColor(cs.MainStarType()),
+		PrevStar:   StarTypeColor(cs.GetMainStarType()),
 		Jumps:      ev.RemainingJumpsInRoute,
 		NextSystem: ev.Name,
 		NextStar:   StarTypeColor(ev.StarClass),

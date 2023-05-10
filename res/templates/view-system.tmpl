@@ -6,10 +6,9 @@
 
 <thead>
     <tr class="stars-th">
-        <th></th>
-        <th id="stars-type">Type,</th>
-        <th id="stars-subclass">C</th>
-        <th id="stars-luminosity">L</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Star</th>
         <th>Dist(Ls)</th>
         <th>Rad(Sol)</th>
         <th>Mass(Sol)</th>
@@ -24,30 +23,43 @@
 <tbody>
 {{- $odd := true}}
 {{ range $i, $v := .Data }}
-    {{ if $odd }}
-    <tr id="tr-odd">
+    {{ if not $v.Barycenter }}
+        {{ if $odd }}
+            <tr id="tr-odd">
+        {{ else }}
+            <tr id="tr-even">
+        {{ end }}
     {{ else }}
-    <tr id="tr-even">
+        <tr>
     {{ end }}
-        <td id="stars-links">{{ $v.Links }}</td>
         {{ if not $v.Barycenter }}
-        {{ $odd = not $odd }}
-        <td id="stars-type"><font color="{{$v.Type.Color}}">{{ $v.Type.Type }}</font></td>
-        <td id="stars-subclass"><font color="{{$v.Type.Color}}">{{ $v.Subclass }}</font></td>
-        <td id="stars-luminosity"><font color="{{$v.Type.Color}}">{{ $v.Luminosity }}</font></td>
-        <td>{{ $v.DistanceLs }}</td>
-        <td>{{ $v.RadiusS }}</td>
-        <td>{{ $v.MassS }}</td>
-        <td>{{ $v.TemperatureK }}</td>
-        <td>{{ $v.OrbitalPeriodD }}</td>
-        <td>{{ $v.RingsNum }}</td>
-        <td>{{ $v.RingsRadiusLs }}</td>
-         {{ if $v.Discovered }}
-         <td id="stars-discovered-true">yes</td>
-         {{ else }}
-         <td id="stars-discovered-false">no</td>
-         {{ end }}
-         {{ end }}
+           {{ $odd = not $odd }}
+           {{ if $v.MainStar }}
+               <td>&gt;</td>
+           {{ else }}
+               <td></td>
+           {{ end }}
+           <td>
+                <div class="star-circle" style="background: {{ .Type.Color }};"></div>
+            </td>
+           <td class="stars-type">
+                <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}{{ $v.Subclass }} {{ $v.Luminosity }}</font>
+            </td>
+            <td>{{ $v.DistanceLs }}</td>
+            <td>{{ $v.RadiusS }}</td>
+            <td>{{ $v.MassS }}</td>
+            <td>{{ $v.TemperatureK }}</td>
+            <td>{{ $v.OrbitalPeriodD }}</td>
+            <td>{{ $v.RingsNum }}</td>
+            <td>{{ $v.RingsRadiusLs }}</td>
+            {{ if $v.Discovered }}
+                <td id="stars-discovered-true">yes</td>
+            {{ else }}
+                <td id="stars-discovered-false">no</td>
+            {{ end }}
+        {{ else }}
+            <td>&nbsp;</td>
+        {{ end }}
     </tr>
 {{ end }}
 </tbody>

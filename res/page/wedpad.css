@@ -174,3 +174,33 @@ body {
     background-color: rgba(250, 250, 250, 0.05);
 }
 
+.star-circle {
+    /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
+    width: 20%;
+    border-radius: 50%;
+    /* (B) NECESSARY TO POSITION TEXT BLOCK */
+    line-height: 0;
+    position: relative;
+    margin-left: 0; 
+    margin-right: auto;
+}
+
+/* (C) MATCH HEIGHT */
+.star-circle::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+/* (D) TEXT BLOCK */
+.star-circle .star-circle-text {
+    /* (D1) CENTER TEXT IN CIRCLE */
+    position: absolute;
+    bottom: 50%; 
+    width: 100%;
+    text-align: center;
+    /* (D2) COSMETICS */
+    font-weight: 700;
+    color: black;
+}
+

@@ -24,10 +24,15 @@ func (cs *CurrentSystemT) ShowStars() {
 
 		star := make(map[string]interface{})
 
+		if id == cs.MainStarID {
+			star["MainStar"] = true
+		} else {
+			star["MainStar"] = false
+		}
+
 		// a Star, not a BaryCentre
 		if s, ok := cs.Stars[id]; ok {
 			star["Barycenter"] = false
-			star["Links"] = `*`
 			star["Type"] = StarTypeColor(s.StarType)
 			star["Subclass"] = s.Subclass
 			star["Luminosity"] = s.Luminosity
@@ -40,11 +45,10 @@ func (cs *CurrentSystemT) ShowStars() {
 			rn, rr := CalcRings(s)
 			if rn > 0 {
 				star["RingsNum"] = rn
-				star["RingsRadiusLs"] = Num(rr)
+				star["RingsRadiusLs"] = Num(rr / LIGHT_SECOND)
 			}
 		} else {
 			star["Barycenter"] = true
-			star["Links"] = `--[`
 		}
 
 		stars = append(stars, star)

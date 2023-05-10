@@ -119,8 +119,8 @@ var StarTypes = map[string]StarTypeColorPair{
 	"DC":                    {"DC", "#EEEEFF"},
 	"DCV":                   {"DCV", "#EEEEFF"},
 	"DQ":                    {"DQ", "#EEEEFF"},
-	"F":                     {"F", "#FFFFA0"},
-	"F_WhiteSuperGiant":     {"++F", "#FFFFA0"},
+	"F":                     {"F", "#FFFFB0"},
+	"F_WhiteSuperGiant":     {"++F", "#FFFFB0"},
 	"G":                     {"G", "#EEEE30"},
 	"G_WhiteSuperGiant":     {"++G", "#EEEE30"},
 	"H":                     {"H", "#808080"},
@@ -132,7 +132,7 @@ var StarTypes = map[string]StarTypeColorPair{
 	"M_RedSuperGiant":       {"++M", "#FF3030"},
 	"MS":                    {"MS", "#FF7010"},
 	"N":                     {"N", "#AAAAFF"},
-	"O":                     {"O", "#FFFFFF"},
+	"O":                     {"O", "#EEEEFF"},
 	"S":                     {"S", "#CCCC70"},
 	"SupermassiveBlackHole": {"++H", "#808080"},
 	"T":                     {"T", "#FF2080"},
@@ -153,14 +153,27 @@ func StarTypeColor(t string) StarTypeColorPair {
 	}
 	// star type is new to us!
 	return StarTypeColorPair{
-		Type:  t + "(?!)",
+		Type:  t + "(fixme!)",
 		Color: "#FFFF00",
 	}
 }
 
-func (cs *CurrentSystemT) MainStarType() string {
+func (cs *CurrentSystemT) GetMainStarType() string {
 	if s, ok := cs.Stars[cs.MainStarID]; ok {
 		return s.StarType
 	}
 	return "?"
 }
+
+/* not used atm
+func StarTempColor(tempK float64) string {
+
+	// black holes have no temp so make them dark gray
+	if tempK == 0.0 {
+		return "#101010"
+	}
+
+	r, g, b := temperature.ToRGB(uint16(tempK))
+	return fmt.Sprintf("#%02X%02X%02X", r, g, b)
+}
+*/
