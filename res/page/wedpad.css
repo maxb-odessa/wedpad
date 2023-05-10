@@ -1,9 +1,14 @@
 
 body {
     background-image: url('background.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: repeat;
+/*    background-attachment: fixed;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 #left {
@@ -19,7 +24,7 @@ body {
 #view-top {
     border-radius: 8px;
     display: flex;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
     text-align: center;
     font-family: courier;
@@ -32,7 +37,7 @@ body {
     margin-top: 4px;
     margin-bottom: 4px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     overflow-x: scroll;
     overflow-y: scroll;
 }
@@ -56,7 +61,7 @@ body {
 #view-bottom {
     border-radius: 8px;
     display: block;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #right {

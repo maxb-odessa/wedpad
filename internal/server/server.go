@@ -90,5 +90,7 @@ func Run() {
 
 	http.HandleFunc("/ws", wsHandler)
 
-	http.ListenAndServe(sconf.StrDef("net", "listen", "localhost:8080"), nil)
+	addr := sconf.StrDef("net", "listen", "localhost:8080")
+	slog.Info("Listening at %s", addr)
+	http.ListenAndServe(addr, nil)
 }
