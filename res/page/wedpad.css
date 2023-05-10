@@ -2,10 +2,6 @@
 body {
     background-image: url('background.png');
     background-repeat: repeat;
-/*    background-attachment: fixed;*/
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
@@ -144,20 +140,11 @@ body {
     color: gray;
 }
 
-#stars-links {
-    text-align: right;
-    font-family: monospace;
+#stars-tbody {
+    font-size: 120%;
 }
 
 #stars-type {
-    text-align: right;
-}
-
-#stars-subclass {
-    text-align: left;
-}
-
-#stars-luminosity {
     text-align: left;
 }
 

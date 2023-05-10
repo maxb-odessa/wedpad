@@ -7,7 +7,6 @@
 <thead>
     <tr class="stars-th">
         <th>&nbsp;</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
         <th>Star</th>
         <th>Dist(Ls)</th>
         <th>Rad(Sol)</th>
@@ -20,7 +19,7 @@
     </tr>
 </thead>
 
-<tbody>
+<tbody id="stars-tbody">
 {{- $odd := true}}
 {{ range $i, $v := .Data }}
     {{ if not $v.Barycenter }}
@@ -39,10 +38,7 @@
            {{ else }}
                <td></td>
            {{ end }}
-           <td>
-                <div class="star-circle" style="background: {{ .Type.Color }};"></div>
-            </td>
-           <td class="stars-type">
+           <td id="stars-type">
                 <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}{{ $v.Subclass }} {{ $v.Luminosity }}</font>
             </td>
             <td>{{ $v.DistanceLs }}</td>

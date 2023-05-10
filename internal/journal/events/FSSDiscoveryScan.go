@@ -2,6 +2,9 @@ package events
 
 import (
 	"time"
+	"wedpad/internal/msg"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // FSSDiscoveryScan event structure
@@ -17,7 +20,31 @@ type FSSDiscoveryScanT struct {
 
 // FSSDiscoveryScan event handler
 func (evHandler EventHandler) FSSDiscoveryScan(eventData map[string]interface{}) {
-    // ev := new(FSSDiscoveryScanT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(FSSDiscoveryScanT)
+	mapstructure.Decode(eventData, ev)
 
+	type Bodies struct {
+		Bodies    int
+		NonBodies int
+	}
+
+	B := &Bodies{ev.BodyCount, ev.NonBodyCount}
+
+	md := &msg.Message{
+		Target: msg.TARGET_SYSTEM,
+		Type:   msg.TYPE_BUTTON,
+		Action: msg.ACTION_REPLACE,
+		Data:   B,
+	}
+
+	md.Send()
+
+	ma := &msg.Message{
+		Target: msg.TARGET_SYSTEM,
+		Type:   msg.TYPE_BUTTON,
+		Action: msg.ACTION_ATTENTION,
+		Data:   "",
+	}
+
+	ma.Send()
+}
