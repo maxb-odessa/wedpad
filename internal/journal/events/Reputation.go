@@ -14,7 +14,7 @@ type ReputationT struct {
 }
 
 // Reputation event handler
-func (evHandler EventHandler) Reputation(eventData map[string]interface{}) {
+func (evh *EventHandler) Reputation(eventData map[string]interface{}) {
     // ev := new(ReputationT)
     // mapstructure.Decode(eventData, ev)
 }

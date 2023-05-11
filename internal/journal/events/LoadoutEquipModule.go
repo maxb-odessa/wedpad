@@ -4,7 +4,7 @@ package events
 type LoadoutEquipModuleT interface{}
 
 // LoadoutEquipModule event handler
-func (evHandler EventHandler) LoadoutEquipModule(eventData map[string]interface{}) {
+func (evh *EventHandler) LoadoutEquipModule(eventData map[string]interface{}) {
     // ev := new(LoadoutEquipModuleT)
     // mapstructure.Decode(eventData, ev)
 }

@@ -12,7 +12,7 @@ type ShieldStateT struct {
 }
 
 // ShieldState event handler
-func (evHandler EventHandler) ShieldState(eventData map[string]interface{}) {
+func (evh *EventHandler) ShieldState(eventData map[string]interface{}) {
     // ev := new(ShieldStateT)
     // mapstructure.Decode(eventData, ev)
 }

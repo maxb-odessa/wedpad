@@ -19,7 +19,7 @@ type CarrierFinanceT struct {
 }
 
 // CarrierFinance event handler
-func (evHandler EventHandler) CarrierFinance(eventData map[string]interface{}) {
+func (evh *EventHandler) CarrierFinance(eventData map[string]interface{}) {
     // ev := new(CarrierFinanceT)
     // mapstructure.Decode(eventData, ev)
 }

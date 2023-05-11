@@ -18,11 +18,11 @@ type FSDTargetT struct {
 }
 
 // FSDTarget event handler
-func (evHandler EventHandler) FSDTarget(eventData map[string]interface{}) {
+func (evh *EventHandler) FSDTarget(eventData map[string]interface{}) {
 	ev := new(FSDTargetT)
 	mapstructure.Decode(eventData, ev)
 
-	cs := CurrentSystem
+	cs := evh.CurrentSystem()
 
 	type JumpRoute struct {
 		PrevSystem, NextSystem string
@@ -31,11 +31,11 @@ func (evHandler EventHandler) FSDTarget(eventData map[string]interface{}) {
 	}
 
 	Data := &JumpRoute{
-		PrevSystem: cs.Name,
-		PrevStar:   StarTypeColor(cs.GetMainStarType()),
+		PrevSystem: cs.Name(),
+		PrevStar:   cs.StarTypeColor(cs.MainStarType()),
 		Jumps:      ev.RemainingJumpsInRoute,
 		NextSystem: ev.Name,
-		NextStar:   StarTypeColor(ev.StarClass),
+		NextStar:   cs.StarTypeColor(ev.StarClass),
 	}
 
 	m := &msg.Message{

@@ -13,7 +13,7 @@ type PromotionT struct {
 }
 
 // Promotion event handler
-func (evHandler EventHandler) Promotion(eventData map[string]interface{}) {
+func (evh *EventHandler) Promotion(eventData map[string]interface{}) {
     // ev := new(PromotionT)
     // mapstructure.Decode(eventData, ev)
 }

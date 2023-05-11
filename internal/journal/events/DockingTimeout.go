@@ -4,7 +4,7 @@ package events
 type DockingTimeoutT interface{}
 
 // DockingTimeout event handler
-func (evHandler EventHandler) DockingTimeout(eventData map[string]interface{}) {
+func (evh *EventHandler) DockingTimeout(eventData map[string]interface{}) {
     // ev := new(DockingTimeoutT)
     // mapstructure.Decode(eventData, ev)
 }

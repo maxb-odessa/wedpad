@@ -4,7 +4,7 @@ package events
 type CarrierJumpT interface{}
 
 // CarrierJump event handler
-func (evHandler EventHandler) CarrierJump(eventData map[string]interface{}) {
+func (evh *EventHandler) CarrierJump(eventData map[string]interface{}) {
     // ev := new(CarrierJumpT)
     // mapstructure.Decode(eventData, ev)
 }

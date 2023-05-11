@@ -15,7 +15,7 @@ type AfmuRepairsT struct {
 }
 
 // AfmuRepairs event handler
-func (evHandler EventHandler) AfmuRepairs(eventData map[string]interface{}) {
+func (evh *EventHandler) AfmuRepairs(eventData map[string]interface{}) {
     // ev := new(AfmuRepairsT)
     // mapstructure.Decode(eventData, ev)
 }

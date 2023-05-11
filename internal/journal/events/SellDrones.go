@@ -4,7 +4,7 @@ package events
 type SellDronesT interface{}
 
 // SellDrones event handler
-func (evHandler EventHandler) SellDrones(eventData map[string]interface{}) {
+func (evh *EventHandler) SellDrones(eventData map[string]interface{}) {
     // ev := new(SellDronesT)
     // mapstructure.Decode(eventData, ev)
 }

@@ -4,7 +4,7 @@ package events
 type CommunityGoalDiscardT interface{}
 
 // CommunityGoalDiscard event handler
-func (evHandler EventHandler) CommunityGoalDiscard(eventData map[string]interface{}) {
+func (evh *EventHandler) CommunityGoalDiscard(eventData map[string]interface{}) {
     // ev := new(CommunityGoalDiscardT)
     // mapstructure.Decode(eventData, ev)
 }

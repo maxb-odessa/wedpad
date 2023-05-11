@@ -9,14 +9,17 @@ import (
 )
 
 func Init() error {
-	go run()
+
+	evh := new(events.EventHandler)
+	if err := evh.Init(); err != nil {
+		return err
+	}
+
+	go run(evh)
 	return nil
 }
 
-func run() {
-	evh := new(events.EventHandler)
-	evh.Init()
-
+func run(evh *events.EventHandler) {
 	for {
 
 		// wait for the log line

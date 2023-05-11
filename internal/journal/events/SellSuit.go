@@ -4,7 +4,7 @@ package events
 type SellSuitT interface{}
 
 // SellSuit event handler
-func (evHandler EventHandler) SellSuit(eventData map[string]interface{}) {
+func (evh *EventHandler) SellSuit(eventData map[string]interface{}) {
     // ev := new(SellSuitT)
     // mapstructure.Decode(eventData, ev)
 }

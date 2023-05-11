@@ -4,7 +4,7 @@ package events
 type CargoDepotT interface{}
 
 // CargoDepot event handler
-func (evHandler EventHandler) CargoDepot(eventData map[string]interface{}) {
+func (evh *EventHandler) CargoDepot(eventData map[string]interface{}) {
     // ev := new(CargoDepotT)
     // mapstructure.Decode(eventData, ev)
 }

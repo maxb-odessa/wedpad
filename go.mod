@@ -14,6 +14,7 @@ require (
 )
 
 require (
+	github.com/Shopify/go-lua v0.0.0-20221004153744-91867de107cf // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	golang.org/x/sys v0.0.0-20211216021012-1d35b9e2eb4e // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect

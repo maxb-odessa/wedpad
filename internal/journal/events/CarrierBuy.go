@@ -18,7 +18,7 @@ type CarrierBuyT struct {
 }
 
 // CarrierBuy event handler
-func (evHandler EventHandler) CarrierBuy(eventData map[string]interface{}) {
+func (evh *EventHandler) CarrierBuy(eventData map[string]interface{}) {
     // ev := new(CarrierBuyT)
     // mapstructure.Decode(eventData, ev)
 }

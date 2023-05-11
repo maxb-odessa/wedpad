@@ -4,7 +4,7 @@ package events
 type VehicleSwitchT interface{}
 
 // VehicleSwitch event handler
-func (evHandler EventHandler) VehicleSwitch(eventData map[string]interface{}) {
+func (evh *EventHandler) VehicleSwitch(eventData map[string]interface{}) {
     // ev := new(VehicleSwitchT)
     // mapstructure.Decode(eventData, ev)
 }

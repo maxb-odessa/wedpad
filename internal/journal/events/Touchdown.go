@@ -23,7 +23,7 @@ type TouchdownT struct {
 }
 
 // Touchdown event handler
-func (evHandler EventHandler) Touchdown(eventData map[string]interface{}) {
+func (evh *EventHandler) Touchdown(eventData map[string]interface{}) {
     // ev := new(TouchdownT)
     // mapstructure.Decode(eventData, ev)
 }

@@ -6,50 +6,107 @@ import (
 )
 
 type CurrentSystemT struct {
-	Name          string
-	Sector        string
-	MainStarID    int
-	MainStarType  string
-	Stars         map[int]*ScanT
-	Planets       map[int]*ScanT
-	BaryCentres   map[int]*ScanBaryCentreT
-	Signals       map[int]*FSSSignalDiscoveredT
-	PlanetSignals map[int]*SAASignalsFoundT
+	name     string
+	sector   string
+	mainStar struct {
+		id    int
+		typ   string
+		color string
+	}
+	stars         map[int]*ScanT
+	planets       map[int]*ScanT
+	baryCentres   map[int]*ScanBaryCentreT
+	signals       map[int]*FSSSignalDiscoveredT
+	planetSignals map[int]*SAASignalsFoundT
+	luaScripts    map[string]string
 }
 
-var CurrentSystem *CurrentSystemT
-
-func (cs *CurrentSystemT) Init() {
+func (cs *CurrentSystemT) Init() error {
 	cs.Clean("all")
-	CurrentSystem = cs
+	return cs.LoadLua()
 }
 
-func (cs *CurrentSystemT) String() string {
-	return cs.Name
+func (cs *CurrentSystemT) LoadLua() error {
+	// TODO
+	return nil
 }
 
-// TODO name, sector, etc
+func (cs *CurrentSystemT) AddStar(s *ScanT) {
+	cs.stars[s.BodyID] = s
+}
+
+func (cs *CurrentSystemT) AddPlanet(p *ScanT) {
+	cs.planets[p.BodyID] = p
+}
+
+func (cs *CurrentSystemT) AddBaryCentre(b *ScanBaryCentreT) {
+	cs.baryCentres[b.BodyID] = b
+}
+
+func (cs *CurrentSystemT) SetName(n string) {
+	cs.name = n
+}
+
+func (cs *CurrentSystemT) SetMainStarID(id int) {
+	cs.mainStar.id = id
+}
+
+func (cs *CurrentSystemT) Name() string {
+	return cs.name
+}
+
+func (cs *CurrentSystemT) SetMainStarType(t string) {
+	scp := cs.StarTypeColor(t)
+	cs.mainStar.typ = scp.Type
+	cs.mainStar.color = scp.Color
+}
+
+func (cs *CurrentSystemT) MainStarType() string {
+	return cs.mainStar.typ
+}
+
+func (cs *CurrentSystemT) MainStarID() int {
+	return cs.mainStar.id
+}
+
+func (cs *CurrentSystemT) Stars() map[int]*ScanT {
+	return cs.stars
+}
+
+func (cs *CurrentSystemT) BaryCentres() map[int]*ScanBaryCentreT {
+	return cs.baryCentres
+}
+
+func (cs *CurrentSystemT) Planets() map[int]*ScanT {
+	return cs.planets
+}
+
 func (cs *CurrentSystemT) Clean(what string) {
-	cs.Name = "(somewhere in space)"
-	cs.Sector = ""
-	cs.MainStarID = 0
+
+	cs.name = "(somewhere in space)"
+	cs.sector = "?"
+	cs.mainStar = struct {
+		id         int
+		typ, color string
+	}{0, "?", "#FFFFFF"}
+
 	switch strings.ToLower(what) {
 	case "stars":
-		cs.Stars = make(map[int]*ScanT)
+		cs.stars = make(map[int]*ScanT)
 	case "planets":
-		cs.Planets = make(map[int]*ScanT)
+		cs.planets = make(map[int]*ScanT)
 	case "barycentres":
-		cs.BaryCentres = make(map[int]*ScanBaryCentreT)
+		cs.baryCentres = make(map[int]*ScanBaryCentreT)
 	case "signals":
-		cs.Signals = make(map[int]*FSSSignalDiscoveredT)
+		cs.signals = make(map[int]*FSSSignalDiscoveredT)
 	case "planetSignals":
-		cs.PlanetSignals = make(map[int]*SAASignalsFoundT)
+		cs.planetSignals = make(map[int]*SAASignalsFoundT)
 	default:
-		cs.Stars = make(map[int]*ScanT)
-		cs.Planets = make(map[int]*ScanT)
-		cs.BaryCentres = make(map[int]*ScanBaryCentreT)
-		cs.Signals = make(map[int]*FSSSignalDiscoveredT)
-		cs.PlanetSignals = make(map[int]*SAASignalsFoundT)
+		cs.stars = make(map[int]*ScanT)
+		cs.planets = make(map[int]*ScanT)
+		cs.baryCentres = make(map[int]*ScanBaryCentreT)
+		cs.signals = make(map[int]*FSSSignalDiscoveredT)
+		cs.planetSignals = make(map[int]*SAASignalsFoundT)
 	}
 }
 
@@ -147,7 +204,7 @@ var StarTypes = map[string]StarTypeColorPair{
 	"?": {"(UNK)", "#A0A0A0"},
 }
 
-func StarTypeColor(t string) StarTypeColorPair {
+func (cs *CurrentSystemT) StarTypeColor(t string) StarTypeColorPair {
 	if st, ok := StarTypes[t]; ok {
 		return st
 	}
@@ -156,13 +213,6 @@ func StarTypeColor(t string) StarTypeColorPair {
 		Type:  t + "(fixme!)",
 		Color: "#FFFF00",
 	}
-}
-
-func (cs *CurrentSystemT) GetMainStarType() string {
-	if s, ok := cs.Stars[cs.MainStarID]; ok {
-		return s.StarType
-	}
-	return "?"
 }
 
 /* not used atm

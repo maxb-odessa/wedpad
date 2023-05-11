@@ -17,11 +17,11 @@ type StartJumpT struct {
 }
 
 // StartJump event handler
-func (evHandler EventHandler) StartJump(eventData map[string]interface{}) {
+func (evh *EventHandler) StartJump(eventData map[string]interface{}) {
 	ev := new(StartJumpT)
 	mapstructure.Decode(eventData, ev)
 
-	cs := CurrentSystem
-	cs.Name = ev.StarSystem
-	cs.MainStarType = ev.StarClass
+	cs := evh.CurrentSystem()
+	cs.SetName(ev.StarSystem)
+	cs.SetMainStarType(ev.StarClass)
 }

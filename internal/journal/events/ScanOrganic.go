@@ -18,7 +18,7 @@ type ScanOrganicT struct {
 }
 
 // ScanOrganic event handler
-func (evHandler EventHandler) ScanOrganic(eventData map[string]interface{}) {
+func (evh *EventHandler) ScanOrganic(eventData map[string]interface{}) {
     // ev := new(ScanOrganicT)
     // mapstructure.Decode(eventData, ev)
 }

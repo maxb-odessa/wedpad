@@ -33,7 +33,7 @@ type EngineerCraftT struct {
 }
 
 // EngineerCraft event handler
-func (evHandler EventHandler) EngineerCraft(eventData map[string]interface{}) {
+func (evh *EventHandler) EngineerCraft(eventData map[string]interface{}) {
     // ev := new(EngineerCraftT)
     // mapstructure.Decode(eventData, ev)
 }

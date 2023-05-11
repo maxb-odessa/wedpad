@@ -18,7 +18,7 @@ type ModuleSellT struct {
 }
 
 // ModuleSell event handler
-func (evHandler EventHandler) ModuleSell(eventData map[string]interface{}) {
+func (evh *EventHandler) ModuleSell(eventData map[string]interface{}) {
     // ev := new(ModuleSellT)
     // mapstructure.Decode(eventData, ev)
 }

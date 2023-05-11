@@ -15,7 +15,7 @@ type BackpackT struct {
 }
 
 // Backpack event handler
-func (evHandler EventHandler) Backpack(eventData map[string]interface{}) {
+func (evh *EventHandler) Backpack(eventData map[string]interface{}) {
     // ev := new(BackpackT)
     // mapstructure.Decode(eventData, ev)
 }

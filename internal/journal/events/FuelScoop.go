@@ -13,7 +13,7 @@ type FuelScoopT struct {
 }
 
 // FuelScoop event handler
-func (evHandler EventHandler) FuelScoop(eventData map[string]interface{}) {
+func (evh *EventHandler) FuelScoop(eventData map[string]interface{}) {
     // ev := new(FuelScoopT)
     // mapstructure.Decode(eventData, ev)
 }

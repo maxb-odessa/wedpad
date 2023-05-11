@@ -17,7 +17,7 @@ type ShipyardT struct {
 }
 
 // Shipyard event handler
-func (evHandler EventHandler) Shipyard(eventData map[string]interface{}) {
+func (evh *EventHandler) Shipyard(eventData map[string]interface{}) {
     // ev := new(ShipyardT)
     // mapstructure.Decode(eventData, ev)
 }

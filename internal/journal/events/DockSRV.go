@@ -14,7 +14,7 @@ type DockSRVT struct {
 }
 
 // DockSRV event handler
-func (evHandler EventHandler) DockSRV(eventData map[string]interface{}) {
+func (evh *EventHandler) DockSRV(eventData map[string]interface{}) {
     // ev := new(DockSRVT)
     // mapstructure.Decode(eventData, ev)
 }

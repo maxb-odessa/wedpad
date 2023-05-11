@@ -19,7 +19,7 @@ for EV in $LIST; do
 cat<<EOF>> events/$EV.go
 
 // $EV event handler
-func (evHandler EventHandler) $EV(eventData map[string]interface{}) {
+func (evh *EventHandler) $EV(eventData map[string]interface{}) {
     // ev := new(${EV}T)
     // mapstructure.Decode(eventData, ev)
 }

@@ -4,7 +4,7 @@ package events
 type ShipLockerMaterialsT interface{}
 
 // ShipLockerMaterials event handler
-func (evHandler EventHandler) ShipLockerMaterials(eventData map[string]interface{}) {
+func (evh *EventHandler) ShipLockerMaterials(eventData map[string]interface{}) {
     // ev := new(ShipLockerMaterialsT)
     // mapstructure.Decode(eventData, ev)
 }

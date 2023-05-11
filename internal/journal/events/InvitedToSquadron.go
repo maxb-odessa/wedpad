@@ -4,7 +4,7 @@ package events
 type InvitedToSquadronT interface{}
 
 // InvitedToSquadron event handler
-func (evHandler EventHandler) InvitedToSquadron(eventData map[string]interface{}) {
+func (evh *EventHandler) InvitedToSquadron(eventData map[string]interface{}) {
     // ev := new(InvitedToSquadronT)
     // mapstructure.Decode(eventData, ev)
 }

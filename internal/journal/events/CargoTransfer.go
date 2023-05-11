@@ -16,7 +16,7 @@ type CargoTransferT struct {
 }
 
 // CargoTransfer event handler
-func (evHandler EventHandler) CargoTransfer(eventData map[string]interface{}) {
+func (evh *EventHandler) CargoTransfer(eventData map[string]interface{}) {
     // ev := new(CargoTransferT)
     // mapstructure.Decode(eventData, ev)
 }

@@ -14,7 +14,7 @@ type SendTextT struct {
 }
 
 // SendText event handler
-func (evHandler EventHandler) SendText(eventData map[string]interface{}) {
+func (evh *EventHandler) SendText(eventData map[string]interface{}) {
     // ev := new(SendTextT)
     // mapstructure.Decode(eventData, ev)
 }

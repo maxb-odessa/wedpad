@@ -29,7 +29,7 @@ type CodexEntryT struct {
 }
 
 // CodexEntry event handler
-func (evHandler EventHandler) CodexEntry(eventData map[string]interface{}) {
+func (evh *EventHandler) CodexEntry(eventData map[string]interface{}) {
     // ev := new(CodexEntryT)
     // mapstructure.Decode(eventData, ev)
 }

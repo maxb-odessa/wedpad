@@ -23,11 +23,12 @@ type ScanBaryCentreT struct {
 }
 
 // ScanBaryCentre event handler
-func (evHandler EventHandler) ScanBaryCentre(eventData map[string]interface{}) {
+func (evh *EventHandler) ScanBaryCentre(eventData map[string]interface{}) {
 	ev := new(ScanBaryCentreT)
 	mapstructure.Decode(eventData, ev)
 
-	CurrentSystem.Name = ev.StarSystem
+	cs := evh.CurrentSystem()
+	cs.SetName(ev.StarSystem)
 
-	CurrentSystem.BaryCentres[ev.BodyID] = ev
+	cs.AddBaryCentre(ev)
 }

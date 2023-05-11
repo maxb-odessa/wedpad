@@ -15,7 +15,7 @@ type InterdictedT struct {
 }
 
 // Interdicted event handler
-func (evHandler EventHandler) Interdicted(eventData map[string]interface{}) {
+func (evh *EventHandler) Interdicted(eventData map[string]interface{}) {
     // ev := new(InterdictedT)
     // mapstructure.Decode(eventData, ev)
 }

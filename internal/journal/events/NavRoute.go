@@ -12,7 +12,7 @@ type NavRouteT struct {
 }
 
 // NavRoute event handler
-func (evHandler EventHandler) NavRoute(eventData map[string]interface{}) {
+func (evh *EventHandler) NavRoute(eventData map[string]interface{}) {
     // ev := new(NavRouteT)
     // mapstructure.Decode(eventData, ev)
 }

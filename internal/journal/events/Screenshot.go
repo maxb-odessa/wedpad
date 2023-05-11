@@ -16,7 +16,7 @@ type ScreenshotT struct {
 }
 
 // Screenshot event handler
-func (evHandler EventHandler) Screenshot(eventData map[string]interface{}) {
+func (evh *EventHandler) Screenshot(eventData map[string]interface{}) {
     // ev := new(ScreenshotT)
     // mapstructure.Decode(eventData, ev)
 }

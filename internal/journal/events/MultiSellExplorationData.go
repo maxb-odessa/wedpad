@@ -19,7 +19,7 @@ type MultiSellExplorationDataT struct {
 }
 
 // MultiSellExplorationData event handler
-func (evHandler EventHandler) MultiSellExplorationData(eventData map[string]interface{}) {
+func (evh *EventHandler) MultiSellExplorationData(eventData map[string]interface{}) {
     // ev := new(MultiSellExplorationDataT)
     // mapstructure.Decode(eventData, ev)
 }

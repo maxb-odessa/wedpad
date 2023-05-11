@@ -4,7 +4,7 @@ package events
 type RepairAllT interface{}
 
 // RepairAll event handler
-func (evHandler EventHandler) RepairAll(eventData map[string]interface{}) {
+func (evh *EventHandler) RepairAll(eventData map[string]interface{}) {
     // ev := new(RepairAllT)
     // mapstructure.Decode(eventData, ev)
 }

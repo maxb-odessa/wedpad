@@ -10,30 +10,32 @@ func (cs *CurrentSystemT) ShowStars() {
 	stars := make([]map[string]interface{}, 0)
 
 	var keys []int
-	for k, _ := range cs.Stars {
+	for k, _ := range cs.Stars() {
 		keys = append(keys, k)
 	}
 
-	for k, _ := range cs.BaryCentres {
+	for k, _ := range cs.BaryCentres() {
 		keys = append(keys, k)
 	}
 
 	sort.Ints(keys)
 
+	currSysStars := cs.Stars()
+
 	for _, id := range keys {
 
 		star := make(map[string]interface{})
 
-		if id == cs.MainStarID {
+		if id == cs.MainStarID() {
 			star["MainStar"] = true
 		} else {
 			star["MainStar"] = false
 		}
 
 		// a Star, not a BaryCentre
-		if s, ok := cs.Stars[id]; ok {
+		if s, ok := currSysStars[id]; ok {
 			star["Barycenter"] = false
-			star["Type"] = StarTypeColor(s.StarType)
+			star["Type"] = cs.StarTypeColor(s.StarType)
 			star["Subclass"] = s.Subclass
 			star["Luminosity"] = s.Luminosity
 			star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
@@ -60,7 +62,7 @@ func (cs *CurrentSystemT) ShowStars() {
 		Target: msg.TARGET_SYSTEM,
 		Type:   msg.TYPE_VIEW,
 		Data: map[string]interface{}{
-			"SystemName": cs.Name,
+			"SystemName": cs.Name(),
 			"Data":       stars,
 		},
 	}

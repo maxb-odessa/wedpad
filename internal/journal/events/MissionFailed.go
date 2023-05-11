@@ -4,7 +4,7 @@ package events
 type MissionFailedT interface{}
 
 // MissionFailed event handler
-func (evHandler EventHandler) MissionFailed(eventData map[string]interface{}) {
+func (evh *EventHandler) MissionFailed(eventData map[string]interface{}) {
     // ev := new(MissionFailedT)
     // mapstructure.Decode(eventData, ev)
 }

@@ -19,7 +19,7 @@ type RankT struct {
 }
 
 // Rank event handler
-func (evHandler EventHandler) Rank(eventData map[string]interface{}) {
+func (evh *EventHandler) Rank(eventData map[string]interface{}) {
     // ev := new(RankT)
     // mapstructure.Decode(eventData, ev)
 }

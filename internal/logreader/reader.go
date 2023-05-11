@@ -27,12 +27,12 @@ type reader struct {
 func (r *reader) run() error {
 
 	// set files dir (default is current)
-	dir := sconf.StrDef("logs", "dir", "./")
+	dir := sconf.StrDef("journal", "dir", "./")
 	r.dir, _ = filepath.Abs(os.ExpandEnv(dir))
 	r.dir += "/"
 
 	// set files mask (default is *.log)
-	r.mask = sconf.StrDef("logs", "mask", `*.log`)
+	r.mask = sconf.StrDef("journal", "mask", `*.log`)
 
 	r.linesCh = make(chan string, 64)
 	r.pathCh = make(chan string, 1)
@@ -63,7 +63,7 @@ func (r *reader) getRecentFile() string {
 
 	sortAsc := true
 
-	if sconf.StrDef("logs", "sort", "asc") != "asc" {
+	if sconf.StrDef("journal", "sort", "asc") != "asc" {
 		sortAsc = false
 	}
 

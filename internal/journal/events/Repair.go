@@ -13,7 +13,7 @@ type RepairT struct {
 }
 
 // Repair event handler
-func (evHandler EventHandler) Repair(eventData map[string]interface{}) {
+func (evh *EventHandler) Repair(eventData map[string]interface{}) {
     // ev := new(RepairT)
     // mapstructure.Decode(eventData, ev)
 }

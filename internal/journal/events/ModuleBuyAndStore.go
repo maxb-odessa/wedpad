@@ -17,7 +17,7 @@ type ModuleBuyAndStoreT struct {
 }
 
 // ModuleBuyAndStore event handler
-func (evHandler EventHandler) ModuleBuyAndStore(eventData map[string]interface{}) {
+func (evh *EventHandler) ModuleBuyAndStore(eventData map[string]interface{}) {
     // ev := new(ModuleBuyAndStoreT)
     // mapstructure.Decode(eventData, ev)
 }

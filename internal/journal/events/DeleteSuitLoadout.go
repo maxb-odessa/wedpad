@@ -16,7 +16,7 @@ type DeleteSuitLoadoutT struct {
 }
 
 // DeleteSuitLoadout event handler
-func (evHandler EventHandler) DeleteSuitLoadout(eventData map[string]interface{}) {
+func (evh *EventHandler) DeleteSuitLoadout(eventData map[string]interface{}) {
     // ev := new(DeleteSuitLoadoutT)
     // mapstructure.Decode(eventData, ev)
 }

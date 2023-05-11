@@ -12,7 +12,7 @@ type MusicT struct {
 }
 
 // Music event handler
-func (evHandler EventHandler) Music(eventData map[string]interface{}) {
+func (evh *EventHandler) Music(eventData map[string]interface{}) {
     // ev := new(MusicT)
     // mapstructure.Decode(eventData, ev)
 }

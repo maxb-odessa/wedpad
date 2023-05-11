@@ -16,7 +16,7 @@ type FileheaderT struct {
 }
 
 // Fileheader event handler
-func (evHandler EventHandler) Fileheader(eventData map[string]interface{}) {
+func (evh *EventHandler) Fileheader(eventData map[string]interface{}) {
     // ev := new(FileheaderT)
     // mapstructure.Decode(eventData, ev)
 }

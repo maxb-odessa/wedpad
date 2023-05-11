@@ -35,7 +35,7 @@ type StoredShipsT struct {
 }
 
 // StoredShips event handler
-func (evHandler EventHandler) StoredShips(eventData map[string]interface{}) {
+func (evh *EventHandler) StoredShips(eventData map[string]interface{}) {
     // ev := new(StoredShipsT)
     // mapstructure.Decode(eventData, ev)
 }

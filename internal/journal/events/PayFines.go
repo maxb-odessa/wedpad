@@ -4,7 +4,7 @@ package events
 type PayFinesT interface{}
 
 // PayFines event handler
-func (evHandler EventHandler) PayFines(eventData map[string]interface{}) {
+func (evh *EventHandler) PayFines(eventData map[string]interface{}) {
     // ev := new(PayFinesT)
     // mapstructure.Decode(eventData, ev)
 }

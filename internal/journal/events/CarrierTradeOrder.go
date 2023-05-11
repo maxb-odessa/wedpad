@@ -17,7 +17,7 @@ type CarrierTradeOrderT struct {
 }
 
 // CarrierTradeOrder event handler
-func (evHandler EventHandler) CarrierTradeOrder(eventData map[string]interface{}) {
+func (evh *EventHandler) CarrierTradeOrder(eventData map[string]interface{}) {
     // ev := new(CarrierTradeOrderT)
     // mapstructure.Decode(eventData, ev)
 }

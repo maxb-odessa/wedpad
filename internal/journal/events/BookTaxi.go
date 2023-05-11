@@ -14,7 +14,7 @@ type BookTaxiT struct {
 }
 
 // BookTaxi event handler
-func (evHandler EventHandler) BookTaxi(eventData map[string]interface{}) {
+func (evh *EventHandler) BookTaxi(eventData map[string]interface{}) {
     // ev := new(BookTaxiT)
     // mapstructure.Decode(eventData, ev)
 }

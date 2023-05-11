@@ -14,7 +14,7 @@ type HullDamageT struct {
 }
 
 // HullDamage event handler
-func (evHandler EventHandler) HullDamage(eventData map[string]interface{}) {
+func (evh *EventHandler) HullDamage(eventData map[string]interface{}) {
     // ev := new(HullDamageT)
     // mapstructure.Decode(eventData, ev)
 }

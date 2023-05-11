@@ -14,7 +14,7 @@ type USSDropT struct {
 }
 
 // USSDrop event handler
-func (evHandler EventHandler) USSDrop(eventData map[string]interface{}) {
+func (evh *EventHandler) USSDrop(eventData map[string]interface{}) {
     // ev := new(USSDropT)
     // mapstructure.Decode(eventData, ev)
 }

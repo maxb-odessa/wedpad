@@ -13,7 +13,7 @@ type FriendsT struct {
 }
 
 // Friends event handler
-func (evHandler EventHandler) Friends(eventData map[string]interface{}) {
+func (evh *EventHandler) Friends(eventData map[string]interface{}) {
     // ev := new(FriendsT)
     // mapstructure.Decode(eventData, ev)
 }

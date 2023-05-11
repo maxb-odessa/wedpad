@@ -74,13 +74,14 @@ type FSDJumpT struct {
 }
 
 // FSDJump event handler
-func (evHandler EventHandler) FSDJump(eventData map[string]interface{}) {
+func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 	ev := new(FSDJumpT)
 	mapstructure.Decode(eventData, ev)
 
-	cs := CurrentSystem
+	cs := evh.CurrentSystem()
+
 	cs.Clean("all")
 
-	cs.Name = ev.StarSystem
-	cs.MainStarID = ev.BodyID
+	cs.SetName(ev.StarSystem)
+	cs.SetMainStarID(ev.BodyID)
 }

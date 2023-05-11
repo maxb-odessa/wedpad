@@ -12,7 +12,7 @@ type UnderAttackT struct {
 }
 
 // UnderAttack event handler
-func (evHandler EventHandler) UnderAttack(eventData map[string]interface{}) {
+func (evh *EventHandler) UnderAttack(eventData map[string]interface{}) {
     // ev := new(UnderAttackT)
     // mapstructure.Decode(eventData, ev)
 }

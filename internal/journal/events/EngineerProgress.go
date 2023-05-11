@@ -21,7 +21,7 @@ type EngineerProgressT struct {
 }
 
 // EngineerProgress event handler
-func (evHandler EventHandler) EngineerProgress(eventData map[string]interface{}) {
+func (evh *EventHandler) EngineerProgress(eventData map[string]interface{}) {
     // ev := new(EngineerProgressT)
     // mapstructure.Decode(eventData, ev)
 }

@@ -4,7 +4,7 @@ package events
 type PowerplayJoinT interface{}
 
 // PowerplayJoin event handler
-func (evHandler EventHandler) PowerplayJoin(eventData map[string]interface{}) {
+func (evh *EventHandler) PowerplayJoin(eventData map[string]interface{}) {
     // ev := new(PowerplayJoinT)
     // mapstructure.Decode(eventData, ev)
 }

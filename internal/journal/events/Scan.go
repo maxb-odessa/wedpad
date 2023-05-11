@@ -76,27 +76,29 @@ type ScanT struct {
 }
 
 // Scan event handler
-func (evHandler EventHandler) Scan(eventData map[string]interface{}) {
+func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	ev := new(ScanT)
 	mapstructure.Decode(eventData, ev)
 
-	CurrentSystem.Name = ev.StarSystem
+	evh.CurrentSystem().SetName(ev.StarSystem)
 
 	if ev.StarType != "" {
-		evHandler.scanStar(ev)
+		evh.scanStar(ev)
 	} else if ev.PlanetClass != "" {
-		evHandler.scanPlanet(ev)
+		evh.scanPlanet(ev)
 	} else {
 		slog.Warn("Unknown 'Scan' type: not Star nor Planet, ignored")
 	}
 }
 
-func (evHandler EventHandler) scanStar(ev *ScanT) {
-	CurrentSystem.Stars[ev.BodyID] = ev
-	CurrentSystem.ShowStars()
+func (evh *EventHandler) scanStar(ev *ScanT) {
+	cs := evh.CurrentSystem()
+	cs.AddStar(ev)
+	cs.ShowStars()
 }
 
-func (evHandler EventHandler) scanPlanet(ev *ScanT) {
-	CurrentSystem.Planets[ev.BodyID] = ev
-	//showPlanets()
+func (evh *EventHandler) scanPlanet(ev *ScanT) {
+	cs := evh.CurrentSystem()
+	cs.AddPlanet(ev)
+	cs.ShowPlanets()
 }

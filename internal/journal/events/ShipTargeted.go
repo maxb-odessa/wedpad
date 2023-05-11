@@ -23,7 +23,7 @@ type ShipTargetedT struct {
 }
 
 // ShipTargeted event handler
-func (evHandler EventHandler) ShipTargeted(eventData map[string]interface{}) {
+func (evh *EventHandler) ShipTargeted(eventData map[string]interface{}) {
     // ev := new(ShipTargetedT)
     // mapstructure.Decode(eventData, ev)
 }

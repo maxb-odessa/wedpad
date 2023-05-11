@@ -4,7 +4,7 @@ package events
 type LaunchFighterT interface{}
 
 // LaunchFighter event handler
-func (evHandler EventHandler) LaunchFighter(eventData map[string]interface{}) {
+func (evh *EventHandler) LaunchFighter(eventData map[string]interface{}) {
     // ev := new(LaunchFighterT)
     // mapstructure.Decode(eventData, ev)
 }

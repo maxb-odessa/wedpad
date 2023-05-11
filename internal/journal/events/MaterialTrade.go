@@ -25,7 +25,7 @@ type MaterialTradeT struct {
 }
 
 // MaterialTrade event handler
-func (evHandler EventHandler) MaterialTrade(eventData map[string]interface{}) {
+func (evh *EventHandler) MaterialTrade(eventData map[string]interface{}) {
     // ev := new(MaterialTradeT)
     // mapstructure.Decode(eventData, ev)
 }

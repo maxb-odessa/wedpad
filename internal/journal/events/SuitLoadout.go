@@ -18,7 +18,7 @@ type SuitLoadoutT struct {
 }
 
 // SuitLoadout event handler
-func (evHandler EventHandler) SuitLoadout(eventData map[string]interface{}) {
+func (evh *EventHandler) SuitLoadout(eventData map[string]interface{}) {
     // ev := new(SuitLoadoutT)
     // mapstructure.Decode(eventData, ev)
 }

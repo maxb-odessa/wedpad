@@ -17,7 +17,7 @@ type BuyWeaponT struct {
 }
 
 // BuyWeapon event handler
-func (evHandler EventHandler) BuyWeapon(eventData map[string]interface{}) {
+func (evh *EventHandler) BuyWeapon(eventData map[string]interface{}) {
     // ev := new(BuyWeaponT)
     // mapstructure.Decode(eventData, ev)
 }

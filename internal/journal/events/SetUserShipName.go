@@ -15,7 +15,7 @@ type SetUserShipNameT struct {
 }
 
 // SetUserShipName event handler
-func (evHandler EventHandler) SetUserShipName(eventData map[string]interface{}) {
+func (evh *EventHandler) SetUserShipName(eventData map[string]interface{}) {
     // ev := new(SetUserShipNameT)
     // mapstructure.Decode(eventData, ev)
 }

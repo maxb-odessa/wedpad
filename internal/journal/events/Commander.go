@@ -13,7 +13,7 @@ type CommanderT struct {
 }
 
 // Commander event handler
-func (evHandler EventHandler) Commander(eventData map[string]interface{}) {
+func (evh *EventHandler) Commander(eventData map[string]interface{}) {
     // ev := new(CommanderT)
     // mapstructure.Decode(eventData, ev)
 }

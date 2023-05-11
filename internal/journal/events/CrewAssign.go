@@ -4,7 +4,7 @@ package events
 type CrewAssignT interface{}
 
 // CrewAssign event handler
-func (evHandler EventHandler) CrewAssign(eventData map[string]interface{}) {
+func (evh *EventHandler) CrewAssign(eventData map[string]interface{}) {
     // ev := new(CrewAssignT)
     // mapstructure.Decode(eventData, ev)
 }

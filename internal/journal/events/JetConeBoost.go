@@ -12,7 +12,7 @@ type JetConeBoostT struct {
 }
 
 // JetConeBoost event handler
-func (evHandler EventHandler) JetConeBoost(eventData map[string]interface{}) {
+func (evh *EventHandler) JetConeBoost(eventData map[string]interface{}) {
     // ev := new(JetConeBoostT)
     // mapstructure.Decode(eventData, ev)
 }

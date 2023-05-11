@@ -20,7 +20,7 @@ type ModuleBuyT struct {
 }
 
 // ModuleBuy event handler
-func (evHandler EventHandler) ModuleBuy(eventData map[string]interface{}) {
+func (evh *EventHandler) ModuleBuy(eventData map[string]interface{}) {
     // ev := new(ModuleBuyT)
     // mapstructure.Decode(eventData, ev)
 }

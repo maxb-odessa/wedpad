@@ -93,10 +93,8 @@ socket.onmessage = function(msg) {
 };
 
 socket.onclose = function(ev) {
-    if (ev.wasClean === false) {
-        logView.innerHTML += "<p><h1>UNEXPECTED CONNECTION CLOSE!</h1>";
-    }
-    logView.innerHTML += "<p><h1>CONNECTION CLOSED: " + "Clean:" + ev.wasClean + " Reason:" + ev.reason + " Code:" + ev.code + "</h1>";
+    logView.innerHTML += "<p><b>CONNECTION CLOSED: " + "Clean:" + ev.wasClean + " Reason:" + ev.reason + " Code:" + ev.code + "</b>";
+    switchView("log");
     socket.send("closed");
 };
 

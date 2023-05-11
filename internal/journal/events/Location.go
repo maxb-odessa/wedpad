@@ -93,9 +93,9 @@ type LocationT struct {
 }
 
 // Location event handler
-func (evHandler EventHandler) Location(eventData map[string]interface{}) {
+func (evh *EventHandler) Location(eventData map[string]interface{}) {
 	ev := new(LocationT)
 	mapstructure.Decode(eventData, ev)
 
-	CurrentSystem.Name = ev.StarSystem
+	evh.CurrentSystem().SetName(ev.StarSystem)
 }

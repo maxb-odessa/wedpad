@@ -4,7 +4,7 @@ package events
 type MissionAbandonedT interface{}
 
 // MissionAbandoned event handler
-func (evHandler EventHandler) MissionAbandoned(eventData map[string]interface{}) {
+func (evh *EventHandler) MissionAbandoned(eventData map[string]interface{}) {
     // ev := new(MissionAbandonedT)
     // mapstructure.Decode(eventData, ev)
 }

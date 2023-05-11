@@ -18,7 +18,7 @@ type SwitchSuitLoadoutT struct {
 }
 
 // SwitchSuitLoadout event handler
-func (evHandler EventHandler) SwitchSuitLoadout(eventData map[string]interface{}) {
+func (evh *EventHandler) SwitchSuitLoadout(eventData map[string]interface{}) {
     // ev := new(SwitchSuitLoadoutT)
     // mapstructure.Decode(eventData, ev)
 }
