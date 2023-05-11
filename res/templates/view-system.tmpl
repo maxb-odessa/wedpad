@@ -7,7 +7,8 @@
 <thead>
     <tr class="stars-th">
         <th>&nbsp;</th>
-        <th>Star</th>
+        <th style="text-align: right;">Type</th>
+        <th style="text-align: left;">C, L</th>
         <th>Dist(Ls)</th>
         <th>Rad(Sol)</th>
         <th>Mass(Sol)</th>
@@ -34,25 +35,28 @@
         {{ if not $v.Barycenter }}
            {{ $odd = not $odd }}
            {{ if $v.MainStar }}
-               <td>&gt;</td>
+              <td>&gt;</td>
            {{ else }}
-               <td></td>
+              <td></td>
            {{ end }}
-           <td id="stars-type">
-                <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}{{ $v.Subclass }} {{ $v.Luminosity }}</font>
+           <td id="stars-type" style="text-align: right; font-weight: bold;">
+               <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}</font>
+           </td>
+           <td id="stars-cl" style="text-align: left; font-weight: bold;">
+               <font color="{{ $v.Type.Color }}">{{ $v.Subclass }} {{ $v.Luminosity }}</font>
             </td>
-            <td>{{ $v.DistanceLs }}</td>
-            <td>{{ $v.RadiusS }}</td>
-            <td>{{ $v.MassS }}</td>
-            <td>{{ $v.TemperatureK }}</td>
-            <td>{{ $v.OrbitalPeriodD }}</td>
-            <td>{{ $v.RingsNum }}</td>
-            <td>{{ $v.RingsRadiusLs }}</td>
-            {{ if $v.Discovered }}
-                <td id="stars-discovered-true">yes</td>
-            {{ else }}
-                <td id="stars-discovered-false">no</td>
-            {{ end }}
+           <td>{{ $v.DistanceLs }}</td>
+           <td>{{ $v.RadiusS }}</td>
+           <td>{{ $v.MassS }}</td>
+           <td>{{ $v.TemperatureK }}</td>
+           <td>{{ $v.OrbitalPeriodD }}</td>
+           <td>{{ $v.RingsNum }}</td>
+           <td>{{ $v.RingsRadiusLs }}</td>
+           {{ if $v.Discovered }}
+               <td id="stars-discovered-true">yes</td>
+           {{ else }}
+               <td id="stars-discovered-false">no</td>
+           {{ end }}
         {{ else }}
             <td>&nbsp;</td>
         {{ end }}

@@ -93,28 +93,30 @@ type serverMsg struct {
 	Data   template.HTML
 }
 
-func (msg *Message) Send() error {
+func (m *Message) Send() error {
 
 	sm := serverMsg{
-		Action: msg.Action,
-		Target: msg.Target,
-		Type:   msg.Type,
+		Action: m.Action,
+		Target: m.Target,
+		Type:   m.Type,
 		Data:   "",
 	}
 
-	target := msg.Type + "-" + msg.Target
+	target := m.Type + "-" + m.Target
 
-	if tmpl, ok := templates[target]; ok {
-		var buf bytes.Buffer
-		if err := tmpl.Execute(&buf, msg.Data); err != nil {
-			slog.Warn("template '%s' execution failed: %s", target, err)
+	if m.Data != "" {
+		if tmpl, ok := templates[target]; ok {
+			var buf bytes.Buffer
+			if err := tmpl.Execute(&buf, m.Data); err != nil {
+				slog.Warn("template '%s' execution failed: %s", target, err)
+			} else {
+				res := strings.ReplaceAll(buf.String(), "\n", "")
+				sm.Data = template.HTML(res)
+				slog.Debug(9, "string after templating: '%s'", sm.Data)
+			}
 		} else {
-			res := strings.ReplaceAll(buf.String(), "\n", "")
-			sm.Data = template.HTML(res)
-			slog.Debug(9, "string after templating: '%s'", sm.Data)
+			slog.Warn("Template '%s' is not defined", target)
 		}
-	} else {
-		slog.Warn("Template '%s' is not defined", target)
 	}
 
 	if d, err := utils.JSONMarshal(sm); err != nil {

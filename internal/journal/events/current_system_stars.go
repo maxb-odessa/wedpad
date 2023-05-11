@@ -54,21 +54,15 @@ func (cs *CurrentSystemT) ShowStars() {
 		stars = append(stars, star)
 	}
 
-	type withSystemName struct {
-		SystemName string
-		Data       interface{}
-	}
-	Data := &withSystemName{
-		SystemName: cs.String(),
-		Data:       stars,
-	}
-
 	// send data to system view
 	mv := &msg.Message{
 		Action: msg.ACTION_REPLACE,
 		Target: msg.TARGET_SYSTEM,
 		Type:   msg.TYPE_VIEW,
-		Data:   Data,
+		Data: map[string]interface{}{
+			"SystemName": cs.Name,
+			"Data":       stars,
+		},
 	}
 
 	mv.Send()

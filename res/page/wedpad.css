@@ -124,7 +124,7 @@ body {
     width: 100%;
     /*table-layout: fixed;*/
     overflow-wrap: break-word;
-    text-align: right;
+    /*text-align: right;*/
 }
 
 .stars-caption {
@@ -141,11 +141,8 @@ body {
 }
 
 #stars-tbody {
-    font-size: 120%;
-}
-
-#stars-type {
-    text-align: left;
+    font-size: larger;
+    font-family: courier;
 }
 
 #stars-discovered-true {

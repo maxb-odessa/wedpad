@@ -22,8 +22,6 @@ func (evHandler EventHandler) StartJump(eventData map[string]interface{}) {
 	mapstructure.Decode(eventData, ev)
 
 	cs := CurrentSystem
-	if ev.JumpType == "Hyperspace" {
-		cs.Name = ev.StarSystem
-		cs.MainStarType = ev.StarClass
-	}
+	cs.Name = ev.StarSystem
+	cs.MainStarType = ev.StarClass
 }
