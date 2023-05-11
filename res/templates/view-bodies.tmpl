@@ -1,0 +1,37 @@
+<table class="bodies-table">
+
+<caption class="bodies-caption">
+</caption>
+
+<thead>
+    <tr class="bodies-th">
+        <th>&nbsp;</th>
+        <th style="text-align: right;">Name</th>
+        <th style="text-align: left;">Type</th>
+        <th>D/L/T</th>
+        <th>Atmo</th>
+        <th>Dist(Ls)</th>
+        <th>Rad(E)</th>
+        <th>Mass(E)</th>
+        <th>Temp(K)</th>
+        <th>Grav(G)</th>
+        <th>RN</th>
+        <th>RR(Ls)</th>
+        <th>bgo</th>
+    </tr>
+</thead>
+
+<tbody id="bodies-tbody">
+{{- $odd := true}}
+{{ range $i, $v := .Data }}
+    {{ if $odd }}
+        <tr id="tr-odd">
+    {{ else }}
+        <tr id="tr-even">
+    {{ end }}
+    {{ $odd = not $odd }}
+    </tr>
+{{ end }}
+</tbody>
+
+</table>
