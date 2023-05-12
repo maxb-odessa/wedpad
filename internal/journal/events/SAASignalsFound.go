@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // SAASignalsFound event structure
@@ -24,7 +26,9 @@ type SAASignalsFoundT struct {
 
 // SAASignalsFound event handler
 func (evh *EventHandler) SAASignalsFound(eventData map[string]interface{}) {
-    // ev := new(SAASignalsFoundT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(SAASignalsFoundT)
+	mapstructure.Decode(eventData, ev)
 
+	cs := evh.CurrentSystem()
+	cs.AddPlanetSignals(ev)
+}

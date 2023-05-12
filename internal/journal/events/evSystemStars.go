@@ -35,7 +35,8 @@ func (cs *CurrentSystemT) ShowStars() {
 		// a Star, not a BaryCentre
 		if s, ok := currSysStars[id]; ok {
 			star["Barycenter"] = false
-			star["Type"] = cs.StarTypeColor(s.StarType)
+			star["Name"] = BodyName(s.BodyName, cs.Name())
+			star["Type"] = StarTypeColor(s.StarType)
 			star["Subclass"] = s.Subclass
 			star["Luminosity"] = s.Luminosity
 			star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
@@ -51,6 +52,8 @@ func (cs *CurrentSystemT) ShowStars() {
 			}
 		} else {
 			star["Barycenter"] = true
+			// TODO get it from star parents star["Name"] = BodyName(s.BodyName, cs.Name())
+			star["Name"] = BodyName("+", cs.Name())
 		}
 
 		stars = append(stars, star)

@@ -1,14 +1,16 @@
 <table class="stars-table">
 
-<caption class="stars-caption">
+<caption>
     {{ .SystemName }}<p>
 </caption>
 
 <thead>
-    <tr class="stars-th">
+    <tr>
+        <th>Name</th>
         <th>&nbsp;</th>
-        <th style="text-align: right;">Type</th>
+        <th>Type</th>
         <th style="text-align: left;">C, L</th>
+        <th>Discovered</th>
         <th>Dist(Ls)</th>
         <th>Rad(Sol)</th>
         <th>Mass(Sol)</th>
@@ -16,11 +18,10 @@
         <th>OrbPeriod(D)</th>
         <th>RingsN</th>
         <th>RingR(Ls)</th>
-        <th>Discovered</th>
     </tr>
 </thead>
 
-<tbody id="stars-tbody">
+<tbody>
 {{- $odd := true}}
 {{ range $i, $v := .Data }}
     {{ if not $v.Barycenter }}
@@ -34,17 +35,23 @@
     {{ end }}
         {{ if not $v.Barycenter }}
            {{ $odd = not $odd }}
+           <td>{{ $v.Name }}</td>
            {{ if $v.MainStar }}
               <td>&gt;</td>
            {{ else }}
               <td></td>
            {{ end }}
-           <td id="stars-type" style="text-align: right; font-weight: bold;">
+           <td style="font-weight: bold;">
                <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}</font>
            </td>
-           <td id="stars-cl" style="text-align: left; font-weight: bold;">
+           <td style="text-align: left; font-weight: bold;">
                <font color="{{ $v.Type.Color }}">{{ $v.Subclass }} {{ $v.Luminosity }}</font>
             </td>
+           {{ if $v.Discovered }}
+               <td><font color="yellow">YES</font></td>
+           {{ else }}
+               <td><font color="gray">no</font></td>
+           {{ end }}
            <td>{{ $v.DistanceLs }}</td>
            <td>{{ $v.RadiusS }}</td>
            <td>{{ $v.MassS }}</td>
@@ -52,13 +59,8 @@
            <td>{{ $v.OrbitalPeriodD }}</td>
            <td>{{ $v.RingsNum }}</td>
            <td>{{ $v.RingsRadiusLs }}</td>
-           {{ if $v.Discovered }}
-               <td id="stars-discovered-true">yes</td>
-           {{ else }}
-               <td id="stars-discovered-false">no</td>
-           {{ end }}
         {{ else }}
-            <td>&nbsp;</td>
+            <td>{{ $v.Name }}</td>
         {{ end }}
     </tr>
 {{ end }}

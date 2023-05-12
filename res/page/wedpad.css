@@ -124,10 +124,19 @@ body {
     width: 100%;
     /*table-layout: fixed;*/
     overflow-wrap: break-word;
-    /*text-align: right;*/
 }
 
-.stars-caption {
+.stars-table th {
+    font-size: smaller;
+    color: gray;
+    text-align: right;
+}
+
+.stars-table td {
+    text-align: right;
+}
+
+.stars-table caption {
     color: white;
     font-weight: bold;
     font-size: larger;
@@ -135,24 +144,9 @@ body {
     font-family: courier;
 }
 
-.stars-th {
-    font-size: smaller;
-    color: gray;
-}
-
-#stars-tbody {
+.stars-table tbody {
     font-size: larger;
     font-family: courier;
-}
-
-#stars-discovered-true {
-    text-align: center;
-    color: yellow;
-}
-
-#stars-discovered-false {
-    text-align: center;
-    color: gray;
 }
 
 #tr-odd {
@@ -163,33 +157,27 @@ body {
     background-color: rgba(250, 250, 250, 0.05);
 }
 
-.star-circle {
-    /* (A) PERCENTAGE WIDTH & BORDER RADIUS */
-    width: 20%;
-    border-radius: 50%;
-    /* (B) NECESSARY TO POSITION TEXT BLOCK */
-    line-height: 0;
-    position: relative;
-    margin-left: 0; 
-    margin-right: auto;
-}
-
-/* (C) MATCH HEIGHT */
-.star-circle::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-}
-
-/* (D) TEXT BLOCK */
-.star-circle .star-circle-text {
-    /* (D1) CENTER TEXT IN CIRCLE */
-    position: absolute;
-    bottom: 50%; 
+.bodies-table {
+    color: white;
+    border: none;
     width: 100%;
-    text-align: center;
-    /* (D2) COSMETICS */
-    font-weight: 700;
-    color: black;
+    /*table-layout: fixed;*/
+    overflow-wrap: break-word;
 }
+
+.bodies-table th {
+    font-size: smaller;
+    color: gray;
+    text-align: right;
+}
+
+.bodies-table td {
+    text-align: right;
+}
+
+.bodies-table tbody {
+    font-size: larger;
+    font-family: courier;
+}
+
 

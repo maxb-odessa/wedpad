@@ -56,6 +56,10 @@ func (cs *CurrentSystemT) AddPlanet(p *ScanT) {
 	cs.planets[p.BodyID] = p
 }
 
+func (cs *CurrentSystemT) AddPlanetSignals(s *SAASignalsFoundT) {
+	cs.planetSignals[s.BodyID] = s
+}
+
 func (cs *CurrentSystemT) AddBaryCentre(b *ScanBaryCentreT) {
 	cs.baryCentres[b.BodyID] = b
 }
@@ -73,7 +77,7 @@ func (cs *CurrentSystemT) Name() string {
 }
 
 func (cs *CurrentSystemT) SetMainStarType(t string) {
-	scp := cs.StarTypeColor(t)
+	scp := StarTypeColor(t)
 	cs.mainStar.typ = scp.Type
 	cs.mainStar.color = scp.Color
 }
@@ -96,6 +100,10 @@ func (cs *CurrentSystemT) BaryCentres() map[int]*ScanBaryCentreT {
 
 func (cs *CurrentSystemT) Planets() map[int]*ScanT {
 	return cs.planets
+}
+
+func (cs *CurrentSystemT) PlanetSignals() map[int]*SAASignalsFoundT {
+	return cs.planetSignals
 }
 
 func (cs *CurrentSystemT) Clean(what string) {
@@ -154,6 +162,13 @@ func Num(val float64) (s string) {
 	return
 }
 
+func BodyName(bname, sysname string) string {
+	if bname == sysname {
+		return ""
+	}
+	return strings.TrimPrefix(bname, sysname+" ")
+}
+
 func CalcRings(ev *ScanT) (num int, rad float64) {
 
 	for _, r := range ev.Rings {
@@ -169,11 +184,11 @@ func CalcRings(ev *ScanT) (num int, rad float64) {
 	return
 }
 
-type StarTypeColorPair struct {
+type TypeColorPair struct {
 	Type, Color string
 }
 
-var StarTypes = map[string]StarTypeColorPair{
+var StarTypes = map[string]TypeColorPair{
 	"A":                     {"A", "#FFFFE0"},
 	"A_BlueWhiteSuperGiant": {"++A", "#FFFFE0"},
 	"AeBe":                  {"AeBe", "#FFFF80"},
@@ -221,13 +236,45 @@ var StarTypes = map[string]StarTypeColorPair{
 	"?": {"(UNK)", "#A0A0A0"},
 }
 
-func (cs *CurrentSystemT) StarTypeColor(t string) StarTypeColorPair {
-	if st, ok := StarTypes[t]; ok {
-		return st
+func StarTypeColor(st string) TypeColorPair {
+	if tc, ok := StarTypes[st]; ok {
+		return tc
 	}
 	// star type is new to us!
-	return StarTypeColorPair{
-		Type:  t + "(fixme!)",
+	return TypeColorPair{
+		Type:  st + "(fixme!)",
+		Color: "#FFFF00",
+	}
+}
+
+var PlanetTypes = map[string]TypeColorPair{
+	"Ammonia world":                     {"AW", "#F4A460"},
+	"Earthlike body":                    {"ELW", "#00FF7F"},
+	"Gas giant with ammonia based life": {"GgAl", "#F5DEB3"},
+	"Gas giant with water based life":   {"GgWl", "#DEB887"},
+	"Helium gas giant":                  {"HeGg", "#D2B48C"},
+	"Helium rich gas giant":             {"HeRGg", "#D2B48C"},
+	"High metal content body":           {"HMC", "#778899"},
+	"Icy body":                          {"Icy", "#F8F8FF"},
+	"Metal rich body":                   {"Metal", "#B0C4DE"},
+	"Rocky body":                        {"Rocky", "#DEB887"},
+	"Rocky ice body":                    {"RoIce", "#FFF8DC"},
+	"Sudarsky class I gas giant":        {"GgI", "#DEB887"},
+	"Sudarsky class II gas giant":       {"GgII", "#F5DEB3"},
+	"Sudarsky class III gas giant":      {"GgIII", "#6495ED"},
+	"Sudarsky class IV gas giant":       {"GgIV", "#CD5C5C"},
+	"Sudarsky class V gas giant":        {"GgV", "#DC143C"},
+	"Water giant":                       {"Wg", "#808000"},
+	"Water world":                       {"WW", "#00BFFF"},
+}
+
+func PlanetTypeColor(pt string) TypeColorPair {
+	if tc, ok := PlanetTypes[pt]; ok {
+		return tc
+	}
+	// body type is new to us!
+	return TypeColorPair{
+		Type:  pt + "(fixme!)",
 		Color: "#FFFF00",
 	}
 }
@@ -244,3 +291,39 @@ func StarTempColor(tempK float64) string {
 	return fmt.Sprintf("#%02X%02X%02X", r, g, b)
 }
 */
+
+var PlanetAtmospheres = map[string]TypeColorPair{
+	"Ammonia":           {"NH3", "#A52A2A"},
+	"AmmoniaOxygen":     {"NH3+02", "#BC8F8F"},
+	"AmmoniaRich":       {"NH3+", "#A52A2A"},
+	"Argon":             {"Ar", "#3CB371"},
+	"ArgonRich":         {"Ar+", "#3CB371"},
+	"CarbonDioxide":     {"CO2", "#FF8C00"},
+	"CarbonDioxideRich": {"CO2+", "#FF8C00"},
+	"EarthLike":         {"N2+O2", "#ADD8E6"},
+	"Helium":            {"He", "#DC143C"},
+	"MetallicVapour":    {"Metals", "#D3D3D3"},
+	"Methane":           {"CH4", "#FFDAB9"},
+	"MethaneRich":       {"CH4+", "#FFDAB9"},
+	"Neon":              {"Ne", "#FF4500"},
+	"NeonRich":          {"Ne+", "#FF4500"},
+	"Nitrogen":          {"N2", "#87CEFA"},
+	"None":              {"", "#000000"},
+	"Oxygen":            {"O2", "#1E90FF"},
+	"SilicateVapour":    {"Si", "#D3D3D3"},
+	"SulphurDioxide":    {"SO2", "#CCCC00"},
+	"Water":             {"H2O", "#00BFFF"},
+	"WaterRich":         {"H2O+", "#00BFFF"},
+	"":                  {"", "#000000"},
+}
+
+func PlanetAtmosphereTypeColor(pa string) TypeColorPair {
+	if tc, ok := PlanetAtmospheres[pa]; ok {
+		return tc
+	}
+	// atmo is new to us!
+	return TypeColorPair{
+		Type:  pa + "(fixme!)",
+		Color: "#FFFF00",
+	}
+}
