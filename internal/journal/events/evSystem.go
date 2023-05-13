@@ -231,8 +231,8 @@ func StarTypeColor(st string) TypeColorPair {
 var PlanetTypes = map[string]TypeColorPair{
 	"Ammonia world":                     {"AW", "#F4A460"},
 	"Earthlike body":                    {"ELW", "#00FF7F"},
-	"Gas giant with ammonia based life": {"GgAl", "#F5DEB3"},
-	"Gas giant with water based life":   {"GgWl", "#DEB887"},
+	"Gas giant with ammonia based life": {"GgAL", "#F5DEB3"},
+	"Gas giant with water based life":   {"GgWL", "#DEB887"},
 	"Helium gas giant":                  {"HeGg", "#D2B48C"},
 	"Helium rich gas giant":             {"HeRGg", "#D2B48C"},
 	"High metal content body":           {"HMC", "#778899"},

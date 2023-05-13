@@ -46,36 +46,39 @@ func (cs *CurrentSystemT) ShowPlanets() {
 			body["RingsRadiusLs"] = Num(rr / LIGHT_SECOND)
 		}
 		body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
-		body["Signals"] = cs.composeBGHO(id)
+		body["Signals"] = cs.composeBGGHO(id)
 
 		bodies = append(bodies, body)
 
 		bodiesCnt++
 	}
 
-	m := &msg.Message{
-		Target: msg.TARGET_BODIES,
-		Type:   msg.TYPE_VIEW,
-		Action: msg.ACTION_REPLACE,
-		Data:   bodies,
-	}
-	m.Send()
+	if bodiesCnt > 0 {
 
-	m = &msg.Message{
-		Target: msg.TARGET_BODIES,
-		Type:   msg.TYPE_BUTTON,
-		Action: msg.ACTION_REPLACE,
-		Data:   bodiesCnt,
-	}
-	m.Send()
+		m := &msg.Message{
+			Target: msg.TARGET_BODIES,
+			Type:   msg.TYPE_VIEW,
+			Action: msg.ACTION_REPLACE,
+			Data:   bodies,
+		}
+		m.Send()
 
-	m = &msg.Message{
-		Target: msg.TARGET_BODIES,
-		Type:   msg.TYPE_BUTTON,
-		Action: msg.ACTION_ATTENTION,
-		Data:   "",
+		m = &msg.Message{
+			Target: msg.TARGET_BODIES,
+			Type:   msg.TYPE_BUTTON,
+			Action: msg.ACTION_REPLACE,
+			Data:   bodiesCnt,
+		}
+		m.Send()
+
+		m = &msg.Message{
+			Target: msg.TARGET_BODIES,
+			Type:   msg.TYPE_BUTTON,
+			Action: msg.ACTION_ATTENTION,
+			Data:   "",
+		}
+		m.Send()
 	}
-	m.Send()
 
 	// those are for LOG view
 	for _, id := range keys {
@@ -119,9 +122,9 @@ func composeDMTL(d bool, m bool, tf string, l bool) []TypeColorPair {
 	return dmtl
 }
 
-// BGHO = Bio, Geo, Human, Other
-func (cs *CurrentSystemT) composeBGHO(id int) (signals []TypeColorPair) {
-	signals = make([]TypeColorPair, 4)
+// BGGHO = Bio, Geo, Guardian, Human, Other
+func (cs *CurrentSystemT) composeBGGHO(id int) (signals []TypeColorPair) {
+	signals = make([]TypeColorPair, 5)
 
 	// init with defaults
 	for i, _ := range signals {
@@ -134,13 +137,15 @@ func (cs *CurrentSystemT) composeBGHO(id int) (signals []TypeColorPair) {
 		return
 	}
 
-	var bio, geo, human, other int
+	var bio, geo, guard, human, other int
 	for _, sig := range sigs.Signals {
 		switch sig.Type {
 		case "$SAA_SignalType_Biological":
 			bio++
 		case "$SAA_SignalType_Geological":
 			geo++
+		case "$SAA_SignalType_Guardian":
+			guard++
 		case "$SAA_SignalType_Human":
 			human++
 		case "$SAA_SignalType_Other":
@@ -156,12 +161,16 @@ func (cs *CurrentSystemT) composeBGHO(id int) (signals []TypeColorPair) {
 		signals[1] = TypeColorPair{Type: strconv.Itoa(geo), Color: "brown"}
 	}
 
+	if guard > 0 {
+		signals[2] = TypeColorPair{Type: strconv.Itoa(guard), Color: "yellow"}
+	}
+
 	if human > 0 {
-		signals[2] = TypeColorPair{Type: strconv.Itoa(human), Color: "blue"}
+		signals[3] = TypeColorPair{Type: strconv.Itoa(human), Color: "blue"}
 	}
 
 	if other > 0 {
-		signals[3] = TypeColorPair{Type: strconv.Itoa(other), Color: "red"}
+		signals[4] = TypeColorPair{Type: strconv.Itoa(other), Color: "red"}
 	}
 
 	return

@@ -1,37 +1,64 @@
 package events
 
 import (
+	"strings"
+
+	"github.com/danwakefield/fnmatch"
 	"github.com/maxb-odessa/sconf"
+	"github.com/maxb-odessa/slog"
 )
 
 func (cs *CurrentSystemT) IsRemarkableBody(id int) bool {
 
-	if cs.gotSignals(id) {
+	name := cs.Planets()[id].BodyName
+
+	if cs.wantBGGHO(id) {
+		slog.Debug(5, "Remarkable body '%s': wantBGGHO", name)
 		return true
 	}
 
-	if cs.wideRings(id) {
+	if cs.wantRings(id) {
+		slog.Debug(5, "Remarkable body '%s': wantRings", name)
 		return true
 	}
 
-	if cs.niceAtmosphere(id) {
+	if cs.wantAtmosphere(id) {
+		slog.Debug(5, "Remarkable body '%s': wantAtmosphere", name)
 		return true
 	}
+
+	if cs.wantDMTL(id) {
+		slog.Debug(5, "Remarkable body '%s': wantDMTL", name)
+		return true
+	}
+
+	if cs.wantGravity(id) {
+		slog.Debug(5, "Remarkable body '%s': wantGravity", name)
+		return true
+	}
+
+	if cs.wantBodyClass(id) {
+		slog.Debug(5, "Remarkable body '%s': wantBodyClass", name)
+		return true
+	}
+
+	slog.Debug(5, "Remarkable body '%s': NOT REMARKABLE", name)
 
 	return false
 }
 
-func (cs *CurrentSystemT) gotSignals(id int) bool {
+func (cs *CurrentSystemT) wantBGGHO(id int) bool {
 
 	wantBio := int(sconf.Int32Def("criteria", "min bio signals", 0))
 	wantGeo := int(sconf.Int32Def("criteria", "min geo signals", 0))
+	wantGuard := int(sconf.Int32Def("criteria", "min guardian signals", 0))
 	wantHuman := int(sconf.Int32Def("criteria", "min human signals", 0))
 	wantOther := int(sconf.Int32Def("criteria", "min other signals", 0))
 
 	// no signals detected but at least one is wanted
 	sigs, ok := cs.PlanetSignals()[id]
 	if !ok {
-		if wantBio+wantGeo+wantHuman+wantOther > 0 {
+		if wantBio+wantGeo+wantGuard+wantHuman+wantOther > 0 {
 			return false
 		} else {
 			return true
@@ -46,6 +73,10 @@ func (cs *CurrentSystemT) gotSignals(id int) bool {
 			}
 		case "$SAA_SignalType_Geological":
 			if sig.Count >= wantGeo {
+				return true
+			}
+		case "$SAA_SignalType_Guardian":
+			if sig.Count >= wantGuard {
 				return true
 			}
 		case "$SAA_SignalType_Human":
@@ -63,10 +94,104 @@ func (cs *CurrentSystemT) gotSignals(id int) bool {
 	return false
 }
 
-func (cs *CurrentSystemT) wideRings(id int) bool {
+func (cs *CurrentSystemT) wantRings(id int) bool {
+
+	rNum, rRad := CalcRings(cs.Planets()[id])
+	rRadLs := float32(rRad / LIGHT_SECOND)
+
+	wantHighRadLs := sconf.Float32Def("criteria", "high ring radius", 0.0)
+	wantLowRadLs := sconf.Float32Def("criteria", "low ring radius", 0.0)
+
+	if rNum == 0 {
+		if wantLowRadLs > 0.0 || wantHighRadLs > 0.0 {
+			return false
+		} else {
+			return true
+		}
+	}
+
+	if rRadLs <= wantLowRadLs || rRadLs >= wantHighRadLs {
+		return true
+	}
+
 	return false
 }
 
-func (cs *CurrentSystemT) niceAtmosphere(id int) bool {
+func (cs *CurrentSystemT) wantAtmosphere(id int) bool {
+
+	body := cs.Planets()[id]
+
+	wantAtmos := sconf.StrDef("criteria", "atmospheres", "*")
+	landableOnly := sconf.BoolDef("criteria", "atmospheres landable only", false)
+	found := false
+
+	for _, atmo := range strings.Split(wantAtmos, ",") {
+		if fnmatch.Match(strings.TrimSpace(atmo), body.Atmosphere, fnmatch.FNM_IGNORECASE) {
+			found = true
+			break
+		}
+	}
+
+	if found {
+		if landableOnly && !body.Landable {
+			found = false
+		}
+	}
+
+	return found
+}
+
+func (cs *CurrentSystemT) wantDMTL(id int) bool {
+
+	body := cs.Planets()[id]
+
+	wantDiscovered := sconf.BoolDef("criteria", "discovered", false)
+	wantMapped := sconf.BoolDef("criteria", "mapped", false)
+	wantTerraformable := sconf.BoolDef("criteria", "terraformable", false)
+	wantLandable := sconf.BoolDef("criteria", "landable", false)
+
+	if wantDiscovered && body.WasDiscovered ||
+		wantMapped && body.WasMapped ||
+		wantTerraformable && body.TerraformState == "Terraformable" ||
+		wantLandable && body.Landable {
+		return true
+	}
+
+	return false
+}
+
+func (cs *CurrentSystemT) wantGravity(id int) bool {
+
+	body := cs.Planets()[id]
+
+	wantHighGravity := sconf.Float32Def("criteria", "high gravity", 0.0)
+	wantLowGravity := sconf.Float32Def("criteria", "low gravity", 0.0)
+	landableOnly := sconf.BoolDef("criteria", "gravity landable only", false)
+
+	grav := float32(body.SurfaceGravity / 10.0) // yes, 10.0 is corrent here (as FDEV why)
+
+	if grav <= wantLowGravity || grav >= wantHighGravity {
+		if landableOnly && !body.Landable {
+			return false
+		} else {
+			return true
+		}
+	}
+
+	return false
+}
+
+func (cs *CurrentSystemT) wantBodyClass(id int) bool {
+
+	body := cs.Planets()[id]
+
+	wantClass := sconf.StrDef("criteria", "body class", "*")
+
+	for _, class := range strings.Split(wantClass, ",") {
+		if fnmatch.Match(strings.TrimSpace(class), body.PlanetClass, fnmatch.FNM_IGNORECASE) {
+			return true
+		}
+	}
+
 	return false
 }
