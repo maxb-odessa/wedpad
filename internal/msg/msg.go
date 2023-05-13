@@ -46,7 +46,7 @@ func Init() error {
 
 	files := make(map[string][]byte)
 
-	dir := sconf.StrDef("paths", "templates", "templates")
+	dir := sconf.StrDef("resources", "templates", "templates")
 
 	if err := utils.LoadDir(files, dir, ".tmpl", 8192, 32); err != nil {
 		return err

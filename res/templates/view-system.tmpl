@@ -1,7 +1,7 @@
 <table class="stars-table">
 
 <caption>
-    {{ .SystemName }}<p>
+    {{ .SystemName }}
 </caption>
 
 <thead>
@@ -35,7 +35,7 @@
     {{ end }}
         {{ if not $v.Barycenter }}
            {{ $odd = not $odd }}
-           <td>{{ $v.Name }}</td>
+           <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
            {{ if $v.MainStar }}
               <td>&gt;</td>
            {{ else }}

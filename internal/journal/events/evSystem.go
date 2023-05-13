@@ -3,9 +3,6 @@ package events
 import (
 	"fmt"
 	"strings"
-	"wedpad/internal/utils"
-
-	"github.com/maxb-odessa/sconf"
 )
 
 type CurrentSystemT struct {
@@ -21,31 +18,15 @@ type CurrentSystemT struct {
 	baryCentres   map[int]*ScanBaryCentreT
 	signals       map[int]*FSSSignalDiscoveredT
 	planetSignals map[int]*SAASignalsFoundT
-	luaScripts    map[string][]byte
 }
 
 func (cs *CurrentSystemT) Init() error {
 	cs.Clean("all")
-	return cs.LoadLua()
+	return nil
 }
 
 func (cs *CurrentSystemT) String() string {
 	return cs.name
-}
-
-func (cs *CurrentSystemT) LoadLua() error {
-	cs.luaScripts = make(map[string][]byte)
-	if err := utils.LoadDir(cs.luaScripts, sconf.StrDef("paths", "lua", "lua"), ".lua", 100_000, 16); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (cs *CurrentSystemT) FindLua(name string) (string, error) {
-	if scr, ok := cs.luaScripts[name]; ok {
-		return string(scr), nil
-	}
-	return "", fmt.Errorf("not loaded")
 }
 
 func (cs *CurrentSystemT) AddStar(s *ScanT) {

@@ -4,11 +4,6 @@ import (
 	"sort"
 	"strconv"
 	"wedpad/internal/msg"
-
-	"github.com/maxb-odessa/slog"
-
-	lua "github.com/yuin/gopher-lua"
-	luar "layeh.com/gopher-luar"
 )
 
 func (cs *CurrentSystemT) ShowPlanets() {
@@ -26,11 +21,12 @@ func (cs *CurrentSystemT) ShowPlanets() {
 
 	sort.Ints(keys)
 
+	bodiesCnt := 0
 	for _, id := range keys {
 
 		b := planets[id]
 
-		if !cs.remarkable("planet", b) {
+		if !cs.IsRemarkableBody(id) {
 			continue
 		}
 
@@ -44,27 +40,47 @@ func (cs *CurrentSystemT) ShowPlanets() {
 		body["MassE"] = Num(b.MassEm)
 		body["TemperatureK"] = Num(b.SurfaceTemperature)
 		body["GravityG"] = Num(b.SurfaceGravity / 10) // this 10 is correct!
-		body["RingsNum"], body["RingsRadLs"] = CalcRings(b)
+		rn, rr := CalcRings(b)
+		if rn > 0 {
+			body["RingsNum"] = rn
+			body["RingsRadiusLs"] = Num(rr / LIGHT_SECOND)
+		}
 		body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
-		body["Signals"] = cs.composeSignals(id)
+		body["Signals"] = cs.composeBGHO(id)
 
 		bodies = append(bodies, body)
 
+		bodiesCnt++
 	}
 
-	mb := &msg.Message{
+	m := &msg.Message{
 		Target: msg.TARGET_BODIES,
 		Type:   msg.TYPE_VIEW,
 		Action: msg.ACTION_REPLACE,
 		Data:   bodies,
 	}
+	m.Send()
 
-	mb.Send()
+	m = &msg.Message{
+		Target: msg.TARGET_BODIES,
+		Type:   msg.TYPE_BUTTON,
+		Action: msg.ACTION_REPLACE,
+		Data:   bodiesCnt,
+	}
+	m.Send()
 
-	// those are for LOG view port
-	for _, b := range cs.planets {
+	m = &msg.Message{
+		Target: msg.TARGET_BODIES,
+		Type:   msg.TYPE_BUTTON,
+		Action: msg.ACTION_ATTENTION,
+		Data:   "",
+	}
+	m.Send()
 
-		if !cs.remarkable("body", b) {
+	// those are for LOG view
+	for _, id := range keys {
+
+		if !cs.IsRemarkableBody(id) {
 			continue
 		}
 
@@ -72,6 +88,7 @@ func (cs *CurrentSystemT) ShowPlanets() {
 
 }
 
+// DMTL = Discovered, Mapped, Terraformable, Landable
 func composeDMTL(d bool, m bool, tf string, l bool) []TypeColorPair {
 	dmtl := make([]TypeColorPair, 4)
 
@@ -102,8 +119,9 @@ func composeDMTL(d bool, m bool, tf string, l bool) []TypeColorPair {
 	return dmtl
 }
 
-func (cs *CurrentSystemT) composeSignals(id int) (signals []TypeColorPair) {
-	signals = make([]TypeColorPair, 3)
+// BGHO = Bio, Geo, Human, Other
+func (cs *CurrentSystemT) composeBGHO(id int) (signals []TypeColorPair) {
+	signals = make([]TypeColorPair, 4)
 
 	// init with defaults
 	for i, _ := range signals {
@@ -116,14 +134,16 @@ func (cs *CurrentSystemT) composeSignals(id int) (signals []TypeColorPair) {
 		return
 	}
 
-	var bio, geo, other int
+	var bio, geo, human, other int
 	for _, sig := range sigs.Signals {
 		switch sig.Type {
 		case "$SAA_SignalType_Biological":
 			bio++
 		case "$SAA_SignalType_Geological":
 			geo++
-		default:
+		case "$SAA_SignalType_Human":
+			human++
+		case "$SAA_SignalType_Other":
 			other++
 		}
 	}
@@ -136,49 +156,13 @@ func (cs *CurrentSystemT) composeSignals(id int) (signals []TypeColorPair) {
 		signals[1] = TypeColorPair{Type: strconv.Itoa(geo), Color: "brown"}
 	}
 
+	if human > 0 {
+		signals[2] = TypeColorPair{Type: strconv.Itoa(human), Color: "blue"}
+	}
+
 	if other > 0 {
-		signals[2] = TypeColorPair{Type: strconv.Itoa(bio), Color: "blue"}
+		signals[3] = TypeColorPair{Type: strconv.Itoa(other), Color: "red"}
 	}
 
 	return
-}
-
-type luaData struct {
-	ev  *ScanT
-	cs  *CurrentSystemT
-	res bool
-}
-
-func (d *luaData) SetResult(r bool) {
-	d.res = r
-}
-
-func (cs *CurrentSystemT) remarkable(what string, ev *ScanT) bool {
-
-	scriptName := "remarkable-" + what
-
-	script, err := cs.FindLua(scriptName)
-	if err != nil {
-		slog.Err("LUA: Failed to call '%s.lua': %s", scriptName, err)
-		return false
-	}
-
-	l := lua.NewState()
-	defer l.Close()
-
-	ld := &luaData{
-		ev:  ev,
-		cs:  cs,
-		res: false,
-	}
-
-	l.SetGlobal("data", luar.New(l, ld))
-	if err := l.DoString(script); err != nil {
-		slog.Err("LUA: Failed to call '%s.lua': %s", scriptName, err)
-		return false
-	}
-
-	slog.Debug(9, "LUA: '%s' returned '%+v'", scriptName, ld.res)
-
-	return ld.res
 }

@@ -11,8 +11,6 @@ require (
 	github.com/nxadm/tail v1.4.8
 	github.com/pborman/getopt/v2 v2.1.0
 	github.com/radovskyb/watcher v1.0.7
-	github.com/yuin/gopher-lua v1.1.0
-	layeh.com/gopher-luar v1.0.10
 )
 
 require (
