@@ -42,7 +42,7 @@ func (cs *CurrentSystemT) IsRemarkableBody(id int) bool {
 		return true
 	}
 
-	slog.Debug(5, "Remarkable body '%s': NOT REMARKABLE", name)
+	slog.Debug(9, "Remarkable body '%s': NOT REMARKABLE", name)
 
 	return false
 }
@@ -67,23 +67,23 @@ func (cs *CurrentSystemT) wantBGGHO(id int) bool {
 
 	for _, sig := range sigs.Signals {
 		switch sig.Type {
-		case "$SAA_SignalType_Biological":
+		case "$SAA_SignalType_Biological;":
 			if sig.Count >= wantBio {
 				return true
 			}
-		case "$SAA_SignalType_Geological":
+		case "$SAA_SignalType_Geological;":
 			if sig.Count >= wantGeo {
 				return true
 			}
-		case "$SAA_SignalType_Guardian":
+		case "$SAA_SignalType_Guardian;":
 			if sig.Count >= wantGuard {
 				return true
 			}
-		case "$SAA_SignalType_Human":
+		case "$SAA_SignalType_Human;":
 			if sig.Count >= wantHuman {
 				return true
 			}
-		case "$SAA_SignalType_Other":
+		case "$SAA_SignalType_Other;":
 			if sig.Count >= wantOther {
 				return true
 			}

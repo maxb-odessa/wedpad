@@ -16,8 +16,8 @@ type CurrentSystemT struct {
 	stars         map[int]*ScanT
 	planets       map[int]*ScanT
 	baryCentres   map[int]*ScanBaryCentreT
-	signals       map[int]*FSSSignalDiscoveredT
-	planetSignals map[int]*SAASignalsFoundT
+	signals       map[int]*SAASignalsFoundT
+	planetSignals map[int]*FSSBodySignalsT
 }
 
 func (cs *CurrentSystemT) Init() error {
@@ -37,7 +37,7 @@ func (cs *CurrentSystemT) AddPlanet(p *ScanT) {
 	cs.planets[p.BodyID] = p
 }
 
-func (cs *CurrentSystemT) AddPlanetSignals(s *SAASignalsFoundT) {
+func (cs *CurrentSystemT) AddPlanetSignals(s *FSSBodySignalsT) {
 	cs.planetSignals[s.BodyID] = s
 }
 
@@ -83,7 +83,7 @@ func (cs *CurrentSystemT) Planets() map[int]*ScanT {
 	return cs.planets
 }
 
-func (cs *CurrentSystemT) PlanetSignals() map[int]*SAASignalsFoundT {
+func (cs *CurrentSystemT) PlanetSignals() map[int]*FSSBodySignalsT {
 	return cs.planetSignals
 }
 
@@ -104,15 +104,15 @@ func (cs *CurrentSystemT) Clean(what string) {
 	case "barycentres":
 		cs.baryCentres = make(map[int]*ScanBaryCentreT)
 	case "signals":
-		cs.signals = make(map[int]*FSSSignalDiscoveredT)
+		cs.signals = make(map[int]*SAASignalsFoundT)
 	case "planetSignals":
-		cs.planetSignals = make(map[int]*SAASignalsFoundT)
-	default:
+		cs.planetSignals = make(map[int]*FSSBodySignalsT)
+	case "all":
 		cs.stars = make(map[int]*ScanT)
 		cs.planets = make(map[int]*ScanT)
 		cs.baryCentres = make(map[int]*ScanBaryCentreT)
-		cs.signals = make(map[int]*FSSSignalDiscoveredT)
-		cs.planetSignals = make(map[int]*SAASignalsFoundT)
+		cs.signals = make(map[int]*SAASignalsFoundT)
+		cs.planetSignals = make(map[int]*FSSBodySignalsT)
 	}
 }
 
@@ -175,9 +175,9 @@ var StarTypes = map[string]TypeColorPair{
 	"AeBe":                  {"AeBe", "#FFFF80"},
 	"B":                     {"B", "#E0E0FF"},
 	"B_BlueWhiteSuperGiant": {"++B", "#E0E0FF"},
-	"C":                     {"C", "#DDDD70"},
-	"CJ":                    {"CJ", "#DDDD70"},
-	"CN":                    {"CN", "#DDDD70"},
+	"C":                     {"C", "#DDDD60"},
+	"CJ":                    {"CJ", "#DDDD60"},
+	"CN":                    {"CN", "#DDDD60"},
 	"D":                     {"D", "#EEEEFF"},
 	"DA":                    {"DA", "#EEEEFF"},
 	"DAB":                   {"DAB", "#EEEEFF"},
@@ -203,18 +203,44 @@ var StarTypes = map[string]TypeColorPair{
 	"MS":                    {"MS", "#FF7010"},
 	"N":                     {"N", "#AAAAFF"},
 	"O":                     {"O", "#EEEEFF"},
-	"S":                     {"S", "#CCCC70"},
+	"S":                     {"S", "#DDDD70"},
 	"SupermassiveBlackHole": {"++H", "#808080"},
-	"T":                     {"T", "#FF2080"},
-	"TTS":                   {"TTS", "#FF7070"},
+	"T":                     {"T", "#EE2080"},
+	"TTS":                   {"TTS", ""},
 	"W":                     {"W", "#E0E0E0"},
 	"WC":                    {"WC", "#E0E0E0"},
 	"WN":                    {"WN", "#E0E0E0"},
 	"WNC":                   {"WNC", "#E0E0E0"},
 	"WO":                    {"WO", "#E0E0E0"},
-	"Y":                     {"Y", "#FF2080"},
+	"Y":                     {"Y", "#DD2080"},
 	// special: undefined star type
 	"?": {"(UNK)", "#A0A0A0"},
+}
+
+func GuessColorByTemp(temp float64) string {
+	switch {
+	case temp >= 50_000:
+		return "#AAAAFF" // N
+	case temp >= 33_000:
+		return "#EEEEFF" // O
+	case temp >= 10_000:
+		return "#E0E0FF" // B
+	case temp >= 6_000:
+		return "#FFFFB0" // F
+	case temp >= 5_200:
+		return "#EEEE30" // G
+	case temp >= 3_700:
+		return "#FF9020" // K
+	case temp >= 2_000:
+		return "#FF3030" // M
+	case temp >= 1_300:
+		return "#EE2080" // L
+	case temp >= 999:
+		return "#CC2080" // T
+	case temp >= 256:
+		return "#AA2080" // Y
+	}
+	return "#aabbcc" // dunno
 }
 
 func StarTypeColor(st string) TypeColorPair {
@@ -223,7 +249,7 @@ func StarTypeColor(st string) TypeColorPair {
 	}
 	// star type is new to us!
 	return TypeColorPair{
-		Type:  st + "(fixme!)",
+		Type:  st + "(1fixme!)",
 		Color: "#FFFF00",
 	}
 }
@@ -255,7 +281,7 @@ func PlanetTypeColor(pt string) TypeColorPair {
 	}
 	// body type is new to us!
 	return TypeColorPair{
-		Type:  pt + "(fixme!)",
+		Type:  pt + "(2fixme!)",
 		Color: "#FFFF00",
 	}
 }

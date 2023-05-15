@@ -140,25 +140,25 @@ func (cs *CurrentSystemT) composeBGGHO(id int) (signals []TypeColorPair) {
 	var bio, geo, guard, human, other int
 	for _, sig := range sigs.Signals {
 		switch sig.Type {
-		case "$SAA_SignalType_Biological":
-			bio++
-		case "$SAA_SignalType_Geological":
-			geo++
-		case "$SAA_SignalType_Guardian":
-			guard++
-		case "$SAA_SignalType_Human":
-			human++
-		case "$SAA_SignalType_Other":
-			other++
+		case "$SAA_SignalType_Biological;":
+			bio = sig.Count
+		case "$SAA_SignalType_Geological;":
+			geo = sig.Count
+		case "$SAA_SignalType_Guardian;":
+			guard = sig.Count
+		case "$SAA_SignalType_Human;":
+			human = sig.Count
+		case "$SAA_SignalType_Other;":
+			other = sig.Count
 		}
 	}
 
 	if bio > 0 {
-		signals[0] = TypeColorPair{Type: strconv.Itoa(bio), Color: "green"}
+		signals[0] = TypeColorPair{Type: strconv.Itoa(bio), Color: "lime"}
 	}
 
 	if geo > 0 {
-		signals[1] = TypeColorPair{Type: strconv.Itoa(geo), Color: "brown"}
+		signals[1] = TypeColorPair{Type: strconv.Itoa(geo), Color: "sandybrown"}
 	}
 
 	if guard > 0 {
@@ -166,7 +166,7 @@ func (cs *CurrentSystemT) composeBGGHO(id int) (signals []TypeColorPair) {
 	}
 
 	if human > 0 {
-		signals[3] = TypeColorPair{Type: strconv.Itoa(human), Color: "blue"}
+		signals[3] = TypeColorPair{Type: strconv.Itoa(human), Color: "dodgerblue"}
 	}
 
 	if other > 0 {

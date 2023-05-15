@@ -72,14 +72,13 @@ func Init() error {
 
 func showGreeting() {
 
-	data := make(map[string]string)
-	data["text"] = "WEdPad - Web based Elite Dangerous Pad"
+	greet := "WEdPad - Web based Elite Dangerous Pad"
 
 	msg := &Message{
 		Action: ACTION_REPLACE,
 		Target: TARGET_LOG,
 		Type:   TYPE_VIEW,
-		Data:   data,
+		Data:   greet,
 	}
 
 	msg.Send()

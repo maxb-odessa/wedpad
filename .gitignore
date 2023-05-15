@@ -26,3 +26,6 @@ go.work
 *.log
 *.err
 wedpad
+log
+err
+out

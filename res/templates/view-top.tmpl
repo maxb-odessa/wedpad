@@ -1,5 +1,10 @@
 <table style="font-style: italic; color: #B0B0B0; width: 100%; border: 0; padding: 0;">
 <tr>
+    {{ if eq .Jumps 0 }}
+    <td style="text-align: center;">
+        {{ .PrevSystem }}
+    </td>
+    {{ else }}
     <td style="text-align: right;">
         {{ .PrevSystem }}
     </td>
@@ -15,5 +20,6 @@
     <td style="text-align: left;">
         {{ .NextSystem }}
     </td>
+    {{ end }}
 </tr>
 </table>

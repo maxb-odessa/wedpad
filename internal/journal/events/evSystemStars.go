@@ -3,6 +3,8 @@ package events
 import (
 	"sort"
 	"wedpad/internal/msg"
+
+	"github.com/maxb-odessa/slog"
 )
 
 func (cs *CurrentSystemT) ShowStars() {
@@ -31,12 +33,16 @@ func (cs *CurrentSystemT) ShowStars() {
 		} else {
 			star["MainStar"] = false
 		}
-
 		// a Star, not a BaryCentre
 		if s, ok := currSysStars[id]; ok {
+			slog.Debug(9, "BODYNAME: '%s', CSNAME: '%s'", s.BodyName, cs.Name())
 			star["Barycenter"] = false
 			star["Name"] = BodyName(s.BodyName, cs.Name())
-			star["Type"] = StarTypeColor(s.StarType)
+			tc := StarTypeColor(s.StarType)
+			if tc.Color == "" {
+				tc.Color = GuessColorByTemp(s.SurfaceTemperature)
+			}
+			star["Type"] = tc
 			star["Subclass"] = s.Subclass
 			star["Luminosity"] = s.Luminosity
 			star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
@@ -52,8 +58,6 @@ func (cs *CurrentSystemT) ShowStars() {
 			}
 		} else {
 			star["Barycenter"] = true
-			// TODO get it from star parents star["Name"] = BodyName(s.BodyName, cs.Name())
-			star["Name"] = BodyName("+", cs.Name())
 		}
 
 		stars = append(stars, star)

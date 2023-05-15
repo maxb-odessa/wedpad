@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>WEdPad - Web: Elite Dangerous Pad</title>
-    <link rel="stylesheet" href="wedpad.css?34121912315252aaafz">
+    <link rel="stylesheet" href="wedpad.css?34121912315252aaafz11">
 </head>
 
 <body>
@@ -43,8 +43,15 @@ function switchView(id) {
     document.getElementById("view-system").style.display = 'none';
     document.getElementById("view-bodies").style.display = 'none';
     document.getElementById("view-signals").style.display = 'none';
-    document.getElementById("view-" + id).style.display = 'block';
+
+    var output = document.getElementById("view-" + id);
+    output.style.display = 'block';
+    output.scrollTop = output.scrollHeight;
 };
+
+function timestamp() {
+    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: "2-digit", hour12: false })
+}
 
 var logView = document.getElementById("view-log");
 
@@ -52,7 +59,7 @@ var wsUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/
 var socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
-    logView.innerHTML = "<h1>CONNECTED!</h1>";
+    logView.innerHTML = "<p><b>CONNECTED!</b>";
     socket.send("connected");
 };
 
@@ -67,33 +74,50 @@ socket.onmessage = function(msg) {
     var output;
 
     if (otype === "view") {
-        output = document.getElementById("view-" + target);
-    } else if (otype === "button") {
-        output = document.getElementById("button-" + target + "-text");
-    }
 
-    if (action === "replace") {
+        output = document.getElementById("view-" + target);
+
+        if (target === "log") {
+            data = "<i>" + timestamp() + "</i>&gt; " + data
+        }
+
+        if (action === "replace") {
             output.innerHTML = data;
-    } else if (action === "append") {
+        } else if (action === "append") {
             output.innerHTML += data;
-    } else if (action === "clean") {
+        } else if (action === "clean") {
             output.innerHTML = "";
-    } else if (action === "attention") {
-        if (otype === "button") {
-            document.getElementById(otype + "-" + target).setAttribute("class", "button button-attention");
-        } else if (otype === "view") {
+        } else if (action === "attention") {
             switchView(target)
+        }
+
+        if (target === "log") {
+            output.scrollTop = output.scrollHeight;
+        }
+
+    } else if (otype === "button") {
+
+        output = document.getElementById("button-" + target + "-text");
+
+        if (action === "replace") {
+            output.innerHTML = data;
+        } else if (action === "append") {
+            output.innerHTML += data;
+        } else if (action === "clean") {
+            output.innerHTML = "";
+        } else if (action === "attention") {
+            if (document.getElementById("button-" + target).getAttribute("class") !== "button button-active") {
+                document.getElementById("button-" + target).setAttribute("class", "button button-attention");
+            }
         }
     }
 
-    socket.send("ack");
-
-    <!-- target.scrollBy(0, 500); -->
+    socket.send("ACK");
 
 };
 
 socket.onclose = function(ev) {
-    logView.innerHTML += "<p><b>CONNECTION CLOSED: " + "Clean:" + ev.wasClean + " Reason:" + ev.reason + " Code:" + ev.code + "</b>";
+    logView.innerHTML += "<p><b>CONNECTION CLOSED! " + "Clean: " + ev.wasClean + ", Reason: ''" + ev.reason + ", Code: " + ev.code + "</b>";
     switchView("log");
     socket.send("closed");
 };

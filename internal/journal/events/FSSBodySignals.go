@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // FSSBodySignals event structure
@@ -20,7 +22,10 @@ type FSSBodySignalsT struct {
 
 // FSSBodySignals event handler
 func (evh *EventHandler) FSSBodySignals(eventData map[string]interface{}) {
-    // ev := new(FSSBodySignalsT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(FSSBodySignalsT)
+	mapstructure.Decode(eventData, ev)
 
+	cs := evh.CurrentSystem()
+
+	cs.AddPlanetSignals(ev)
+}

@@ -1,7 +1,9 @@
 package events
 
 import (
+	"fmt"
 	"time"
+	"wedpad/internal/msg"
 
 	"github.com/mitchellh/mapstructure"
 )
@@ -80,8 +82,15 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 
 	cs := evh.CurrentSystem()
 
-	cs.Clean("all")
-
 	cs.SetName(ev.StarSystem)
 	cs.SetMainStarID(ev.BodyID)
+
+	m := &msg.Message{
+		Target: msg.TARGET_LOG,
+		Action: msg.ACTION_APPEND,
+		Type:   msg.TYPE_VIEW,
+		Data:   fmt.Sprintf("Arrived to system %s, fuel used: %.1ft, fuel lvl: %.1ft", ev.StarSystem, ev.FuelUsed, ev.FuelLevel),
+	}
+
+	m.Send()
 }

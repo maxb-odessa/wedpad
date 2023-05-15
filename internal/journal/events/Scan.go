@@ -79,8 +79,9 @@ type ScanT struct {
 func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	ev := new(ScanT)
 	mapstructure.Decode(eventData, ev)
+	cs := evh.CurrentSystem()
 
-	evh.CurrentSystem().SetName(ev.StarSystem)
+	cs.SetName(ev.StarSystem)
 
 	if ev.StarType != "" {
 		evh.scanStar(ev)

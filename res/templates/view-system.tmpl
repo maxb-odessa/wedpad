@@ -37,18 +37,18 @@
            {{ $odd = not $odd }}
            <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
            {{ if $v.MainStar }}
-              <td>&gt;</td>
+              <td><font color="{{ $v.Type.Color }}">&#x2726;</font></td>
            {{ else }}
               <td></td>
            {{ end }}
            <td style="font-weight: bold;">
-               <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}</font>
+               <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }} {{ $v.Subclass }}</font>
            </td>
-           <td style="text-align: left; font-weight: bold;">
-               <font color="{{ $v.Type.Color }}">{{ $v.Subclass }} {{ $v.Luminosity }}</font>
+           <td style="text-align: left;">
+               <font color="{{ $v.Type.Color }}">{{ $v.Luminosity }}</font>
             </td>
            {{ if $v.Discovered }}
-               <td><font color="yellow">YES</font></td>
+               <td><font color="yellow">Yes</font></td>
            {{ else }}
                <td><font color="gray">no</font></td>
            {{ end }}
@@ -60,7 +60,7 @@
            <td>{{ $v.RingsNum }}</td>
            <td>{{ $v.RingsRadiusLs }}</td>
         {{ else }}
-            <td>{{ $v.Name }}</td>
+           <td><font color="gray">&#9741;</font></td>
         {{ end }}
     </tr>
 {{ end }}

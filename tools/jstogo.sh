@@ -22,6 +22,7 @@ cat<<EOF>> events/$EV.go
 func (evh *EventHandler) $EV(eventData map[string]interface{}) {
     // ev := new(${EV}T)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 
 EOF
