@@ -34,8 +34,8 @@ func Run() {
 	wsHandler := func(w http.ResponseWriter, r *http.Request) {
 
 		var upgrader = ws.Upgrader{
-			ReadBufferSize:  1024,
-			WriteBufferSize: 1024,
+			ReadBufferSize:  8192,
+			WriteBufferSize: 8192,
 		}
 
 		conn, err := upgrader.Upgrade(w, r, nil)

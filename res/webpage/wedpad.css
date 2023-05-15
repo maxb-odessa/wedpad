@@ -1,7 +1,7 @@
 
 body {
     background-image: url('background.png');
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
@@ -23,9 +23,64 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
     text-align: center;
-    font-family: courier;
+    /* font-family: courier, courier new, serif; */
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+#view-bottom-container {
+    border-radius: 8px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    overflow: hidden;
+}
+
+#view-bottom {
+    overflow: hidden;
+    color: white;
+    /* font-family: courier, courier new, serif; */
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+    /*position: relative;*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%);
+    /* Apply animation to this element */	
+    -moz-animation: view-bottom 15s linear infinite;
+    -webkit-animation: view-bottom 15s linear infinite;
+    animation: view-bottom 15s linear infinite;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes view-bottom {
+    0%   { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes view-bottom {
+    0%   { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes view-bottom {
+    0%   { 
+        -moz-transform: translateX(100%); /* Firefox bug fix */
+        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        transform: translateX(100%); 		
+    }
+    100% { 
+        -moz-transform: translateX(-100%); /* Firefox bug fix */
+        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        transform: translateX(-100%); 
+    }
 }
 
 .view-main {
@@ -39,6 +94,8 @@ body {
 }
 
 #view-log {
+    font-size: larger;
+    /* font-family: courier, courier new, serif; */
     display: block;
 }
 
@@ -52,12 +109,6 @@ body {
 
 #view-signals {
     display: none;
-}
-
-#view-bottom {
-    border-radius: 8px;
-    display: block;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #right {
@@ -99,7 +150,7 @@ body {
     font-weight: bold;
     font-size: larger;
     text-align: center;
-    font-family: courier;
+    /* font-family: courier, courier new, serif; */
 }
 
 .button-active {
@@ -159,12 +210,12 @@ body {
     font-weight: bold;
     font-size: larger;
     text-align: center;
-    font-family: courier;
+    /* font-family: courier, courier new, serif; */
 }
 
 .stars-table tbody {
     font-size: larger;
-    font-family: courier;
+    /* font-family: courier, courier new, serif; */
 }
 
 #tr-odd {
@@ -195,7 +246,7 @@ body {
 
 .bodies-table tbody {
     font-size: larger;
-    font-family: courier;
+    /* font-family: courier, courier new, serif; */
 }
 
 

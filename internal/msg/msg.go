@@ -3,8 +3,8 @@ package msg
 import (
 	"bytes"
 	"errors"
-	"html/template"
 	"strings"
+	"text/template"
 
 	"wedpad/internal/server"
 	"wedpad/internal/utils"
@@ -89,7 +89,8 @@ type serverMsg struct {
 	Action string
 	Target string
 	Type   string
-	Data   template.HTML
+	//	Data   template.HTML
+	Data string
 }
 
 func (m *Message) Send() error {
@@ -107,10 +108,11 @@ func (m *Message) Send() error {
 		if tmpl, ok := templates[target]; ok {
 			var buf bytes.Buffer
 			if err := tmpl.Execute(&buf, m.Data); err != nil {
-				slog.Warn("template '%s' execution failed: %s", target, err)
+				slog.Warn("Template '%s' execution failed: %s", target, err)
 			} else {
 				res := strings.ReplaceAll(buf.String(), "\n", "")
-				sm.Data = template.HTML(res)
+				//sm.Data = template.HTML(res)
+				sm.Data = res
 				slog.Debug(9, "string after templating: '%s'", sm.Data)
 			}
 		} else {

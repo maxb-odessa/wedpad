@@ -88,7 +88,7 @@ func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	} else if ev.PlanetClass != "" {
 		evh.scanPlanet(ev)
 	} else {
-		slog.Warn("Unknown 'Scan' type: not Star nor Planet, ignored")
+		slog.Debug(1, "Unknown 'Scan' type: not Star nor Planet, ignored")
 	}
 }
 

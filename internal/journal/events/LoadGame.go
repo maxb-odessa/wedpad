@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // LoadGame event structure
@@ -30,7 +32,8 @@ type LoadGameT struct {
 
 // LoadGame event handler
 func (evh *EventHandler) LoadGame(eventData map[string]interface{}) {
-    // ev := new(LoadGameT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(LoadGameT)
+	mapstructure.Decode(eventData, ev)
 
+	AlertFuel(ev.FuelLevel)
+}

@@ -22,6 +22,7 @@ type CurrentSystemT struct {
 
 func (cs *CurrentSystemT) Init() error {
 	cs.Clean("all")
+	alerts = make(map[string]*alert)
 	return nil
 }
 
@@ -173,7 +174,7 @@ var StarTypes = map[string]TypeColorPair{
 	"A":                     {"A", "#FFFFE0"},
 	"A_BlueWhiteSuperGiant": {"++A", "#FFFFE0"},
 	"AeBe":                  {"AeBe", "#FFFF80"},
-	"B":                     {"B", "#E0E0FF"},
+	"B":                     {"B", "#E5E5FF"},
 	"B_BlueWhiteSuperGiant": {"++B", "#E0E0FF"},
 	"C":                     {"C", "#DDDD60"},
 	"CJ":                    {"CJ", "#DDDD60"},

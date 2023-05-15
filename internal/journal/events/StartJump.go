@@ -33,8 +33,15 @@ func (evh *EventHandler) StartJump(eventData map[string]interface{}) {
 		Target: msg.TARGET_LOG,
 		Action: msg.ACTION_APPEND,
 		Type:   msg.TYPE_VIEW,
-		Data:   "Jumping to system " + ev.StarSystem + ", star class " + ev.StarClass,
+		Data:   "Jumping to system " + ev.StarSystem + ", star class " + ev.StarClass + "<br>",
 	}
+	m.Send()
 
+	m = &msg.Message{
+		Target: msg.TARGET_LOG,
+		Action: msg.ACTION_ATTENTION,
+		Type:   msg.TYPE_VIEW,
+		Data:   "",
+	}
 	m.Send()
 }

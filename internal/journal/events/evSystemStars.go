@@ -64,7 +64,7 @@ func (cs *CurrentSystemT) ShowStars() {
 	}
 
 	// send data to system view
-	mv := &msg.Message{
+	m := &msg.Message{
 		Action: msg.ACTION_REPLACE,
 		Target: msg.TARGET_SYSTEM,
 		Type:   msg.TYPE_VIEW,
@@ -74,15 +74,15 @@ func (cs *CurrentSystemT) ShowStars() {
 		},
 	}
 
-	mv.Send()
+	m.Send()
 
 	// switch to system view
-	mb := &msg.Message{
+	m = &msg.Message{
 		Action: msg.ACTION_ATTENTION,
 		Target: msg.TARGET_SYSTEM,
 		Type:   msg.TYPE_VIEW,
 		Data:   "",
 	}
 
-	mb.Send()
+	m.Send()
 }

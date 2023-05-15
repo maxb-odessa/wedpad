@@ -1,0 +1,10 @@
+{{ range $k, $v := . }}
+    {{- $color := "white" }}
+    {{ if eq $v.level "crit" }}
+        {{ $color = "red" }}
+    {{ else }} {{ if eq $v.level "warn" }}
+        {{ $color = "yellow" }}
+    {{ end }}
+    {{ end }}
+    <font color="{{ $color }}">{{ $v.text }}... </font>
+{{ end }}

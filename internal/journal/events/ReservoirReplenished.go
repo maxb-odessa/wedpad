@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // ReservoirReplenished event structure
@@ -14,7 +16,8 @@ type ReservoirReplenishedT struct {
 
 // ReservoirReplenished event handler
 func (evh *EventHandler) ReservoirReplenished(eventData map[string]interface{}) {
-    // ev := new(ReservoirReplenishedT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(ReservoirReplenishedT)
+	mapstructure.Decode(eventData, ev)
 
+	AlertFuel(ev.FuelMain)
+}

@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // FuelScoop event structure
@@ -14,7 +16,8 @@ type FuelScoopT struct {
 
 // FuelScoop event handler
 func (evh *EventHandler) FuelScoop(eventData map[string]interface{}) {
-    // ev := new(FuelScoopT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(FuelScoopT)
+	mapstructure.Decode(eventData, ev)
 
+	AlertFuel(ev.Total)
+}

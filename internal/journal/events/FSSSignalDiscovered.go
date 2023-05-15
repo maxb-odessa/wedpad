@@ -2,6 +2,8 @@ package events
 
 import (
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // FSSSignalDiscovered event structure
@@ -24,7 +26,7 @@ type FSSSignalDiscoveredT struct {
 
 // FSSSignalDiscovered event handler
 func (evh *EventHandler) FSSSignalDiscovered(eventData map[string]interface{}) {
-    // ev := new(FSSSignalDiscoveredT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(FSSSignalDiscoveredT)
+	mapstructure.Decode(eventData, ev)
 
+}
