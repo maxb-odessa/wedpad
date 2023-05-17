@@ -2,10 +2,11 @@ package journal
 
 import (
 	"encoding/json"
-	"wedpad/internal/journal/events"
-	"wedpad/internal/logreader"
 
 	"github.com/maxb-odessa/slog"
+
+	"wedpad/internal/journal/events"
+	"wedpad/internal/logreader"
 )
 
 func Init() error {

@@ -10,7 +10,6 @@ import (
 	"github.com/maxb-odessa/slog"
 	"github.com/pborman/getopt/v2"
 
-	"wedpad/internal/audio"
 	"wedpad/internal/journal"
 	"wedpad/internal/logreader"
 	"wedpad/internal/msg"
@@ -70,11 +69,6 @@ func main() {
 	// init journal processing
 	if err := journal.Init(); err != nil {
 		slog.Fatal("Journal subsystem init failed: %s", err)
-	}
-
-	// init audio sybsytem
-	if err := audio.Init(); err != nil {
-		slog.Fatal("Audio subsystem init failed: %s", err)
 	}
 
 	// run http server

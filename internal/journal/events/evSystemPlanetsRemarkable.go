@@ -12,6 +12,9 @@ func (cs *CurrentSystemT) IsRemarkableBody(id int) bool {
 
 	name := cs.Planets()[id].BodyName
 
+	// TODO mark as remarkable by close bodies, shepherd moon, close rings, etc
+	// tap on planet name for detailed info popup (including bios)
+
 	if cs.wantBGGHO(id) {
 		slog.Debug(5, "Remarkable body '%s': wantBGGHO", name)
 		return true

@@ -32,6 +32,7 @@ func LoadDir(holder map[string][]byte, dir string, ext string, maxSize int64, ma
 	for _, f := range files {
 
 		if len(holder) >= maxNum {
+			slog.Warn("Not loading '%s': too much files loaded", f)
 			break
 		}
 
@@ -40,6 +41,7 @@ func LoadDir(holder map[string][]byte, dir string, ext string, maxSize int64, ma
 		}
 
 		if f.Size() > maxSize {
+			slog.Warn("Not loading '%s': too large", f)
 			continue
 		}
 
@@ -50,6 +52,7 @@ func LoadDir(holder map[string][]byte, dir string, ext string, maxSize int64, ma
 		path := absDir + `/` + f.Name()
 		if data, err := os.ReadFile(path); err != nil {
 			slog.Warn("Failed to read file '%s': %s", path, err)
+			return err
 		} else {
 			slog.Debug(1, "Loaded file '%s'", path)
 			noExt := strings.TrimSuffix(f.Name(), ext)
