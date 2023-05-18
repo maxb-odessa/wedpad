@@ -1,7 +1,6 @@
 <table class="stars-table">
 
 <caption>
-    {{ .SystemName }}
 </caption>
 
 <thead>
@@ -23,7 +22,7 @@
 
 <tbody>
 {{- $odd := true}}
-{{ range $i, $v := .Data }}
+{{ range $i, $v := . }}
     {{ if not $v.Barycenter }}
         {{ if $odd }}
             <tr id="tr-odd">

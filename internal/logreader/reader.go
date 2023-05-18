@@ -1,3 +1,9 @@
+/*
+
+ WARNING: Very dirty code here - do something better in the future
+
+*/
+
 package logreader
 
 import (
@@ -32,7 +38,11 @@ func (r *reader) run() error {
 	r.dir += "/"
 
 	// set files mask (default is *.log)
-	r.mask = sconf.StrDef("journal", "mask", `*.log`)
+	r.mask = sconf.StrDef("journal", "log mask", `*.log`)
+
+	statusFile := sconf.StrDef("journal", "status", "Status.json")
+	spath, _ := filepath.Abs(os.ExpandEnv(r.dir + statusFile))
+	watchFile(spath)
 
 	r.linesCh = make(chan string, 64)
 	r.pathCh = make(chan string, 1)
@@ -82,7 +92,6 @@ func (r *reader) getRecentFile() string {
 func (r *reader) watchDir() error {
 
 	// monitor the direcotory for newer file to appear
-
 	w := watcher.New()
 	w.FilterOps(watcher.Create)
 
@@ -181,5 +190,48 @@ func (r *reader) realTailer(ctx context.Context, path string) {
 		case line := <-tailer.Lines:
 			r.linesCh <- line.Text
 		}
+	}
+}
+
+func watchFile(path string) {
+	w := watcher.New()
+	w.FilterOps(watcher.Create, watcher.Write)
+
+	filterFunc := func(info os.FileInfo, fullPath string) error {
+		if fullPath == path {
+			return nil
+		}
+		return watcher.ErrSkip
+	}
+
+	w.AddFilterHook(filterFunc)
+
+	if err := w.Add(r.dir); err != nil {
+		slog.Err("Failed to watch dir '%s': %s", r.dir, err)
+		return
+	}
+
+	go func() {
+		for {
+			select {
+			case event := <-w.Event:
+				slurpFile(event.Path)
+			case err := <-w.Error:
+				slog.Err("Watching file '%s' failed: %s", path, err)
+				return
+			case <-w.Closed:
+				return
+			}
+		}
+	}()
+
+	go w.Start(time.Second * 1)
+}
+
+func slurpFile(name string) {
+	if data, err := os.ReadFile(name); err != nil {
+		slog.Err("Failed to slupr file '%s': %s", name, err)
+	} else {
+		r.linesCh <- string(data)
 	}
 }

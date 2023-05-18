@@ -24,7 +24,7 @@ func (evh *EventHandler) StartJump(eventData map[string]interface{}) {
 	mapstructure.Decode(eventData, ev)
 	cs := evh.CurrentSystem()
 
-	cs.Clean("all")
+	cs.Reset()
 
 	cs.SetName(ev.StarSystem)
 	cs.SetMainStarType(ev.StarClass)

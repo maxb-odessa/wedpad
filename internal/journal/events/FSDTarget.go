@@ -47,7 +47,7 @@ func (evh *EventHandler) FSDTarget(eventData map[string]interface{}) {
 
 	m.Send()
 
-	cs.Clean("all")
+	cs.Reset()
 	cs.SetMainStarType(ev.StarClass)
 	cs.SetName(ev.Name)
 }

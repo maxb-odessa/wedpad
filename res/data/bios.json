@@ -3,7 +3,7 @@
     "Family": "Amphora Plant",
     "Name": "Amphora Plant",
     "StarsRequired": [
-      "A"
+      "A*"
     ],
     "OnBodies": [
       "Metal Rich"
@@ -15,8 +15,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "ValueCr": 117900,
     "Notes": ""
@@ -35,8 +35,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "ValueCr": 108900,
     "Notes": "Nebula requierd"
@@ -45,12 +45,12 @@
     "Family": "Crystalline Shards",
     "Name": "Crystalline Shards",
     "StarsRequired": [
-      "A",
-      "F",
-      "G",
-      "K",
-      "MS",
-      "S"
+      "A*",
+      "F*",
+      "G*",
+      "K*",
+      "MS*",
+      "S*"
     ],
     "OnBodies": [
       "*"
@@ -64,8 +64,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      0,
-      273
+      1.0,
+      273.0
     ],
     "ValueCr": 117900,
     "Notes": "Distance from arrival point > 12000 Ls"
@@ -86,8 +86,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -109,8 +109,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      300
+      200.0,
+      300.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -133,8 +133,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -156,8 +156,8 @@
       "*"
     ],
     "TemperatureK": [
-      100,
-      270
+      100.0,
+      270.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -179,8 +179,8 @@
       "*"
     ],
     "TemperatureK": [
-      300,
-      500
+      300.0,
+      500.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -203,8 +203,8 @@
       "*"
     ],
     "TemperatureK": [
-      300,
-      500
+      300.0,
+      500.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -227,8 +227,8 @@
       "*"
     ],
     "TemperatureK": [
-      300,
-      500
+      300.0,
+      500.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -251,8 +251,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
@@ -261,7 +261,7 @@
     "Family": "Anemone",
     "Name": "Luteolum Anemone",
     "StarsRequired": [
-      "B"
+      "B*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -271,8 +271,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      200,
-      440
+      200.0,
+      440.0
     ],
     "ValueCr": 110500,
     "Notes": ""
@@ -281,8 +281,8 @@
     "Family": "Anemone",
     "Name": "Croceum Anemone",
     "StarsRequired": [
-      "A",
-      "B"
+      "A*",
+      "B*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -292,8 +292,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      200,
-      440
+      200.0,
+      440.0
     ],
     "ValueCr": 110500,
     "Notes": ""
@@ -302,7 +302,7 @@
     "Family": "Anemone",
     "Name": "Puniceum Anemone",
     "StarsRequired": [
-      "O"
+      "O*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -313,8 +313,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      65,
-      860
+      65.0,
+      860.0
     ],
     "ValueCr": 110500,
     "Notes": ""
@@ -323,7 +323,7 @@
     "Family": "Anemone",
     "Name": "Roseum Anemone",
     "StarsRequired": [
-      "B"
+      "B*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -333,8 +333,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      200,
-      440
+      200.0,
+      440.0
     ],
     "ValueCr": 110500,
     "Notes": ""
@@ -343,7 +343,7 @@
     "Family": "Anemone",
     "Name": "Blatteum Bioluminescent Anemone",
     "StarsRequired": [
-      "B"
+      "B*"
     ],
     "OnBodies": [
       "Metal Rich Body",
@@ -354,8 +354,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      220,
-      9999
+      220.0,
+      9999.0
     ],
     "ValueCr": 129900,
     "Notes": ""
@@ -364,7 +364,8 @@
     "Family": "Anemone",
     "Name": "Rubeum Bioluminescent Anemone",
     "StarsRequired": [
-      "A, B"
+      "A*",
+      "B*"
     ],
     "OnBodies": [
       "Metal Rich",
@@ -375,8 +376,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "ValueCr": 110500,
     "Notes": ""
@@ -385,7 +386,7 @@
     "Family": "Anemone",
     "Name": "Prasinum Bioluminescent Anemone",
     "StarsRequired": [
-      "O"
+      "O*"
     ],
     "OnBodies": [
       "Metal Rich",
@@ -397,8 +398,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "ValueCr": 129900,
     "Notes": ""
@@ -407,7 +408,7 @@
     "Family": "Anemone",
     "Name": "Roseum Bioluminescent Anemone",
     "StarsRequired": [
-      "B"
+      "B*"
     ],
     "OnBodies": [
       "Metal Rich Body",
@@ -418,8 +419,8 @@
     ],
     "Volcanism": [],
     "TemperatureK": [
-      200,
-      9999
+      200.0,
+      9999.0
     ],
     "ValueCr": 129900,
     "Notes": ""
@@ -440,8 +441,8 @@
       "*silicate*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -464,8 +465,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -486,8 +487,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -510,8 +511,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -533,8 +534,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -556,8 +557,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -578,8 +579,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -600,8 +601,8 @@
       "*"
     ],
     "TemperatureK": [
-      200,
-      500
+      200.0,
+      500.0
     ],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
@@ -611,15 +612,15 @@
     "Name": "Aleoida Arcus",
     "ValueCr": 7252500,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      175,
-      180
+      175.0,
+      180.0
     ],
     "GravityG": [
       0.0,
@@ -633,15 +634,15 @@
     "Name": "Aleoida Coronamus",
     "ValueCr": 6284600,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      180,
-      190
+      180.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -655,15 +656,15 @@
     "Name": "Aleoida Gravis",
     "ValueCr": 12934900,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      190,
-      195
+      190.0,
+      195.0
     ],
     "GravityG": [
       0.0,
@@ -677,15 +678,15 @@
     "Name": "Aleoida Laminiae",
     "ValueCr": 3385200,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      152,
-      9999
+      152.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -699,15 +700,15 @@
     "Name": "Aleoida Spica",
     "ValueCr": 3385200,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      170,
-      9999
+      170.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -728,8 +729,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -743,15 +744,15 @@
     "Name": "Bacterium Alcyoneum",
     "ValueCr": 1658500,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -765,15 +766,15 @@
     "Name": "Bacterium Aurasus",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -795,8 +796,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -819,8 +820,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -840,8 +841,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -861,8 +862,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -884,8 +885,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -908,8 +909,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -932,8 +933,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -955,8 +956,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -978,8 +979,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1001,8 +1002,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1016,15 +1017,15 @@
     "Name": "Cactoida Cortexum",
     "ValueCr": 3667600,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      180,
-      195
+      180.0,
+      195.0
     ],
     "GravityG": [
       0.0,
@@ -1038,15 +1039,15 @@
     "Name": "Cactoida Lapis",
     "ValueCr": 2483600,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1060,15 +1061,15 @@
     "Name": "Cactoida Peperatis",
     "ValueCr": 2483600,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1082,15 +1083,15 @@
     "Name": "Cactoida Pullulanta",
     "ValueCr": 3667600,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      180,
-      195
+      180.0,
+      195.0
     ],
     "GravityG": [
       0.0,
@@ -1111,8 +1112,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      165,
-      450
+      165.0,
+      450.0
     ],
     "GravityG": [
       0.0,
@@ -1126,15 +1127,15 @@
     "Name": "Clypeus Lacrimam",
     "ValueCr": 8418000,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      190,
-      9999
+      190.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1148,15 +1149,15 @@
     "Name": "Clypeus Margaritus",
     "ValueCr": 11873200,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
       "High Metal Content Body"
     ],
     "TemperatureK": [
-      190,
-      9999
+      190.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1170,15 +1171,15 @@
     "Name": "Clypeus Speculumi",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      190,
-      9999
+      190.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1192,15 +1193,15 @@
     "Name": "Concha Aureolas",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "Ammonia",
+      "*Ammonia*",
       "Nitrogen"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1221,8 +1222,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1236,15 +1237,15 @@
     "Name": "Concha Labiata",
     "ValueCr": 2352400,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1258,7 +1259,7 @@
     "Name": "Concha Renibus",
     "ValueCr": 4572400,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
@@ -1266,8 +1267,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1287,8 +1288,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1296,10 +1297,10 @@
     ],
     "ColonyRangeM": 1000,
     "StarsRequired": [
-      "O",
-      "B",
-      "A",
-      "F"
+      "O*",
+      "B*",
+      "A*",
+      "F*"
     ],
     "Notes": "Around bright white stars (luminosity V+)"
   },
@@ -1316,8 +1317,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1338,8 +1339,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1359,8 +1360,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1380,8 +1381,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1402,8 +1403,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1423,8 +1424,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1445,8 +1446,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1460,14 +1461,14 @@
     "Name": "Frutexa Acus",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      190
+      1.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -1487,8 +1488,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1502,14 +1503,14 @@
     "Name": "Frutexa Fera",
     "ValueCr": 1632500,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      190
+      1.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -1523,14 +1524,14 @@
     "Name": "Frutexa Flabellum",
     "ValueCr": 1808900,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1544,14 +1545,14 @@
     "Name": "Frutexa Flammasis",
     "ValueCr": 10326000,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1565,15 +1566,15 @@
     "Name": "Frutexa Metallicum",
     "ValueCr": 1632500,
     "Atmospheres": [
-      "Ammonia",
-      "Carbon dioxide"
+      "*Ammonia*",
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body"
     ],
     "TemperatureK": [
-      1,
-      190
+      1.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -1593,8 +1594,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1614,8 +1615,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1635,8 +1636,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1656,8 +1657,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1677,8 +1678,8 @@
       "*"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1698,8 +1699,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1713,7 +1714,7 @@
     "Name": "Fungoida Gelata",
     "ValueCr": 3330300,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
@@ -1721,8 +1722,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1736,15 +1737,15 @@
     "Name": "Fungoida Setisis",
     "ValueCr": 1670100,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1758,7 +1759,7 @@
     "Name": "Fungoida Stabitis",
     "ValueCr": 2680300,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
@@ -1766,8 +1767,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1781,15 +1782,15 @@
     "Name": "Osseus Cornibus",
     "ValueCr": 1483000,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       " Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1810,8 +1811,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1825,15 +1826,15 @@
     "Name": "Osseus Fractus",
     "ValueCr": 4027800,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1847,15 +1848,15 @@
     "Name": "Osseus Pellebantus",
     "ValueCr": 9739000,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1877,8 +1878,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1892,15 +1893,15 @@
     "Name": "Osseus Spiralis",
     "ValueCr": 2404700,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1921,8 +1922,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      132,
-      9999
+      132.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1944,8 +1945,8 @@
       "Icy Body"
     ],
     "TemperatureK": [
-      132,
-      9999
+      132.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1967,8 +1968,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      132,
-      9999
+      132.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -1988,8 +1989,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      165,
-      9999
+      165.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2003,15 +2004,15 @@
     "Name": "Stratum Cucumisis",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Sulphur dioxide"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      190,
-      9999
+      190.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2025,15 +2026,15 @@
     "Name": "Stratum Excutitus",
     "ValueCr": 2448900,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Sulphur dioxide"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      165,
-      190
+      165.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -2048,15 +2049,15 @@
     "Name": "Stratum Frigus",
     "ValueCr": 2637500,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Sulphur dioxide"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      190,
-      9999
+      190.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2070,14 +2071,14 @@
     "Name": "Stratum Laminamus",
     "ValueCr": 2788300,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      165,
-      9999
+      165.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2091,15 +2092,15 @@
     "Name": "Stratum Limaxus",
     "ValueCr": 1362000,
     "Atmospheres": [
-      "Carbon dioxide",
+      "*Carbon dioxide*",
       "Sulphur dioxide"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      165,
-      190
+      165.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -2113,16 +2114,16 @@
     "Name": "Stratum Paleas",
     "ValueCr": 1362000,
     "Atmospheres": [
-      "Ammonia",
-      "Carbon dioxide",
+      "*Ammonia*",
+      "*Carbon dioxide*",
       "Water"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      165,
-      9999
+      165.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2136,8 +2137,8 @@
     "Name": "Stratum Tectonicas",
     "ValueCr": 19010800,
     "Atmospheres": [
-      "Ammonia",
-      "Carbon dioxide",
+      "*Ammonia*",
+      "*Carbon dioxide*",
       "Sulphur dioxide",
       "Water"
     ],
@@ -2145,8 +2146,8 @@
       "High Metal Content Body"
     ],
     "TemperatureK": [
-      165,
-      9999
+      165.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2160,14 +2161,14 @@
     "Name": "Tubus Cavas",
     "ValueCr": 11873200,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2181,14 +2182,14 @@
     "Name": "Tubus Compagibus",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2202,14 +2203,14 @@
     "Name": "Tubus Conifer",
     "ValueCr": 2415500,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2223,14 +2224,14 @@
     "Name": "Tubus Rosarium",
     "ValueCr": 2637500,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2244,15 +2245,15 @@
     "Name": "Tubus Sororibus",
     "ValueCr": 5727600,
     "Atmospheres": [
-      "Ammonia",
-      "Carbon dioxide"
+      "*Ammonia*",
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body"
     ],
     "TemperatureK": [
-      160,
-      9999
+      160.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2266,15 +2267,15 @@
     "Name": "Tussock Albata",
     "ValueCr": 3252500,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      175,
-      180
+      175.0,
+      180.0
     ],
     "GravityG": [
       0.0,
@@ -2295,8 +2296,8 @@
       "Rocky Ice Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2310,15 +2311,15 @@
     "Name": "Tussock Caputus",
     "ValueCr": 3472400,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      180,
-      190
+      180.0,
+      190.0
     ],
     "GravityG": [
       0.0,
@@ -2332,15 +2333,15 @@
     "Name": "Tussock Catena",
     "ValueCr": 1766600,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2354,15 +2355,15 @@
     "Name": "Tussock Cultro",
     "ValueCr": 1766600,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2376,15 +2377,15 @@
     "Name": "Tussock Divisa",
     "ValueCr": 1766600,
     "Atmospheres": [
-      "Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2398,15 +2399,15 @@
     "Name": "Tussock Ignis",
     "ValueCr": 1849000,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      160,
-      170
+      160.0,
+      170.0
     ],
     "GravityG": [
       0.0,
@@ -2420,15 +2421,15 @@
     "Name": "Tussock Pennata",
     "ValueCr": 5853800,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      145,
-      155
+      145.0,
+      155.0
     ],
     "GravityG": [
       0.0,
@@ -2442,15 +2443,15 @@
     "Name": "Tussock Pennatis",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      195
+      1.0,
+      195.0
     ],
     "GravityG": [
       0.0,
@@ -2464,15 +2465,15 @@
     "Name": "Tussock Propagito",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      195
+      1.0,
+      195.0
     ],
     "GravityG": [
       0.0,
@@ -2486,15 +2487,15 @@
     "Name": "Tussock Serrati",
     "ValueCr": 4447100,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      170,
-      175
+      170.0,
+      175.0
     ],
     "GravityG": [
       0.0,
@@ -2514,8 +2515,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,
@@ -2529,15 +2530,15 @@
     "Name": "Tussock Triticum",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      190,
-      195
+      190.0,
+      195.0
     ],
     "GravityG": [
       0.0,
@@ -2551,15 +2552,15 @@
     "Name": "Tussock Ventusa",
     "ValueCr": 3227700,
     "Atmospheres": [
-      "Carbon dioxide"
+      "*Carbon dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
       "Rocky Body"
     ],
     "TemperatureK": [
-      155,
-      160
+      155.0,
+      160.0
     ],
     "GravityG": [
       0.0,
@@ -2580,8 +2581,8 @@
       "Rocky Body"
     ],
     "TemperatureK": [
-      1,
-      9999
+      1.0,
+      9999.0
     ],
     "GravityG": [
       0.0,

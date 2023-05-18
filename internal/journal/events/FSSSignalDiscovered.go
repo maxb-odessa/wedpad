@@ -29,4 +29,7 @@ func (evh *EventHandler) FSSSignalDiscovered(eventData map[string]interface{}) {
 	ev := new(FSSSignalDiscoveredT)
 	mapstructure.Decode(eventData, ev)
 
+	evh.cs.AddSignal(ev)
+
+	evh.cs.ShowSignals()
 }

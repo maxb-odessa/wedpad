@@ -68,10 +68,7 @@ func (cs *CurrentSystemT) ShowStars() {
 		Action: msg.ACTION_REPLACE,
 		Target: msg.TARGET_SYSTEM,
 		Type:   msg.TYPE_VIEW,
-		Data: map[string]interface{}{
-			"SystemName": cs.Name(),
-			"Data":       stars,
-		},
+		Data:   stars,
 	}
 
 	m.Send()

@@ -27,5 +27,5 @@ func (evh *EventHandler) FSSBodySignals(eventData map[string]interface{}) {
 
 	cs := evh.CurrentSystem()
 
-	cs.AddPlanetSignals(ev)
+	cs.AddPlanetSignalsCount(ev)
 }

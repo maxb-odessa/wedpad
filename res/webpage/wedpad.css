@@ -35,52 +35,34 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 #view-bottom {
     overflow: hidden;
+    display: block;
     color: white;
-    /* font-family: courier, courier new, serif; */
+    font-family: courier, courier new, serif;
     font-size: larger;
     font-weight: bold;
     font-style: italic;
-    /*position: relative;*/
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
     text-align: center;
-    /* Starting position */
-    -moz-transform:translateX(100%);
-    -webkit-transform:translateX(100%);	
-    transform:translateX(100%);
-    /* Apply animation to this element */	
-    -moz-animation: view-bottom 15s linear infinite;
-    -webkit-animation: view-bottom 15s linear infinite;
-    animation: view-bottom 15s linear infinite;
+    animation: view-bottom-ani 10s linear infinite;
 }
 
-/* Move it (define the animation) */
-@-moz-keyframes view-bottom {
-    0%   { -moz-transform: translateX(100%); }
-    100% { -moz-transform: translateX(-100%); }
-}
-
-@-webkit-keyframes view-bottom {
-    0%   { -webkit-transform: translateX(100%); }
-    100% { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes view-bottom {
-    0%   { 
-        -moz-transform: translateX(100%); /* Firefox bug fix */
-        -webkit-transform: translateX(100%); /* Firefox bug fix */
-        transform: translateX(100%); 		
-    }
-    100% { 
-        -moz-transform: translateX(-100%); /* Firefox bug fix */
-        -webkit-transform: translateX(-100%); /* Firefox bug fix */
-        transform: translateX(-100%); 
-    }
+@keyframes view-bottom-ani {
+	from {
+		transform: translate3d(0%, 0%, 0px);
+        left: 80%;
+	}
+	to {
+		transform: translate3d(-80%, 0%, 0px);
+        left: 0%;
+	}
 }
 
 .view-main {
@@ -249,4 +231,26 @@ body {
     /* font-family: courier, courier new, serif; */
 }
 
+.signals-table {
+    color: white;
+    border: none;
+    width: 100%;
+    /*table-layout: fixed;*/
+    overflow-wrap: break-word;
+}
+
+.signals-table th {
+    font-size: smaller;
+    color: gray;
+    text-align: left;
+}
+
+.signals-table td {
+    text-align: left;
+}
+
+.signals-table tbody {
+    font-size: larger;
+    /* font-family: courier, courier new, serif; */
+}
 

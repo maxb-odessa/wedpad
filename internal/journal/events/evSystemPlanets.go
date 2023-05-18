@@ -132,7 +132,7 @@ func (cs *CurrentSystemT) composeBGGHO(id int) (signals []TypeColorPair) {
 	}
 
 	// no signals detected
-	sigs, ok := cs.PlanetSignals()[id]
+	sigs, ok := cs.PlanetSignalsCount()[id]
 	if !ok {
 		return
 	}

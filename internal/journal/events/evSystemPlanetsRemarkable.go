@@ -59,7 +59,7 @@ func (cs *CurrentSystemT) wantBGGHO(id int) bool {
 	wantOther := int(sconf.Int32Def("criteria", "min other signals", 0))
 
 	// no signals detected but at least one is wanted
-	sigs, ok := cs.PlanetSignals()[id]
+	sigs, ok := cs.PlanetSignalsCount()[id]
 	if !ok {
 		if wantBio+wantGeo+wantGuard+wantHuman+wantOther > 0 {
 			return false

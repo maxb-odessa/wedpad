@@ -1,1 +1,30 @@
-<h1> SIG! {{ index . "text" }}</h1>
+<table class="signals-table">
+
+<caption>
+</caption>
+
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+</thead>
+
+<tbody>
+{{- $odd := true}}
+{{ range $i, $v := . }}
+    {{ if $odd }}
+        <tr id="tr-odd">
+    {{ else }}
+        <tr id="tr-even">
+    {{ end }}
+    {{ $odd = not $odd }}
+        <td>{{ $v.Name }}</td>
+        <td>{{ $v.Type }}</td>
+        <td>{{ $v.Description }}</td>
+    </tr>
+{{ end }}
+</tbody>
+
+</table>

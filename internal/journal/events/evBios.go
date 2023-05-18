@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"sort"
 
+	"github.com/danwakefield/fnmatch"
 	"github.com/maxb-odessa/slog"
 	"github.com/mitchellh/mapstructure"
 )
@@ -17,7 +19,7 @@ type BioT struct {
 	OnBodies       []string   `mapstructure:"OnBodies"`
 	ColonyRangeM   int        `mapstructure:"ColonyRangeM"`
 	GravityG       [2]float64 `mapstructure:"GravityG"`
-	TemperatureK   [2]int     `mapstructure:"TemperatureK"`
+	TemperatureK   [2]float64 `mapstructure:"TemperatureK"`
 	StarsRequired  []string   `mapstructure:"StarsRequired"`
 	Volcanism      []string   `mapstructure:"Volcanism"`
 	ValueCr        int        `mapstructure:"ValueCr"`
@@ -57,7 +59,60 @@ func (b *BiosT) Init(bioData []byte) error {
 
 func (b *BiosT) predictedBios(ev *ScanT) []string {
 
-	bios := make([]string, 0)
+	pBios := make(map[string]bool, 0)
 
-	return bios
+	for _, bio := range b.bios {
+
+		if !matchStrings(ev.Atmosphere, bio.Atmospheres) {
+			continue
+		}
+
+		if !matchStrings(ev.PlanetClass, bio.OnBodies) {
+			continue
+		}
+
+		if !inRange(ev.SurfaceTemperature, bio.TemperatureK) {
+			continue
+		}
+
+		if !inRange(ev.SurfaceGravity/10.0, bio.GravityG) { // again, shoud divide by 10
+			continue
+		}
+		/*
+			if !matchStars(evStars(), bio.StarsRequired) {
+				continue
+			}
+
+			if !matchBodies(ev.StarType, bio.StarsRequired) {
+				continue
+			}
+		*/
+		pBios[bio.Family] = true
+	}
+
+	bioList := make([]string, 0)
+	for k, _ := range pBios {
+		bioList = append(bioList, k)
+	}
+
+	sort.Strings(bioList)
+	return bioList
+}
+
+func matchStrings(what string, patts []string) bool {
+	for _, patt := range patts {
+		if fnmatch.Match(patt, what, fnmatch.FNM_IGNORECASE) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func inRange(what float64, where [2]float64) bool {
+	if what >= where[0] && what <= where[1] {
+		return true
+	}
+
+	return false
 }

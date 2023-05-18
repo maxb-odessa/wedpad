@@ -13,15 +13,20 @@ type CurrentSystemT struct {
 		typ   string
 		color string
 	}
-	stars         map[int]*ScanT
-	planets       map[int]*ScanT
-	baryCentres   map[int]*ScanBaryCentreT
-	signals       map[int]*SAASignalsFoundT
-	planetSignals map[int]*FSSBodySignalsT
+
+	// systemwide, AutoScan, FSS*
+	stars       map[int]*ScanT
+	planets     map[int]*ScanT
+	baryCentres map[int]*ScanBaryCentreT
+	signals     []*FSSSignalDiscoveredT
+
+	// bodywide, DSS, SAA
+	planetSignalsCount map[int]*FSSBodySignalsT
+	planetSignalsFound map[int]*SAASignalsFoundT
 }
 
 func (cs *CurrentSystemT) Init() error {
-	cs.Clean("all")
+	cs.Reset()
 	alerts = make(map[string]*alert)
 	return nil
 }
@@ -38,8 +43,16 @@ func (cs *CurrentSystemT) AddPlanet(p *ScanT) {
 	cs.planets[p.BodyID] = p
 }
 
-func (cs *CurrentSystemT) AddPlanetSignals(s *FSSBodySignalsT) {
-	cs.planetSignals[s.BodyID] = s
+func (cs *CurrentSystemT) AddSignal(s *FSSSignalDiscoveredT) {
+	cs.signals = append(cs.signals, s)
+}
+
+func (cs *CurrentSystemT) AddPlanetSignalsCount(s *FSSBodySignalsT) {
+	cs.planetSignalsCount[s.BodyID] = s
+}
+
+func (cs *CurrentSystemT) AddPlanetSignalsFound(s *SAASignalsFoundT) {
+	cs.planetSignalsFound[s.BodyID] = s
 }
 
 func (cs *CurrentSystemT) AddBaryCentre(b *ScanBaryCentreT) {
@@ -84,11 +97,19 @@ func (cs *CurrentSystemT) Planets() map[int]*ScanT {
 	return cs.planets
 }
 
-func (cs *CurrentSystemT) PlanetSignals() map[int]*FSSBodySignalsT {
-	return cs.planetSignals
+func (cs *CurrentSystemT) Signals() []*FSSSignalDiscoveredT {
+	return cs.signals
 }
 
-func (cs *CurrentSystemT) Clean(what string) {
+func (cs *CurrentSystemT) PlanetSignalsCount() map[int]*FSSBodySignalsT {
+	return cs.planetSignalsCount
+}
+
+func (cs *CurrentSystemT) PlanetSignalsFound() map[int]*SAASignalsFoundT {
+	return cs.planetSignalsFound
+}
+
+func (cs *CurrentSystemT) Reset() {
 
 	cs.name = "(somewhere in space)"
 	cs.sector = "?"
@@ -97,24 +118,12 @@ func (cs *CurrentSystemT) Clean(what string) {
 		typ, color string
 	}{0, "?", "#FFFFFF"}
 
-	switch strings.ToLower(what) {
-	case "stars":
-		cs.stars = make(map[int]*ScanT)
-	case "planets":
-		cs.planets = make(map[int]*ScanT)
-	case "barycentres":
-		cs.baryCentres = make(map[int]*ScanBaryCentreT)
-	case "signals":
-		cs.signals = make(map[int]*SAASignalsFoundT)
-	case "planetSignals":
-		cs.planetSignals = make(map[int]*FSSBodySignalsT)
-	case "all":
-		cs.stars = make(map[int]*ScanT)
-		cs.planets = make(map[int]*ScanT)
-		cs.baryCentres = make(map[int]*ScanBaryCentreT)
-		cs.signals = make(map[int]*SAASignalsFoundT)
-		cs.planetSignals = make(map[int]*FSSBodySignalsT)
-	}
+	cs.stars = make(map[int]*ScanT)
+	cs.planets = make(map[int]*ScanT)
+	cs.baryCentres = make(map[int]*ScanBaryCentreT)
+	cs.signals = make([]*FSSSignalDiscoveredT, 0)
+	cs.planetSignalsCount = make(map[int]*FSSBodySignalsT)
+	cs.planetSignalsFound = make(map[int]*SAASignalsFoundT)
 }
 
 // in meters
