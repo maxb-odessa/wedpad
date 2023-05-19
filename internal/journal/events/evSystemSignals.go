@@ -36,8 +36,9 @@ func (cs *CurrentSystemT) ShowSignals() {
 	}
 
 	// add planets predicted bios
-
-	// add planets determined bios
+	for _, sig := range cs.PlanetPredictedBioSignals() {
+		signals = append(signals, sig)
+	}
 
 	sigsCnt := len(signals)
 	slog.Debug(9, "SIGS CNT: %d", sigsCnt)

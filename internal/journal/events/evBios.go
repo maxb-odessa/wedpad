@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"sort"
+	"strings"
 
 	"github.com/danwakefield/fnmatch"
 	"github.com/maxb-odessa/slog"
@@ -57,7 +58,30 @@ func (b *BiosT) Init(bioData []byte) error {
 	return nil
 }
 
-func (b *BiosT) predictedBios(ev *ScanT) []string {
+func (b *BiosT) predictBios(cs *CurrentSystemT) {
+
+	for _, bodyEv := range cs.Planets() {
+
+		pbios := b.guessBios(cs, bodyEv)
+
+		if len(pbios) == 0 {
+			continue
+		}
+
+		sig := &SignalT{
+			Name:        BodyName(bodyEv.BodyName, cs.Name()),
+			Type:        "Body Bios(?)",
+			Description: strings.Join(pbios, ", "),
+		}
+
+		cs.AddPlanetPredictedBioSignal(sig)
+
+	}
+
+	return
+}
+
+func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []string {
 
 	pBios := make(map[string]bool, 0)
 
@@ -79,15 +103,16 @@ func (b *BiosT) predictedBios(ev *ScanT) []string {
 			continue
 		}
 		/*
-			if !matchStars(evStars(), bio.StarsRequired) {
+			if !matchStars(cs.Stars(), bio.StarsRequired) {
 				continue
 			}
 
-			if !matchBodies(ev.StarType, bio.StarsRequired) {
+			if !matchBodies(cs.Planets(), bio.BodiesRequired) {
 				continue
 			}
 		*/
 		pBios[bio.Family] = true
+
 	}
 
 	bioList := make([]string, 0)
@@ -96,6 +121,7 @@ func (b *BiosT) predictedBios(ev *ScanT) []string {
 	}
 
 	sort.Strings(bioList)
+
 	return bioList
 }
 

@@ -21,8 +21,9 @@ type CurrentSystemT struct {
 	signals     []*FSSSignalDiscoveredT
 
 	// bodywide, DSS, SAA
-	planetSignalsCount map[int]*FSSBodySignalsT
-	planetSignalsFound map[int]*SAASignalsFoundT
+	planetSignalsCount        map[int]*FSSBodySignalsT
+	planetSignalsFound        map[int]*SAASignalsFoundT
+	planetPredictedBioSignals map[string]*SignalT
 }
 
 func (cs *CurrentSystemT) Init() error {
@@ -57,6 +58,10 @@ func (cs *CurrentSystemT) AddPlanetSignalsFound(s *SAASignalsFoundT) {
 
 func (cs *CurrentSystemT) AddBaryCentre(b *ScanBaryCentreT) {
 	cs.baryCentres[b.BodyID] = b
+}
+
+func (cs *CurrentSystemT) AddPlanetPredictedBioSignal(b *SignalT) {
+	cs.planetPredictedBioSignals[b.Name] = b
 }
 
 func (cs *CurrentSystemT) SetName(n string) {
@@ -109,6 +114,10 @@ func (cs *CurrentSystemT) PlanetSignalsFound() map[int]*SAASignalsFoundT {
 	return cs.planetSignalsFound
 }
 
+func (cs *CurrentSystemT) PlanetPredictedBioSignals() map[string]*SignalT {
+	return cs.planetPredictedBioSignals
+}
+
 func (cs *CurrentSystemT) Reset() {
 
 	cs.name = "(somewhere in space)"
@@ -124,6 +133,7 @@ func (cs *CurrentSystemT) Reset() {
 	cs.signals = make([]*FSSSignalDiscoveredT, 0)
 	cs.planetSignalsCount = make(map[int]*FSSBodySignalsT)
 	cs.planetSignalsFound = make(map[int]*SAASignalsFoundT)
+	cs.planetPredictedBioSignals = make(map[string]*SignalT)
 }
 
 // in meters

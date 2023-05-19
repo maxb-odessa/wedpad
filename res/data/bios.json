@@ -722,7 +722,7 @@
     "Name": "Bacterium Acies",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "Neon"
+      "*Neon*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -744,7 +744,7 @@
     "Name": "Bacterium Alcyoneum",
     "ValueCr": 1658500,
     "Atmospheres": [
-      "*Ammonia"
+      "*Ammonia*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -788,7 +788,7 @@
     "Name": "Bacterium Bullaris",
     "ValueCr": 1152500,
     "Atmospheres": [
-      "Methane"
+      "*Methane*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -811,8 +811,8 @@
     "Name": "Bacterium Cerbrus",
     "ValueCr": 1689800,
     "Atmospheres": [
-      "Sulphur dioxide",
-      "Water"
+      "*Sulphur dioxide*",
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -835,7 +835,7 @@
     "Name": "Bacterium Informem",
     "ValueCr": 8418000,
     "Atmospheres": [
-      "Nitrogen"
+      "*Nitrogen*"
     ],
     "OnBodies": [
       "*"
@@ -856,7 +856,7 @@
     "Name": "Bacterium Nebulus",
     "ValueCr": 5289900,
     "Atmospheres": [
-      "Helium"
+      "*Helium*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -877,9 +877,9 @@
     "Name": "Bacterium Omentum",
     "ValueCr": 4638900,
     "Atmospheres": [
-      "Argon",
-      "Methane",
-      "Neon"
+      "*Argon*",
+      "*Methane*",
+      "*Neon*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -900,10 +900,10 @@
     "Name": "Bacterium Scopulum",
     "ValueCr": 4934500,
     "Atmospheres": [
-      "Argon",
-      "Methane",
-      "Neon",
-      "Nitrogen"
+      "*Argon*",
+      "*Methane*",
+      "*Neon*",
+      "*Nitrogen*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -917,7 +917,6 @@
       9999.0
     ],
     "ColonyRangeM": 500,
-    "AreasFound": "Everywhere",
     "Notes": "Possibly Carbon-based vulcanism required"
   },
   {
@@ -971,7 +970,7 @@
     "Name": "Bacterium Vesicula",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "Argon"
+      "*Argon*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -994,7 +993,7 @@
     "Name": "Bacterium Volu",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "Oxygen"
+      "*Oxygen*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1105,7 +1104,7 @@
     "Name": "Cactoida Vermis",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1128,7 +1127,7 @@
     "ValueCr": 8418000,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1150,7 +1149,7 @@
     "ValueCr": 11873200,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body"
@@ -1172,7 +1171,7 @@
     "ValueCr": 16202800,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1194,7 +1193,7 @@
     "ValueCr": 7774700,
     "Atmospheres": [
       "*Ammonia*",
-      "Nitrogen"
+      "*Nitrogen*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1208,7 +1207,6 @@
       0.27
     ],
     "ColonyRangeM": 150,
-    "AreasFound": "Everywhere",
     "Notes": "Possibly not in Nitrogen atmo"
   },
   {
@@ -1216,7 +1214,7 @@
     "Name": "Concha Biconcavis",
     "ValueCr": 19010800,
     "Atmospheres": [
-      "Nitrogen"
+      "*Nitrogen*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1260,7 +1258,7 @@
     "ValueCr": 4572400,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1282,7 +1280,7 @@
     "Name": "Electricae Pluma",
     "ValueCr": 6284600,
     "Atmospheres": [
-      "Argon"
+      "*Argon*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -1309,9 +1307,9 @@
     "Name": "Electricae Radialem",
     "ValueCr": 6284600,
     "Atmospheres": [
-      "Argon",
-      "Neon",
-      "Helium"
+      "*Argon*",
+      "*Neon*",
+      "*Helium*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -1332,7 +1330,7 @@
     "Name": "Fonticulua Campestris",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "Argon"
+      "*Argon*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1354,7 +1352,7 @@
     "Name": "Fonticulua Digitos",
     "ValueCr": 1804100,
     "Atmospheres": [
-      "Methane"
+      "*Methane*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -1375,7 +1373,7 @@
     "Name": "Fonticulua Fluctus",
     "ValueCr": 20000000,
     "Atmospheres": [
-      "Oxygen"
+      "*Oxygen*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -1396,7 +1394,7 @@
     "Name": "Fonticulua Lapida",
     "ValueCr": 3111000,
     "Atmospheres": [
-      "Nitrogen"
+      "*Nitrogen*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1418,7 +1416,7 @@
     "Name": "Fonticulua Segmentatus",
     "ValueCr": 19010800,
     "Atmospheres": [
-      "Neon"
+      "*Neon*"
     ],
     "OnBodies": [
       "Icy Body"
@@ -1439,7 +1437,7 @@
     "Name": "Fonticulua Upupam",
     "ValueCr": 5727600,
     "Atmospheres": [
-      "Argon rich"
+      "*Argon Rich*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1482,7 +1480,7 @@
     "Name": "Frutexa Collum",
     "ValueCr": 1639800,
     "Atmospheres": [
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1588,7 +1586,7 @@
     "Name": "Frutexa Sponsae",
     "ValueCr": 5988000,
     "Atmospheres": [
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1693,7 +1691,7 @@
     "Name": "Fungoida Bullarum",
     "ValueCr": 3703200,
     "Atmospheres": [
-      "Argon"
+      "*Argon*"
     ],
     "OnBodies": [
       "Rocky Ice Body"
@@ -1715,7 +1713,7 @@
     "ValueCr": 3330300,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1760,7 +1758,7 @@
     "ValueCr": 2680300,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1804,7 +1802,7 @@
     "Name": "Osseus Discus",
     "ValueCr": 12934900,
     "Atmospheres": [
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1870,7 +1868,9 @@
     "Name": "Osseus Pumice",
     "ValueCr": 3156300,
     "Atmospheres": [
-      "Argon, Methane, Nitrogen"
+      "*Argon*",
+      "*Methane*",
+      "*Nitrogen*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1915,7 +1915,7 @@
     "Name": "Recepta Conditivus",
     "ValueCr": 14313700,
     "Atmospheres": [
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1937,7 +1937,7 @@
     "Name": "Recepta Deltahedronix",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1960,7 +1960,7 @@
     "Name": "Recepta Umbrux",
     "ValueCr": 12934900,
     "Atmospheres": [
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1983,7 +1983,7 @@
     "Name": "Stratum Araneamus",
     "ValueCr": 2448900,
     "Atmospheres": [
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2005,7 +2005,7 @@
     "ValueCr": 16202800,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2018,7 +2018,6 @@
       0.0,
       9999.0
     ],
-    "AreasFound": "Sagittarius-Carina Arm",
     "Notes": "In Sagittarius-Carina Arm"
   },
   {
@@ -2027,7 +2026,7 @@
     "ValueCr": 2448900,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2041,7 +2040,6 @@
       9999.0
     ],
     "ColonyRangeM": 500,
-    "AreasFound": "Orion-Cygnus Arm",
     "Notes": "In Orion-Cygnus Arm"
   },
   {
@@ -2050,7 +2048,7 @@
     "ValueCr": 2637500,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2093,7 +2091,7 @@
     "ValueCr": 1362000,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2116,7 +2114,7 @@
     "Atmospheres": [
       "*Ammonia*",
       "*Carbon dioxide*",
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2139,8 +2137,8 @@
     "Atmospheres": [
       "*Ammonia*",
       "*Carbon dioxide*",
-      "Sulphur dioxide",
-      "Water"
+      "*Sulphur dioxide*",
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body"
@@ -2289,8 +2287,8 @@
     "Name": "Tussock Capillum",
     "ValueCr": 7025800,
     "Atmospheres": [
-      "Argon",
-      "Methane"
+      "*Argon*",
+      "*Methane*"
     ],
     "OnBodies": [
       "Rocky Ice Body"
@@ -2509,7 +2507,7 @@
     "Name": "Tussock Stigmasis",
     "ValueCr": 19010800,
     "Atmospheres": [
-      "Sulphur dioxide"
+      "*Sulphur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2574,7 +2572,7 @@
     "Name": "Tussock Virgam",
     "ValueCr": 14313700,
     "Atmospheres": [
-      "Water"
+      "*Water*"
     ],
     "OnBodies": [
       "High Metal Content Body",
