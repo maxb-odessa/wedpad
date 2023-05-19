@@ -1,8 +1,12 @@
 package events
 
 import (
+	"errors"
 	"fmt"
 	"strings"
+	"wedpad/internal/utils"
+
+	"github.com/maxb-odessa/sconf"
 )
 
 type CurrentSystemT struct {
@@ -21,14 +25,37 @@ type CurrentSystemT struct {
 	signals     []*FSSSignalDiscoveredT
 
 	// bodywide, DSS, SAA
-	planetSignalsCount        map[int]*FSSBodySignalsT
-	planetSignalsFound        map[int]*SAASignalsFoundT
-	planetPredictedBioSignals map[string]*SignalT
+	planetSignalsCount map[int]*FSSBodySignalsT
+	planetSignalsFound map[int]*SAASignalsFoundT
+
+	bios *BiosT
 }
 
+var loadedData map[string][]byte
+
 func (cs *CurrentSystemT) Init() error {
-	cs.Reset()
+
+	loadedData = make(map[string][]byte)
+
+	// load all data: bios, geos, etc...
+	if err := utils.LoadDir(loadedData, sconf.StrDef("paths", "data", "data"), ".json", 100_000, 32); err != nil {
+		return err
+	}
+
+	// bios data loaded - init its handler
+	if bioData, ok := loadedData["bios"]; ok {
+		cs.bios = new(BiosT)
+		if err := cs.bios.Init(bioData); err != nil {
+			return err
+		}
+	} else {
+		return errors.New("No BIO data loaded (missing 'bios.json'?)")
+	}
+
 	alerts = make(map[string]*alert)
+
+	cs.Reset()
+
 	return nil
 }
 
@@ -58,10 +85,6 @@ func (cs *CurrentSystemT) AddPlanetSignalsFound(s *SAASignalsFoundT) {
 
 func (cs *CurrentSystemT) AddBaryCentre(b *ScanBaryCentreT) {
 	cs.baryCentres[b.BodyID] = b
-}
-
-func (cs *CurrentSystemT) AddPlanetPredictedBioSignal(b *SignalT) {
-	cs.planetPredictedBioSignals[b.Name] = b
 }
 
 func (cs *CurrentSystemT) SetName(n string) {
@@ -114,10 +137,6 @@ func (cs *CurrentSystemT) PlanetSignalsFound() map[int]*SAASignalsFoundT {
 	return cs.planetSignalsFound
 }
 
-func (cs *CurrentSystemT) PlanetPredictedBioSignals() map[string]*SignalT {
-	return cs.planetPredictedBioSignals
-}
-
 func (cs *CurrentSystemT) Reset() {
 
 	cs.name = "(somewhere in space)"
@@ -127,20 +146,26 @@ func (cs *CurrentSystemT) Reset() {
 		typ, color string
 	}{0, "?", "#FFFFFF"}
 
+	// systemwide
 	cs.stars = make(map[int]*ScanT)
 	cs.planets = make(map[int]*ScanT)
 	cs.baryCentres = make(map[int]*ScanBaryCentreT)
 	cs.signals = make([]*FSSSignalDiscoveredT, 0)
+
+	// planet related
 	cs.planetSignalsCount = make(map[int]*FSSBodySignalsT)
 	cs.planetSignalsFound = make(map[int]*SAASignalsFoundT)
-	cs.planetPredictedBioSignals = make(map[string]*SignalT)
 }
 
 // in meters
 const (
-	SOLAR_RADIUS    = 696340000.0
-	EARTH_RADIUS    = 6371.0 * 1000.0
-	LIGHT_SECOND    = 299792.0 * 1000.0
+	SOLAR_RADIUS = 696_340_000.0
+	EARTH_RADIUS = 6_371.0 * 1000.0
+	LIGHT_SECOND = 299_792.0 * 1000.0
+)
+
+// in seconds
+const (
 	SECONDS_IN_HOUR = 60.0 * 60.0
 	SECONDS_IN_DAY  = 24.0 * 60.0 * 60.0
 )

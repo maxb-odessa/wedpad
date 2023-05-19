@@ -67,7 +67,7 @@ func AlertFuel(fl float64) {
 				level = ALERT_LEVEL_CRIT
 			}
 		}
-		alertAdd(ALERT_FUEL, level, fmt.Sprintf("Fuel level is %.1 tons", fl))
+		alertAdd(ALERT_FUEL, level, fmt.Sprintf("Fuel level is %.1f tons", fl))
 	} else if alertDel(ALERT_FUEL) {
 		alertShow()
 	}

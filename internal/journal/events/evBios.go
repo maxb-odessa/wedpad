@@ -14,7 +14,7 @@ import (
 
 type BioT struct {
 	Family         string     `mapstructure:"Family"`
-	Name           string     `mapstructure:"Type"`
+	Name           string     `mapstructure:"Name"`
 	Atmospheres    []string   `mapstructure:"Atmospheres"`
 	BodiesRequired []string   `mapstructure:"BodiesRequired"`
 	OnBodies       []string   `mapstructure:"OnBodies"`
@@ -47,8 +47,7 @@ func (b *BiosT) Init(bioData []byte) error {
 	for _, bioData := range jsData {
 		bio := new(BioT)
 		if err := mapstructure.Decode(bioData, bio); err != nil {
-			fmt.Errorf("Decode BIO data failed: %s", err)
-			return err
+			return fmt.Errorf("Decode BIO data failed: %s", err)
 		}
 		b.bios = append(b.bios, bio)
 	}
@@ -58,32 +57,59 @@ func (b *BiosT) Init(bioData []byte) error {
 	return nil
 }
 
-func (b *BiosT) predictBios(cs *CurrentSystemT) {
+// called once after FSSAllBodiesFound event
+func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
-	for _, bodyEv := range cs.Planets() {
+	predicted := make(map[string][2]string, 0)
 
-		pbios := b.guessBios(cs, bodyEv)
+	for _, planet := range cs.Planets() {
 
-		if len(pbios) == 0 {
+		// the planet has no bios on it
+		if !bodyHasBios(cs, planet) {
 			continue
 		}
 
-		sig := &SignalT{
-			Name:        BodyName(bodyEv.BodyName, cs.Name()),
-			Type:        "Body Bios(?)",
-			Description: strings.Join(pbios, ", "),
+		// no bios guessed?
+		bios := b.guessBios(cs, planet)
+		if len(bios) == 0 {
+			slog.Warn("Failed to guess BIO on '%s'", planet.BodyName)
+			continue
 		}
 
-		cs.AddPlanetPredictedBioSignal(sig)
+		bioFams := make(map[string]bool, 0)
+		bioHints := make([]string, 0)
+		for _, bio := range bios {
+
+			bioFams[bio.Family] = true
+
+			hint := fmt.Sprintf(`<tr><td>%s</td><td style="text-align: right;">%.1f MCr</td>`, bio.Name, float64(bio.ValueCr)/1_000_000.0)
+			if bio.Notes != "" {
+				hint += "<td>" + bio.Notes + "</td>"
+			}
+			hint += "</tr>"
+
+			bioHints = append(bioHints, hint)
+
+		}
+
+		bioList := make([]string, 0)
+		for f, _ := range bioFams {
+			bioList = append(bioList, f)
+		}
+
+		sort.Strings(bioList)
+		sort.Strings(bioHints)
+
+		predicted[planet.BodyName] = [2]string{strings.Join(bioList, ", "), strings.Join(bioHints, "")}
 
 	}
 
-	return
+	return predicted
 }
 
-func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []string {
+func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []*BioT {
 
-	pBios := make(map[string]bool, 0)
+	pBios := make([]*BioT, 0)
 
 	for _, bio := range b.bios {
 
@@ -111,18 +137,23 @@ func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []string {
 				continue
 			}
 		*/
-		pBios[bio.Family] = true
+		pBios = append(pBios, bio)
 
 	}
 
-	bioList := make([]string, 0)
-	for k, _ := range pBios {
-		bioList = append(bioList, k)
+	return pBios
+}
+
+func bodyHasBios(cs *CurrentSystemT, ev *ScanT) bool {
+	if bs, ok := cs.PlanetSignalsCount()[ev.BodyID]; ok {
+		for _, s := range bs.Signals {
+			if s.Type == "$SAA_SignalType_Biological;" && s.Count > 0 {
+				return true
+			}
+		}
 	}
 
-	sort.Strings(bioList)
-
-	return bioList
+	return false
 }
 
 func matchStrings(what string, patts []string) bool {

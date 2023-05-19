@@ -1,40 +1,16 @@
 package events
 
 import (
-	"errors"
 	"reflect"
 
-	"github.com/maxb-odessa/sconf"
 	"github.com/maxb-odessa/slog"
-
-	"wedpad/internal/utils"
 )
 
 type EventHandler struct {
-	cs     *CurrentSystemT
-	bios   *BiosT
-	sounds struct{} // TBD
+	cs *CurrentSystemT
 }
 
 func (evh *EventHandler) Init() error {
-
-	loadedData := make(map[string][]byte)
-
-	// load all data
-	if err := utils.LoadDir(loadedData, sconf.StrDef("paths", "data", "data"), ".json", 100_000, 32); err != nil {
-		return err
-	}
-
-	// bios data loaded - init its handler
-	if bioData, ok := loadedData["bios"]; ok {
-		evh.bios = new(BiosT)
-		if err := evh.bios.Init(bioData); err != nil {
-			return err
-		}
-	} else {
-		return errors.New("No BIO data loaded (missing 'bios.json'?)")
-	}
-
 	evh.cs = new(CurrentSystemT)
 	return evh.cs.Init()
 }

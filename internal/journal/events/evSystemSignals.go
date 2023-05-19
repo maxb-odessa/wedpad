@@ -2,14 +2,13 @@ package events
 
 import (
 	"wedpad/internal/msg"
-
-	"github.com/maxb-odessa/slog"
 )
 
 type SignalT struct {
 	Name        string
 	Type        string
 	Description string
+	Hint        string
 }
 
 func (cs *CurrentSystemT) ShowSignals() {
@@ -22,26 +21,31 @@ func (cs *CurrentSystemT) ShowSignals() {
 		s := new(SignalT)
 
 		if sig.IsStation {
-			s.Name = "?"
-			s.Type = "Station"
+			s.Name = ""
+			s.Type = `<font color="cyan">Station</font>`
 			s.Description = sig.SignalName
 		} else {
 			// TODO for now: collect all sig.SignalName variants
 			s.Name = "?"
-			s.Type = "Phenomena"
-			s.Description = sig.SignalNameLocalised + " (" + sig.SignalName + ")"
+			s.Type = `<font color="yellow">Phenomena</font>`
+			s.Description = sig.SignalNameLocalised + "<br>(" + sig.SignalName + ")"
 		}
 
 		signals = append(signals, s)
 	}
 
-	// add planets predicted bios
-	for _, sig := range cs.PlanetPredictedBioSignals() {
-		signals = append(signals, sig)
+	// predict and add bodies BIO signals
+	for name, sigs := range cs.bios.Predict(cs) {
+		s := &SignalT{
+			Name:        BodyName(name, cs.Name()),
+			Type:        `<font color="green">Biological</font>`,
+			Description: sigs[0],
+			Hint:        sigs[1],
+		}
+		signals = append(signals, s)
 	}
 
 	sigsCnt := len(signals)
-	slog.Debug(9, "SIGS CNT: %d", sigsCnt)
 	if sigsCnt > 0 {
 
 		m := &msg.Message{

@@ -5,9 +5,9 @@
 
 <thead>
     <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
+        <th style="text-align: right;">BodyName</th>
+        <th style="text-align: center;">Type</th>
+        <th style="text-align: left;">Description</th>
     </tr>
 </thead>
 
@@ -20,9 +20,20 @@
         <tr id="tr-even">
     {{ end }}
     {{ $odd = not $odd }}
-        <td>{{ $v.Name }}</td>
-        <td>{{ $v.Type }}</td>
-        <td>{{ $v.Description }}</td>
+        <td style="text-align: right;">{{ $v.Name }}</td>
+        <td style="text-align: center;">{{ $v.Type }}</td>
+        <td style="text-align: left;">{{ $v.Description }}
+            <table class="hint-table">
+            <thead>
+                <tr>
+                    <th>Variant</th>
+                    <th>Payout</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>`{{ $v.Hint }}</tbody>
+            </table>
+        </td>
     </tr>
 {{ end }}
 </tbody>
