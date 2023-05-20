@@ -34,6 +34,7 @@ func (cs *CurrentSystemT) ShowSignals() {
 		} else {
 			s.Description = sig.SignalName
 		}
+
 		signals = append(signals, s)
 	}
 

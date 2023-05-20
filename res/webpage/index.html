@@ -56,11 +56,18 @@ function timestamp() {
 var logView = document.getElementById("view-log");
 
 var wsUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/ws";
+
+loop();
+
+async function loop() {
+while (1) {
+var reconnect = false;
 var socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
     logView.innerHTML = "<p><b>CONNECTED!</b>";
     socket.send("connected");
+    reconnect = false;
 };
 
 socket.onmessage = function(msg) {
@@ -119,8 +126,23 @@ socket.onmessage = function(msg) {
 socket.onclose = function(ev) {
     logView.innerHTML += "<p><b>CONNECTION CLOSED! " + "Clean: " + ev.wasClean + ", Reason: ''" + ev.reason + ", Code: " + ev.code + "</b>";
     switchView("log");
-    socket.send("closed");
+    //socket.send("closed");
+    reconnect = true;
 };
+
+
+  await waitUntil(() => reconnect === true);
+
+};
+
+};
+
+async function waitUntil(condition, time = 1000) {
+    while (!condition()) {
+        await new Promise((resolve) => setTimeout(resolve, time));
+    }
+}
+
 
 </script>
 
