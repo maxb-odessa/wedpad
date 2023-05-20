@@ -134,11 +134,15 @@ func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []*BioT {
 			continue
 		}
 
-		if !matchStars(cs, bio.StarsRequired) {
+		if len(bio.StarsRequired) > 0 && !matchStars(cs, bio.StarsRequired) {
 			continue
 		}
 
-		if !matchBodies(cs, bio.BodiesRequired) {
+		if len(bio.BodiesRequired) > 0 && !matchBodies(cs, bio.BodiesRequired) {
+			continue
+		}
+
+		if len(bio.Volcanism) > 0 && !matchBodies(cs, bio.Volcanism) {
 			continue
 		}
 
@@ -162,12 +166,7 @@ func bodyHasBios(cs *CurrentSystemT, ev *ScanT) bool {
 }
 
 func matchStrings(what string, patts []string) bool {
-	if len(patts) == 0 {
-		patts = append(patts, "*")
-	}
-
 	for _, patt := range patts {
-		slog.Debug(9, "MATCHING: '%s' over '%s'", what, patt)
 		if fnmatch.Match(patt, what, fnmatch.FNM_IGNORECASE) {
 			return true
 		}

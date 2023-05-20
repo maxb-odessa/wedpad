@@ -216,6 +216,7 @@ func watchFile(path string) {
 			select {
 			case event := <-w.Event:
 				slurpFile(event.Path)
+				slog.Debug(9, "SLURP: %s", event.Path)
 			case err := <-w.Error:
 				slog.Err("Watching file '%s' failed: %s", path, err)
 				return
@@ -230,7 +231,7 @@ func watchFile(path string) {
 
 func slurpFile(name string) {
 	if data, err := os.ReadFile(name); err != nil {
-		slog.Err("Failed to slupr file '%s': %s", name, err)
+		slog.Err("Failed to slurp file '%s': %s", name, err)
 	} else {
 		r.linesCh <- string(data)
 	}

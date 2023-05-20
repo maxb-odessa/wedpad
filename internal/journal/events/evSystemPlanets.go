@@ -73,7 +73,7 @@ func (cs *CurrentSystemT) ShowPlanets() {
 
 		m = &msg.Message{
 			Target: msg.TARGET_BODIES,
-			Type:   msg.TYPE_BUTTON,
+			Type:   msg.TYPE_VIEW,
 			Action: msg.ACTION_ATTENTION,
 			Data:   "",
 		}

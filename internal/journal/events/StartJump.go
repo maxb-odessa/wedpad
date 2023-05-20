@@ -22,6 +22,11 @@ type StartJumpT struct {
 func (evh *EventHandler) StartJump(eventData map[string]interface{}) {
 	ev := new(StartJumpT)
 	mapstructure.Decode(eventData, ev)
+
+	if ev.JumpType != "Hyperspace" {
+		return
+	}
+
 	cs := evh.CurrentSystem()
 
 	cs.Reset()

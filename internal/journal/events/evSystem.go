@@ -22,7 +22,7 @@ type CurrentSystemT struct {
 	stars       map[int]*ScanT
 	planets     map[int]*ScanT
 	baryCentres map[int]*ScanBaryCentreT
-	signals     []*FSSSignalDiscoveredT
+	signals     map[string]*FSSSignalDiscoveredT
 
 	// bodywide, DSS, SAA
 	planetSignalsCount map[int]*FSSBodySignalsT
@@ -52,7 +52,7 @@ func (cs *CurrentSystemT) Init() error {
 		return errors.New("No BIO data loaded (missing 'bios.json'?)")
 	}
 
-	alerts = make(map[string]*alert)
+	alerts = make(map[string]*Alert)
 
 	cs.Reset()
 
@@ -72,7 +72,7 @@ func (cs *CurrentSystemT) AddPlanet(p *ScanT) {
 }
 
 func (cs *CurrentSystemT) AddSignal(s *FSSSignalDiscoveredT) {
-	cs.signals = append(cs.signals, s)
+	cs.signals[s.SignalName] = s
 }
 
 func (cs *CurrentSystemT) AddPlanetSignalsCount(s *FSSBodySignalsT) {
@@ -125,7 +125,7 @@ func (cs *CurrentSystemT) Planets() map[int]*ScanT {
 	return cs.planets
 }
 
-func (cs *CurrentSystemT) Signals() []*FSSSignalDiscoveredT {
+func (cs *CurrentSystemT) Signals() map[string]*FSSSignalDiscoveredT {
 	return cs.signals
 }
 
@@ -150,7 +150,7 @@ func (cs *CurrentSystemT) Reset() {
 	cs.stars = make(map[int]*ScanT)
 	cs.planets = make(map[int]*ScanT)
 	cs.baryCentres = make(map[int]*ScanBaryCentreT)
-	cs.signals = make([]*FSSSignalDiscoveredT, 0)
+	cs.signals = make(map[string]*FSSSignalDiscoveredT, 0)
 
 	// planet related
 	cs.planetSignalsCount = make(map[int]*FSSBodySignalsT)

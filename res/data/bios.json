@@ -33,7 +33,7 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": ["*"],
     "TemperatureK": [
       1.0,
       9999.0
@@ -62,7 +62,7 @@
       "Gas giant with * based life",
       "Water Giant"
     ],
-    "Volcanism": [],
+    "Volcanism": ["*"],
     "TemperatureK": [
       1.0,
       273.0
@@ -94,6 +94,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Gypseeum Brain Tree",
     "StarsRequired": [
       "*"
@@ -117,6 +118,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Ostrinum Brain Tree",
     "StarsRequired": [
       "*"
@@ -141,6 +143,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Viride Brain Tree",
     "StarsRequired": [
       "*"
@@ -164,6 +167,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Lividum Brain Tree",
     "StarsRequired": [
       "*"
@@ -187,6 +191,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Aureum Brain Tree",
     "StarsRequired": [
       "*"
@@ -211,6 +216,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Lindigoticum Brain Tree",
     "StarsRequired": [
       "*"
@@ -235,6 +241,7 @@
     "Notes": "Confined to specific areas (Guardian)"
   },
   {
+    "Family": "Brain Tree",
     "Name": "Puniceum Brain Tree",
     "StarsRequired": [
       "*"
@@ -1614,6 +1621,7 @@
     "OnBodies": [
       "*"
     ],
+    "Volcanism": ["*water*"],
     "TemperatureK": [
       1.0,
       9999.0
@@ -1635,10 +1643,12 @@
     "OnBodies": [
       "*"
     ],
+    "Volcanism": ["*carbon*"],
     "TemperatureK": [
       1.0,
       9999.0
     ],
+    "Volcanism": ["*"],
     "GravityG": [
       0.0,
       0.27
@@ -1660,6 +1670,7 @@
       1.0,
       9999.0
     ],
+    "Volcanism": ["*"],
     "GravityG": [
       0.0,
       0.27

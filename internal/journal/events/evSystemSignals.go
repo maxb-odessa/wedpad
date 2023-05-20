@@ -21,16 +21,19 @@ func (cs *CurrentSystemT) ShowSignals() {
 		s := new(SignalT)
 
 		if sig.IsStation {
-			s.Name = ""
+			s.Name = "&nabla;"
 			s.Type = `<font color="cyan">Station</font>`
-			s.Description = sig.SignalName
 		} else {
 			// TODO for now: collect all sig.SignalName variants
-			s.Name = "?"
+			s.Name = "&sect;"
 			s.Type = `<font color="yellow">Phenomena</font>`
-			s.Description = sig.SignalNameLocalised + "<br>(" + sig.SignalName + ")"
 		}
 
+		if sig.SignalNameLocalised != "" {
+			s.Description = sig.SignalNameLocalised + "<br>(" + sig.SignalName + ")"
+		} else {
+			s.Description = sig.SignalName
+		}
 		signals = append(signals, s)
 	}
 

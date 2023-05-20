@@ -5,12 +5,12 @@ import (
 	"wedpad/internal/msg"
 )
 
-type alert struct {
-	text  string
-	level string
+type Alert struct {
+	Text  string
+	Level string
 }
 
-var alerts map[string]*alert
+var alerts map[string]*Alert
 
 const (
 	ALERT_FUEL = "fuel"
@@ -32,9 +32,9 @@ const (
 )
 
 func alertAdd(id string, level string, text string) {
-	alerts[id] = &alert{
-		text:  text,
-		level: level,
+	alerts[id] = &Alert{
+		Text:  text,
+		Level: level,
 	}
 }
 
@@ -50,7 +50,7 @@ func alertShow() {
 
 	m := &msg.Message{
 		Target: msg.TARGET_BOTTOM,
-		Action: msg.ACTION_APPEND,
+		Action: msg.ACTION_REPLACE,
 		Type:   msg.TYPE_VIEW,
 		Data:   alerts,
 	}
@@ -59,6 +59,7 @@ func alertShow() {
 }
 
 func AlertFuel(fl float64) {
+	alertDel(ALERT_FUEL)
 	if fl < 10.0 {
 		level := ALERT_LEVEL_INFO
 		if fl < 5.0 {
@@ -68,7 +69,6 @@ func AlertFuel(fl float64) {
 			}
 		}
 		alertAdd(ALERT_FUEL, level, fmt.Sprintf("Fuel level is %.1f tons", fl))
-	} else if alertDel(ALERT_FUEL) {
-		alertShow()
 	}
+	alertShow()
 }
