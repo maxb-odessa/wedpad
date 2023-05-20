@@ -32,23 +32,15 @@
     <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
     <td><font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}</font></td>
     <td>{{ $v.DistanceLs }}</td>
-    <td>
-    {{ range $j, $dmtl := $v.DMTL }}
-        <font color="{{ $dmtl.Color }}">{{ $dmtl.Type }}</font>
-    {{ end }}
-    </td>
+    <td>{{ range $j, $dmtl := $v.DMTL }}<font color="{{ $dmtl.Color }}">{{ $dmtl.Type }}</font>{{ end }}</td>
     <td>{{ $v.RadiusE }}</td>
     <td>{{ $v.MassE }}</td>
     <td>{{ $v.TemperatureK }}</td>
     <td>{{ $v.GravityG }}</td>
     <td>{{ $v.RingsNum }}</td>
-    <td>{{ $v.RingsRaiusdLs }}</td>
+    <td>{{ $v.RingsRadiusLs }}</td>
     <td><font color="{{ $v.Atmosphere.Color }}">{{ $v.Atmosphere.Type }}</font></td>
-    <td>
-        {{ range $k, $sig := $v.Signals }}
-            <font color="{{ $sig.Color }}">{{ $sig.Type }}</font>
-        {{ end }}
-    </td>
+    <td>{{ range $k, $sig := $v.Signals }}<font color="{{ $sig.Color }}">{{ $sig.Type }}</font>{{ end }}</td>
     </tr>
 {{ end }}
 </tbody>

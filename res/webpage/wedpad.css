@@ -170,6 +170,8 @@ body {
 }
 
 .stars-table {
+    font-family: monospace;
+    font-size: larger;
     color: white;
     border: none;
     width: 100%;
@@ -178,12 +180,13 @@ body {
 }
 
 .stars-table th {
-    font-size: smaller;
     color: gray;
     text-align: right;
+    font-style: italic;
 }
 
 .stars-table td {
+    font-size: larger;
     text-align: right;
 }
 
@@ -197,6 +200,7 @@ body {
 
 .stars-table tbody {
     font-size: larger;
+    font-family: monospace;
     /* font-family: courier, courier new, serif; */
 }
 
@@ -213,16 +217,19 @@ body {
     border: none;
     width: 100%;
     /*table-layout: fixed;*/
+    font-family: monospace;
+    font-size: larger;
     overflow-wrap: break-word;
 }
 
 .bodies-table th {
-    font-size: smaller;
     color: gray;
     text-align: right;
+    font-style: italic;
 }
 
 .bodies-table td {
+    font-size: larger;
     text-align: right;
 }
 
@@ -232,6 +239,8 @@ body {
 }
 
 .signals-table {
+    font-family: monospace;
+    font-size: larger;
     color: white;
     border: none;
     width: 100%;
@@ -240,18 +249,19 @@ body {
 }
 
 .signals-table th {
-    font-size: smaller;
+    font-style: italic;
     color: gray;
     text-align: left;
 }
 
 .signals-table td {
+    font-size: larger;
     text-align: left;
 }
 
 .hint-table {
+    font-family: monospace;
     visibility: hidden;
-    font-size: 60%;
     z-index: 100;
     position: absolute;
     border-radius: 8px;
@@ -263,7 +273,6 @@ body {
 }
 
 .hint-table tr th td {
-    font-size: 60%;
     overflow-wrap: break-word;
 }
 

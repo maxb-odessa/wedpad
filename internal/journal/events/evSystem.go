@@ -345,7 +345,7 @@ func StarTempColor(tempK float64) string {
 */
 
 var PlanetAtmospheres = map[string]TypeColorPair{
-	"Ammonia":           {"NH3", "#A52A2A"},
+	"Ammonia":           {"NH3", "#B54A4A"},
 	"AmmoniaOxygen":     {"NH3+02", "#BC8F8F"},
 	"AmmoniaRich":       {"NH3+", "#A52A2A"},
 	"Argon":             {"Ar", "#3CB371"},

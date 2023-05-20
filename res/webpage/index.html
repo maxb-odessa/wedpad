@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>WEdPad - Web: Elite Dangerous Pad</title>
-    <link rel="stylesheet" href="wedpad.css?A121221zaa">
+    <link rel="stylesheet" href="wedpad.css?A121221zaaa1aa1">
 </head>
 
 <body>
@@ -65,7 +65,7 @@ var reconnect = false;
 var socket = new WebSocket(wsUrl);
 
 socket.onopen = function() {
-    logView.innerHTML = "<p><b>CONNECTED!</b>";
+    logView.innerHTML += "<i>"+timestamp()+"</i>&gt; <b>CONNECTED!</b><br>";
     socket.send("connected");
     reconnect = false;
 };
@@ -124,7 +124,7 @@ socket.onmessage = function(msg) {
 };
 
 socket.onclose = function(ev) {
-    logView.innerHTML += "<p><b>CONNECTION CLOSED! " + "Clean: " + ev.wasClean + ", Reason: ''" + ev.reason + ", Code: " + ev.code + "</b>";
+    logView.innerHTML += "<i>"+timestamp()+"</i>&gt; <b>CONNECTION CLOSED! " + "Clean: " + ev.wasClean + ", Reason: ''" + ev.reason + ", Code: " + ev.code + "</b><br>";
     switchView("log");
     //socket.send("closed");
     reconnect = true;
@@ -137,7 +137,7 @@ socket.onclose = function(ev) {
 
 };
 
-async function waitUntil(condition, time = 1000) {
+async function waitUntil(condition, time = 2000) {
     while (!condition()) {
         await new Promise((resolve) => setTimeout(resolve, time));
     }
