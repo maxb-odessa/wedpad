@@ -68,6 +68,7 @@
       273.0
     ],
     "ValueCr": 117900,
+    "MinDistanceLs": 12000,
     "Notes": "Distance from arrival point > 12000 Ls"
   },
   {
@@ -1185,7 +1186,8 @@
       0.27
     ],
     "ColonyRangeM": 150,
-    "Notes": "Distance to parent star > 2495 Ls"
+    "MinDistanceLs": 2500,
+    "Notes": "Distance to parent star > 2500 Ls"
   },
   {
     "Family": "Concha",

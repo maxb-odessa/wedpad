@@ -24,6 +24,7 @@ type BioT struct {
 	StarsRequired  []string   `mapstructure:"StarsRequired"`
 	Volcanism      []string   `mapstructure:"Volcanism"`
 	ValueCr        int        `mapstructure:"ValueCr"`
+	MinDistanceLs  int        `mapstructure:"MinDistanceLs"`
 	Notes          string     `mapstructure:"Notes"`
 }
 
@@ -128,15 +129,19 @@ func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []*BioT {
 		if !inRange(ev.SurfaceGravity/10.0, bio.GravityG) { // again, shoud divide by 10
 			continue
 		}
-		/*
-			if !matchStars(cs.Stars(), bio.StarsRequired) {
-				continue
-			}
 
-			if !matchBodies(cs.Planets(), bio.BodiesRequired) {
-				continue
-			}
-		*/
+		if ev.DistanceFromArrivalLs < float64(bio.MinDistanceLs) {
+			continue
+		}
+
+		if !matchStars(cs, bio.StarsRequired) {
+			continue
+		}
+
+		if !matchBodies(cs, bio.BodiesRequired) {
+			continue
+		}
+
 		pBios = append(pBios, bio)
 
 	}
@@ -157,7 +162,12 @@ func bodyHasBios(cs *CurrentSystemT, ev *ScanT) bool {
 }
 
 func matchStrings(what string, patts []string) bool {
+	if len(patts) == 0 {
+		patts = append(patts, "*")
+	}
+
 	for _, patt := range patts {
+		slog.Debug(9, "MATCHING: '%s' over '%s'", what, patt)
 		if fnmatch.Match(patt, what, fnmatch.FNM_IGNORECASE) {
 			return true
 		}
@@ -169,6 +179,30 @@ func matchStrings(what string, patts []string) bool {
 func inRange(what float64, where [2]float64) bool {
 	if what >= where[0] && what <= where[1] {
 		return true
+	}
+
+	return false
+}
+
+func matchStars(cs *CurrentSystemT, starsRequired []string) bool {
+	stars := cs.Stars()
+
+	for _, star := range stars {
+		if matchStrings(star.StarType, starsRequired) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func matchBodies(cs *CurrentSystemT, bodiesRequired []string) bool {
+	planets := cs.Planets()
+
+	for _, planet := range planets {
+		if matchStrings(planet.PlanetClass, bodiesRequired) {
+			return true
+		}
 	}
 
 	return false
