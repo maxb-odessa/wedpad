@@ -264,19 +264,39 @@ body {
     z-index: 100;
     position: absolute;
     border-radius: 8px;
-    border: solid 1px black;
-    background-color: #FFDEAD;
+    border: 0;
+    border-spacing: 5px;
+    background-color: #AA9E9D;
     top: 7%;
     right: 12%;
     box-shadow: 5px 7px 10px black;
 }
 
-.hint-table tr th td {
+.hint-table td {
+    border: dotted 1px gray;
+    border-radius: 5px;
+    background-color: lightgray;
     overflow-wrap: break-word;
+}
+
+.hint-table th {
+    color: black;
 }
 
 .signals-table td:hover .hint-table {
     visibility: visible;
+}
+
+.bodies-table caption:hover .hint-table {
+    visibility: visible;
+}
+
+.bodies-table caption {
+    border: 1px solid white;
+    background-color: #AAAA30;
+    border-radius: 3px;
+    color: black;
+    font-family: impact, arial black;
 }
 
 .signals-table tbody {

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"strconv"
+	"strings"
 	"wedpad/internal/msg"
 )
 
@@ -46,7 +47,7 @@ func (cs *CurrentSystemT) ShowPlanets() {
 		}
 		body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
 		body["Signals"] = cs.composeBGGHO(id)
-		body["Notes"] = cs.notesOnBody(id)
+		body["Notes"] = strings.Join(cs.notesOnBody(id), "<br>")
 
 		bodies = append(bodies, body)
 

@@ -1,8 +1,33 @@
 <table class="bodies-table">
 
 <caption>
+    {{- $nnum := 0 }}
+    {{ range $i, $v := . }}
+        {{ if ne $v.Notes  "" }}
+            {{ $nnum = 1 }}
+            {{ break }}
+        {{ end }}
+    {{ end }}
+    {{ if ne $nnum 0 }}
+        &Lt;&nbsp;Notable Objects&nbsp;&Gt;
+    {{ end }}
     <table class="hint-table">
-put notes her
+        <thead>
+            <tr>
+                <th style="text-align: center;">BodyName</th>
+                <th style="text-align: center;">Notes</th>
+            </tr>
+        <thead>
+        <tbody>
+        {{ range $i, $v := . }}
+        {{ if ne $v.Notes "" }}
+        <tr>
+            <td style="text-align: right;"><b>{{ $v.Name }}</b></td>
+            <td style="text-align: left;"><i>{{ $v.Notes }}</i></td>
+        </tr>
+        {{ end }}
+        {{ end }}
+        </tbody>
     </table>
 </caption>
 
