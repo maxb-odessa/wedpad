@@ -188,7 +188,8 @@ func Num(val float64) (s string) {
 	return
 }
 
-func BodyName(bname, sysname string) string {
+func (cs *CurrentSystemT) BodyName(bname string) string {
+	sysname := cs.Name()
 	if bname == sysname {
 		return ""
 	}

@@ -85,7 +85,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
 			hint := fmt.Sprintf(`<tr><td>%s</td><td style="text-align: right;">%.1f MCr</td>`, bio.Name, float64(bio.ValueCr)/1_000_000.0)
 			if bio.Notes != "" {
-				hint += "<td>" + bio.Notes + "</td>"
+				hint += `<td style="font-size: smaller; color: gray;">` + bio.Notes + "</td>"
 			}
 			hint += "</tr>"
 
@@ -106,6 +106,17 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 	}
 
 	return predicted
+}
+
+func (b *BiosT) getBio(name string) *BioT {
+
+	for _, bio := range b.bios {
+		if bio.Name == name {
+			return bio
+		}
+	}
+
+	return nil
 }
 
 func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []*BioT {

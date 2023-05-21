@@ -36,16 +36,16 @@ func LoadDir(holder map[string][]byte, dir string, ext string, maxSize int64, ma
 			break
 		}
 
+		if !fnmatch.Match(`*`+ext, f.Name(), fnmatch.FNM_PATHNAME) {
+			continue
+		}
+
 		if !f.Mode().IsRegular() {
 			continue
 		}
 
 		if f.Size() > maxSize {
 			slog.Warn("Not loading '%s': too large", f)
-			continue
-		}
-
-		if !fnmatch.Match(`*`+ext, f.Name(), fnmatch.FNM_PATHNAME) {
 			continue
 		}
 

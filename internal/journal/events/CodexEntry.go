@@ -2,6 +2,9 @@ package events
 
 import (
 	"time"
+	"wedpad/internal/msg"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // CodexEntry event structure
@@ -30,7 +33,30 @@ type CodexEntryT struct {
 
 // CodexEntry event handler
 func (evh *EventHandler) CodexEntry(eventData map[string]interface{}) {
-    // ev := new(CodexEntryT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(CodexEntryT)
+	mapstructure.Decode(eventData, ev)
 
+	isNew := ""
+	if !ev.IsNewEntry {
+		isNew = " (new)"
+	}
+
+	text := "Codex" + isNew + ": " + ev.SubCategoryLocalised + ": " + ev.NameLocalised + ", region: " + ev.RegionLocalised
+
+	m := &msg.Message{
+		Type:   msg.TYPE_VIEW,
+		Target: msg.TARGET_LOG,
+		Action: msg.ACTION_APPEND,
+		Data:   text,
+	}
+	m.Send()
+
+	m = &msg.Message{
+		Type:   msg.TYPE_BUTTON,
+		Target: msg.TARGET_LOG,
+		Action: msg.ACTION_ATTENTION,
+		Data:   "",
+	}
+	m.Send()
+
+}

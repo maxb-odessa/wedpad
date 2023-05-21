@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>WEdPad - Web: Elite Dangerous Pad</title>
-    <link rel="stylesheet" href="wedpad.css?A121221zaaa1aa1">
+    <link rel="stylesheet" href="wedpad.css?A121221zaaa1aa1azza">
 </head>
 
 <body>
@@ -60,80 +60,80 @@ var wsUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/
 loop();
 
 async function loop() {
-while (1) {
-var reconnect = false;
-var socket = new WebSocket(wsUrl);
 
-socket.onopen = function() {
-    logView.innerHTML += "<i>"+timestamp()+"</i>&gt; <b>CONNECTED!</b><br>";
-    socket.send("connected");
-    reconnect = false;
-};
+    while (1) {
 
-socket.onmessage = function(msg) {
+        var reconnect = false;
+        var socket = new WebSocket(wsUrl);
 
-    const obj = JSON.parse(msg.data);
+        socket.onopen = function() {
+            logView.innerHTML += makeLog("<b>CONNECTED!</b>");
+            socket.send("connected");
+            reconnect = false;
+        };
 
-    var action = obj.Action;
-    var target = obj.Target;
-    var otype = obj.Type;
-    var data = obj.Data;
-    var output;
+        socket.onmessage = function(msg) {
 
-    if (otype === "view") {
+            const obj = JSON.parse(msg.data);
 
-        output = document.getElementById("view-" + target);
+            var action = obj.Action;
+            var target = obj.Target;
+            var otype = obj.Type;
+            var data = obj.Data;
+            var output;
 
-        if (target === "log") {
-            data = "<i>" + timestamp() + "</i>&gt; " + data
-        }
+            if (otype === "view") {
 
-        if (action === "replace") {
-            output.innerHTML = data;
-        } else if (action === "append") {
-            output.innerHTML += data;
-        } else if (action === "clean") {
-            output.innerHTML = "";
-        } else if (action === "attention") {
-            switchView(target)
-        }
+                output = document.getElementById("view-" + target);
 
-        if (target === "log") {
-            output.scrollTop = output.scrollHeight;
-        }
+                if (target === "log") {
+                    data = makeLog(data);
+                }
 
-    } else if (otype === "button") {
+                if (action === "replace") {
+                    output.innerHTML = data;
+                } else if (action === "append") {
+                    output.innerHTML += data;
+                } else if (action === "clean") {
+                    output.innerHTML = "";
+                } else if (action === "attention") {
+                    switchView(target);
+                }
 
-        output = document.getElementById("button-" + target + "-text");
+                if (target === "log") {
+                    output.scrollTop = output.scrollHeight;
+                }
 
-        if (action === "replace") {
-            output.innerHTML = data;
-        } else if (action === "append") {
-            output.innerHTML += data;
-        } else if (action === "clean") {
-            output.innerHTML = "";
-        } else if (action === "attention") {
-            if (document.getElementById("button-" + target).getAttribute("class") !== "button button-active") {
-                document.getElementById("button-" + target).setAttribute("class", "button button-attention");
+            } else if (otype === "button") {
+    
+                output = document.getElementById("button-" + target + "-text");
+    
+                if (action === "replace") {
+                    output.innerHTML = data;
+                } else if (action === "append") {
+                    output.innerHTML += data;
+                } else if (action === "clean") {
+                    output.innerHTML = "";
+                } else if (action === "attention") {
+                    if (document.getElementById("button-" + target).getAttribute("class") !== "button button-active") {
+                        document.getElementById("button-" + target).setAttribute("class", "button button-attention");
+                    }
+                }
             }
-        }
-    }
 
-    socket.send("ACK");
+            socket.send("ACK");
 
-};
+        };
 
-socket.onclose = function(ev) {
-    logView.innerHTML += "<i>"+timestamp()+"</i>&gt; <b>CONNECTION CLOSED! " + "Clean: " + ev.wasClean + ", Reason: ''" + ev.reason + ", Code: " + ev.code + "</b><br>";
-    switchView("log");
-    //socket.send("closed");
-    reconnect = true;
-};
+        socket.onclose = function(ev) {
+            logView.innerHTML += makeLog("<b>CONNECTION CLOSED!</b>" + ", Reason: ''" + ev.reason + ", Code: " + ev.code);
+            switchView("log");
+            reconnect = true;
+        };
 
+        await waitUntil(() => reconnect === true);
 
-  await waitUntil(() => reconnect === true);
-
-};
+    };
 
 };
 
@@ -143,6 +143,9 @@ async function waitUntil(condition, time = 2000) {
     }
 }
 
+function makeLog(line) {
+   return '<i><font color="gray">' + timestamp() + '&gt;</font></i> ' + line + '<br>';
+}
 
 </script>
 

@@ -1,6 +1,7 @@
 package events
 
 import (
+	"fmt"
 	"sort"
 	"wedpad/internal/msg"
 
@@ -37,7 +38,7 @@ func (cs *CurrentSystemT) ShowStars() {
 		if s, ok := currSysStars[id]; ok {
 			slog.Debug(9, "BODYNAME: '%s', CSNAME: '%s'", s.BodyName, cs.Name())
 			star["Barycenter"] = false
-			star["Name"] = BodyName(s.BodyName, cs.Name())
+			star["Name"] = cs.BodyName(s.BodyName)
 			tc := StarTypeColor(s.StarType)
 			if tc.Color == "" {
 				tc.Color = GuessColorByTemp(s.SurfaceTemperature)
@@ -45,16 +46,19 @@ func (cs *CurrentSystemT) ShowStars() {
 			star["Type"] = tc
 			star["Subclass"] = s.Subclass
 			star["Luminosity"] = s.Luminosity
-			star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
+			if s.DistanceFromArrivalLs > 0.0 {
+				star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
+			}
 			star["RadiusS"] = Num(s.Radius / SOLAR_RADIUS)
 			star["MassS"] = Num(s.StellarMass)
 			star["TemperatureK"] = Num(s.SurfaceTemperature)
+			star["TemperatureColor"] = GuessColorByTemp(s.SurfaceTemperature)
 			star["OrbitalPeriodD"] = Num(s.OrbitalPeriod / SECONDS_IN_DAY)
+			star["Eccentricity"] = Num(s.Eccentricity)
 			star["Discovered"] = s.WasDiscovered
 			rn, rr := CalcRings(s)
 			if rn > 0 {
-				star["RingsNum"] = rn
-				star["RingsRadiusLs"] = Num(rr / LIGHT_SECOND)
+				star["Rings"] = fmt.Sprintf("%d/%d", rn, int(rr/LIGHT_SECOND))
 			}
 		} else {
 			star["Barycenter"] = true

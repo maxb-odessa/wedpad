@@ -15,8 +15,8 @@
         <th>Mass(Sol)</th>
         <th>Temper(K)</th>
         <th>OrbPer(D)</th>
-        <th>RingsN</th>
-        <th>RingR(Ls)</th>
+        <th>Eccent(e)</th>
+        <th>Rings(N/R)</th>
     </tr>
 </thead>
 
@@ -54,10 +54,10 @@
            <td>{{ $v.DistanceLs }}</td>
            <td>{{ $v.RadiusS }}</td>
            <td>{{ $v.MassS }}</td>
-           <td>{{ $v.TemperatureK }}</td>
+           <td><font color="{{ $v.TemperatureColor }}">{{ $v.TemperatureK }}</font></td>
            <td>{{ $v.OrbitalPeriodD }}</td>
-           <td>{{ $v.RingsNum }}</td>
-           <td>{{ $v.RingsRadiusLs }}</td>
+           <td>{{ $v.Eccentricity }}</td>
+           <td>{{ $v.Rings }}</td>
         {{ else }}
            <td><font color="gray">&#9741;</font></td>
         {{ end }}

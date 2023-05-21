@@ -1,6 +1,7 @@
 package events
 
 import (
+	"fmt"
 	"sort"
 	"strconv"
 	"wedpad/internal/msg"
@@ -8,7 +9,6 @@ import (
 
 func (cs *CurrentSystemT) ShowPlanets() {
 
-	// those are for BODIES view port
 	bodies := make([]map[string]interface{}, 0)
 
 	planets := cs.Planets()
@@ -32,7 +32,7 @@ func (cs *CurrentSystemT) ShowPlanets() {
 
 		body := make(map[string]interface{})
 
-		body["Name"] = BodyName(b.BodyName, cs.Name())
+		body["Name"] = cs.BodyName(b.BodyName)
 		body["DistanceLs"] = Num(b.DistanceFromArrivalLs)
 		body["Type"] = PlanetTypeColor(b.PlanetClass)
 		body["DMTL"] = composeDMTL(b.WasDiscovered, b.WasMapped, b.TerraformState, b.Landable)
@@ -42,15 +42,16 @@ func (cs *CurrentSystemT) ShowPlanets() {
 		body["GravityG"] = Num(b.SurfaceGravity / 10) // this 10 is correct!
 		rn, rr := CalcRings(b)
 		if rn > 0 {
-			body["RingsNum"] = rn
-			body["RingsRadiusLs"] = Num(rr / LIGHT_SECOND)
+			body["Rings"] = fmt.Sprintf("%d/%d", rn, int(rr/LIGHT_SECOND))
 		}
 		body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
 		body["Signals"] = cs.composeBGGHO(id)
+		body["Notes"] = cs.notesOnBody(id)
 
 		bodies = append(bodies, body)
 
 		bodiesCnt++
+
 	}
 
 	if bodiesCnt > 0 {
@@ -78,15 +79,6 @@ func (cs *CurrentSystemT) ShowPlanets() {
 			Data:   "",
 		}
 		m.Send()
-	}
-
-	// those are for LOG view
-	for _, id := range keys {
-
-		if !cs.IsRemarkableBody(id) {
-			continue
-		}
-
 	}
 
 }

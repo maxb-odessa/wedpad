@@ -1,6 +1,9 @@
 <table class="bodies-table">
 
 <caption>
+    <table class="hint-table">
+put notes her
+    </table>
 </caption>
 
 <thead>
@@ -13,8 +16,7 @@
         <th>Mass(E)</th>
         <th>Temp(K)</th>
         <th>Grav(G)</th>
-        <th>RN</th>
-        <th>RR(Ls)</th>
+        <th>Rs(N/R)</th>
         <th>Atmo</th>
         <th>BGGHO</th>
     </tr>
@@ -37,8 +39,7 @@
     <td>{{ $v.MassE }}</td>
     <td>{{ $v.TemperatureK }}</td>
     <td>{{ $v.GravityG }}</td>
-    <td>{{ $v.RingsNum }}</td>
-    <td>{{ $v.RingsRadiusLs }}</td>
+    <td>{{ $v.Rings }}</td>
     <td><font color="{{ $v.Atmosphere.Color }}">{{ $v.Atmosphere.Type }}</font></td>
     <td>{{ range $k, $sig := $v.Signals }}<font color="{{ $sig.Color }}">{{ $sig.Type }}</font>{{ end }}</td>
     </tr>

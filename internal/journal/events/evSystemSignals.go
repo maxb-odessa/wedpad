@@ -41,7 +41,7 @@ func (cs *CurrentSystemT) ShowSignals() {
 	// predict and add bodies BIO signals
 	for name, sigs := range cs.bios.Predict(cs) {
 		s := &SignalT{
-			Name:        BodyName(name, cs.Name()),
+			Name:        cs.BodyName(name),
 			Type:        `<font color="green">Biological</font>`,
 			Description: sigs[0],
 			Hint:        sigs[1],

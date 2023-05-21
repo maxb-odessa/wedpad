@@ -1,6 +1,7 @@
 package events
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/danwakefield/fnmatch"
@@ -197,4 +198,62 @@ func (cs *CurrentSystemT) wantBodyClass(id int) bool {
 	}
 
 	return false
+}
+
+func (cs *CurrentSystemT) notesOnBody(id int) []string {
+
+	notes := make([]string, 0)
+
+	// close bodies
+	if n := closeBodies(cs, id); n != "" {
+		notes = append(notes, n)
+	}
+
+	// close/intersecting rings
+
+	// shepherd moon
+
+	// hot planet (close to star)
+
+	// fast spinning body
+
+	// fast orbiting body
+
+	// high inclination body
+
+	slog.Debug(9, "Notes on body: %+v", notes)
+
+	return notes
+}
+
+func closeBodies(cs *CurrentSystemT, id int) string {
+
+	planets := cs.Planets()
+	body := planets[id]
+
+	if parent := findParentBody(planets, id); parent != nil {
+
+		bodyDistRatio := body.SemiMajorAxis / body.Radius
+		parentDistRatio := body.SemiMajorAxis / parent.Radius
+
+		if bodyDistRatio <= 5.0 || parentDistRatio <= 5.0 {
+			return fmt.Sprintf("Close bodies '%s' and '%s', SMA/Rad: %.2f and %.2f", cs.BodyName(body.BodyName), cs.BodyName(parent.BodyName), bodyDistRatio, parentDistRatio)
+		}
+
+	}
+
+	return ""
+}
+
+func findParentBody(planets map[int]*ScanT, id int) *ScanT {
+
+	body := planets[id]
+
+	for _, parent := range body.Parents {
+		if parent.Planet > 0 {
+			return planets[parent.Planet]
+		}
+	}
+
+	return nil
 }
