@@ -27,7 +27,8 @@ func (cs *CurrentSystemT) ShowPlanets() {
 
 		b := planets[id]
 
-		if !cs.IsRemarkableBody(id) {
+		notes := cs.notesOnBody(id)
+		if !cs.IsRemarkableBody(id) && len(notes) == 0 {
 			continue
 		}
 
@@ -43,11 +44,11 @@ func (cs *CurrentSystemT) ShowPlanets() {
 		body["GravityG"] = Num(b.SurfaceGravity / 10) // this 10 is correct!
 		rn, rr := CalcRings(b)
 		if rn > 0 {
-			body["Rings"] = fmt.Sprintf("%d/%d", rn, int(rr/LIGHT_SECOND))
+			body["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
 		}
 		body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
 		body["Signals"] = cs.composeBGGHO(id)
-		body["Notes"] = strings.Join(cs.notesOnBody(id), "<br>")
+		body["Notes"] = strings.Join(notes, "<br>")
 
 		bodies = append(bodies, body)
 

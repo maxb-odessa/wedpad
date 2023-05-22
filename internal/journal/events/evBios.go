@@ -85,7 +85,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
 			hint := fmt.Sprintf(`<tr><td>%s</td><td style="text-align: right;">%.1f MCr</td>`, bio.Name, float64(bio.ValueCr)/1_000_000.0)
 			if bio.Notes != "" {
-				hint += `<td style="font-size: smaller; color: gray;">` + bio.Notes + "</td>"
+				hint += `<td style="font-size: smaller;">` + bio.Notes + "</td>"
 			}
 			hint += "</tr>"
 
@@ -153,8 +153,10 @@ func (b *BiosT) guessBios(cs *CurrentSystemT, ev *ScanT) []*BioT {
 			continue
 		}
 
-		if len(bio.Volcanism) > 0 && !matchBodies(cs, bio.Volcanism) {
-			continue
+		if len(bio.Volcanism) > 0 {
+			if ev.Volcanism == "" || !matchStrings(ev.Volcanism, bio.Volcanism) {
+				continue
+			}
 		}
 
 		pBios = append(pBios, bio)

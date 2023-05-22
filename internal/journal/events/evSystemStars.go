@@ -58,7 +58,7 @@ func (cs *CurrentSystemT) ShowStars() {
 			star["Discovered"] = s.WasDiscovered
 			rn, rr := CalcRings(s)
 			if rn > 0 {
-				star["Rings"] = fmt.Sprintf("%d/%d", rn, int(rr/LIGHT_SECOND))
+				star["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
 			}
 		} else {
 			star["Barycenter"] = true
