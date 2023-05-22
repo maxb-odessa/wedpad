@@ -23,40 +23,44 @@ func (cs *CurrentSystemT) ShowPlanets() {
 	sort.Ints(keys)
 
 	bodiesCnt := 0
+	haveNotes := 0
+
 	for _, id := range keys {
-
-		b := planets[id]
-
-		notes := cs.notesOnBody(id)
-		if !cs.IsRemarkableBody(id) && len(notes) == 0 {
-			continue
-		}
 
 		body := make(map[string]interface{})
 
-		body["Name"] = cs.BodyName(b.BodyName)
-		body["DistanceLs"] = Num(b.DistanceFromArrivalLs)
-		body["Type"] = PlanetTypeColor(b.PlanetClass)
-		body["DMTL"] = composeDMTL(b.WasDiscovered, b.WasMapped, b.TerraformState, b.Landable)
-		body["RadiusE"] = Num(b.Radius / EARTH_RADIUS)
-		body["MassE"] = Num(b.MassEm)
-		body["TemperatureK"] = Num(b.SurfaceTemperature)
-		body["GravityG"] = Num(b.SurfaceGravity / 10) // this 10 is correct!
-		rn, rr := CalcRings(b)
-		if rn > 0 {
-			body["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
+		b := planets[id]
+
+		if cs.IsRemarkableBody(id) {
+
+			body["Name"] = cs.BodyName(b.BodyName)
+			body["DistanceLs"] = Num(b.DistanceFromArrivalLs)
+			body["Type"] = PlanetTypeColor(b.PlanetClass)
+			body["DMTL"] = composeDMTL(b.WasDiscovered, b.WasMapped, b.TerraformState, b.Landable)
+			body["RadiusE"] = Num(b.Radius / EARTH_RADIUS)
+			body["MassE"] = Num(b.MassEm)
+			body["TemperatureK"] = Num(b.SurfaceTemperature)
+			body["GravityG"] = Num(b.SurfaceGravity / 10) // this 10 is correct!
+			rn, rr := CalcRings(b)
+			if rn > 0 {
+				body["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
+			}
+			body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
+			body["Signals"] = cs.composeBGGHO(id)
+
+			bodies = append(bodies, body)
+
+			bodiesCnt++
 		}
-		body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
-		body["Signals"] = cs.composeBGGHO(id)
-		body["Notes"] = strings.Join(notes, "<br>")
 
-		bodies = append(bodies, body)
-
-		bodiesCnt++
+		if notes := cs.notesOnBody(id); len(notes) > 0 {
+			haveNotes++
+			body["Notes"] = strings.Join(notes, "<br>")
+		}
 
 	}
 
-	if bodiesCnt > 0 {
+	if bodiesCnt > 0 || haveNotes > 0 {
 
 		m := &msg.Message{
 			Target: msg.TARGET_BODIES,

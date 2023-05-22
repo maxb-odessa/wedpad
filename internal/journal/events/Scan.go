@@ -78,7 +78,22 @@ type ScanT struct {
 // Scan event handler
 func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	ev := new(ScanT)
+
+	// init Parents with invalid values
+	// because Parent.Star (and other) could be zero (which is also a default value in Go)
+	ev.Parents = make([]struct {
+		Null   int `mapstructure:"Null"`
+		Planet int `mapstructure:"Planet"`
+		Ring   int `mapstructure:"Ring"`
+		Star   int `mapstructure:"Star"`
+	}, 1)
+	ev.Parents[0].Null = -1
+	ev.Parents[0].Planet = -1
+	ev.Parents[0].Ring = -1
+	ev.Parents[0].Star = -1
+
 	mapstructure.Decode(eventData, ev)
+	slog.Debug(9, "Parents for '%s': %+v", ev.BodyName, ev.Parents)
 	cs := evh.CurrentSystem()
 
 	cs.SetName(ev.StarSystem)

@@ -2,6 +2,7 @@ package events
 
 import (
 	"fmt"
+	"math"
 	"strings"
 
 	"github.com/danwakefield/fnmatch"
@@ -218,22 +219,38 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 		notes = append(notes, note)
 	}
 
-	// fast spinning body
+	// TODO planet inside star ring
 
-	// fast orbiting body
+	// TODO fast spinning body
+
+	// TODO fast orbiting body
 
 	// high inclination body
+	if note := highInclination(cs, body); note != "" {
+		notes = append(notes, note)
+	}
 
 	slog.Debug(9, "Notes on body: %+v", notes)
 
 	return notes
 }
 
+func findParentBarycentre(barycentres map[int]*ScanBaryCentreT, body *ScanT) *ScanBaryCentreT {
+
+	if len(body.Parents) > 0 {
+		if body.Parents[0].Null > 0 {
+			return barycentres[body.Parents[0].Null]
+		}
+	}
+
+	return nil
+}
+
 func findParentBody(planets map[int]*ScanT, body *ScanT) *ScanT {
 
-	for _, parent := range body.Parents {
-		if parent.Planet > 0 {
-			return planets[parent.Planet]
+	if len(body.Parents) > 0 {
+		if body.Parents[0].Planet > 0 {
+			return planets[body.Parents[0].Planet]
 		}
 	}
 
@@ -242,9 +259,25 @@ func findParentBody(planets map[int]*ScanT, body *ScanT) *ScanT {
 
 func findParentStar(stars map[int]*ScanT, body *ScanT) *ScanT {
 
-	for _, parent := range body.Parents {
-		if parent.Star > 0 {
-			return stars[parent.Planet]
+	if len(body.Parents) > 0 {
+		if body.Parents[0].Star >= 0 {
+			return stars[body.Parents[0].Star]
+		}
+	}
+
+	return nil
+}
+
+func findBodyByBaryCentreID(planets map[int]*ScanT, baryCentreID int, skipBodyID int) *ScanT {
+
+	for id, p := range planets {
+		if id == skipBodyID {
+			continue
+		}
+		if len(p.Parents) > 0 {
+			if p.Parents[0].Null == baryCentreID {
+				return p
+			}
 		}
 	}
 
@@ -253,40 +286,39 @@ func findParentStar(stars map[int]*ScanT, body *ScanT) *ScanT {
 
 func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 
-	planets := cs.Planets()
+	// check over parent barycentre
+	if pBary := findParentBarycentre(cs.BaryCentres(), body); pBary != nil {
 
-	if parent := findParentBody(planets, body); parent != nil {
+		if pBody := findBodyByBaryCentreID(cs.Planets(), pBary.BodyID, body.BodyID); pBody != nil {
 
-		var bodyRad, parentRad float64
+			bodyDistRatio := body.SemiMajorAxis / body.Radius
+			parentDistRatio := pBody.SemiMajorAxis / pBody.Radius
 
-		byRings := ""
+			if bodyDistRatio < 5.0 && parentDistRatio < 5.0 {
+				return fmt.Sprintf("Close orbiting bodes: '%s' and '%s', SMA/Rad: %.2f and %.2f",
+					cs.BodyName(body.BodyName),
+					cs.BodyName(pBody.BodyName),
+					bodyDistRatio,
+					parentDistRatio,
+				)
+			}
 
-		if rn, rr := CalcRings(body); rn > 0 {
-			byRings = "(by rings) "
-			bodyRad = rr
-		} else {
-			bodyRad = body.Radius
 		}
 
-		if rn, rr := CalcRings(parent); rn > 0 {
-			byRings = "(by rings) "
-			parentRad = rr
-		} else {
-			parentRad = parent.Radius
-		}
+		// check over parent body
+	} else if pPlanet := findParentBody(cs.Planets(), body); pPlanet != nil {
 
-		bodyDistRatio := body.SemiMajorAxis / bodyRad
-		parentDistRatio := body.SemiMajorAxis / parentRad
+		bodyDistRatio := body.SemiMajorAxis / body.Radius
+		parentDistRatio := body.SemiMajorAxis / pPlanet.Radius
 
-		if bodyDistRatio <= 5.0 || parentDistRatio <= 5.0 {
-			return fmt.Sprintf("Close bodies: %s'%s' ('%s'), SMA/Rad: %.2f (%.2f)",
-				byRings,
+		if bodyDistRatio < 5.0 && parentDistRatio < 5.0 {
+			return fmt.Sprintf("Close orbiting body: '%s' to '%s', SMA/Rad: %.2f (%.2f)",
 				cs.BodyName(body.BodyName),
-				cs.BodyName(parent.BodyName),
+				cs.BodyName(pPlanet.BodyName),
 				bodyDistRatio,
-				parentDistRatio)
+				parentDistRatio,
+			)
 		}
-
 	}
 
 	return ""
@@ -294,12 +326,10 @@ func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 
 func shepherdMoon(cs *CurrentSystemT, body *ScanT) string {
 
-	planets := cs.Planets()
-
-	if parent := findParentBody(planets, body); parent != nil {
+	if parent := findParentBody(cs.Planets(), body); parent != nil {
 		if rn, rr := CalcRings(parent); rn > 0 {
 			if rr > body.SemiMajorAxis {
-				return fmt.Sprintf("Shepherd Moon: '%s'", body.BodyName)
+				return fmt.Sprintf("Shepherd Moon: '%s' for '%s'", body.BodyName, parent.BodyName)
 			}
 		}
 	}
@@ -309,13 +339,23 @@ func shepherdMoon(cs *CurrentSystemT, body *ScanT) string {
 
 func hotPlanet(cs *CurrentSystemT, body *ScanT) string {
 
-	stars := cs.Stars()
+	if parent := findParentStar(cs.Stars(), body); parent != nil {
 
-	if parent := findParentStar(stars, body); parent != nil {
-		if body.SemiMajorAxis/parent.Radius < 3.0 {
-			return fmt.Sprintf("Hot Planet: '%s', distance to star %.1f Ls", body.BodyName, body.SemiMajorAxis-parent.Radius/LIGHT_SECOND)
+		smaRadRatio := body.SemiMajorAxis / parent.Radius
+
+		if smaRadRatio < 2.0 {
+			return fmt.Sprintf("Hot Planet: '%s', distance to star %.2f Ls (%.2f Star Rad)",
+				body.BodyName, math.Abs(body.SemiMajorAxis-parent.Radius)/LIGHT_SECOND, smaRadRatio)
 		}
 	}
 
+	return ""
+}
+
+func highInclination(cs *CurrentSystemT, body *ScanT) string {
+	incl := math.Abs(body.OrbitalInclination)
+	if incl >= 45.0 && incl <= 90.0+45.0 {
+		return fmt.Sprintf("High Inclination: '%s' %+.1f&deg;", body.BodyName, body.OrbitalInclination)
+	}
 	return ""
 }
