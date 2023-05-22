@@ -116,5 +116,5 @@ func (evh *EventHandler) scanStar(ev *ScanT) {
 func (evh *EventHandler) scanPlanet(ev *ScanT) {
 	cs := evh.CurrentSystem()
 	cs.AddPlanet(ev)
-	cs.ShowPlanets()
+	cs.ShowPlanets(false)
 }

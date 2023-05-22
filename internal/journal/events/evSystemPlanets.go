@@ -8,7 +8,7 @@ import (
 	"wedpad/internal/msg"
 )
 
-func (cs *CurrentSystemT) ShowPlanets() {
+func (cs *CurrentSystemT) ShowPlanets(final bool) {
 
 	bodies := make([]map[string]interface{}, 0)
 
@@ -48,14 +48,19 @@ func (cs *CurrentSystemT) ShowPlanets() {
 			body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
 			body["Signals"] = cs.composeBGGHO(id)
 
-			bodies = append(bodies, body)
-
 			bodiesCnt++
 		}
 
-		if notes := cs.notesOnBody(id); len(notes) > 0 {
-			haveNotes++
-			body["Notes"] = strings.Join(notes, "<br>")
+		if final {
+			if notes := cs.notesOnBody(id); len(notes) > 0 {
+				body["Notes"] = strings.Join(notes, "<br>")
+				body["NotesName"] = cs.BodyName(b.BodyName)
+				haveNotes++
+			}
+		}
+
+		if len(body) > 0 {
+			bodies = append(bodies, body)
 		}
 
 	}
