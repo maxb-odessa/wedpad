@@ -42,7 +42,7 @@ func (cs *CurrentSystemT) ShowSignals() {
 	for name, sigs := range cs.bios.Predict(cs) {
 		s := &SignalT{
 			Name:        cs.BodyName(name),
-			Type:        `<font color="green">Biological</font>`,
+			Type:        `<font color="limegreen">Biological</font>`,
 			Description: sigs[0],
 			Hint:        sigs[1],
 		}

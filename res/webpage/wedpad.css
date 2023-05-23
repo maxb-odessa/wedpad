@@ -15,6 +15,7 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: 5% 90% 5%;
     padding: 0;
+    backdrop-filter: blur(7px);
 }
 
 #view-top {
@@ -26,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    backdrop-filter: blur(7px);
 }
 
 #view-bottom-container {
@@ -35,6 +37,7 @@ body {
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
+    backdrop-filter: blur(7px);
 }
 
 #view-bottom {
@@ -100,6 +103,7 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: 25% 25% 25% 25%;
     background-color: rgba(250, 250, 250, 0.1);
+    backdrop-filter: blur(7px);
 }
 
 .button {
@@ -117,6 +121,7 @@ body {
     background-color: rgba(218, 165, 32, 0.3);
     white-space: pre-wrap;
     word-wrap: break-word;
+    backdrop-filter: blur(7px);
 }
 
 .button-text {
@@ -187,6 +192,9 @@ body {
 .stars-table td {
     font-size: larger;
     text-align: right;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: rgba(250, 250, 250, 0.15);
 }
 
 .stars-table caption {
@@ -230,11 +238,22 @@ body {
 .bodies-table td {
     font-size: larger;
     text-align: right;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: rgba(250, 250, 250, 0.15);
 }
 
 .bodies-table tbody {
     font-size: larger;
     /* font-family: courier, courier new, serif; */
+}
+
+.bodies-table caption {
+    border: 1px solid white;
+    background-color: #AAAA30;
+    border-radius: 3px;
+    color: black;
+    font-family: impact, arial black;
 }
 
 .signals-table {
@@ -256,6 +275,14 @@ body {
 .signals-table td {
     font-size: larger;
     text-align: left;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: rgba(250, 250, 250, 0.15);
+}
+
+.signals-table tbody {
+    font-size: larger;
+    /* font-family: courier, courier new, serif; */
 }
 
 .hint-table {
@@ -266,24 +293,27 @@ body {
     position: absolute;
     border-radius: 8px;
     border: 0;
-    border-spacing: 5px;
-    background-color: rgba(200, 200, 0, 0.20);
-    backdrop-filter: blur(5px);
+    border-spacing: 2px;    
+    background-color: rgba(150, 150, 1500, 0.20);
+    backdrop-filter: blur(7px);
     top: 7%;
     right: 12%;
     box-shadow: 5px 7px 10px black;
 }
 
 .hint-table td {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     border: solid 1px black;
     border-radius: 3px;
-    background-color: rgba(200, 200, 0, 0.30);
+    background-color: rgba(150, 150, 150, 0.35);
     color: white;
     overflow-wrap: break-word;
 }
 
 .hint-table caption {
-    background-color: rgba(200, 200, 0, 0.30);
     border: 0;
     color: white;
     font-size: 120%;
@@ -294,6 +324,10 @@ body {
 }
 
 .hint-table th {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     color: lightgray;
 }
 
@@ -305,16 +339,4 @@ body {
     visibility: visible;
 }
 
-.bodies-table caption {
-    border: 1px solid white;
-    background-color: #AAAA30;
-    border-radius: 3px;
-    color: black;
-    font-family: impact, arial black;
-}
-
-.signals-table tbody {
-    font-size: larger;
-    /* font-family: courier, courier new, serif; */
-}
 
