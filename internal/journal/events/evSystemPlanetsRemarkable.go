@@ -219,11 +219,10 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 		notes = append(notes, note)
 	}
 
-	// TODO planet inside star ring
-
-	// TODO fast spinning body
-
-	// TODO fast orbiting body
+	// fast spinning body
+	if note := fastSpinning(cs, body); note != "" {
+		notes = append(notes, note)
+	}
 
 	// high inclination body
 	if note := highInclination(cs, body); note != "" {
@@ -284,8 +283,9 @@ func findBodyByBaryCentreID(planets map[int]*ScanT, baryCentreID int, skipBodyID
 	return nil
 }
 
-// TODO -> config all constatnts!
 func closeBodies(cs *CurrentSystemT, body *ScanT) string {
+
+	ratioRequired := float64(sconf.Float32Def("criteria", "close bodies ratio", 3.0))
 
 	// check over parent barycentre
 	if pBary := findParentBarycentre(cs.BaryCentres(), body); pBary != nil {
@@ -295,7 +295,7 @@ func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 			bodyDistRatio := body.SemiMajorAxis / body.Radius
 			parentDistRatio := pBody.SemiMajorAxis / pBody.Radius
 
-			if bodyDistRatio < 5.0 || parentDistRatio < 5.0 {
+			if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
 				return fmt.Sprintf("Close orbiting bodes: to '%s', SMA/Rad: %.2f",
 					cs.BodyName(pBody.BodyName),
 					parentDistRatio,
@@ -310,7 +310,7 @@ func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 		bodyDistRatio := body.SemiMajorAxis / body.Radius
 		parentDistRatio := body.SemiMajorAxis / pPlanet.Radius
 
-		if bodyDistRatio < 5.0 || parentDistRatio < 5.0 {
+		if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
 			return fmt.Sprintf("Close orbiting body: to '%s', SMA/Rad: %.2f (%.2f)",
 				cs.BodyName(pPlanet.BodyName),
 				bodyDistRatio,
@@ -341,7 +341,7 @@ func hotPlanet(cs *CurrentSystemT, body *ScanT) string {
 
 		smaRadRatio := body.SemiMajorAxis / parent.Radius
 
-		if smaRadRatio < 2.0 {
+		if smaRadRatio < float64(sconf.Float32Def("criteria", "hot planet ratio", 2.0)) {
 			return fmt.Sprintf("Hot Planet: distance to star %.2f Ls (%.2f Star Rad)",
 				math.Abs(body.SemiMajorAxis-parent.Radius)/LIGHT_SECOND, smaRadRatio)
 		}
@@ -355,5 +355,13 @@ func highInclination(cs *CurrentSystemT, body *ScanT) string {
 	if incl >= 45.0 && incl <= 90.0+45.0 {
 		return fmt.Sprintf("High Inclination: '%s' %+.1f&deg;", cs.BodyName(body.BodyName), body.OrbitalInclination)
 	}
+	return ""
+}
+
+func fastSpinning(cs *CurrentSystemT, body *ScanT) string {
+	if math.Abs(body.RotationPeriod) <= float64(sconf.Int32Def("criteria", "body rotation period", 1)) {
+		return fmt.Sprintf("Fast Spinning: %.1f Hours", body.RotationPeriod/60/60)
+	}
+
 	return ""
 }

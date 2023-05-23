@@ -50,6 +50,7 @@
 <tbody>
 {{- $odd := true}}
 {{ range $i, $v := . }}
+    {{ if $v.Name }}
     {{ if $odd }}
         <tr id="tr-odd">
     {{ else }}
@@ -68,6 +69,7 @@
     <td><font color="{{ $v.Atmosphere.Color }}">{{ $v.Atmosphere.Type }}</font></td>
     <td>{{ range $k, $sig := $v.Signals }}<font color="{{ $sig.Color }}">{{ $sig.Type }}</font>{{ end }}</td>
     </tr>
+    {{ end }}
 {{ end }}
 </tbody>
 

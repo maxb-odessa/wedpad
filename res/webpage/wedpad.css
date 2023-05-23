@@ -266,7 +266,7 @@ body {
     border-radius: 8px;
     border: 0;
     border-spacing: 5px;
-    background-color: rgba(2000, 200, 0, 0.30);
+    background-color: rgba(200, 200, 0, 0.20);
     backdrop-filter: blur(5px);
     top: 7%;
     right: 12%;
@@ -274,21 +274,22 @@ body {
 }
 
 .hint-table td {
-    border: dotted 1px black;
+    border: solid 1px black;
     border-radius: 5px;
-    background-color: gray;
+    background-color: rgba(200, 200, 0, 0.30);
     color: white;
     overflow-wrap: break-word;
 }
 
 .hint-table caption {
-    border: dotted 1px black;
+    border: solid 1px black;
     background-color: rgba(2000, 200, 0, 0.30);
     border-radius: 5px;
     color: white;
     font-size: 120%;
+    font-family: courier;
     font-weight: bold;
-    text-decoration: underline;
+    backdrop-filter: blur(5px);
     overflow-wrap: break-word;
 }
 
@@ -296,7 +297,7 @@ body {
     color: lightgray;
 }
 
-.signals-table td:hover .hint-table {
+.signals-table tr:hover .hint-table {
     visibility: visible;
 }
 

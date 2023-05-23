@@ -900,6 +900,7 @@
       0.0,
       9999.0
     ],
+    "Volcanism": ["*nitrogen*"],
     "ColonyRangeM": 500,
     "Notes": "Possibly Nitrogen-based vulcanism required"
   },
@@ -924,6 +925,7 @@
       0.0,
       9999.0
     ],
+    "Volcanism": ["*carbon*"],
     "ColonyRangeM": 500,
     "Notes": "Possibly Carbon-based vulcanism required"
   },
@@ -970,6 +972,7 @@
       0.0,
       9999.0
     ],
+    "Volcanism": ["*water*"],
     "ColonyRangeM": 500,
     "Notes": "Possibly Water-based vulcanism required"
   },
