@@ -49,4 +49,9 @@ func (evh *EventHandler) StartJump(eventData map[string]interface{}) {
 		Data:   "",
 	}
 	m.Send()
+
+	switch ev.StarClass[0:1] {
+	case "D", "H":
+		cs.sound.Play("warning")
+	}
 }

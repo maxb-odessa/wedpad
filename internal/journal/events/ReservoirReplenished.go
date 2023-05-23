@@ -19,5 +19,5 @@ func (evh *EventHandler) ReservoirReplenished(eventData map[string]interface{}) 
 	ev := new(ReservoirReplenishedT)
 	mapstructure.Decode(eventData, ev)
 
-	AlertFuel(ev.FuelMain)
+	evh.cs.AlertFuel(ev.FuelMain)
 }

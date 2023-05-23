@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"strings"
+	"wedpad/internal/sound"
 	"wedpad/internal/utils"
 
 	"github.com/maxb-odessa/sconf"
@@ -29,6 +30,9 @@ type CurrentSystemT struct {
 	planetSignalsFound map[int]*SAASignalsFoundT
 
 	bios *BiosT
+
+	alert *AlertT
+	sound *sound.SoundT
 }
 
 var loadedData map[string][]byte
@@ -52,11 +56,28 @@ func (cs *CurrentSystemT) Init() error {
 		return errors.New("No BIO data loaded (missing 'bios.json'?)")
 	}
 
-	alerts = make(map[string]*Alert)
+	// load and init sounds
+	cs.sound = new(sound.SoundT)
+	if err := cs.sound.Init(); err != nil {
+		return err
+	}
+
+	cs.alert = new(AlertT)
+	if err := cs.alert.Init(cs.sound); err != nil {
+		return err
+	}
 
 	cs.Reset()
 
 	return nil
+}
+
+func (cs *CurrentSystemT) AlertFuel(what float64) {
+	cs.alert.AlertFuel(what)
+}
+
+func (cs *CurrentSystemT) Play(what string) {
+	cs.sound.Play(what)
 }
 
 func (cs *CurrentSystemT) String() string {

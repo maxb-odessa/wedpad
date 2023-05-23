@@ -292,11 +292,27 @@ func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 
 		if pBody := findBodyByBaryCentreID(cs.Planets(), pBary.BodyID, body.BodyID); pBody != nil {
 
-			bodyDistRatio := body.SemiMajorAxis / body.Radius
-			parentDistRatio := pBody.SemiMajorAxis / pBody.Radius
+			bodyRad := body.Radius
+			pBodyRad := pBody.Radius
+			byRings := ""
 
-			if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
-				return fmt.Sprintf("Close orbiting bodes: to '%s', SMA/Rad: %.2f",
+			if rn, rr := CalcRings(body); rn > 0 {
+				bodyRad += rr
+				byRings = " (rings)"
+			}
+
+			if rn, rr := CalcRings(pBody); rn > 0 {
+				pBodyRad += rr
+				byRings = " (rings)"
+			}
+
+			bodyDistRatio := body.SemiMajorAxis / bodyRad
+			parentDistRatio := pBody.SemiMajorAxis / pBodyRad
+
+			if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
+				math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
+				return fmt.Sprintf("Close orbiting bodes%s: to '%s', SMA/Rad: %.2f",
+					byRings,
 					cs.BodyName(pBody.BodyName),
 					parentDistRatio,
 				)
@@ -307,11 +323,27 @@ func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 		// check over parent body
 	} else if pPlanet := findParentBody(cs.Planets(), body); pPlanet != nil {
 
-		bodyDistRatio := body.SemiMajorAxis / body.Radius
-		parentDistRatio := body.SemiMajorAxis / pPlanet.Radius
+		bodyRad := body.Radius
+		pPlanetRad := pPlanet.Radius
+		byRings := ""
 
-		if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
-			return fmt.Sprintf("Close orbiting body: to '%s', SMA/Rad: %.2f (%.2f)",
+		if rn, rr := CalcRings(body); rn > 0 {
+			bodyRad += rr
+			byRings = " (rings)"
+		}
+
+		if rn, rr := CalcRings(pPlanet); rn > 0 {
+			pPlanetRad += rr
+			byRings = " (rings)"
+		}
+
+		bodyDistRatio := body.SemiMajorAxis / bodyRad
+		parentDistRatio := body.SemiMajorAxis / pPlanetRad
+
+		if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
+			math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
+			return fmt.Sprintf("Close orbiting body%s: to '%s', SMA/Rad: %.2f (%.2f)",
+				byRings,
 				cs.BodyName(pPlanet.BodyName),
 				bodyDistRatio,
 				parentDistRatio,

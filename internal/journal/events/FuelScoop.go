@@ -19,5 +19,5 @@ func (evh *EventHandler) FuelScoop(eventData map[string]interface{}) {
 	ev := new(FuelScoopT)
 	mapstructure.Decode(eventData, ev)
 
-	AlertFuel(ev.Total)
+	evh.cs.AlertFuel(ev.Total)
 }

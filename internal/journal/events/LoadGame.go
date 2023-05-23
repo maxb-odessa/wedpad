@@ -35,5 +35,5 @@ func (evh *EventHandler) LoadGame(eventData map[string]interface{}) {
 	ev := new(LoadGameT)
 	mapstructure.Decode(eventData, ev)
 
-	AlertFuel(ev.FuelLevel)
+	evh.cs.AlertFuel(ev.FuelLevel)
 }
