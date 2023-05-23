@@ -2,7 +2,6 @@ package sound
 
 import (
 	"bytes"
-	"sync"
 	"time"
 	"wedpad/internal/utils"
 
@@ -14,7 +13,6 @@ import (
 )
 
 type track struct {
-	sync.Mutex
 	data   []byte
 	buffer *beep.Buffer
 }
@@ -79,10 +77,14 @@ func (s *SoundT) run() {
 }
 
 func (tr *track) play() {
-
-	tr.Lock()
-	defer tr.Unlock()
+	slog.Debug(9, "PLAY")
 
 	stream := tr.buffer.Streamer(0, tr.buffer.Len())
-	speaker.Play(stream)
+
+	done := make(chan bool)
+	speaker.Play(beep.Seq(stream, beep.Callback(func() {
+		done <- true
+	})))
+
+	<-done
 }

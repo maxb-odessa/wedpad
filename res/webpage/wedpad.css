@@ -293,7 +293,7 @@ body {
     position: absolute;
     border-radius: 8px;
     border: 0;
-    border-spacing: 2px;    
+    border-spacing: 2px;
     background-color: rgba(150, 150, 1500, 0.20);
     backdrop-filter: blur(7px);
     top: 7%;

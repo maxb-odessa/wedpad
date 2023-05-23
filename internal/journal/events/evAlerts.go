@@ -69,16 +69,28 @@ func (al *AlertT) alertShow() {
 }
 
 func (al *AlertT) AlertFuel(fl float64) {
+
 	al.alertDel(ALERT_FUEL)
+
 	if fl < 10.0 {
+
 		level := ALERT_LEVEL_INFO
+		al.sound.Play("drop")
+
 		if fl < 5.0 {
+
 			level = ALERT_LEVEL_WARN
+			al.sound.Play("drop")
+
 			if fl < 2.0 {
 				level = ALERT_LEVEL_CRIT
+				al.sound.Play("drop")
 			}
+
 		}
+
 		al.alertAdd(ALERT_FUEL, level, fmt.Sprintf("Fuel level is %.1f tons", fl))
 	}
+
 	al.alertShow()
 }
