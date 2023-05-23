@@ -101,18 +101,17 @@ func (cs *CurrentSystemT) wantRings(id int) bool {
 	rNum, rRad := CalcRings(cs.Planets()[id])
 	rRadLs := float32(rRad / LIGHT_SECOND)
 
-	wantHighRadLs := sconf.Float32Def("criteria", "high ring radius", 0.0)
-	wantLowRadLs := sconf.Float32Def("criteria", "low ring radius", 0.0)
+	minRadLs := sconf.Float32Def("criteria", "min ring radius", 0.0)
 
 	if rNum == 0 {
-		if wantLowRadLs > 0.0 || wantHighRadLs > 0.0 {
+		if minRadLs > 0.0 {
 			return false
 		} else {
 			return true
 		}
 	}
 
-	if rRadLs <= wantLowRadLs || rRadLs >= wantHighRadLs {
+	if rRadLs >= minRadLs {
 		return true
 	}
 
@@ -205,27 +204,32 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 	body := cs.Planets()[id]
 
 	// close bodies or rings
-	if note := closeBodies(cs, body); note != "" {
+	if note := cs.closeBodies(body); note != "" {
 		notes = append(notes, note)
 	}
 
 	// shepherd moon
-	if note := shepherdMoon(cs, body); note != "" {
+	if note := cs.shepherdMoon(body); note != "" {
 		notes = append(notes, note)
 	}
 
 	// hot planet (close to star)
-	if note := hotPlanet(cs, body); note != "" {
+	if note := cs.hotPlanet(body); note != "" {
 		notes = append(notes, note)
 	}
 
 	// fast spinning body
-	if note := fastSpinning(cs, body); note != "" {
+	if note := cs.fastSpinning(body); note != "" {
 		notes = append(notes, note)
 	}
 
 	// high inclination body
-	if note := highInclination(cs, body); note != "" {
+	if note := cs.highInclination(body); note != "" {
+		notes = append(notes, note)
+	}
+
+	// GG with high helium level
+	if note := cs.highHeliumLevel(body); note != "" {
 		notes = append(notes, note)
 	}
 
@@ -283,7 +287,7 @@ func findBodyByBaryCentreID(planets map[int]*ScanT, baryCentreID int, skipBodyID
 	return nil
 }
 
-func closeBodies(cs *CurrentSystemT, body *ScanT) string {
+func (cs *CurrentSystemT) closeBodies(body *ScanT) string {
 
 	ratioRequired := float64(sconf.Float32Def("criteria", "close bodies ratio", 3.0))
 
@@ -354,7 +358,7 @@ func closeBodies(cs *CurrentSystemT, body *ScanT) string {
 	return ""
 }
 
-func shepherdMoon(cs *CurrentSystemT, body *ScanT) string {
+func (cs *CurrentSystemT) shepherdMoon(body *ScanT) string {
 
 	if parent := findParentBody(cs.Planets(), body); parent != nil {
 		if rn, rr := CalcRings(parent); rn > 0 {
@@ -367,7 +371,7 @@ func shepherdMoon(cs *CurrentSystemT, body *ScanT) string {
 	return ""
 }
 
-func hotPlanet(cs *CurrentSystemT, body *ScanT) string {
+func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 
 	if parent := findParentStar(cs.Stars(), body); parent != nil {
 
@@ -382,7 +386,7 @@ func hotPlanet(cs *CurrentSystemT, body *ScanT) string {
 	return ""
 }
 
-func highInclination(cs *CurrentSystemT, body *ScanT) string {
+func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
 	if incl >= 45.0 && incl <= 90.0+45.0 {
 		return fmt.Sprintf("High Inclination: '%s' %+.1f&deg;", cs.BodyName(body.BodyName), body.OrbitalInclination)
@@ -390,9 +394,21 @@ func highInclination(cs *CurrentSystemT, body *ScanT) string {
 	return ""
 }
 
-func fastSpinning(cs *CurrentSystemT, body *ScanT) string {
+func (cs *CurrentSystemT) fastSpinning(body *ScanT) string {
 	if math.Abs(body.RotationPeriod) <= float64(sconf.Int32Def("criteria", "body rotation period", 1)) {
 		return fmt.Sprintf("Fast Spinning: %.1f Hours", body.RotationPeriod/60/60)
+	}
+
+	return ""
+}
+
+func (cs *CurrentSystemT) highHeliumLevel(body *ScanT) string {
+	if fnmatch.Match("*giant*", body.PlanetClass, fnmatch.FNM_IGNORECASE) {
+		for _, atmo := range body.AtmosphereComposition {
+			if atmo.Name == "Helium" && atmo.Percent >= float64(sconf.Float32Def("criteria", "min helium level", 29.0)) {
+				return fmt.Sprintf("High Helium level: %.1f%%", atmo.Percent)
+			}
+		}
 	}
 
 	return ""
