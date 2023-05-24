@@ -222,12 +222,12 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 	if note := cs.fastSpinning(body); note != "" {
 		notes = append(notes, note)
 	}
-
+	/* not needed atm TODO: make it configurable
 	// high inclination body
 	if note := cs.highInclination(body); note != "" {
 		notes = append(notes, note)
 	}
-
+	*/
 	// GG with high helium level
 	if note := cs.highHeliumLevel(body); note != "" {
 		notes = append(notes, note)

@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/danwakefield/fnmatch"
+	"github.com/maxb-odessa/sconf"
 	"github.com/maxb-odessa/slog"
 	"github.com/mitchellh/mapstructure"
 )
@@ -83,13 +84,18 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
 			bioFams[bio.Family] = true
 
-			hint := fmt.Sprintf(`<tr><td>%s</td><td style="text-align: right;">%.1f MCr</td>`, bio.Name, float64(bio.ValueCr)/1_000_000.0)
-			if bio.Notes != "" {
-				hint += `<td style="font-size: smaller;">` + bio.Notes + "</td>"
-			}
-			hint += "</tr>"
+			if float32(bio.ValueCr/1_000_000.0) >= sconf.Float32Def("criteria", "min bio value", 0.0) {
 
-			bioHints = append(bioHints, hint)
+				hint := fmt.Sprintf(`<tr><td>%s</td><td style="text-align: right;">%.1f MCr</td><td>%dm</td>`,
+					bio.Name, float64(bio.ValueCr)/1_000_000.0, bio.ColonyRangeM)
+				if bio.Notes != "" {
+					hint += `<td style="font-size: smaller;">` + bio.Notes + "</td>"
+				}
+				hint += "</tr>"
+
+				bioHints = append(bioHints, hint)
+
+			}
 
 		}
 
