@@ -42,7 +42,7 @@ func (cs *CurrentSystemT) Init() error {
 	loadedData = make(map[string][]byte)
 
 	// load all data: bios, geos, etc...
-	if err := utils.LoadDir(loadedData, sconf.StrDef("paths", "data", "data"), ".json", 100_000, 32); err != nil {
+	if err := utils.LoadDir(loadedData, sconf.StrDef("resources", "data", "data"), ".json", 100_000, 32); err != nil {
 		return err
 	}
 

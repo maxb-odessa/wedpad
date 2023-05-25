@@ -29,7 +29,7 @@ func (s *SoundT) Init() error {
 
 	trData := make(map[string][]byte)
 
-	if err := utils.LoadDir(trData, sconf.StrDef("paths", "sounds", "sounds"), ".wav", 1_000_000, 10); err != nil {
+	if err := utils.LoadDir(trData, sconf.StrDef("resources", "sounds", "sounds"), ".wav", 1_000_000, 10); err != nil {
 		return err
 	}
 
