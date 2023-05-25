@@ -819,7 +819,7 @@
     "Name": "Bacterium Cerbrus",
     "ValueCr": 1689800,
     "Atmospheres": [
-      "*Sulphur dioxide*",
+      "*Sul*ur dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1492,7 +1492,7 @@
     "Name": "Frutexa Collum",
     "ValueCr": 1639800,
     "Atmospheres": [
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1932,7 +1932,7 @@
     "Name": "Recepta Conditivus",
     "ValueCr": 14313700,
     "Atmospheres": [
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1954,7 +1954,7 @@
     "Name": "Recepta Deltahedronix",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1977,7 +1977,7 @@
     "Name": "Recepta Umbrux",
     "ValueCr": 12934900,
     "Atmospheres": [
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -2000,7 +2000,7 @@
     "Name": "Stratum Araneamus",
     "ValueCr": 2448900,
     "Atmospheres": [
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2022,7 +2022,7 @@
     "ValueCr": 16202800,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2043,7 +2043,7 @@
     "ValueCr": 2448900,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2065,7 +2065,7 @@
     "ValueCr": 2637500,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2108,7 +2108,7 @@
     "ValueCr": 1362000,
     "Atmospheres": [
       "*Carbon dioxide*",
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2154,7 +2154,7 @@
     "Atmospheres": [
       "*Ammonia*",
       "*Carbon dioxide*",
-      "*Sulphur dioxide*",
+      "*Sul*ur dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -2524,7 +2524,7 @@
     "Name": "Tussock Stigmasis",
     "ValueCr": 19010800,
     "Atmospheres": [
-      "*Sulphur dioxide*"
+      "*Sul*ur dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
