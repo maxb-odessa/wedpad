@@ -41,7 +41,7 @@ func (evh *EventHandler) CodexEntry(eventData map[string]interface{}) {
 		isNew = " (new)"
 	}
 
-	text := "Codex" + isNew + ": " + ev.SubCategoryLocalised + ": " + ev.NameLocalised + ", region: " + ev.RegionLocalised
+	text := "Codex" + isNew + ": " + ev.SubCategoryLocalised + ": <b>" + ev.NameLocalised + "</b>, region: " + ev.RegionLocalised
 
 	m := &msg.Message{
 		Type:   msg.TYPE_VIEW,

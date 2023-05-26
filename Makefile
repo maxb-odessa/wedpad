@@ -19,5 +19,4 @@ install:
 	mkdir -p ${CONFDIR}
 	cp -r conf/wedpad.conf ${CONFDIR}
 	cp -a wedpad.service ${HOME}/.config/systemd/user/
-	systemctl --user enable wedpad
 
