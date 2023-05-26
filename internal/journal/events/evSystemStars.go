@@ -17,9 +17,11 @@ func (cs *CurrentSystemT) ShowStars() {
 		keys = append(keys, k)
 	}
 
-	for k, _ := range cs.BaryCentres() {
-		keys = append(keys, k)
-	}
+	/*
+		for k, _ := range cs.BaryCentres() {
+			keys = append(keys, k)
+		}
+	*/
 
 	sort.Ints(keys)
 
