@@ -345,3 +345,28 @@ body {
     visibility: visible;
 }
 
+.stars-div {
+}
+
+.star-div {
+    border: 0px;
+    border-radius: 50%;
+  /*  padding-bottom: 18%;*/
+    width: 18%;
+    height: auto;
+    float: left;
+    background-color: white;
+    margin: 1%;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+}
+
+.star-div-text {
+    font-family: courier;
+    align-items: center;
+    display: block;
+    color: black;
+}

@@ -1,68 +1,35 @@
-<table class="stars-table">
-
-<caption>
-</caption>
-
-<thead>
-    <tr>
-        <th>Name</th>
-        <th>&nbsp;</th>
-        <th>Type</th>
-        <th style="text-align: left;">C, L</th>
-        <th>Disc</th>
-        <th>Dist(Ls)</th>
-        <th>Rad(Sol)</th>
-        <th>Mass(Sol)</th>
-        <th>Temper(K)</th>
-        <th>OrbPer(D)</th>
-        <th>Eccent(e)</th>
-        <th>Rings(N/R)</th>
-    </tr>
-</thead>
-
-<tbody>
-{{- $odd := true}}
+<div class="stars-div">
 {{ range $i, $v := . }}
-    {{ if not $v.Barycenter }}
-        {{ if $odd }}
-            <tr id="tr-odd">
-        {{ else }}
-            <tr id="tr-even">
-        {{ end }}
-    {{ else }}
-        <tr>
-    {{ end }}
-        {{ if not $v.Barycenter }}
-           {{ $odd = not $odd }}
-           <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
-           {{ if $v.MainStar }}
-              <td><font color="{{ $v.Type.Color }}">&#x2726;</font></td>
-           {{ else }}
-              <td></td>
-           {{ end }}
-           <td style="font-weight: bold;">
-               <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }} {{ $v.Subclass }}</font>
-           </td>
-           <td style="text-align: left; font-size: smaller;">
-               <font color="{{ $v.Type.Color }}">{{ $v.Luminosity }}</font>
-            </td>
-           {{ if $v.Discovered }}
-               <td><font color="yellow">Yes</font></td>
-           {{ else }}
-               <td><font color="gray">no</font></td>
-           {{ end }}
-           <td>{{ $v.DistanceLs }}</td>
-           <td>{{ $v.RadiusS }}</td>
-           <td>{{ $v.MassS }}</td>
-           <td><font color="{{ $v.TemperatureColor }}">{{ $v.TemperatureK }}</font></td>
-           <td>{{ $v.OrbitalPeriodD }}</td>
-           <td>{{ $v.Eccentricity }}</td>
-           <td>{{ $v.Rings }}</td>
-        {{ else }}
-           <td><font color="gray">&#9741;</font></td>
-        {{ end }}
-    </tr>
+    <div class="star-div" style="background-color: {{ $v.Type.Color }}">
+        <div class="star-div-text">
+            <table>
+            <tbody>
+            <tr>
+                <td><i><u>{{ $v.Name }}</u></i></td>
+                {{ if $v.Discovered }}
+                    <td style="text-align: left;"><font style="font-size: x-small;"><i>(Discovered)</i></font></td>
+                {{ end }}
+            </tr>
+            <tr>
+                <td><b>{{ $v.Type.Type }} {{ $v.Subclass }}</b></td><td>{{ $v.Luminosity }}<td>
+            </tr>
+            <tr>
+                <td><font style="font-size: smaller;"><i>Rad(S):</i></font></td><td>{{ $v.RadiusS }}</td>
+            </tr>
+            <tr>
+                <td><font style="font-size: smaller;"><i>Mass(S):</i></font></td><td>{{ $v.MassS }}</td>
+            </tr>
+            <tr>
+                <td><font style="font-size: smaller;"><i>Temp(K):</i></font></td><td>{{ $v.TemperatureK }}</td>
+            </tr>
+            {{ if $v.Rings }}
+            <tr>
+                <td><font style="font-size: smaller;"><i>Rings:</i></font></td><td>{{ $v.Rings }}</td>
+            </tr>
+            {{ end }}
+            </tbody>
+            </table>
+        </div>
+    </div>
 {{ end }}
-</tbody>
-
-</table>
+</div>
