@@ -314,7 +314,7 @@ body {
     border-radius: 3px;
     background-color: rgba(150, 150, 150, 0.30);
     color: white;
-    overflow-wrap: break-word;
+    /*overflow-wrap: break-word;*/
 }
 
 .hint-table caption {
@@ -326,7 +326,7 @@ body {
     font-weight: bold;
     background-color: rgba(150, 150, 150, 0.30);
     backdrop-filter: blur(5px);
-    overflow-wrap: break-word;
+    /*overflow-wrap: break-word;*/
 }
 
 .hint-table th {
@@ -345,3 +345,14 @@ body {
     visibility: visible;
 }
 
+span.char-in-circle {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5ch;
+    height: 1.5ch;
+    width: 1.5ch;
+}
