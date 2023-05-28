@@ -1,23 +1,23 @@
 <table style="font-family: Arial; font-size: larger; font-style: italic; width: 100%; border: 0; padding: 0; font-weight: bold;">
-<tr>
+<tr style="text-align: center; justify-self: center;">
     {{ if eq .Jumps 0 }}
     <td style="text-align: center; color: white;">
         {{ .PrevSystem }}
     </td>
     {{ else }}
-    <td style="text-align: right; color: white;">
+    <td style="text-align: right; color: white; width: 35%;">
         {{ .PrevSystem }}
     </td>
     <td style="text-align: right; color: {{ .PrevStar.Color }}; font-weight: bold; width: 10%; font-size: 120%;">
         {{ .PrevStar.Type }}
     </td>
-    <td style="text-align: center; color: white; width: 5%; font-weight: bold; font-size: 120%;">
+    <td style="text-align: center; color: white; width: 10%; font-weight: bold; font-size: 120%;">
         &raquo;&nbsp;{{ .Jumps }}&nbsp;&raquo;
     </td>
     <td style="text-align: left; color: {{ .NextStar.Color }}; font-weight: bold; width: 10%; font-size: 120%;">
         {{ .NextStar.Type }}
     </td>
-    <td style="text-align: left; color: gray;">
+    <td style="text-align: left; color: gray; width: 35%;">
         {{ .NextSystem }}
     </td>
     {{ end }}
