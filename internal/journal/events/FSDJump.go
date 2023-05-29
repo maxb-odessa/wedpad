@@ -137,7 +137,8 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 		Target: msg.TARGET_LOG,
 		Action: msg.ACTION_APPEND,
 		Type:   msg.TYPE_VIEW,
-		Data:   fmt.Sprintf("Arrived to <u><b>%s</b></u>, fuel used: <b>%.1f</b>t, fuel lvl: <b>%.1f</b>t", ev.StarSystem, ev.FuelUsed, ev.FuelLevel),
+		Data: fmt.Sprintf("Arrived to <u><b>%s</b></u>; Dist: <b>%.1f</b>Ly; Fuel used: <b>%.1f</b>t, lvl: <b>%.1f</b>t",
+			ev.StarSystem, ev.JumpDist, ev.FuelUsed, ev.FuelLevel),
 	}
 	m.Send()
 
