@@ -2,29 +2,33 @@
 {{ range $i, $v := . }}
     <div class="star-div" style="background-color: {{ $v.Type.Color }}">
         <div class="star-div-text">
-            <table>
+            <table style="padding: 0; margin: 0; border-spacing: 0; border-collapse: collapse;">
             <tbody>
             <tr>
-                <td><i><u>{{ $v.Name }}</u></i></td>
+                <td style="text-align: center; border: 1px dotted black; border-radius: 5px;"><i><b>
+                {{ $v.Name }}
                 {{ if $v.Discovered }}
-                    <td style="text-align: left;"><font style="font-size: x-small;"><i>(Discovered)</i></font></td>
+                    (&copy;)
                 {{ end }}
+                </b></i></td>
             </tr>
             <tr>
-                <td><b>{{ $v.Type.Type }} {{ $v.Subclass }}</b></td><td>{{ $v.Luminosity }}<td>
+                <td><b>{{ $v.Type.Type }}&nbsp;{{ $v.Subclass }}&nbsp;{{ $v.Luminosity }}</b><td>
             </tr>
             <tr>
-                <td><font style="font-size: smaller;"><i>Rad(S):</i></font></td><td>{{ $v.RadiusS }}</td>
+                <td>{{ $v.RadiusS }}&nbsp;<font size="smaller"><i>R&#9737;</i></font></td>
             </tr>
             <tr>
-                <td><font style="font-size: smaller;"><i>Mass(S):</i></font></td><td>{{ $v.MassS }}</td>
+                <td>{{ $v.MassS }}&nbsp;<font size="smaller"><i>M&#9737;</i></font></td>
             </tr>
             <tr>
-                <td><font style="font-size: smaller;"><i>Temp(K):</i></font></td><td>{{ $v.TemperatureK }}</td>
+                <td>{{ $v.TemperatureK }}&nbsp;<font size="smaller"><i>&deg;&#8490;</i></font></td>
             </tr>
             {{ if $v.Rings }}
             <tr>
-                <td><font style="font-size: smaller;"><i>Rings:</i></font></td><td>{{ $v.Rings }}</td>
+                <td>{{ $v.Rings }}&nbsp;<font size="smaller"><i>R(n/ls)</i></font></td>
+            </tr>
+            <tr>
             </tr>
             {{ end }}
             </tbody>

@@ -212,14 +212,6 @@ body {
 }
 */
 
-#tr-odd {
-    background-color: rgba(200, 200, 200, 0.15);
-}
-
-#tr-even {
-    background-color: rgba(200, 200, 200, 0.05);
-}
-
 .bodies-table {
     color: white;
     border: none;
@@ -370,3 +362,15 @@ body {
     display: block;
     color: black;
 }
+
+.signals-table tr:nth-child(odd),
+.bodies-table tr:nth-child(odd) {
+    background-color: rgba(200, 200, 200, 0.15);
+}
+
+.signals-table tr:nth-child(even),
+.bodies-table tr:nth-child(even) {
+    background-color: rgba(200, 200, 200, 0.05);
+}
+
+
