@@ -281,7 +281,7 @@ var StarTypes = map[string]TypeColorPair{
 	"WO":                    {"WO", "#E0E0E0"},
 	"Y":                     {"Y", "#DD2080"},
 	// special: undefined star type
-	"?": {"(UNK)", "#A0A0A0"},
+	"?": {"&#10037;", "#A0A0A0"},
 }
 
 func GuessColorByTemp(temp float64) string {

@@ -17,6 +17,7 @@ install:
 	mkdir -p ${SHAREDIR}
 	cp -a res/* ${SHAREDIR}
 	mkdir -p ${CONFDIR}
-	cp -r conf/wedpad.conf ${CONFDIR}
+	cp -a conf/wedpad.conf ${CONFDIR}
 	cp -a wedpad.service ${HOME}/.config/systemd/user/
+	systemctl --user daemon-reload
 

@@ -20,9 +20,10 @@
         <tr id="tr-even">
     {{ end }}
     {{ $odd = not $odd }}
-        <td style="text-align: right;">{{ $v.Name }}</td>
+        <td style="text-align: right; font-weight: bold;">{{ $v.Name }}</td>
         <td style="text-align: center;">{{ $v.Type }}</td>
-        <td style="text-align: left;">{{ $v.Description }}
+        {{ if $v.BioHint }}
+        <td style="text-align: left;">{{ $v.Description }} <span class="char-in-circle">&gt;</span>
             <table class="hint-table">
             <caption>{{ $v.Name }}</caption>
             <thead>
@@ -33,8 +34,11 @@
                     <th style="text-align: center;">Notes</th>
                 </tr>
             </thead>
-            <tbody>{{ $v.Hint }}</tbody>
+            <tbody>{{ $v.BioHint }}</tbody>
             </table>
+        {{ else }}
+        <td style="text-align: left;">{{ $v.Description }}
+        {{ end }}
         </td>
     </tr>
 {{ end }}

@@ -1,14 +1,17 @@
 package events
 
 import (
+	"html"
 	"wedpad/internal/msg"
+
+	"github.com/danwakefield/fnmatch"
 )
 
 type SignalT struct {
 	Name        string
 	Type        string
 	Description string
-	Hint        string
+	BioHint     string
 }
 
 func (cs *CurrentSystemT) ShowSignals() {
@@ -20,19 +23,25 @@ func (cs *CurrentSystemT) ShowSignals() {
 
 		s := new(SignalT)
 
+		sigName := html.EscapeString(sig.SignalName)
+		sigNameLoc := html.EscapeString(sig.SignalNameLocalised)
+
+		// TODO for now: collect all sig.SignalName variants
 		if sig.IsStation {
 			s.Name = "&nabla;"
 			s.Type = `<font color="cyan">Station</font>`
-		} else {
-			// TODO for now: collect all sig.SignalName variants
+		} else if fnmatch.Match("$Fixed_Event_Life*", sigName, 0) {
 			s.Name = "&sect;"
 			s.Type = `<font color="yellow">Phenomena</font>`
+		} else {
+			s.Name = "&#8859;"
+			s.Type = `<font color="magenta">Other</font>`
 		}
 
-		if sig.SignalNameLocalised != "" {
-			s.Description = sig.SignalNameLocalised + "<br>(" + sig.SignalName + ")"
+		if sigNameLoc != "" {
+			s.Description = sigNameLoc + "&nbsp;" + sigName
 		} else {
-			s.Description = sig.SignalName
+			s.Description = sigName
 		}
 
 		signals = append(signals, s)
@@ -44,7 +53,7 @@ func (cs *CurrentSystemT) ShowSignals() {
 			Name:        cs.BodyName(name),
 			Type:        `<font color="limegreen">Biological</font>`,
 			Description: sigs[0],
-			Hint:        sigs[1],
+			BioHint:     sigs[1],
 		}
 		signals = append(signals, s)
 	}

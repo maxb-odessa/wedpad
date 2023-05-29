@@ -1,6 +1,6 @@
 
 body {
-    background-image: url('background.png');
+    background-image: url('background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
@@ -15,7 +15,7 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: 5% 90% 5%;
     padding: 0;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 #view-top {
@@ -27,7 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 #view-bottom-container {
@@ -37,7 +37,7 @@ body {
     margin: 0;
     overflow: hidden;
     white-space: nowrap;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 #view-bottom {
@@ -103,7 +103,7 @@ body {
     grid-template-columns: 100%;
     grid-template-rows: 25% 25% 25% 25%;
     background-color: rgba(250, 250, 250, 0.1);
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 .button {
@@ -121,7 +121,7 @@ body {
     background-color: rgba(218, 165, 32, 0.3);
     white-space: pre-wrap;
     word-wrap: break-word;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
 }
 
 .button-text {
@@ -314,7 +314,7 @@ body {
     border-radius: 3px;
     background-color: rgba(150, 150, 150, 0.30);
     color: white;
-    overflow-wrap: break-word;
+    /*overflow-wrap: break-word;*/
 }
 
 .hint-table caption {
@@ -325,8 +325,8 @@ body {
     font-family: courier;
     font-weight: bold;
     background-color: rgba(150, 150, 150, 0.30);
-    backdrop-filter: blur(5px);
-    overflow-wrap: break-word;
+    backdrop-filter: blur(7px);
+    /*overflow-wrap: break-word;*/
 }
 
 .hint-table th {
@@ -345,3 +345,14 @@ body {
     visibility: visible;
 }
 
+span.char-in-circle {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5ch;
+    height: 1.5ch;
+    width: 1.5ch;
+}

@@ -52,7 +52,7 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 	   		alert("fuel level low")
 	   	}
 
-	   	if flags | flagusOverHeating {
+	   	if flags | flagsOverHeating {
 	   		alert("heat level high")
 	   	}
 	*/

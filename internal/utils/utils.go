@@ -72,29 +72,3 @@ func JSONMarshal(t interface{}) ([]byte, error) {
 	err := encoder.Encode(t)
 	return buffer.Bytes(), err
 }
-
-// simple tree implementation
-type TreeLessFunc func(interface{}, interface{}) bool
-
-type Tree struct {
-	Left, Right *Tree
-	Value       interface{}
-}
-
-func (t *Tree) Attach(root **Tree, val int, cmp TreeLessFunc) *Tree {
-
-	if *root == nil {
-		*root = &Tree{
-			Value: val,
-		}
-		return *root
-	}
-
-	if cmp(val, (*root).Value) {
-		t.Attach(&((*root).Left), val, cmp)
-	} else {
-		t.Attach(&((*root).Right), val, cmp)
-	}
-
-	return *root
-}

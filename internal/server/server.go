@@ -2,6 +2,7 @@ package server
 
 import (
 	"net/http"
+	"os"
 
 	ws "github.com/gorilla/websocket"
 
@@ -84,7 +85,7 @@ func Run() {
 		}
 	}
 
-	pageDir := sconf.StrDef("resources", "webpage", "webpage")
+	pageDir := os.ExpandEnv(sconf.StrDef("resources", "webpage", "webpage"))
 	slog.Debug(9, "Serving HTTP dir: %s", pageDir)
 	http.Handle("/", http.FileServer(http.Dir(pageDir)))
 
