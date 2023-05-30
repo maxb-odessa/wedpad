@@ -7,8 +7,8 @@
     <tr>
         <th>Name</th>
         <th>&nbsp;</th>
-        <th>Type,C</th>
-        <th style="text-align: left;">Lum</th>
+        <th>Type Cl</th>
+        <th>Lum</th>
         <th>Disc</th>
         <th>Dist(Ls)</th>
         <th>Rad &#9737;</th>
@@ -21,19 +21,8 @@
 </thead>
 
 <tbody>
-{{- $odd := true}}
 {{ range $i, $v := . }}
-    {{ if not $v.Barycenter }}
-        {{ if $odd }}
-            <tr id="tr-odd">
-        {{ else }}
-            <tr id="tr-even">
-        {{ end }}
-    {{ else }}
-        <tr>
-    {{ end }}
-        {{ if not $v.Barycenter }}
-           {{ $odd = not $odd }}
+    <tr>
            <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
            {{ if $v.MainStar }}
               <td><font color="{{ $v.Type.Color }}">&#x2726;</font></td>
@@ -43,7 +32,7 @@
            <td style="font-weight: bold;">
                <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }} {{ $v.Subclass }}</font>
            </td>
-           <td style="text-align: left; font-size: smaller;">
+           <td>
                <font color="{{ $v.Type.Color }}">{{ $v.Luminosity }}</font>
             </td>
            {{ if $v.Discovered }}
@@ -58,9 +47,6 @@
            <td>{{ $v.OrbitalPeriodD }}</td>
            <td>{{ $v.Eccentricity }}</td>
            <td>{{ $v.Rings }}</td>
-        {{ else }}
-           <td><font color="gray">&#9741;</font></td>
-        {{ end }}
     </tr>
 {{ end }}
 </tbody>

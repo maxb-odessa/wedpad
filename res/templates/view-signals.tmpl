@@ -5,21 +5,15 @@
 
 <thead>
     <tr>
-        <th style="text-align: right;">Signal Name</th>
-        <th style="text-align: center;">Signal Type</th>
+        <th style="text-align: right; width: 10%;">What/Where</th>
+        <th style="text-align: center; width: 20%;">Signal&nbsp;Type</th>
         <th style="text-align: left;">Description</th>
     </tr>
 </thead>
 
 <tbody>
-{{- $odd := true}}
 {{ range $i, $v := . }}
-    {{ if $odd }}
-        <tr id="tr-odd">
-    {{ else }}
-        <tr id="tr-even">
-    {{ end }}
-    {{ $odd = not $odd }}
+    <tr>
         <td style="text-align: right; font-weight: bold;">{{ $v.Name }}</td>
         <td style="text-align: center;">{{ $v.Type }}</td>
         {{ if $v.BioHint }}

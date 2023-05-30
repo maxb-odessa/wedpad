@@ -23,7 +23,7 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 	sort.Ints(keys)
 
 	bodiesCnt := 0
-	haveNotes := 0
+	haveNotes := false
 
 	for _, id := range keys {
 
@@ -56,14 +56,14 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 			if notes := cs.notesOnBody(id); len(notes) > 0 {
 				body["Notes"] = strings.Join(notes, "<br>")
 				body["NotesName"] = cs.BodyName(b.BodyName)
-				haveNotes++
+				haveNotes = true
 				bodies = append(bodies, body)
 			}
 		}
 
 	}
 
-	if bodiesCnt > 0 || haveNotes > 0 {
+	if bodiesCnt > 0 || haveNotes {
 
 		m := &msg.Message{
 			Target: msg.TARGET_BODIES,
@@ -73,11 +73,15 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 		}
 		m.Send()
 
+		buttonText := fmt.Sprintf("%d", bodiesCnt)
+		if haveNotes {
+			buttonText += " (!)"
+		}
 		m = &msg.Message{
 			Target: msg.TARGET_BODIES,
 			Type:   msg.TYPE_BUTTON,
 			Action: msg.ACTION_REPLACE,
-			Data:   bodiesCnt,
+			Data:   buttonText,
 		}
 		m.Send()
 

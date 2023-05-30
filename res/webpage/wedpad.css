@@ -72,9 +72,9 @@ body {
     margin-top: 4px;
     margin-bottom: 4px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     overflow-x: scroll;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 }
 
 #view-log {
@@ -174,8 +174,6 @@ body {
 }
 
 .stars-table {
-    font-family: monospace;
-    font-size: larger;
     color: white;
     border: none;
     width: 100%;
@@ -194,8 +192,8 @@ body {
     text-align: right;
     border: solid 1px black;
     border-radius: 5px;
-    font-family: monospace;
-    background-color: rgba(250, 250, 250, 0.15);
+    font-family: courier;
+    /*background-color: rgba(250, 250, 250, 0.15);*/
 }
 
 .stars-table caption {
@@ -212,21 +210,11 @@ body {
 }
 */
 
-#tr-odd {
-    background-color: rgba(200, 200, 200, 0.15);
-}
-
-#tr-even {
-    background-color: rgba(200, 200, 200, 0.05);
-}
-
 .bodies-table {
     color: white;
     border: none;
     width: 100%;
     /*table-layout: fixed;*/
-    font-family: monospace;
-    font-size: larger;
     overflow-wrap: break-word;
 }
 
@@ -241,7 +229,8 @@ body {
     text-align: right;
     border: solid 1px black;
     border-radius: 5px;
-    background-color: rgba(250, 250, 250, 0.15);
+    font-family: courier;
+    /*background-color: rgba(250, 250, 250, 0.15);*/
 }
 /*
 .bodies-table tbody {
@@ -251,15 +240,12 @@ body {
 
 .bodies-table caption {
     border: 1px solid white;
-    background-color: #AAAA30;
     border-radius: 3px;
     color: black;
     font-family: impact, arial black;
 }
 
 .signals-table {
-    font-family: monospace;
-    font-size: larger;
     color: white;
     border: none;
     width: 100%;
@@ -278,7 +264,8 @@ body {
     text-align: left;
     border: solid 1px black;
     border-radius: 5px;
-    background-color: rgba(250, 250, 250, 0.15);
+    font-family: courier;
+    /*background-color: rgba(250, 250, 250, 0.15);*/
 }
 
 /*
@@ -349,6 +336,7 @@ span.char-in-circle {
     background-color: white;
     color: black;
     border-radius: 50%;
+    border: solid 1px black;
     font-weight: bold;
     display: inline-block;
     text-align: center;
@@ -356,3 +344,24 @@ span.char-in-circle {
     height: 1.5ch;
     width: 1.5ch;
 }
+
+table td font {
+    background-color: transparent !important;
+}
+    
+
+.stars-table tr:nth-child(odd) :not(th),
+.bodies-table tr:nth-child(odd) :not(th),
+.signals-table tr:nth-child(odd) :not(th){
+    background-color: rgba(200, 200, 200, 0.12);
+}
+
+.stars-table tr:nth-child(even) :not(th),
+.bodies-table tr:nth-child(even) :not(th),
+.signals-table tr:nth-child(even) :not(th){
+    background-color: rgba(200, 200, 200, 0.05);
+}
+
+
+
+
