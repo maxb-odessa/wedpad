@@ -20,30 +20,36 @@
     </tr>
 </thead>
 
+{{ $odd := false }}
 <tbody>
 {{ range $i, $v := . }}
-    <tr>
-           <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
+    {{ if $odd }}
+    <tr class="odd">
+    {{ else }}
+    <tr class="even">
+    {{ end }}
+    {{ $odd = not $odd }}
+           <td><span style="color: gray;"><i>{{ $v.Name }}</i></span></td>
            {{ if $v.MainStar }}
-              <td><font color="{{ $v.Type.Color }}">&#x2726;</font></td>
+              <td><span style="color: {{ $v.Type.Color }};">&#x2726;</font></td>
            {{ else }}
               <td></td>
            {{ end }}
            <td style="font-weight: bold;">
-               <font color="{{ $v.Type.Color }}">{{ $v.Type.Type }} {{ $v.Subclass }}</font>
+               <span style="color: {{ $v.Type.Color }};">{{ $v.Type.Type }} {{ $v.Subclass }}</span>
            </td>
            <td>
-               <font color="{{ $v.Type.Color }}">{{ $v.Luminosity }}</font>
+               <span style="color: {{ $v.Type.Color }};">{{ $v.Luminosity }}</span>
             </td>
            {{ if $v.Discovered }}
-               <td><font color="yellow">Yes</font></td>
+               <td><span style="color: yellow;">Yes</span></td>
            {{ else }}
-               <td><font color="gray">no</font></td>
+               <td><span style="color: gray;">no</span></td>
            {{ end }}
            <td>{{ $v.DistanceLs }}</td>
            <td>{{ $v.RadiusS }}</td>
            <td>{{ $v.MassS }}</td>
-           <td><font color="{{ $v.TemperatureColor }}">{{ $v.TemperatureK }}</font></td>
+           <td><span style="color: {{ $v.TemperatureColor }};">{{ $v.TemperatureK }}</span></td>
            <td>{{ $v.OrbitalPeriodD }}</td>
            <td>{{ $v.Eccentricity }}</td>
            <td>{{ $v.Rings }}</td>

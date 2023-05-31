@@ -324,9 +324,9 @@ func StarTypeColor(st string) TypeColorPair {
 var PlanetTypes = map[string]TypeColorPair{
 	"Ammonia world":                     {"AW", "#F4A460"},
 	"Earthlike body":                    {"ELW", "#00FF7F"},
-	"Gas giant with ammonia based life": {"GgAL", "#F5DEB3"},
-	"Gas giant with water based life":   {"GgWL", "#DEB887"},
-	"Helium gas giant":                  {"HeGg", "#D2B48C"},
+	"Gas giant with ammonia based life": {"GgABL", "#F5DEB3"},
+	"Gas giant with water based life":   {"GgWBL", "#DEB887"},
+	"Helium gas giant":                  {"HeGg", "#E2C49C"},
 	"Helium rich gas giant":             {"HeRGg", "#D2B48C"},
 	"High metal content body":           {"HMC", "#778899"},
 	"Icy body":                          {"Icy", "#F8F8FF"},
@@ -366,28 +366,32 @@ func StarTempColor(tempK float64) string {
 }
 */
 
+func small(num int) string {
+	return fmt.Sprintf(`<span style="font-size: 0.7em;">%d</span>`, num)
+}
+
 var PlanetAtmospheres = map[string]TypeColorPair{
-	"Ammonia":           {"NH3", "#B54A4A"},
-	"AmmoniaOxygen":     {"NH3+02", "#BC8F8F"},
-	"AmmoniaRich":       {"NH3+", "#A52A2A"},
+	"Ammonia":           {"NH" + small(3), "#B54A4A"},
+	"AmmoniaOxygen":     {"NH" + small(3) + "0" + small(2), "#BC8F8F"},
+	"AmmoniaRich":       {"NH" + small(3) + "+", "#A52A2A"},
 	"Argon":             {"Ar", "#3CB371"},
 	"ArgonRich":         {"Ar+", "#3CB371"},
-	"CarbonDioxide":     {"CO2", "#FF8C00"},
-	"CarbonDioxideRich": {"CO2+", "#FF8C00"},
-	"EarthLike":         {"N2+O2", "#ADD8E6"},
+	"CarbonDioxide":     {"CO" + small(2), "#FF8C00"},
+	"CarbonDioxideRich": {"CO" + small(2) + "+", "#FF8C00"},
+	"EarthLike":         {"N" + small(2) + "+O" + small(2), "#ADD8E6"},
 	"Helium":            {"He", "#DC143C"},
 	"MetallicVapour":    {"Metal", "#D3D3D3"},
-	"Methane":           {"CH4", "#FFDAB9"},
-	"MethaneRich":       {"CH4+", "#FFDAB9"},
+	"Methane":           {"CH" + small(4), "#FFDAB9"},
+	"MethaneRich":       {"CH" + small(4) + "+", "#FFDAB9"},
 	"Neon":              {"Ne", "#FF4500"},
 	"NeonRich":          {"Ne+", "#FF4500"},
-	"Nitrogen":          {"N2", "#87CEFA"},
+	"Nitrogen":          {"N" + small(2), "#87CEFA"},
 	"None":              {"", "#000000"},
-	"Oxygen":            {"O2", "#1E90FF"},
-	"SilicateVapour":    {"SiO4+", "#D3D3D3"},
-	"SulphurDioxide":    {"SO2", "#CCCC00"},
-	"Water":             {"H2O", "#00BFFF"},
-	"WaterRich":         {"H2O+", "#00BFFF"},
+	"Oxygen":            {"O" + small(2), "#1E90FF"},
+	"SilicateVapour":    {"SiO" + small(4) + "+", "#D3D3D3"},
+	"SulphurDioxide":    {"SO" + small(2), "#CCCC00"},
+	"Water":             {"H" + small(2) + "O", "#00BFFF"},
+	"WaterRich":         {"H" + small(2) + "O+", "#00BFFF"},
 	"":                  {"", "#000000"},
 }
 

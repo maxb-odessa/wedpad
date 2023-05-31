@@ -48,7 +48,6 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 			body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
 			body["Signals"] = cs.composeBGGHO(id)
 
-			bodies = append(bodies, body)
 			bodiesCnt++
 		}
 
@@ -57,8 +56,11 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 				body["Notes"] = strings.Join(notes, "<br>")
 				body["NotesName"] = cs.BodyName(b.BodyName)
 				haveNotes = true
-				bodies = append(bodies, body)
 			}
+		}
+
+		if len(body) > 0 {
+			bodies = append(bodies, body)
 		}
 
 	}

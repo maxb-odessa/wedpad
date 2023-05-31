@@ -363,7 +363,7 @@ func (cs *CurrentSystemT) shepherdMoon(body *ScanT) string {
 	if parent := findParentBody(cs.Planets(), body); parent != nil {
 		if rn, rr := CalcRings(parent); rn > 0 {
 			if rr > body.SemiMajorAxis {
-				return fmt.Sprintf("Shepherd Moon: for '%s'", cs.BodyName(parent.BodyName))
+				return fmt.Sprintf("Shepherd Moon: for '%s', incl: %+.0f&deg;", cs.BodyName(parent.BodyName), body.OrbitalInclination)
 			}
 		}
 	}

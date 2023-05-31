@@ -11,9 +11,15 @@
     </tr>
 </thead>
 
+{{ $odd := false }}
 <tbody>
 {{ range $i, $v := . }}
-    <tr>
+    {{ if $odd }}
+    <tr class="odd">
+    {{ else }}
+    <tr class="even">
+    {{ end }}
+    {{ $odd = not $odd }}
         <td style="text-align: right; font-weight: bold;">{{ $v.Name }}</td>
         <td style="text-align: center;">{{ $v.Type }}</td>
         {{ if $v.BioHint }}

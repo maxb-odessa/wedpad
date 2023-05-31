@@ -5,6 +5,7 @@ body {
     background-size: cover;
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
+    color: white;
 }
 
 #left {
@@ -44,7 +45,7 @@ body {
     overflow: hidden;
     display: block;
     color: white;
-    font-family: courier, courier new, serif;
+    font-family: 'Courier New', monospace;
     font-size: larger;
     font-weight: bold;
     font-style: italic;
@@ -53,7 +54,7 @@ body {
     height: 100%;
     margin: 0;
     text-align: center;
-    animation: view-bottom-ani 10s linear infinite;
+    /*animation: view-bottom-ani 10s linear infinite;*/
 }
 
 @keyframes view-bottom-ani {
@@ -188,11 +189,11 @@ body {
 }
 
 .stars-table td {
-    font-size: larger;
+    font-size: 1.4em;
     text-align: right;
     border: solid 1px black;
     border-radius: 5px;
-    font-family: courier;
+    font-family: 'Courier New', monospace;
     /*background-color: rgba(250, 250, 250, 0.15);*/
 }
 
@@ -229,7 +230,7 @@ body {
     text-align: right;
     border: solid 1px black;
     border-radius: 5px;
-    font-family: courier;
+    font-family: 'Courier New', monospace;
     /*background-color: rgba(250, 250, 250, 0.15);*/
 }
 /*
@@ -239,10 +240,8 @@ body {
 */
 
 .bodies-table caption {
-    border: 1px solid white;
-    border-radius: 3px;
-    color: black;
-    font-family: impact, arial black;
+    text-align: right;
+    align: right;
 }
 
 .signals-table {
@@ -264,7 +263,7 @@ body {
     text-align: left;
     border: solid 1px black;
     border-radius: 5px;
-    font-family: courier;
+    font-family: 'Courier New', monospace;
     /*background-color: rgba(250, 250, 250, 0.15);*/
 }
 
@@ -309,7 +308,7 @@ body {
     border-radius: 3px;
     color: white;
     font-size: 120%;
-    font-family: courier;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
     background-color: rgba(150, 150, 150, 0.30);
     backdrop-filter: blur(7px);
@@ -345,23 +344,35 @@ span.char-in-circle {
     width: 1.5ch;
 }
 
-table td font {
+/*
+table td font span th tr i u b {
     background-color: transparent !important;
 }
-    
-
-.stars-table tr:nth-child(odd) :not(th),
-.bodies-table tr:nth-child(odd) :not(th),
-.signals-table tr:nth-child(odd) :not(th){
+*/  
+/*
+.stars-table tr:nth-child(odd) :not(th, span, font),
+.bodies-table tr:nth-child(odd) :not(th, span, font),
+.signals-table tr:nth-child(odd) :not(th, span, font){
+    background-color: transparent !important;
     background-color: rgba(200, 200, 200, 0.12);
 }
 
-.stars-table tr:nth-child(even) :not(th),
-.bodies-table tr:nth-child(even) :not(th),
-.signals-table tr:nth-child(even) :not(th){
+.stars-table tr:nth-child(even) :not(th, span, font),
+.bodies-table tr:nth-child(even) :not(th, span, font),
+.signals-table tr:nth-child(even) :not(th, span, font){
+    background-color: transparent !important;
+    background-color: rgba(200, 200, 200, 0.05);
+}
+*/
+
+.odd {
     background-color: rgba(200, 200, 200, 0.05);
 }
 
+.even {
+    background-color: rgba(200, 200, 200, 0.12);
+}
+    
 
 
 

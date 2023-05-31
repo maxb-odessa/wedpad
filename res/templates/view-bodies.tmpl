@@ -1,18 +1,18 @@
 <table class="bodies-table">
 
-{{- $nnum := 0 }}
+{{ $nots := false }}
 {{ range $i, $v := . }}
     {{ if ($v.Notes) | and (ne $v.Notes "") }}
-        {{ $nnum = 1 }}
+        {{ $nots = true }}
         {{ break }}
     {{ end }}
 {{ end }}
-{{ if eq $nnum 0 }}
+
 <caption>
-        Notable Objects
-{{ else }}
-<caption style="background-color: #AAAA50;">
-        Notable Objects&nbsp;<span class="char-in-circle">&gt;</span>
+    {{ if not $nots }}
+        <span style="color: white; background-color: gray; font-size: larger;">Notable Objects</span>
+    {{ else }}
+        <span style="color: black; background-color: yellow; font-size: larger;">Notable Objects&nbsp;<span class="char-in-circle">&gt;</span></span>
         <table class="hint-table">
             <thead>
                 <tr>
@@ -50,9 +50,16 @@
     </tr>
 </thead>
 
+{{ $odd := false }}
 <tbody>
 {{ range $i, $v := . }}
-    <tr>
+    {{ if $v.Name }}
+    {{ if $odd }}
+    <tr class="odd">
+    {{ else }}
+    <tr class="even">
+    {{ end }}
+    {{ $odd = not $odd }}
     <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
     <td><font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}</font></td>
     <td>{{ $v.DistanceLs }}</td>
@@ -65,6 +72,7 @@
     <td><font color="{{ $v.Atmosphere.Color }}">{{ $v.Atmosphere.Type }}</font></td>
     <td>{{ range $k, $sig := $v.Signals }}<font color="{{ $sig.Color }}">{{ $sig.Type }}</font>{{ end }}</td>
     </tr>
+    {{ end }}
 {{ end }}
 </tbody>
 
