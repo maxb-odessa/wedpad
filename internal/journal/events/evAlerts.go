@@ -1,9 +1,7 @@
 package events
 
 import (
-	"fmt"
 	"wedpad/internal/msg"
-	"wedpad/internal/sound"
 )
 
 type AlertMsgT struct {
@@ -13,29 +11,15 @@ type AlertMsgT struct {
 
 type AlertT struct {
 	alerts map[string]*AlertMsgT
-	sound  *sound.SoundT
 }
 
-func (al *AlertT) Init(snd *sound.SoundT) error {
+func (al *AlertT) Init() error {
 	al.alerts = make(map[string]*AlertMsgT)
-	al.sound = snd
 	return nil
 }
 
 const (
-	ALERT_FUEL = "fuel"
-
-/*
-	not implemented yet
-
-ALERT_HEAT      = "heat"
-ALERT_DAMAGE    = "damage"
-ALERT_PROXIMITY = "proximity"
-ALERT_IMPACT    = "impact"
-*/
-)
-
-const (
+	ALERT_LEVEL_NONE = "none"
 	ALERT_LEVEL_CRIT = "crit"
 	ALERT_LEVEL_WARN = "warn"
 	ALERT_LEVEL_INFO = "info"
@@ -68,28 +52,12 @@ func (al *AlertT) alertShow() {
 	m.Send()
 }
 
-func (al *AlertT) AlertFuel(fl float64) {
+func (al *AlertT) Alert(id string, level string, text string) {
 
-	al.alertDel(ALERT_FUEL)
-
-	if fl < 10.0 {
-
-		level := ALERT_LEVEL_INFO
-		al.sound.Play("drop")
-
-		if fl < 5.0 {
-
-			level = ALERT_LEVEL_WARN
-			al.sound.Play("drop")
-
-			if fl < 2.0 {
-				level = ALERT_LEVEL_CRIT
-				al.sound.Play("drop")
-			}
-
-		}
-
-		al.alertAdd(ALERT_FUEL, level, fmt.Sprintf("Fuel level is %.1f tons", fl))
+	if level == ALERT_LEVEL_NONE {
+		al.alertDel(id)
+	} else {
+		al.alertAdd(id, level, text)
 	}
 
 	al.alertShow()

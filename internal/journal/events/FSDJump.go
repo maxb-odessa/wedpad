@@ -142,6 +142,4 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 	}
 	m.Send()
 
-	cs.AlertFuel(ev.FuelLevel)
-
 }

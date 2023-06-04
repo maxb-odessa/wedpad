@@ -1,7 +1,10 @@
 package events
 
 import (
+	"fmt"
 	"time"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // Status event structure
@@ -33,34 +36,51 @@ type StatusT struct {
 	Health         float64   `mapstructure:"Health"`
 	Temperature    float64   `mapstructure:"Temperature"`
 	SelectedWeapon string    `mapstructure:"SelectedWeapon"`
-	Gravity        string    `mapstructure:"Gravity"`
+	Gravity        float64   `mapstructure:"Gravity"`
 	Event          string    `mapstructure:"event"`
 	Timestamp      time.Time `mapstructure:"timestamp"`
 }
 
 // Status event handler
 func (evh *EventHandler) Status(eventData map[string]interface{}) {
-	/*
-	   ev := new(StatusT)
-	   mapstructure.Decode(eventData, ev)
+	ev := new(StatusT)
+	mapstructure.Decode(eventData, ev)
 
-	   	if ev.Gravity > 1.0 {
-	   		alert("high gravity landing")
-	   	}
+	cs := evh.CurrentSystem()
 
-	   	if flags | flagLowFuel {
-	   		alert("fuel level low")
-	   	}
+	if ev.Gravity > 1.0 {
+		cs.alert.Alert("gravity", ALERT_LEVEL_WARN, fmt.Sprintf("High gravity: %.2f G"))
+		cs.sound.Play("gravity")
+	} else {
+		cs.alert.Alert("gravity", ALERT_LEVEL_NONE, "")
+	}
 
-	   	if flags | flagsOverHeating {
-	   		alert("heat level high")
-	   	}
-	*/
+	if ev.Flags&flagOverHeating != 0 {
+		cs.alert.Alert("heat", ALERT_LEVEL_WARN, fmt.Sprintf("Overheating!"))
+		cs.sound.Play("heat")
+	} else {
+		cs.alert.Alert("heat", ALERT_LEVEL_NONE, "")
+	}
+
+	if ev.Fuel.FuelMain < 10.0 {
+		alvl := ALERT_LEVEL_NONE
+		if ev.Fuel.FuelMain < 5.0 {
+			alvl = ALERT_LEVEL_CRIT
+			cs.sound.Play("fuel")
+		} else {
+			alvl = ALERT_LEVEL_WARN
+		}
+		cs.sound.Play("fuel")
+		cs.alert.Alert("fuel", alvl, fmt.Sprintf("Fuel level: %.1f tones", ev.Fuel.FuelMain))
+	} else {
+		cs.alert.Alert("fuel", ALERT_LEVEL_NONE, "")
+	}
+
 }
 
 // flags
 const (
-	flagLowFuel       uint64 = 524288
-	flagusOverHeating uint64 = 1048576
-	flagFSDJump       uint64 = 1073741824
+	flagLowFuel     uint64 = 524288
+	flagOverHeating uint64 = 1048576
+	flagFSDJump     uint64 = 1073741824
 )

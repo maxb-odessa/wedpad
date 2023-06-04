@@ -63,17 +63,13 @@ func (cs *CurrentSystemT) Init() error {
 	}
 
 	cs.alert = new(AlertT)
-	if err := cs.alert.Init(cs.sound); err != nil {
+	if err := cs.alert.Init(); err != nil {
 		return err
 	}
 
 	cs.Reset()
 
 	return nil
-}
-
-func (cs *CurrentSystemT) AlertFuel(what float64) {
-	cs.alert.AlertFuel(what)
 }
 
 func (cs *CurrentSystemT) Play(what string) {
