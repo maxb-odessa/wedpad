@@ -1,7 +1,11 @@
 package events
 
 import (
+	"fmt"
 	"time"
+	"wedpad/internal/msg"
+
+	"github.com/mitchellh/mapstructure"
 )
 
 // MaterialCollected event structure
@@ -16,7 +20,15 @@ type MaterialCollectedT struct {
 
 // MaterialCollected event handler
 func (evh *EventHandler) MaterialCollected(eventData map[string]interface{}) {
-    // ev := new(MaterialCollectedT)
-    // mapstructure.Decode(eventData, ev)
-}
+	ev := new(MaterialCollectedT)
+	mapstructure.Decode(eventData, ev)
 
+	m := &msg.Message{
+		Action: msg.ACTION_APPEND,
+		Target: msg.TARGET_LOG,
+		Type:   msg.TYPE_VIEW,
+		Data:   fmt.Sprintf("Collected <b>%d</b> units of %s <b>%s</b>", ev.Count, ev.Category, ev.Name),
+	}
+
+	m.Send()
+}
