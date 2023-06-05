@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>WEDPad - Web: Elite Dangerous Pad</title>
-    <link rel="stylesheet" href="wedpad.css?E">
+    <link rel="stylesheet" href="wedpad.css?E12">
 </head>
 
 <body>
@@ -122,7 +122,7 @@ async function loop() {
         };
 
         socket.onclose = function(ev) {
-            logView.innerHTML += makeLog("<b>CONNECTION CLOSED!</b>" + ", Reason: ''" + ev.reason + ", Code: " + ev.code);
+            logView.innerHTML += makeLog("<b>CONNECTION CLOSED!</b> Reconnecting...");
             switchView("log");
             reconnect = true;
         };
