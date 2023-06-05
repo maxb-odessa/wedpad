@@ -215,8 +215,10 @@ func watchFile(path string) {
 		for {
 			select {
 			case event := <-w.Event:
-				slurpFile(event.Path)
-				slog.Debug(9, "SLURP: %s", event.Path)
+				if !event.IsDir() {
+					slurpFile(event.Path)
+					slog.Debug(9, "SLURP: %s", event.Path)
+				}
 			case err := <-w.Error:
 				slog.Err("Watching file '%s' failed: %s", path, err)
 				return
