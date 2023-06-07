@@ -49,14 +49,14 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 	cs := evh.CurrentSystem()
 
 	if ev.Gravity > 1.0 {
-		cs.alert.Alert("gravity", ALERT_LEVEL_WARN, fmt.Sprintf("High gravity: %.2f G"))
+		cs.alert.Alert("gravity", ALERT_LEVEL_WARN, fmt.Sprintf("High gravity: %.1fG!"))
 		cs.sound.Play("gravity")
 	} else {
 		cs.alert.Alert("gravity", ALERT_LEVEL_NONE, "")
 	}
 
 	if ev.Flags&flagOverHeating != 0 {
-		cs.alert.Alert("heat", ALERT_LEVEL_WARN, "Overheating !")
+		cs.alert.Alert("heat", ALERT_LEVEL_WARN, "Overheating!")
 		cs.sound.Play("heat")
 	} else {
 		cs.alert.Alert("heat", ALERT_LEVEL_NONE, "")
@@ -64,7 +64,7 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 
 	if ev.Flags&flagLowFuel != 0 {
 		cs.sound.Play("fuel")
-		cs.alert.Alert("fuel", ALERT_LEVEL_WARN, "Fuel Level is < 25%% !")
+		cs.alert.Alert("fuel", ALERT_LEVEL_WARN, "Fuel Level is < 25%%!")
 	} else {
 		cs.alert.Alert("fuel", ALERT_LEVEL_NONE, "")
 	}
