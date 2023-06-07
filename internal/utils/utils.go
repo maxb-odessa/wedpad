@@ -32,7 +32,7 @@ func LoadDir(holder map[string][]byte, dir string, ext string, maxSize int64, ma
 	for _, f := range files {
 
 		if len(holder) >= maxNum {
-			slog.Warn("Not loading '%s': too much files loaded", f)
+			slog.Warn("Not loading '%s': too much files loaded", f.Name())
 			break
 		}
 

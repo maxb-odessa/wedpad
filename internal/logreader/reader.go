@@ -44,6 +44,10 @@ func (r *reader) run() error {
 	spath, _ := filepath.Abs(os.ExpandEnv(r.dir + statusFile))
 	watchFile(spath)
 
+	navrouteFile := sconf.StrDef("journal", "navroute", "NavRoute.json")
+	nvpath, _ := filepath.Abs(os.ExpandEnv(r.dir + navrouteFile))
+	watchFile(nvpath)
+
 	r.linesCh = make(chan string, 64)
 	r.pathCh = make(chan string, 1)
 
