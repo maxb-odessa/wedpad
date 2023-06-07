@@ -28,10 +28,8 @@ type SAASignalsFoundT struct {
 func (evh *EventHandler) SAASignalsFound(eventData map[string]interface{}) {
 	ev := new(SAASignalsFoundT)
 	mapstructure.Decode(eventData, ev)
-	/*
-		for _, g := range ev.Genuses {
-			evh.bios.AccurateBios(evh.cs, ev.BodyID, g.GenusLocalised)
-		}
-	*/
+
+	evh.cs.AddPlanetSignalsFound(ev)
+
 	evh.cs.ShowSignals()
 }

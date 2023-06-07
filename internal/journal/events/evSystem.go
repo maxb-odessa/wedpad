@@ -368,7 +368,7 @@ func small(num int) string {
 
 var PlanetAtmospheres = map[string]TypeColorPair{
 	"Ammonia":           {"NH" + small(3), "#B54A4A"},
-	"AmmoniaOxygen":     {"NH" + small(3) + "0" + small(2), "#BC8F8F"},
+	"AmmoniaOxygen":     {"NH" + small(3) + "+0" + small(2), "#BC8F8F"},
 	"AmmoniaRich":       {"NH" + small(3) + "+", "#A52A2A"},
 	"Argon":             {"Ar", "#3CB371"},
 	"ArgonRich":         {"Ar+", "#3CB371"},

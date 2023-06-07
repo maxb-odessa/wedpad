@@ -78,6 +78,26 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 			continue
 		}
 
+		// is acceptable? (DSS returned real bios, compare them with predicted families)
+		if acceptBios, ok := cs.PlanetSignalsFound()[planet.BodyID]; ok {
+
+			tempBios := make([]*BioT, 0)
+
+			for _, accept := range acceptBios.Genuses {
+				for _, bio := range bios {
+					if accept.GenusLocalised == bio.Family {
+						tempBios = append(tempBios, bio)
+						break
+					}
+				}
+			}
+
+			if len(tempBios) > 0 {
+				bios = tempBios
+			}
+
+		}
+
 		bioFams := make(map[string]bool, 0)
 		bioHints := make([]string, 0)
 		for _, bio := range bios {

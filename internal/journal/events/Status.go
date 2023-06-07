@@ -49,7 +49,7 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 	cs := evh.CurrentSystem()
 
 	if ev.Gravity > 1.0 {
-		cs.alert.Alert("gravity", ALERT_LEVEL_WARN, fmt.Sprintf("High gravity: %.1fG!"))
+		cs.alert.Alert("gravity", ALERT_LEVEL_WARN, fmt.Sprintf("High gravity: %.1fG!", ev.Gravity))
 		cs.sound.Play("gravity")
 	} else {
 		cs.alert.Alert("gravity", ALERT_LEVEL_NONE, "")
