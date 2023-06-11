@@ -1,4 +1,5 @@
 :root {
+    user-select: none;
     touch-action: pan-x pan-y;
     height: 100% 
 }
@@ -85,8 +86,8 @@ body {
     margin-bottom: 4px;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    overflow-x: scroll;
-    /*overflow-y: scroll;*/
+    /*overflow-x: scroll;*/
+    overflow-y: scroll;
 }
 
 #view-log {
