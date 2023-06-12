@@ -27,9 +27,9 @@ func (evh *EventHandler) NavRoute(eventData map[string]interface{}) {
 
 	cs := evh.CurrentSystem()
 
-	if jumps := len(ev.Route); jumps > 0 {
+	if jumps := len(ev.Route); jumps > 1 {
 		jumps := jumps - 1
-		showNavRoute(cs.Name(), cs.MainStarType(), jumps, ev.Route[jumps].StarSystem, ev.Route[jumps].StarClass)
+		showNavRoute(cs.Name(), cs.MainStarType(), jumps, ev.Route[1].StarSystem, ev.Route[1].StarClass)
 	}
 
 }

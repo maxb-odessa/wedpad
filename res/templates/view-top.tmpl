@@ -1,10 +1,14 @@
 <table style="font-family: Arial; font-size: larger; font-style: italic; width: 100%; border: 0; padding: 0; font-weight: bold;">
 <tr style="text-align: center; justify-self: center;">
-    {{ if eq .Jumps 0 }}
+    <td style="text-align: left; color: gray;">current&gt;</td>
+  {{ if eq .NextSystem "" }}
     <td style="text-align: center; color: white;">
         {{ .PrevSystem }}
     </td>
-    {{ else }}
+    <td style="text-align: center; color: {{ .PrevStar.Color }}; font-weight: bold; width: 10%; font-size: 120%;">
+        {{ .PrevStar.Type }}
+    </td>
+  {{ else }}
     <td style="text-align: right; color: white; width: 35%;">
         {{ .PrevSystem }}
     </td>
@@ -20,6 +24,7 @@
     <td style="text-align: left; color: gray; width: 35%;">
         {{ .NextSystem }}
     </td>
+    <td style="text-align: right; color: gray;">&lt;next</td>
     {{ end }}
 </tr>
 </table>
