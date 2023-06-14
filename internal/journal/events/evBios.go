@@ -87,7 +87,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 				for _, bio := range bios {
 					if accept.GenusLocalised == bio.Family {
 						tempBios = append(tempBios, bio)
-						break
+						//break
 					}
 				}
 			}

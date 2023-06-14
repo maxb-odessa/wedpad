@@ -64,7 +64,7 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 
 	if ev.Flags&flagLowFuel != 0 {
 		cs.sound.Play("fuel")
-		cs.alert.Alert("fuel", ALERT_LEVEL_WARN, "Fuel Level is < 25%%!")
+		cs.alert.Alert("fuel", ALERT_LEVEL_WARN, "Fuel Level less than 25%")
 	} else {
 		cs.alert.Alert("fuel", ALERT_LEVEL_NONE, "")
 	}

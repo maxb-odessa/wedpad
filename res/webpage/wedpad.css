@@ -192,7 +192,7 @@ body {
 
 .stars-table {
     color: white;
-    border: none;
+    border: 0;
     width: 100%;
     /*table-layout: fixed;*/
     overflow-wrap: break-word;
@@ -200,15 +200,20 @@ body {
 
 .stars-table th {
     color: gray;
+    border: 0;
     text-align: right;
     font-style: italic;
+}
+
+.stars-table tr {
+    border: 0;
 }
 
 .stars-table td {
     font-size: 1.4em;
     text-align: right;
     border: solid 1px black;
-    border-radius: 5px;
+    border-radius: 6px;
     font-family: 'Courier New', monospace;
     /*background-color: rgba(250, 250, 250, 0.15);*/
 }
@@ -229,14 +234,19 @@ body {
 
 .bodies-table {
     color: white;
-    border: none;
+    border: 0;
     width: 100%;
     /*table-layout: fixed;*/
     overflow-wrap: break-word;
 }
 
+.bodies-table tr {
+    border: 0;
+}
+
 .bodies-table th {
     color: gray;
+    border: 0;
     text-align: right;
     font-style: italic;
 }
@@ -245,7 +255,7 @@ body {
     font-size: larger;
     text-align: right;
     border: solid 1px black;
-    border-radius: 5px;
+    border-radius: 6px;
     font-family: 'Courier New', monospace;
     /*background-color: rgba(250, 250, 250, 0.15);*/
 }
@@ -256,7 +266,9 @@ body {
 */
 
 .bodies-table caption {
-    text-align: right;
+    text-align: center;
+    border: solid 1px black;
+    border-radius: 8px;
 }
 
 .signals-table {
@@ -277,7 +289,7 @@ body {
     font-size: larger;
     text-align: left;
     border: solid 1px black;
-    border-radius: 5px;
+    border-radius: 6px;
     font-family: 'Courier New', monospace;
     /*background-color: rgba(250, 250, 250, 0.15);*/
 }
@@ -312,8 +324,8 @@ body {
     padding-top: 1px;
     padding-bottom: 1px;
     border: solid 1px black;
-    border-radius: 3px;
-    background-color: rgba(150, 150, 150, 0.80);
+    border-radius: 6px;
+    background-color: rgba(130, 130, 130, 0.90);
     color: white;
     /*overflow-wrap: break-word;*/
 }
@@ -380,11 +392,11 @@ table td font span th tr i u b {
 }
 */
 
-.odd {
+.odd td {
     background-color: rgba(200, 200, 200, 0.05);
 }
 
-.even {
+.even td {
     background-color: rgba(200, 200, 200, 0.12);
 }
     

@@ -31,12 +31,12 @@
     {{ $odd = not $odd }}
            <td><span style="color: gray;"><i>{{ $v.Name }}</i></span></td>
            {{ if $v.MainStar }}
-              <td><span style="color: {{ $v.Type.Color }};">&#x2726;</font></td>
+              <td style="justify-content: center;"><span style="color: {{ $v.Type.Color }};">&#x2606;</font></td>
            {{ else }}
               <td></td>
            {{ end }}
-           <td style="font-weight: bold;">
-               <span style="color: {{ $v.Type.Color }};">{{ $v.Type.Type }} {{ $v.Subclass }}</span>
+           <td>
+               <span style="font-weight: bold; color: {{ $v.Type.Color }};">{{ $v.Type.Type }} {{ $v.Subclass }}</span>
            </td>
            <td>
                <span style="color: {{ $v.Type.Color }};">{{ $v.Luminosity }}</span>
