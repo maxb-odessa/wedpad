@@ -8,31 +8,31 @@
     {{ end }}
 {{ end }}
 
-<caption>
+<caption><div>
     {{ if not $nots }}
         <!-- <span style="color: white; background-color: gray; font-size: larger;">Notable Objects</span> -->
     {{ else }}
-        <span style="color: black; background-color: yellow; font-size: larger;">Notable Objects&nbsp;<span class="char-in-circle">&rarr;</span></span>
+        <span style="border: solid 1px gray; border-radius: 6px; color: black; background-color: yellow;">Notable Objects&nbsp;<span class="char-in-circle">&crarr;</span></span>
         <table class="hint-table">
             <thead>
                 <tr>
-                    <th style="text-align: center;">BodyName</th>
-                    <th style="text-align: center;">Notes</th>
+                    <th>BodyName</th>
+                    <th>Notes</th>
                 </tr>
             <thead>
             <tbody>
             {{ range $i, $v := . }}
                 {{ if ($v.Notes) | and (ne $v.Notes "") }}
                 <tr>
-                    <td style="text-align: right;"><b>{{ $v.NotesName }}</b></td>
-                    <td style="text-align: left;"><i>{{ $v.Notes }}</i></td>
+                    <td id="text-right"><b>{{ $v.NotesName }}</b></td>
+                    <td id="text-left"><i>{{ $v.Notes }}</i></td>
                 </tr>
                 {{ end }}
             {{ end }}
             </tbody>
         </table>
     {{ end }}
-</caption>
+</div></caption>
 
 <thead>
     <tr>

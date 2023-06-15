@@ -31,7 +31,7 @@
     {{ $odd = not $odd }}
            <td><span style="color: gray;"><i>{{ $v.Name }}</i></span></td>
            {{ if $v.MainStar }}
-              <td style="justify-content: center;"><span style="color: {{ $v.Type.Color }};">&#x2606;</font></td>
+              <td style="text-align: center; justify-content: center; align-items: center;"><span style="color: {{ $v.Type.Color }};">&lowast;</span></td>
            {{ else }}
               <td></td>
            {{ end }}

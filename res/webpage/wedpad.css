@@ -266,9 +266,19 @@ body {
 */
 
 .bodies-table caption {
-    text-align: center;
+    justify-content: right;
+    text-align: right;
+    border: 0;
+}
+
+.bodies-table caption div {
     border: solid 1px black;
     border-radius: 8px;
+    justify-content: right;
+    text-align: right;
+    width: auto;
+    display: inline-block;
+    font-size: larger;
 }
 
 .signals-table {
@@ -286,6 +296,7 @@ body {
 }
 
 .signals-table td {
+    padding: 1px;
     font-size: larger;
     text-align: left;
     border: solid 1px black;
@@ -301,19 +312,14 @@ body {
 */
 
 .hint-table {
-    font-family: monospace;
+    font-size: smaller;
+    font-family: 'Courier New', monospace;
     border: solid 1px black;
-    visibility: hidden;
-    z-index: 100;
-    position: absolute;
-    border-radius: 8px;
+    display: none;
+    border-radius: 6px;
     border: 0;
     border-spacing: 2px;
     background-color: rgba(100, 100, 100, 0.80);
-    /*backdrop-filter: blur(7px);*/
-    top: 7%;
-    right: 12%;
-    /*box-shadow: 5px 7px 10px black;*/
     overflow-x: scroll;
     overflow-y: scroll;
 }
@@ -321,41 +327,31 @@ body {
 .hint-table td {
     padding-left: 3px;
     padding-right: 3px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     border: solid 1px black;
-    border-radius: 6px;
+    border-radius: 3px;
     background-color: rgba(130, 130, 130, 0.90);
     color: white;
-    /*overflow-wrap: break-word;*/
-}
-
-.hint-table caption {
-    border: solid 1px black;
-    border-radius: 8px;
-    background-color: rgba(100, 100, 100, 0.80);
-    color: white;
-    font-size: 120%;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    /* backdrop-filter: blur(7px); */
-    /*overflow-wrap: break-word;*/
+    overflow-wrap: break-word;
 }
 
 .hint-table th {
+    text-align: center;
+    font-size: smaller;
     padding-left: 3px;
     padding-right: 3px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     color: lightgray;
 }
 
 .signals-table tr:hover .hint-table {
-    visibility: visible;
+    display: block;
 }
 
 .bodies-table caption:hover .hint-table {
-    visibility: visible;
+    display: block;
 }
 
 span.char-in-circle {
@@ -367,6 +363,7 @@ span.char-in-circle {
     display: inline-block;
     text-align: center;
     line-height: 1.5ch;
+    justify-content: center;
     height: 1.5ch;
     width: 1.5ch;
 }
@@ -401,5 +398,13 @@ table td font span th tr i u b {
 }
     
 
+#text-left {
+    text-align: left;
+    justify-content: left;
+}
 
+#text-right {
+    text-align: right;
+    justify-content: right;
+}
 

@@ -105,16 +105,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 			bioFams[bio.Family] = true
 
 			if float32(bio.ValueCr/1_000_000.0) >= sconf.Float32Def("criteria", "min bio value", 0.0) {
-
-				hint := fmt.Sprintf(`<tr><td>%s</td><td style="text-align: right;">%.1f MCr</td><td>%dm</td>`,
-					bio.Name, float64(bio.ValueCr)/1_000_000.0, bio.ColonyRangeM)
-				if bio.Notes != "" {
-					hint += `<td style="font-size: smaller;">` + bio.Notes + "</td>"
-				}
-				hint += "</tr>"
-
-				bioHints = append(bioHints, hint)
-
+				bioHints = append(bioHints, makeHint(bio))
 			}
 
 		}
@@ -127,11 +118,30 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 		sort.Strings(bioList)
 		sort.Strings(bioHints)
 
-		predicted[planet.BodyName] = [2]string{strings.Join(bioList, ", "), strings.Join(bioHints, "")}
+		hintsTable := `<table class="hint-table">` +
+			`<thead><tr>` +
+			`<th>Variant</th>` +
+			`<th>Pay(MCr)</th>` +
+			`<th>Range(m)</th>` +
+			`<th>Notes</th>` +
+			`</tr></thead><tbody>` +
+			strings.Join(bioHints, "") +
+			`</tbody></table>`
+
+		predicted[planet.BodyName] = [2]string{strings.Join(bioList, ", "), hintsTable}
 
 	}
 
 	return predicted
+}
+
+func makeHint(bio *BioT) string {
+	return `<tr>` +
+		`<td id="text-left">` + strings.ReplaceAll(bio.Name, " ", "&nbsp;") + `</td>` +
+		`<td id="text-right">` + fmt.Sprintf("%.1f", float64(bio.ValueCr)/1_000_000.0) + `</td>` +
+		`<td id="text-right">` + fmt.Sprintf("%d", bio.ColonyRangeM) + `</td>` +
+		`<td id="text-left" style="width: 100%;">` + bio.Notes + `</td>` +
+		`</tr>`
 }
 
 func (b *BiosT) getBio(name string) *BioT {

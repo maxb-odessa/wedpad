@@ -1,12 +1,12 @@
 <table style="font-family: Arial; font-size: larger; font-style: italic; width: 100%; border: 0; padding: 0; font-weight: bold;">
 <tr style="text-align: center; justify-self: center;">
-    <td style="text-align: left; color: gray;">current&gt;&nbsp;</td>
+    <td style="text-align: left; color: gray;">current:&nbsp;</td>
   {{ if eq .NextSystem "" }}
     <td style="text-align: left; color: white;">
         {{ .PrevSystem }}
     </td>
-    <td style="text-align: left; color: {{ .PrevStar.Color }}; font-weight: bold; width: 10%; font-size: 120%;">
-        {{ .PrevStar.Type }}
+    <td style="width: 50%;">
+        <span style="text-align: left; color: {{ .PrevStar.Color }}; font-weight: bold; width: 10%; font-size: 120%;">{{ .PrevStar.Type }}</span>
     </td>
   {{ else }}
     <td style="text-align: left; color: white; width: 35%;">
@@ -21,10 +21,10 @@
     <td style="text-align: left; color: {{ .NextStar.Color }}; font-weight: bold; width: 10%; font-size: 120%;">
         {{ .NextStar.Type }}
     </td>
-    <td style="text-align: right; color: gray; width: 35%;">
+    <td style="text-align: right; color: white; width: 35%;">
         {{ .NextSystem }}
     </td>
-    <td style="text-align: right; color: gray;">&nbsp;&lt;next</td>
+    <td style="text-align: right; color: gray;">&nbsp;:next</td>
   {{ end }}
 </tr>
 </table>

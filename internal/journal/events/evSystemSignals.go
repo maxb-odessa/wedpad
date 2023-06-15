@@ -11,7 +11,7 @@ type SignalT struct {
 	Name        string
 	Type        string
 	Description string
-	BioHint     string
+	Hints       string
 }
 
 func (cs *CurrentSystemT) ShowSignals() {
@@ -48,12 +48,12 @@ func (cs *CurrentSystemT) ShowSignals() {
 	}
 
 	// predict and add bodies BIO signals
-	for name, sigs := range cs.bios.Predict(cs) {
+	for name, bsigs := range cs.bios.Predict(cs) {
 		s := &SignalT{
 			Name:        cs.BodyName(name),
 			Type:        `<font color="limegreen">Biological</font>`,
-			Description: sigs[0],
-			BioHint:     sigs[1],
+			Description: bsigs[0],
+			Hints:       bsigs[1],
 		}
 		signals = append(signals, s)
 	}

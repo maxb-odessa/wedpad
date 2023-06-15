@@ -6,6 +6,7 @@ import (
 	"wedpad/internal/utils"
 
 	"github.com/faiface/beep"
+	"github.com/faiface/beep/effects"
 	"github.com/faiface/beep/speaker"
 	"github.com/faiface/beep/wav"
 	"github.com/maxb-odessa/sconf"
@@ -81,8 +82,18 @@ func (tr *track) play() {
 
 	stream := tr.buffer.Streamer(0, tr.buffer.Len())
 
+	ctrl := &beep.Ctrl{Streamer: beep.Loop(-1, stream), Paused: false}
+
+	volume := &effects.Volume{
+		Streamer: ctrl,
+		Base:     2,
+		Volume:   0,
+		Silent:   false,
+	}
+
 	done := make(chan bool)
-	speaker.Play(beep.Seq(stream, beep.Callback(func() {
+
+	speaker.Play(beep.Seq(volume, beep.Callback(func() {
 		done <- true
 	})))
 

@@ -22,26 +22,14 @@
     {{ $odd = not $odd }}
         <td style="text-align: right; font-weight: bold;">{{ $v.Name }}</td>
         <td style="text-align: center;">{{ $v.Type }}</td>
-        {{ if $v.BioHint }}
-        <td style="text-align: left;">{{ $v.Description }} <span class="char-in-circle">&rarr;</span>
-            <table class="hint-table">
-            <caption>{{ $v.Name }}</caption>
-            <thead>
-                <tr>
-                    <th style="text-align: center;">Variant</th>
-                    <th style="text-align: center;">Payout</th>
-                    <th style="text-align: center;">Diversity</th>
-                    <th style="text-align: center;">Notes</th>
-                </tr>
-            </thead>
-            <tbody>{{ $v.BioHint }}</tbody>
-            </table>
+        {{ if ne $v.Hints "" }}
+            <td style="text-align: left;">{{ $v.Description }}&nbsp;<span class="char-in-circle">&crarr;</span>
+            {{ $v.Hints }}
         {{ else }}
-        <td style="text-align: left;">{{ $v.Description }}
+            <td style="text-align: left;">{{ $v.Description }}
         {{ end }}
         </td>
     </tr>
 {{ end }}
 </tbody>
-
 </table>
