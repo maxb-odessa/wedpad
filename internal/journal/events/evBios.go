@@ -118,15 +118,18 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 		sort.Strings(bioList)
 		sort.Strings(bioHints)
 
-		hintsTable := `<table class="hint-table">` +
-			`<thead><tr>` +
-			`<th>Variant</th>` +
-			`<th>Pay(MCr)</th>` +
-			`<th>Range(m)</th>` +
-			`<th>Notes</th>` +
-			`</tr></thead><tbody>` +
-			strings.Join(bioHints, "") +
-			`</tbody></table>`
+		hintsTable := ""
+		if len(bioHints) > 0 {
+			hintsTable = `<table class="hint-table">` +
+				`<thead><tr>` +
+				`<th>Variant</th>` +
+				`<th>Pay(MCr)</th>` +
+				`<th>Range(m)</th>` +
+				`<th>Notes</th>` +
+				`</tr></thead><tbody>` +
+				strings.Join(bioHints, "") +
+				`</tbody></table>`
+		}
 
 		predicted[planet.BodyName] = [2]string{strings.Join(bioList, ", "), hintsTable}
 

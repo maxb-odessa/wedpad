@@ -82,12 +82,12 @@ func (tr *track) play() {
 
 	stream := tr.buffer.Streamer(0, tr.buffer.Len())
 
-	ctrl := &beep.Ctrl{Streamer: beep.Loop(-1, stream), Paused: false}
+	ctrl := &beep.Ctrl{Streamer: beep.Loop(1, stream), Paused: false}
 
 	volume := &effects.Volume{
 		Streamer: ctrl,
-		Base:     2,
-		Volume:   0,
+		Base:     5,
+		Volume:   1,
 		Silent:   false,
 	}
 
