@@ -140,7 +140,7 @@ func makeHint(bio *BioT) string {
 		`<td id="text-left">` + strings.ReplaceAll(bio.Name, " ", "&nbsp;") + `</td>` +
 		`<td id="text-right">` + fmt.Sprintf("%.1f", float64(bio.ValueCr)/1_000_000.0) + `</td>` +
 		`<td id="text-right">` + fmt.Sprintf("%d", bio.ColonyRangeM) + `</td>` +
-		`<td id="text-left" style="width: 100%;">` + bio.Notes + `</td>` +
+		`<td id="text-left" style="width: 100%; font-size: smaller;">` + bio.Notes + `</td>` +
 		`</tr>`
 }
 
