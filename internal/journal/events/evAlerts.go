@@ -26,18 +26,18 @@ const (
 )
 
 func (al *AlertT) alertAdd(id string, level string, text string) {
-	al.alerts[id] = &AlertMsgT{
-		Text:  text,
-		Level: level,
+	if _, ok := al.alerts[id]; !ok {
+		al.alerts[id] = &AlertMsgT{
+			Text:  text,
+			Level: level,
+		}
 	}
 }
 
-func (al *AlertT) alertDel(id string) bool {
+func (al *AlertT) alertDel(id string) {
 	if _, ok := al.alerts[id]; ok {
 		delete(al.alerts, id)
-		return true
 	}
-	return false
 }
 
 func (al *AlertT) alertShow() {
