@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>WEDPad - Web: Elite Dangerous Pad</title>
-    <link rel="stylesheet" href="wedpad.css?E12345678901224011111">
+    <!-- <link rel="stylesheet" href="wedpad.css"> -->
 </head>
 
 <body>
@@ -25,7 +25,14 @@
 
 <script>
 
+function loadCSS() {
+    document.getElementsByTagName('head')[0].insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="wedpad.css?'+Date.now()+'" />');
+};
+
 window.onload = function () {
+    loadCSS();
     switchView("log");
 };
 
