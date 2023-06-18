@@ -1310,7 +1310,10 @@
       "O*",
       "B*",
       "A*",
-      "F*"
+      "F*",
+      "D*",
+      "W*",
+      "N*"
     ],
     "Notes": "Around bright white stars (luminosity V+)"
   },

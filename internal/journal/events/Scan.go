@@ -99,13 +99,6 @@ func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	cs.SetName(ev.StarSystem)
 
 	if ev.StarType != "" {
-		// play alert on BlackHoles and WhiteDwarves
-		if ev.ScanType == "AutoScan" {
-			switch ev.StarType[0:1] {
-			case "D", "H":
-				cs.sound.Play("warp")
-			}
-		}
 		evh.scanStar(ev)
 	} else if ev.PlanetClass != "" {
 		evh.scanPlanet(ev)

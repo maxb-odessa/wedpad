@@ -222,12 +222,17 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 	if note := cs.fastSpinning(body); note != "" {
 		notes = append(notes, note)
 	}
-	/* not needed atm TODO: make it configurable
+
 	// high inclination body
 	if note := cs.highInclination(body); note != "" {
 		notes = append(notes, note)
 	}
-	*/
+
+	// high eccentricity
+	if note := cs.highEccentricity(body); note != "" {
+		notes = append(notes, note)
+	}
+
 	// GG with high helium level
 	if note := cs.highHeliumLevel(body); note != "" {
 		notes = append(notes, note)
@@ -388,8 +393,18 @@ func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 
 func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
-	if incl >= 45.0 && incl <= 90.0+45.0 {
-		return fmt.Sprintf("High Inclination: '%s' %+.1f&deg;", cs.BodyName(body.BodyName), body.OrbitalInclination)
+	ci := float64(sconf.Float32Def("criteria", "min inclination", 70.0))
+	if incl >= ci && incl <= 90.0+ci {
+		return fmt.Sprintf("High Inclination: %+.1f&deg;", cs.BodyName(body.BodyName), body.OrbitalInclination)
+	}
+	return ""
+}
+
+func (cs *CurrentSystemT) highEccentricity(body *ScanT) string {
+	ecc := math.Abs(body.Eccentricity)
+	ce := float64(sconf.Float32Def("criteria", "min eccentricity", 0.80))
+	if ecc >= ce {
+		return fmt.Sprintf("High Eccentricity: %.1", cs.BodyName(body.BodyName), body.Eccentricity)
 	}
 	return ""
 }
