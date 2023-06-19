@@ -165,18 +165,16 @@ func (cs *CurrentSystemT) wantGravity(id int) bool {
 
 	body := cs.Planets()[id]
 
-	wantHighGravity := sconf.Float32Def("criteria", "high gravity", 0.0)
-	wantLowGravity := sconf.Float32Def("criteria", "low gravity", 0.0)
+	wantMinGravity := sconf.Float32Def("criteria", "min gravity", 3.0)
 	landableOnly := sconf.BoolDef("criteria", "gravity landable only", false)
 
 	grav := float32(body.SurfaceGravity / 10.0) // yes, 10.0 is corrent here (as FDEV why)
 
-	if grav <= wantLowGravity || grav >= wantHighGravity {
+	if grav >= wantMinGravity {
 		if landableOnly && !body.Landable {
 			return false
-		} else {
-			return true
 		}
+		return true
 	}
 
 	return false
@@ -395,7 +393,7 @@ func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
 	ci := float64(sconf.Float32Def("criteria", "min inclination", 70.0))
 	if incl >= ci && incl <= 90.0+ci {
-		return fmt.Sprintf("High Inclination: %+.1f&deg;", cs.BodyName(body.BodyName), body.OrbitalInclination)
+		return fmt.Sprintf("High Inclination: %+.1f&deg;", body.OrbitalInclination)
 	}
 	return ""
 }
@@ -404,7 +402,7 @@ func (cs *CurrentSystemT) highEccentricity(body *ScanT) string {
 	ecc := math.Abs(body.Eccentricity)
 	ce := float64(sconf.Float32Def("criteria", "min eccentricity", 0.80))
 	if ecc >= ce {
-		return fmt.Sprintf("High Eccentricity: %.1", cs.BodyName(body.BodyName), body.Eccentricity)
+		return fmt.Sprintf("High Eccentricity: %.2f", body.Eccentricity)
 	}
 	return ""
 }

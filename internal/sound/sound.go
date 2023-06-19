@@ -86,7 +86,7 @@ func (tr *track) play() {
 
 	volume := &effects.Volume{
 		Streamer: ctrl,
-		Base:     5,
+		Base:     3,
 		Volume:   1,
 		Silent:   false,
 	}
