@@ -236,6 +236,11 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 		notes = append(notes, note)
 	}
 
+	// body crosses star exclusion zone
+	if note := cs.crossExclusionZone(body); note != "" {
+		notes = append(notes, note)
+	}
+
 	slog.Debug(9, "Notes on body: %+v", notes)
 
 	return notes
@@ -392,7 +397,7 @@ func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
 	ci := float64(sconf.Float32Def("criteria", "min inclination", 70.0))
-	if incl >= ci && incl <= 90.0+ci {
+	if incl >= ci && incl <= 180.0-ci {
 		return fmt.Sprintf("High Inclination: %+.1f&deg;", body.OrbitalInclination)
 	}
 	return ""
@@ -425,4 +430,42 @@ func (cs *CurrentSystemT) highHeliumLevel(body *ScanT) string {
 	}
 
 	return ""
+}
+
+func (cs *CurrentSystemT) crossExclusionZone(body *ScanT) string {
+	if parent := findParentStar(cs.Stars(), body); parent != nil {
+		// distance from ellipsoid focus to its vertex
+		foc2ver := body.SemiMajorAxis * (1.0 - body.Eccentricity)
+		ecxlZoneRad := calcExclusionZone(parent)
+		slog.Debug(5, "%s: focal2vertex=%f, parent exclZone=%f", body.BodyName, foc2ver, ecxlZoneRad)
+		if foc2ver <= ecxlZoneRad {
+			return "Possible crossing of parent star exclusion zone"
+		}
+	}
+
+	return ""
+}
+
+// very approximate values
+func calcExclusionZone(star *ScanT) float64 {
+
+	switch star.StarType[0:1] {
+	// guessed
+	case "O", "B", "A", "F", "G", "K", "M":
+		return star.Radius * 1.15
+	// based on Spoihaae XE-X d2-9
+	case "D":
+		return 2 * LIGHT_SECOND
+	// guessed
+	case "C", "S":
+		return star.Radius * 1.12
+	// guessed
+	case "N", "H":
+		return 1_000_000 // 1000km
+	case "L", "T", "Y":
+		return star.Radius * 1.3
+	}
+
+	// TTS, AeBe, etc
+	return star.Radius * 1.5
 }
