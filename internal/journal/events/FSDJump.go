@@ -86,7 +86,7 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 	cs.SetMainStarID(ev.BodyID)
 
 	m := &msg.Message{
-		Target: msg.TARGET_SYSTEM,
+		Target: msg.TARGET_STARS,
 		Action: msg.ACTION_CLEAN,
 		Type:   msg.TYPE_VIEW,
 		Data:   "",
@@ -110,7 +110,15 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 	m.Send()
 
 	m = &msg.Message{
-		Target: msg.TARGET_SYSTEM,
+		Target: msg.TARGET_NOTES,
+		Action: msg.ACTION_CLEAN,
+		Type:   msg.TYPE_VIEW,
+		Data:   "",
+	}
+	m.Send()
+
+	m = &msg.Message{
+		Target: msg.TARGET_STARS,
 		Action: msg.ACTION_CLEAN,
 		Type:   msg.TYPE_BUTTON,
 		Data:   "",
@@ -127,6 +135,14 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 
 	m = &msg.Message{
 		Target: msg.TARGET_SIGNALS,
+		Action: msg.ACTION_CLEAN,
+		Type:   msg.TYPE_BUTTON,
+		Data:   "",
+	}
+	m.Send()
+
+	m = &msg.Message{
+		Target: msg.TARGET_NOTES,
 		Action: msg.ACTION_CLEAN,
 		Type:   msg.TYPE_BUTTON,
 		Data:   "",

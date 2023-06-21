@@ -31,7 +31,7 @@ func (evh *EventHandler) FSSDiscoveryScan(eventData map[string]interface{}) {
 	B := &Bodies{ev.BodyCount, ev.NonBodyCount}
 
 	m := &msg.Message{
-		Target: msg.TARGET_SYSTEM,
+		Target: msg.TARGET_STARS,
 		Type:   msg.TYPE_BUTTON,
 		Action: msg.ACTION_REPLACE,
 		Data:   B,
@@ -40,7 +40,7 @@ func (evh *EventHandler) FSSDiscoveryScan(eventData map[string]interface{}) {
 	m.Send()
 
 	m = &msg.Message{
-		Target: msg.TARGET_SYSTEM,
+		Target: msg.TARGET_STARS,
 		Type:   msg.TYPE_BUTTON,
 		Action: msg.ACTION_ATTENTION,
 		Data:   "",

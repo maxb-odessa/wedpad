@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+	"wedpad/internal/utils"
 
 	"github.com/danwakefield/fnmatch"
 	"github.com/maxb-odessa/sconf"
@@ -140,7 +141,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
 func makeHint(bio *BioT) string {
 	return `<tr>` +
-		`<td id="text-left">` + strings.ReplaceAll(bio.Name, " ", "&nbsp;") + `</td>` +
+		`<td id="text-left">` + utils.HTMLSafe(bio.Name) + `</td>` +
 		`<td id="text-right">` + fmt.Sprintf("%.1f", float64(bio.ValueCr)/1_000_000.0) + `</td>` +
 		`<td id="text-right">` + fmt.Sprintf("%d", bio.ColonyRangeM) + `</td>` +
 		`<td id="text-left" style="width: 100%; font-size: smaller;">` + bio.Notes + `</td>` +

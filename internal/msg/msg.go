@@ -22,10 +22,11 @@ type Message struct {
 
 const (
 	TARGET_TOP     = "top"
-	TARGET_SYSTEM  = "system"
+	TARGET_STARS   = "stars"
 	TARGET_LOG     = "log"
 	TARGET_BODIES  = "bodies"
 	TARGET_SIGNALS = "signals"
+	TARGET_NOTES   = "notes"
 	TARGET_BOTTOM  = "bottom"
 
 	TYPE_VIEW   = "view"

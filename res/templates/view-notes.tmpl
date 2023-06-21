@@ -1,0 +1,27 @@
+<table class="notes-table">
+
+<caption>
+</caption>
+
+<thead>
+    <tr>
+        <th style="width: 15%;">Body</th>
+        <th>Notes</th>
+    </tr>
+</thead>
+
+{{ $odd := false }}
+<tbody>
+{{ range $i, $v := . }}
+    {{ if $odd }}
+    <tr class="odd">
+    {{ else }}
+    <tr class="even">
+    {{ end }}
+    {{ $odd = not $odd }}
+        <td style="text-align: right; font-weight: bold;">{{ $v.Body }}</td>
+        <td style="text-align: left;">{{ $v.Notes }}</td>
+    </tr>
+{{ end }}
+</tbody>
+</table>

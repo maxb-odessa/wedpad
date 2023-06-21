@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"wedpad/internal/msg"
+	"wedpad/internal/utils"
 
 	"github.com/maxb-odessa/slog"
 )
@@ -40,7 +41,7 @@ func (cs *CurrentSystemT) ShowStars() {
 		if s, ok := currSysStars[id]; ok {
 			slog.Debug(9, "BODYNAME: '%s', CSNAME: '%s'", s.BodyName, cs.Name())
 			star["Barycenter"] = false
-			star["Name"] = cs.BodyName(s.BodyName)
+			star["Name"] = utils.HTMLSafe(cs.BodyName(s.BodyName))
 			tc := StarTypeColor(s.StarType)
 			if tc.Color == "" {
 				tc.Color = GuessColorByTemp(s.SurfaceTemperature)
@@ -72,7 +73,7 @@ func (cs *CurrentSystemT) ShowStars() {
 	// send data to system view
 	m := &msg.Message{
 		Action: msg.ACTION_REPLACE,
-		Target: msg.TARGET_SYSTEM,
+		Target: msg.TARGET_STARS,
 		Type:   msg.TYPE_VIEW,
 		Data:   stars,
 	}
@@ -82,7 +83,7 @@ func (cs *CurrentSystemT) ShowStars() {
 	// switch to system view
 	m = &msg.Message{
 		Action: msg.ACTION_ATTENTION,
-		Target: msg.TARGET_SYSTEM,
+		Target: msg.TARGET_STARS,
 		Type:   msg.TYPE_VIEW,
 		Data:   "",
 	}

@@ -371,7 +371,7 @@ func (cs *CurrentSystemT) shepherdMoon(body *ScanT) string {
 	if parent := findParentBody(cs.Planets(), body); parent != nil {
 		if rn, rr := CalcRings(parent); rn > 0 {
 			if rr > body.SemiMajorAxis {
-				return fmt.Sprintf("Shepherd Moon: for '%s', incl: %+.0f&deg;", cs.BodyName(parent.BodyName), body.OrbitalInclination)
+				return fmt.Sprintf("Shepherd moon: for '%s', incl: %+.0f&deg;", cs.BodyName(parent.BodyName), body.OrbitalInclination)
 			}
 		}
 	}
@@ -386,7 +386,7 @@ func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 		smaRadRatio := body.SemiMajorAxis / parent.Radius
 
 		if smaRadRatio < float64(sconf.Float32Def("criteria", "hot planet ratio", 2.0)) {
-			return fmt.Sprintf("Hot Planet: distance to star %.2f Ls (%.2f Star Rad)",
+			return fmt.Sprintf("Hot planet: distance to star %.2f Ls (%.2f Star Rad)",
 				math.Abs(body.SemiMajorAxis-parent.Radius)/LIGHT_SECOND, smaRadRatio)
 		}
 	}
@@ -398,7 +398,7 @@ func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
 	ci := float64(sconf.Float32Def("criteria", "min inclination", 70.0))
 	if incl >= ci && incl <= 180.0-ci {
-		return fmt.Sprintf("High Inclination: %+.1f&deg;", body.OrbitalInclination)
+		return fmt.Sprintf("High orbit inclination: %+.1f&deg;", body.OrbitalInclination)
 	}
 	return ""
 }
@@ -407,14 +407,14 @@ func (cs *CurrentSystemT) highEccentricity(body *ScanT) string {
 	ecc := math.Abs(body.Eccentricity)
 	ce := float64(sconf.Float32Def("criteria", "min eccentricity", 0.80))
 	if ecc >= ce {
-		return fmt.Sprintf("High Eccentricity: %.2f", body.Eccentricity)
+		return fmt.Sprintf("High orbit eccentricity: %.2f", body.Eccentricity)
 	}
 	return ""
 }
 
 func (cs *CurrentSystemT) fastSpinning(body *ScanT) string {
 	if math.Abs(body.RotationPeriod) <= float64(sconf.Int32Def("criteria", "body rotation period", 1)) {
-		return fmt.Sprintf("Fast Spinning: %.1f Hours", body.RotationPeriod/60/60)
+		return fmt.Sprintf("Fast spinning: %.1f Hours", body.RotationPeriod/60/60)
 	}
 
 	return ""
@@ -424,7 +424,7 @@ func (cs *CurrentSystemT) highHeliumLevel(body *ScanT) string {
 	if fnmatch.Match("*giant*", body.PlanetClass, fnmatch.FNM_IGNORECASE) {
 		for _, atmo := range body.AtmosphereComposition {
 			if atmo.Name == "Helium" && atmo.Percent >= float64(sconf.Float32Def("criteria", "min helium level", 29.0)) {
-				return fmt.Sprintf("High Helium level: %.1f%%", atmo.Percent)
+				return fmt.Sprintf("High helium level: %.1f%%", atmo.Percent)
 			}
 		}
 	}
@@ -439,7 +439,7 @@ func (cs *CurrentSystemT) crossExclusionZone(body *ScanT) string {
 		ecxlZoneRad := calcExclusionZone(parent)
 		slog.Debug(5, "%s: focal2vertex=%f, parent exclZone=%f", body.BodyName, foc2ver, ecxlZoneRad)
 		if foc2ver <= ecxlZoneRad {
-			return "Possible crossing of parent star exclusion zone"
+			return fmt.Sprintf("Possible crossing of star exclusion zone: %.1Ls vs %.1Ls", foc2ver/LIGHT_SECOND, ecxlZoneRad/LIGHT_SECOND)
 		}
 	}
 

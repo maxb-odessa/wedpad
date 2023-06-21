@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"sort"
 	"strconv"
-	"strings"
 	"wedpad/internal/msg"
+	"wedpad/internal/utils"
 )
 
-func (cs *CurrentSystemT) ShowPlanets(final bool) {
+func (cs *CurrentSystemT) ShowPlanets() {
 
 	bodies := make([]map[string]interface{}, 0)
 
@@ -23,7 +23,6 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 	sort.Ints(keys)
 
 	bodiesCnt := 0
-	haveNotes := false
 
 	for _, id := range keys {
 
@@ -33,7 +32,7 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 
 		if cs.IsRemarkableBody(id) {
 
-			body["Name"] = cs.BodyName(b.BodyName)
+			body["Name"] = utils.HTMLSafe(cs.BodyName(b.BodyName))
 			body["DistanceLs"] = Num(b.DistanceFromArrivalLs)
 			body["Type"] = PlanetTypeColor(b.PlanetClass)
 			body["DMTL"] = composeDMTL(b.WasDiscovered, b.WasMapped, b.TerraformState, b.Landable)
@@ -51,21 +50,13 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 			bodiesCnt++
 		}
 
-		if final {
-			if notes := cs.notesOnBody(id); len(notes) > 0 {
-				body["Notes"] = strings.Join(notes, "<br>")
-				body["NotesName"] = cs.BodyName(b.BodyName)
-				haveNotes = true
-			}
-		}
-
 		if len(body) > 0 {
 			bodies = append(bodies, body)
 		}
 
 	}
 
-	if bodiesCnt > 0 || haveNotes {
+	if bodiesCnt > 0 {
 
 		m := &msg.Message{
 			Target: msg.TARGET_BODIES,
@@ -76,9 +67,7 @@ func (cs *CurrentSystemT) ShowPlanets(final bool) {
 		m.Send()
 
 		buttonText := fmt.Sprintf("%d", bodiesCnt)
-		if haveNotes {
-			buttonText += " (!)"
-		}
+
 		m = &msg.Message{
 			Target: msg.TARGET_BODIES,
 			Type:   msg.TYPE_BUTTON,

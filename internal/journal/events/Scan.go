@@ -103,7 +103,7 @@ func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	} else if ev.PlanetClass != "" {
 		evh.scanPlanet(ev)
 	} else {
-		slog.Debug(1, "Unknown 'Scan' type: not Star nor Planet, ignored")
+		slog.Debug(9, "Unknown 'Scan' type: not Star nor Planet (belt?), ignored")
 	}
 }
 
@@ -116,5 +116,5 @@ func (evh *EventHandler) scanStar(ev *ScanT) {
 func (evh *EventHandler) scanPlanet(ev *ScanT) {
 	cs := evh.CurrentSystem()
 	cs.AddPlanet(ev)
-	cs.ShowPlanets(false)
+	cs.ShowPlanets()
 }

@@ -3,6 +3,7 @@ package utils
 import (
 	"bytes"
 	"encoding/json"
+	"html"
 	"os"
 	"path/filepath"
 	"strings"
@@ -71,4 +72,8 @@ func JSONMarshal(t interface{}) ([]byte, error) {
 	encoder.SetEscapeHTML(false)
 	err := encoder.Encode(t)
 	return buffer.Bytes(), err
+}
+
+func HTMLSafe(s string) string {
+	return strings.ReplaceAll(html.EscapeString(s), " ", "&nbsp;")
 }

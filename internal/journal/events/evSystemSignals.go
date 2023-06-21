@@ -1,8 +1,8 @@
 package events
 
 import (
-	"html"
 	"wedpad/internal/msg"
+	"wedpad/internal/utils"
 
 	"github.com/danwakefield/fnmatch"
 )
@@ -23,8 +23,8 @@ func (cs *CurrentSystemT) ShowSignals() {
 
 		s := new(SignalT)
 
-		sigName := html.EscapeString(sig.SignalName)
-		sigNameLoc := html.EscapeString(sig.SignalNameLocalised)
+		sigName := utils.HTMLSafe(sig.SignalName)
+		sigNameLoc := utils.HTMLSafe(sig.SignalNameLocalised)
 
 		// TODO for now: collect all sig.SignalName variants
 		if sig.IsStation {
@@ -50,7 +50,7 @@ func (cs *CurrentSystemT) ShowSignals() {
 	// predict and add bodies BIO signals
 	for name, bsigs := range cs.bios.Predict(cs) {
 		s := &SignalT{
-			Name:        cs.BodyName(name),
+			Name:        utils.HTMLSafe(cs.BodyName(name)),
 			Type:        `<font color="limegreen">Biological</font>`,
 			Description: bsigs[0],
 			Hints:       bsigs[1],
