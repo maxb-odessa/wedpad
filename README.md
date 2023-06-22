@@ -14,3 +14,10 @@ Designed for explorers/bio hunters only.
 - or (if using a tablet, like I do) at <whatever.your.pc.ip.is>:8080
 - start ED:O, enjoy the game
 - systemctl --user stop wedpad
+
+## Screenshots
+![Screenshot](screenshots/log.png)
+![Screenshot](screenshots/stars.png)
+![Screenshot](screenshots/bodies.png)
+![Screenshot](screenshots/signals.png)
+![Screenshot](screenshots/notes.png)
