@@ -55,9 +55,13 @@ func Run() {
 		reader := func() {
 			for {
 				// catch remote connection close
-				mtype, _, err := conn.ReadMessage()
+				mtype, msg, err := conn.ReadMessage()
 				if err != nil || mtype == ws.CloseMessage {
 					return
+				}
+				// got a message from the remote
+				if mtype == ws.TextMessage {
+					slog.Debug(1, "Got from remote: %+v", string(msg))
 				}
 			}
 		}

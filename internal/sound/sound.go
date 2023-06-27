@@ -14,6 +14,7 @@ import (
 )
 
 type track struct {
+	name   string
 	data   []byte
 	buffer *beep.Buffer
 }
@@ -44,6 +45,7 @@ func (s *SoundT) Init() error {
 			tr := new(track)
 			tr.buffer = beep.NewBuffer(format)
 			tr.buffer.Append(streamer)
+			tr.name = trName
 			streamer.Close()
 			s.tracks[trName] = tr
 			slog.Debug(1, "Loaded sound track '%s'", trName)
@@ -78,7 +80,7 @@ func (s *SoundT) run() {
 }
 
 func (tr *track) play() {
-	slog.Debug(9, "PLAY")
+	slog.Debug(9, "Playing %s", tr.name)
 
 	stream := tr.buffer.Streamer(0, tr.buffer.Len())
 

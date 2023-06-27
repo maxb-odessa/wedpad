@@ -15,15 +15,18 @@ type CurrentSystemT struct {
 	sector   string
 	mainStar struct {
 		id    int
+		name  string
 		typ   string
 		color string
 	}
 
 	// systemwide, AutoScan, FSS*
-	stars       map[int]*ScanT
-	planets     map[int]*ScanT
-	baryCentres map[int]*ScanBaryCentreT
-	signals     map[string]*FSSSignalDiscoveredT
+	stars         map[int]*ScanT
+	starsByName   map[string]*ScanT
+	planets       map[int]*ScanT
+	planetsByName map[string]*ScanT
+	baryCentres   map[int]*ScanBaryCentreT
+	signals       map[string]*FSSSignalDiscoveredT
 
 	// bodywide, DSS, SAA
 	planetSignalsCount map[int]*FSSBodySignalsT
@@ -82,10 +85,12 @@ func (cs *CurrentSystemT) String() string {
 
 func (cs *CurrentSystemT) AddStar(s *ScanT) {
 	cs.stars[s.BodyID] = s
+	cs.starsByName[s.BodyName] = s
 }
 
 func (cs *CurrentSystemT) AddPlanet(p *ScanT) {
 	cs.planets[p.BodyID] = p
+	cs.planetsByName[p.BodyName] = p
 }
 
 func (cs *CurrentSystemT) AddSignal(s *FSSSignalDiscoveredT) {
@@ -112,6 +117,10 @@ func (cs *CurrentSystemT) SetMainStarID(id int) {
 	cs.mainStar.id = id
 }
 
+func (cs *CurrentSystemT) SetMainStarName(n string) {
+	cs.mainStar.name = n
+}
+
 func (cs *CurrentSystemT) Name() string {
 	return cs.name
 }
@@ -130,8 +139,16 @@ func (cs *CurrentSystemT) MainStarID() int {
 	return cs.mainStar.id
 }
 
+func (cs *CurrentSystemT) MainStarName() string {
+	return cs.mainStar.name
+}
+
 func (cs *CurrentSystemT) Stars() map[int]*ScanT {
 	return cs.stars
+}
+
+func (cs *CurrentSystemT) StarsByName() map[string]*ScanT {
+	return cs.starsByName
 }
 
 func (cs *CurrentSystemT) BaryCentres() map[int]*ScanBaryCentreT {
@@ -140,6 +157,10 @@ func (cs *CurrentSystemT) BaryCentres() map[int]*ScanBaryCentreT {
 
 func (cs *CurrentSystemT) Planets() map[int]*ScanT {
 	return cs.planets
+}
+
+func (cs *CurrentSystemT) PlanetsByName() map[string]*ScanT {
+	return cs.planetsByName
 }
 
 func (cs *CurrentSystemT) Signals() map[string]*FSSSignalDiscoveredT {
@@ -159,13 +180,15 @@ func (cs *CurrentSystemT) Reset() {
 	cs.name = "(somewhere in space)"
 	cs.sector = "?"
 	cs.mainStar = struct {
-		id         int
-		typ, color string
-	}{0, "?", "#FFFFFF"}
+		id               int
+		name, typ, color string
+	}{0, "", "?", "#FFFFFF"}
 
 	// systemwide
 	cs.stars = make(map[int]*ScanT)
+	cs.starsByName = make(map[string]*ScanT)
 	cs.planets = make(map[int]*ScanT)
+	cs.planetsByName = make(map[string]*ScanT)
 	cs.baryCentres = make(map[int]*ScanBaryCentreT)
 	cs.signals = make(map[string]*FSSSignalDiscoveredT, 0)
 

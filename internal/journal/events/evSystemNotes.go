@@ -6,33 +6,35 @@ import (
 	"strings"
 	"wedpad/internal/msg"
 	"wedpad/internal/utils"
+
+	"github.com/fvbommel/sortorder"
 )
 
 func (cs *CurrentSystemT) ShowNotes() {
 
 	notes := make([]map[string]interface{}, 0)
 
-	planets := cs.Planets()
+	planets := cs.PlanetsByName()
 
-	var keys []int
+	var keys []string
 
 	for k, _ := range planets {
 		keys = append(keys, k)
 	}
 
-	sort.Ints(keys)
+	sort.Strings(sortorder.Natural(keys))
 
 	notesCnt := 0
 
-	for _, id := range keys {
+	for _, name := range keys {
 
-		note := make(map[string]interface{})
-
-		body := planets[id]
+		body := planets[name]
+		id := body.BodyID
 
 		if nob := cs.notesOnBody(id); len(nob) > 0 {
+			note := make(map[string]interface{})
 			note["Notes"] = strings.Join(nob, "<br>")
-			note["Body"] = utils.HTMLSafe(cs.BodyName(body.BodyName))
+			note["Body"] = utils.HTMLSafe(cs.BodyName(name))
 			notes = append(notes, note)
 			notesCnt++
 		}

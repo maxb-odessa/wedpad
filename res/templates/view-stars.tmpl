@@ -29,7 +29,7 @@
     <tr class="even">
     {{ end }}
     {{ $odd = not $odd }}
-           <td><span style="color: gray;"><i>{{ $v.Name }}</i></span></td>
+           <td style="color: gray; font-style: italic;">{{ $v.Name }}</td>
            {{ if $v.MainStar }}
               <td style="text-align: center; justify-content: center; align-items: center;"><span style="color: {{ $v.Type.Color }};">&lowast;</span></td>
            {{ else }}

@@ -3,68 +3,62 @@ package events
 import (
 	"fmt"
 	"sort"
+
+	"github.com/fvbommel/sortorder"
+	"github.com/maxb-odessa/slog"
+
 	"wedpad/internal/msg"
 	"wedpad/internal/utils"
-
-	"github.com/maxb-odessa/slog"
 )
 
 func (cs *CurrentSystemT) ShowStars() {
 
 	stars := make([]map[string]interface{}, 0)
 
-	var keys []int
-	for k, _ := range cs.Stars() {
+	currSysStars := cs.StarsByName()
+
+	var keys []string
+	for k, _ := range currSysStars {
 		keys = append(keys, k)
 	}
 
-	/*
-		for k, _ := range cs.BaryCentres() {
-			keys = append(keys, k)
-		}
-	*/
+	sort.Strings(sortorder.Natural(keys))
 
-	sort.Ints(keys)
-
-	currSysStars := cs.Stars()
-
-	for _, id := range keys {
+	for _, starName := range keys {
 
 		star := make(map[string]interface{})
 
-		if id == cs.MainStarID() {
+		if starName == cs.MainStarName() {
 			star["MainStar"] = true
 		} else {
 			star["MainStar"] = false
 		}
-		// a Star, not a BaryCentre
-		if s, ok := currSysStars[id]; ok {
-			slog.Debug(9, "BODYNAME: '%s', CSNAME: '%s'", s.BodyName, cs.Name())
-			star["Barycenter"] = false
-			star["Name"] = utils.HTMLSafe(cs.BodyName(s.BodyName))
-			tc := StarTypeColor(s.StarType)
-			if tc.Color == "" {
-				tc.Color = GuessColorByTemp(s.SurfaceTemperature)
-			}
-			star["Type"] = tc
-			star["Subclass"] = s.Subclass
-			star["Luminosity"] = s.Luminosity
-			if s.DistanceFromArrivalLs > 0.0 {
-				star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
-			}
-			star["RadiusS"] = Num(s.Radius / SOLAR_RADIUS)
-			star["MassS"] = Num(s.StellarMass)
-			star["TemperatureK"] = Num(s.SurfaceTemperature)
-			star["TemperatureColor"] = GuessColorByTemp(s.SurfaceTemperature)
-			star["OrbitalPeriodD"] = Num(s.OrbitalPeriod / SECONDS_IN_DAY)
-			star["Eccentricity"] = Num(s.Eccentricity)
-			star["Discovered"] = s.WasDiscovered
-			rn, rr := CalcRings(s)
-			if rn > 0 {
-				star["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
-			}
-		} else {
-			star["Barycenter"] = true
+
+		s := currSysStars[starName]
+
+		slog.Debug(9, "BODYNAME: '%s', CSNAME: '%s'", s.BodyName, cs.Name())
+		star["Barycenter"] = false
+		star["Name"] = utils.HTMLSafe(cs.BodyName(s.BodyName))
+		tc := StarTypeColor(s.StarType)
+		if tc.Color == "" {
+			tc.Color = GuessColorByTemp(s.SurfaceTemperature)
+		}
+		star["Type"] = tc
+		star["Subclass"] = s.Subclass
+		star["Luminosity"] = s.Luminosity
+		if s.DistanceFromArrivalLs > 0.0 {
+			star["DistanceLs"] = Num(s.DistanceFromArrivalLs)
+		}
+		star["RadiusS"] = Num(s.Radius / SOLAR_RADIUS)
+		star["MassS"] = Num(s.StellarMass)
+		star["TemperatureK"] = Num(s.SurfaceTemperature)
+		star["TemperatureColor"] = GuessColorByTemp(s.SurfaceTemperature)
+		star["OrbitalPeriodD"] = Num(s.OrbitalPeriod / SECONDS_IN_DAY)
+		star["Eccentricity"] = Num(s.Eccentricity)
+		star["Discovered"] = s.WasDiscovered
+		rn, rr := CalcRings(s)
+		if rn > 0 {
+			star["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
 		}
 
 		stars = append(stars, star)

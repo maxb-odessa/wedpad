@@ -5,6 +5,18 @@
     <meta charset="UTF-8" />
     <title>WEDPad - Web: Elite Dangerous Pad</title>
     <!-- <link rel="stylesheet" href="wedpad.css"> -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+        body {
+            color: black;
+            background-color: black;
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +27,7 @@
     <div class="view-main"   id="view-bodies"></div>
     <div class="view-main"   id="view-signals"></div>
     <div class="view-main"   id="view-notes"></div>
-    <div class="view-bottom-container" id="view-bottom-container"><div id="view-bottom"></div></div>
+    <div class="view-bottom" id="view-bottom"></div>
 </div>
 <div id="right">
     <div class="button" id="button-log" onClick="switchView('log');"><b>LOG</b><p><div class="button-text" id="button-log-text"></div></div>
@@ -76,7 +88,7 @@ async function loop() {
 
         socket.onopen = function() {
             logView.innerHTML += makeLog("<b>CONNECTED!</b>");
-            socket.send("connected");
+            socket.send("ACK");
             reconnect = false;
         };
 
@@ -154,6 +166,26 @@ async function waitUntil(condition, time = 2000) {
 function makeLog(line) {
    return '<i><font color="gray">' + timestamp() + '&gt;</font> ' + line + '</i><br>';
 }
+
+// for taking screenshots
+const capture = async () => {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  const video = document.createElement("video");
+
+  try {
+    const captureStream = await navigator.mediaDevices.getDisplayMedia();
+    video.srcObject = captureStream;
+    context.drawImage(video, 0, 0, window.width, window.height);
+    const frame = canvas.toDataURL("image/png");
+    captureStream.getTracks().forEach(track => track.stop());
+    window.location.href = frame;
+  } catch (err) {
+    console.error("Error: " + err);
+  }
+};
+
+//capture();
 
 </script>
 

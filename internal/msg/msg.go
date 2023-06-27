@@ -28,6 +28,7 @@ const (
 	TARGET_SIGNALS = "signals"
 	TARGET_NOTES   = "notes"
 	TARGET_BOTTOM  = "bottom"
+	TARGET_CONFIG  = "config"
 
 	TYPE_VIEW   = "view"
 	TYPE_BUTTON = "button"
@@ -76,7 +77,7 @@ func showGreeting() {
 	greet := "WEdPad - Web based Elite Dangerous Pad"
 
 	msg := &Message{
-		Action: ACTION_REPLACE,
+		Action: ACTION_APPEND,
 		Target: TARGET_LOG,
 		Type:   TYPE_VIEW,
 		Data:   greet,

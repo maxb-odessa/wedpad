@@ -20,7 +20,7 @@
     <tr class="even">
     {{ end }}
     {{ $odd = not $odd }}
-        <td style="text-align: right; font-weight: bold;">{{ $v.Name }}</td>
+        <td style="text-align: right; color: gray;">{{ $v.Name }}</td>
         <td style="text-align: center;">{{ $v.Type }}</td>
         {{ if ne $v.Hints "" }}
             <td style="text-align: left;">{{ $v.Description }}&nbsp;<span class="char-in-circle">&crarr;</span>

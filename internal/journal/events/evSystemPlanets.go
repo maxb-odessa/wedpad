@@ -4,33 +4,33 @@ import (
 	"fmt"
 	"sort"
 	"strconv"
+
 	"wedpad/internal/msg"
 	"wedpad/internal/utils"
+
+	"github.com/fvbommel/sortorder"
 )
 
 func (cs *CurrentSystemT) ShowPlanets() {
 
 	bodies := make([]map[string]interface{}, 0)
 
-	planets := cs.Planets()
+	planets := cs.PlanetsByName()
 
-	var keys []int
+	var keys []string
 
 	for k, _ := range planets {
 		keys = append(keys, k)
 	}
 
-	sort.Ints(keys)
+	sort.Strings(sortorder.Natural(keys))
 
-	bodiesCnt := 0
+	for _, planetName := range keys {
 
-	for _, id := range keys {
+		b := planets[planetName]
 
-		body := make(map[string]interface{})
-
-		b := planets[id]
-
-		if cs.IsRemarkableBody(id) {
+		if cs.IsRemarkableBody(b.BodyID) {
+			body := make(map[string]interface{})
 
 			body["Name"] = utils.HTMLSafe(cs.BodyName(b.BodyName))
 			body["DistanceLs"] = Num(b.DistanceFromArrivalLs)
@@ -45,18 +45,14 @@ func (cs *CurrentSystemT) ShowPlanets() {
 				body["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
 			}
 			body["Atmosphere"] = PlanetAtmosphereTypeColor(b.AtmosphereType)
-			body["Signals"] = cs.composeBGGHO(id)
+			body["Signals"] = cs.composeBGGHO(b.BodyID)
 
-			bodiesCnt++
-		}
-
-		if len(body) > 0 {
 			bodies = append(bodies, body)
 		}
 
 	}
 
-	if bodiesCnt > 0 {
+	if len(bodies) > 0 {
 
 		m := &msg.Message{
 			Target: msg.TARGET_BODIES,
@@ -66,13 +62,11 @@ func (cs *CurrentSystemT) ShowPlanets() {
 		}
 		m.Send()
 
-		buttonText := fmt.Sprintf("%d", bodiesCnt)
-
 		m = &msg.Message{
 			Target: msg.TARGET_BODIES,
 			Type:   msg.TYPE_BUTTON,
 			Action: msg.ACTION_REPLACE,
-			Data:   buttonText,
+			Data:   fmt.Sprintf("%d", len(bodies)),
 		}
 		m.Send()
 

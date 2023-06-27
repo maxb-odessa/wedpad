@@ -84,6 +84,7 @@ func (evh *EventHandler) FSDJump(eventData map[string]interface{}) {
 
 	cs.SetName(ev.StarSystem)
 	cs.SetMainStarID(ev.BodyID)
+	cs.SetMainStarName(ev.Body)
 
 	m := &msg.Message{
 		Target: msg.TARGET_STARS,

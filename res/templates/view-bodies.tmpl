@@ -37,7 +37,7 @@
     <tr class="even">
     {{ end }}
     {{ $odd = not $odd }}
-    <td><font color="gray"><i>{{ $v.Name }}</i></font></td>
+    <td style="color: gray; font-style: italic;">{{ $v.Name }}</td>
     <td><font color="{{ $v.Type.Color }}">{{ $v.Type.Type }}</font></td>
     <td>{{ $v.DistanceLs }}</td>
     <td>{{ range $j, $dmtl := $v.DMTL }}<font color="{{ $dmtl.Color }}">{{ $dmtl.Type }}</font>{{ end }}</td>

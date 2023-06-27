@@ -7,5 +7,5 @@
     {{ else if eq $v.Level "crit" }}
         {{ $color = "orangered" }}
     {{ end }}
-    <font color="{{ $color }}">{{ $v.Text }}&nbsp;</font>
+    <div style="background: {{ $color }}; color: black; border-radius: 5px; margin: 0; margin-right: 5px; margin-left: 5px;">{{ $v.Text }}</div>
 {{ end }}

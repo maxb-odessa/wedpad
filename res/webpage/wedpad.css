@@ -2,9 +2,11 @@
     user-select: none;
     touch-action: pan-x pan-y;
     height: 100% 
+    /* put it here? overscroll-behavior: contain; */ 
 }
 
 body {
+    overscroll-behavior: contain; /* or none */
     background-image: url('background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,7 +45,7 @@ body {
     /*backdrop-filter: blur(3px);*/
 }
 
-#view-bottom-container {
+#view-bottom {
     border-radius: 8px;
     border: solid gray 1px;
     display: flex;
@@ -51,32 +53,6 @@ body {
     overflow: hidden;
     white-space: nowrap;
     /*backdrop-filter: blur(3px);*/
-}
-
-#view-bottom {
-    overflow: hidden;
-    display: block;
-    color: white;
-    font-family: 'Courier New', monospace;
-    font-size: larger;
-    font-weight: bold;
-    font-style: italic;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    animation: view-bottom-ani 10s linear infinite;
-}
-
-@keyframes view-bottom-ani {
-	from {
-		transform: translate3d(0%, 0%, 0px);
-        left: 80%;
-	}
-	to {
-		transform: translate3d(-80%, 0%, 0px);
-        left: 0%;
-	}
 }
 
 .view-main {
@@ -213,6 +189,8 @@ body {
 }
 
 .stars-table td {
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 1.4em;
     text-align: right;
     border: solid 1px black;
@@ -255,6 +233,8 @@ body {
 }
 
 .bodies-table td {
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: larger;
     text-align: right;
     border: solid 1px black;
@@ -299,8 +279,8 @@ body {
 }
 
 .signals-table td {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: larger;
     text-align: left;
     border: solid 1px black;
@@ -324,8 +304,8 @@ body {
 }
 
 .notes-table td {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: larger;
     text-align: left;
     border: solid 1px black;

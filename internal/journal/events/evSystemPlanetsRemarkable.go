@@ -99,9 +99,9 @@ func (cs *CurrentSystemT) wantBGGHO(id int) bool {
 func (cs *CurrentSystemT) wantRings(id int) bool {
 
 	rNum, rRad := CalcRings(cs.Planets()[id])
-	rRadLs := float32(rRad / LIGHT_SECOND)
+	rRadLs := float64(rRad / LIGHT_SECOND)
 
-	minRadLs := sconf.Float32Def("criteria", "min ring radius", 0.0)
+	minRadLs := sconf.Float64Def("criteria", "min ring radius", 0.0)
 
 	if rNum == 0 {
 		if minRadLs > 0.0 {
@@ -165,10 +165,10 @@ func (cs *CurrentSystemT) wantGravity(id int) bool {
 
 	body := cs.Planets()[id]
 
-	wantMinGravity := sconf.Float32Def("criteria", "min gravity", 3.0)
+	wantMinGravity := sconf.Float64Def("criteria", "min gravity", 3.0)
 	landableOnly := sconf.BoolDef("criteria", "gravity landable only", false)
 
-	grav := float32(body.SurfaceGravity / 10.0) // yes, 10.0 is corrent here (as FDEV why)
+	grav := body.SurfaceGravity / 10.0 // yes, 10.0 is corrent here (as FDEV why)
 
 	if grav >= wantMinGravity {
 		if landableOnly && !body.Landable {
@@ -297,7 +297,7 @@ func findBodyByBaryCentreID(planets map[int]*ScanT, baryCentreID int, skipBodyID
 
 func (cs *CurrentSystemT) closeBodies(body *ScanT) string {
 
-	ratioRequired := float64(sconf.Float32Def("criteria", "close bodies ratio", 3.0))
+	ratioRequired := sconf.Float64Def("criteria", "close bodies ratio", 3.0)
 
 	// check over parent barycentre
 	if pBary := findParentBarycentre(cs.BaryCentres(), body); pBary != nil {
@@ -385,7 +385,7 @@ func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 
 		smaRadRatio := body.SemiMajorAxis / parent.Radius
 
-		if smaRadRatio < float64(sconf.Float32Def("criteria", "hot planet ratio", 2.0)) {
+		if smaRadRatio < sconf.Float64Def("criteria", "hot planet ratio", 2.0) {
 			return fmt.Sprintf("Hot planet: distance to star %.2f Ls (%.2f Star Rad)",
 				math.Abs(body.SemiMajorAxis-parent.Radius)/LIGHT_SECOND, smaRadRatio)
 		}
@@ -396,7 +396,7 @@ func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 
 func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
-	ci := float64(sconf.Float32Def("criteria", "min inclination", 70.0))
+	ci := sconf.Float64Def("criteria", "min inclination", 70.0)
 	if incl >= ci && incl <= 180.0-ci {
 		return fmt.Sprintf("High orbit inclination: %+.1f&deg;", body.OrbitalInclination)
 	}
@@ -405,7 +405,7 @@ func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 
 func (cs *CurrentSystemT) highEccentricity(body *ScanT) string {
 	ecc := math.Abs(body.Eccentricity)
-	ce := float64(sconf.Float32Def("criteria", "min eccentricity", 0.80))
+	ce := sconf.Float64Def("criteria", "min eccentricity", 0.80)
 	if ecc >= ce {
 		return fmt.Sprintf("High orbit eccentricity: %.2f", body.Eccentricity)
 	}
@@ -413,7 +413,7 @@ func (cs *CurrentSystemT) highEccentricity(body *ScanT) string {
 }
 
 func (cs *CurrentSystemT) fastSpinning(body *ScanT) string {
-	if math.Abs(body.RotationPeriod) <= float64(sconf.Int32Def("criteria", "body rotation period", 1)) {
+	if math.Abs(body.RotationPeriod) <= sconf.Float64Def("criteria", "body rotation period", 1) {
 		return fmt.Sprintf("Fast spinning: %.1f Hours", body.RotationPeriod/60/60)
 	}
 
@@ -423,7 +423,7 @@ func (cs *CurrentSystemT) fastSpinning(body *ScanT) string {
 func (cs *CurrentSystemT) highHeliumLevel(body *ScanT) string {
 	if fnmatch.Match("*giant*", body.PlanetClass, fnmatch.FNM_IGNORECASE) {
 		for _, atmo := range body.AtmosphereComposition {
-			if atmo.Name == "Helium" && atmo.Percent >= float64(sconf.Float32Def("criteria", "min helium level", 29.0)) {
+			if atmo.Name == "Helium" && atmo.Percent >= sconf.Float64Def("criteria", "min helium level", 29.0) {
 				return fmt.Sprintf("High helium level: %.1f%%", atmo.Percent)
 			}
 		}

@@ -46,7 +46,8 @@ func main() {
 	}()
 
 	// setup logger
-	slog.Init("wedpad", debug, "2006-01-02 15:04:05")
+	//slog.Init("wedpad", debug, "2006-01-02 15:04:05")  // no need if using systemd
+	slog.Init("", debug, "")
 
 	slog.Info("Started")
 	defer slog.Info("Exited")

@@ -28,18 +28,24 @@ func (cs *CurrentSystemT) ShowSignals() {
 
 		// TODO for now: collect all sig.SignalName variants
 		if sig.IsStation {
-			s.Name = "&nabla;"
-			s.Type = `<font color="cyan">Station</font>`
+			// a carrier should have its sign at the end, eg: FANCY NAME X7Y-ZD9
+			if fnmatch.Match("* [A-Z0-9][A-Z0-9][A-Z0-9]-[A-Z0-9][A-Z0-9][A-Z0-9]", sig.SignalName, 0) {
+				s.Name = "&nabla;"
+				s.Type = `<font color="#FF6600">Carrier</font>`
+			} else {
+				s.Name = "&#8859;"
+				s.Type = `<font color="cyan">Station</font>`
+			}
 		} else if fnmatch.Match("$Fixed_Event_Life*", sigName, 0) {
 			s.Name = "&sect;"
 			s.Type = `<font color="yellow">Phenomena</font>`
 		} else {
-			s.Name = "&#8859;"
-			s.Type = `<font color="magenta">Other</font>`
+			s.Name = "&OElig;"
+			s.Type = `<font color="magenta">Location</font>`
 		}
 
 		if sigNameLoc != "" {
-			s.Description = sigNameLoc + "&nbsp;" + sigName
+			s.Description = sigNameLoc + `&nbsp;<span style="font-size: small;">(` + sigName + `)</span>`
 		} else {
 			s.Description = sigName
 		}
