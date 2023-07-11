@@ -22,7 +22,7 @@ func (cs *CurrentSystemT) ShowStars() {
 		keys = append(keys, k)
 	}
 
-	sort.Strings(sortorder.Natural(keys))
+	sort.Sort(sortorder.Natural(keys))
 
 	for _, starName := range keys {
 

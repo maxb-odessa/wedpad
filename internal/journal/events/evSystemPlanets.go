@@ -23,7 +23,7 @@ func (cs *CurrentSystemT) ShowPlanets() {
 		keys = append(keys, k)
 	}
 
-	sort.Strings(sortorder.Natural(keys))
+	sort.Sort(sortorder.Natural(keys))
 
 	for _, planetName := range keys {
 
