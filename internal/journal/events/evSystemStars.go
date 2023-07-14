@@ -2,9 +2,8 @@ package events
 
 import (
 	"fmt"
-	"sort"
+	"strings"
 
-	"github.com/fvbommel/sortorder"
 	"github.com/maxb-odessa/slog"
 
 	"wedpad/internal/msg"
@@ -13,36 +12,27 @@ import (
 
 func (cs *CurrentSystemT) ShowStars() {
 
+	baryCentres := cs.BaryCentres()
+	currStars := cs.Stars()
+
 	stars := make([]map[string]interface{}, 0)
 
-	currSysStars := cs.StarsByName()
-
-	var keys []string
-	for k, _ := range currSysStars {
-		keys = append(keys, k)
-	}
-
-	sort.Sort(sortorder.Natural(keys))
-
-	for _, starName := range keys {
+	for _, s := range cs.StarsByNameSorted() { // array of *ScanT sorted by BodyName
 
 		star := make(map[string]interface{})
 
-		if starName == cs.MainStarName() {
-			star["MainStar"] = true
-		} else {
-			star["MainStar"] = false
-		}
-
-		s := currSysStars[starName]
-
 		slog.Debug(9, "BODYNAME: '%s', CSNAME: '%s'", s.BodyName, cs.Name())
-		star["Barycenter"] = false
-		star["Name"] = utils.HTMLSafe(cs.BodyName(s.BodyName))
 		tc := StarTypeColor(s.StarType)
 		if tc.Color == "" {
 			tc.Color = GuessColorByTemp(s.SurfaceTemperature)
 		}
+
+		if starName := utils.HTMLSafe(cs.BodyName(s.BodyName)); starName != "" {
+			star["Name"] = starName
+		} else {
+			star["Name"] = "&#x2736;"
+		}
+
 		star["Type"] = tc
 		star["Subclass"] = s.Subclass
 		star["Luminosity"] = s.Luminosity
@@ -58,10 +48,28 @@ func (cs *CurrentSystemT) ShowStars() {
 		star["Discovered"] = s.WasDiscovered
 		rn, rr := CalcRings(s)
 		if rn > 0 {
-			star["Rings"] = fmt.Sprintf("%d/%.1f", rn, rr/LIGHT_SECOND)
+			star["Rings"] = fmt.Sprintf("%d / %.1f", rn, rr/LIGHT_SECOND)
 		}
 
+		var parents = []string{}
+		for _, par := range s.Parents {
+			if st, ok := currStars[par.Star]; ok {
+				stName := utils.HTMLSafe(cs.BodyName(st.BodyName))
+				if stName != "" {
+					parents = append(parents, stName)
+				} else {
+					parents = append(parents, "&#x2736;")
+				}
+			}
+			if _, ok := baryCentres[par.Null]; ok {
+				parents = append(parents, "&#9741;")
+			}
+		}
+
+		star["Parents"] = strings.Join(parents, "&nbsp;")
+
 		stars = append(stars, star)
+
 	}
 
 	// send data to system view

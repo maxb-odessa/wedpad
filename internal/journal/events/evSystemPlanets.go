@@ -2,32 +2,17 @@ package events
 
 import (
 	"fmt"
-	"sort"
 	"strconv"
 
 	"wedpad/internal/msg"
 	"wedpad/internal/utils"
-
-	"github.com/fvbommel/sortorder"
 )
 
 func (cs *CurrentSystemT) ShowPlanets() {
 
 	bodies := make([]map[string]interface{}, 0)
 
-	planets := cs.PlanetsByName()
-
-	var keys []string
-
-	for k, _ := range planets {
-		keys = append(keys, k)
-	}
-
-	sort.Sort(sortorder.Natural(keys))
-
-	for _, planetName := range keys {
-
-		b := planets[planetName]
+	for _, b := range cs.PlanetsByNameSorted() {
 
 		if cs.IsRemarkableBody(b.BodyID) {
 			body := make(map[string]interface{})

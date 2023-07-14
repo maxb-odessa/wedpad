@@ -3,10 +3,12 @@ package events
 import (
 	"errors"
 	"fmt"
+	"sort"
 	"strings"
 	"wedpad/internal/sound"
 	"wedpad/internal/utils"
 
+	"github.com/fvbommel/sortorder"
 	"github.com/maxb-odessa/sconf"
 )
 
@@ -151,6 +153,23 @@ func (cs *CurrentSystemT) StarsByName() map[string]*ScanT {
 	return cs.starsByName
 }
 
+func (cs *CurrentSystemT) StarsByNameSorted() (sorted []*ScanT) {
+
+	var keys []string
+
+	for k, _ := range cs.starsByName {
+		keys = append(keys, k)
+	}
+
+	sort.Sort(sortorder.Natural(keys))
+
+	for _, k := range keys {
+		sorted = append(sorted, cs.starsByName[k])
+	}
+
+	return
+}
+
 func (cs *CurrentSystemT) BaryCentres() map[int]*ScanBaryCentreT {
 	return cs.baryCentres
 }
@@ -161,6 +180,23 @@ func (cs *CurrentSystemT) Planets() map[int]*ScanT {
 
 func (cs *CurrentSystemT) PlanetsByName() map[string]*ScanT {
 	return cs.planetsByName
+}
+
+func (cs *CurrentSystemT) PlanetsByNameSorted() (sorted []*ScanT) {
+
+	var keys []string
+
+	for k, _ := range cs.planetsByName {
+		keys = append(keys, k)
+	}
+
+	sort.Sort(sortorder.Natural(keys))
+
+	for _, k := range keys {
+		sorted = append(sorted, cs.planetsByName[k])
+	}
+
+	return
 }
 
 func (cs *CurrentSystemT) Signals() map[string]*FSSSignalDiscoveredT {
@@ -214,15 +250,15 @@ func Num(val float64) (s string) {
 
 	switch {
 	case val >= 1_000_000_000.0:
-		s = fmt.Sprintf("%3.1fG", val/1_000_000_000.0)
+		s = fmt.Sprintf(`%3.1f<span style="font-size: smaller; font-style: italic;">G</span>`, val/1_000_000_000.0)
 	case val >= 1_000_000.0:
-		s = fmt.Sprintf("%3.1fM", val/1_000_000.0)
+		s = fmt.Sprintf(`%3.1f<span style="font-size: smaller; font-style: italic;">M</span>`, val/1_000_000.0)
 	case val >= 1_000.0:
-		s = fmt.Sprintf("%3.1fK", val/1_000.0)
+		s = fmt.Sprintf(`%3.1f<span style="font-size: smaller; font-style: italic;">K</span>`, val/1_000.0)
 	case val >= 1:
-		s = fmt.Sprintf("%3.2f", val)
+		s = fmt.Sprintf(`%3.2f`, val)
 	default:
-		s = fmt.Sprintf("%.2f", val)
+		s = fmt.Sprintf(`%.2f`, val)
 	}
 
 	return

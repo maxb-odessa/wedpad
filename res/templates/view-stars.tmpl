@@ -6,7 +6,7 @@
 <thead>
     <tr>
         <th>Name</th>
-        <th>&nbsp;</th>
+        <th>Prnts</th>
         <th>Type Cl</th>
         <th>Lum</th>
         <th>Disc</th>
@@ -29,30 +29,22 @@
     <tr class="even">
     {{ end }}
     {{ $odd = not $odd }}
-           <td style="color: gray; font-style: italic;">{{ $v.Name }}</td>
-           {{ if $v.MainStar }}
-              <td style="text-align: center; justify-content: center; align-items: center;"><span style="color: {{ $v.Type.Color }};">&lowast;</span></td>
-           {{ else }}
-              <td></td>
-           {{ end }}
-           <td>
-               <span style="font-weight: bold; color: {{ $v.Type.Color }};">{{ $v.Type.Type }} {{ $v.Subclass }}</span>
-           </td>
-           <td>
-               <span style="color: {{ $v.Type.Color }};">{{ $v.Luminosity }}</span>
-            </td>
+           <td style="font-style: italic; text-align: left;">{{ $v.Name }}</td>
+           <td style="text-align: right; font-size: 1.1em; color: gray;">{{ $v.Parents }}</td>
+           <td style="font-weight: bold; color: {{ $v.Type.Color }};">{{ $v.Type.Type }} {{ $v.Subclass }}</td>
+           <td style="text-align: left; font-size: 1.1em; color: {{ $v.Type.Color }};">{{ $v.Luminosity }}</td>
            {{ if $v.Discovered }}
-               <td><span style="color: yellow;">Yes</span></td>
+               <td style="color: yellow;">Yes</td>
            {{ else }}
-               <td><span style="color: gray;">no</span></td>
+               <td style="color: gray;">no</td>
            {{ end }}
-           <td><span style="font-size: smaller;">{{ $v.DistanceLs }}</span></td>
+           <td style="font-size: 1.1em;">{{ $v.DistanceLs }}</td>
            <td>{{ $v.RadiusS }}</td>
            <td>{{ $v.MassS }}</td>
-           <td><span style="color: {{ $v.TemperatureColor }};">{{ $v.TemperatureK }}</span></td>
-           <td>{{ $v.OrbitalPeriodD }}</td>
-           <td>{{ $v.Eccentricity }}</td>
-           <td>{{ $v.Rings }}</td>
+           <td style="color: {{ $v.TemperatureColor }};">{{ $v.TemperatureK }}</td>
+           <td style="font-size: 1.1em;">{{ $v.OrbitalPeriodD }}</td>
+           <td style="font-size: 1.1em;">{{ $v.Eccentricity }}</td>
+           <td style="font-size: 1.1em;">{{ $v.Rings }}</td>
     </tr>
 {{ end }}
 </tbody>

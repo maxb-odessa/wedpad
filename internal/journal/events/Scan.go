@@ -39,10 +39,10 @@ type ScanT struct {
 	OrbitalInclination float64 `mapstructure:"OrbitalInclination"`
 	OrbitalPeriod      float64 `mapstructure:"OrbitalPeriod"`
 	Parents            []struct {
-		Null   int `mapstructure:"Null"`
-		Planet int `mapstructure:"Planet"`
-		Ring   int `mapstructure:"Ring"`
-		Star   int `mapstructure:"Star"`
+		Null   int `mapstructure:"Null,omitempty"`
+		Planet int `mapstructure:"Planet,omitempty"`
+		Ring   int `mapstructure:"Ring,omitempty"`
+		Star   int `mapstructure:"Star,omitempty"`
 	} `mapstructure:"Parents"`
 	Periapsis    float64 `mapstructure:"Periapsis"`
 	PlanetClass  string  `mapstructure:"PlanetClass"`
@@ -80,17 +80,21 @@ func (evh *EventHandler) Scan(eventData map[string]interface{}) {
 	ev := new(ScanT)
 
 	// init Parents with invalid values
+	// this array is of a variable length, also not every field may be present
 	// because Parent.Star (and other) could be zero (which is also a default value in Go)
+	// mapstructure doesn't provide a way to set defaults yet
 	ev.Parents = make([]struct {
-		Null   int `mapstructure:"Null"`
-		Planet int `mapstructure:"Planet"`
-		Ring   int `mapstructure:"Ring"`
-		Star   int `mapstructure:"Star"`
-	}, 1)
-	ev.Parents[0].Null = -1
-	ev.Parents[0].Planet = -1
-	ev.Parents[0].Ring = -1
-	ev.Parents[0].Star = -1
+		Null   int `mapstructure:"Null,omitempty"`
+		Planet int `mapstructure:"Planet,omitempty"`
+		Ring   int `mapstructure:"Ring,omitempty"`
+		Star   int `mapstructure:"Star,omitempty"`
+	}, 10) // TODO is 10 enuff?
+	for i, _ := range ev.Parents {
+		ev.Parents[i].Null = -1
+		ev.Parents[i].Planet = -1
+		ev.Parents[i].Ring = -1
+		ev.Parents[i].Star = -1
+	}
 
 	mapstructure.Decode(eventData, ev)
 	slog.Debug(9, "Parents for '%s': %+v", ev.BodyName, ev.Parents)
