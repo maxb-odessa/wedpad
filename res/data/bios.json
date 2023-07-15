@@ -277,7 +277,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       200.0,
       440.0
@@ -298,7 +300,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       200.0,
       440.0
@@ -319,7 +323,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       65.0,
       860.0
@@ -339,7 +345,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       200.0,
       440.0
@@ -360,7 +368,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       220.0,
       9999.0
@@ -382,7 +392,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       160.0,
       9999.0
@@ -404,7 +416,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       1.0,
       9999.0
@@ -425,7 +439,9 @@
     "BodiesRequired": [
       "*"
     ],
-    "Volcanism": [],
+    "Volcanism": [
+      "*"
+    ],
     "TemperatureK": [
       200.0,
       9999.0

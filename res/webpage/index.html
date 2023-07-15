@@ -73,7 +73,7 @@ function timestamp() {
     return new Date().toLocaleTimeString([], { hour: '2-digit', minute: "2-digit", hour12: false })
 }
 
-var logView = document.getElementById("view-log");
+var diagView = document.getElementById("view-bottom");
 
 var wsUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/ws";
 
@@ -87,7 +87,8 @@ async function loop() {
         var socket = new WebSocket(wsUrl);
 
         socket.onopen = function() {
-            logView.innerHTML += makeLog("<b>CONNECTED!</b>");
+            // diagView.innerHTML += makeLog("<b>CONNECTED!</b>");
+            diagView.innerHTML = "";
             socket.send("ACK");
             reconnect = false;
         };
@@ -146,8 +147,8 @@ async function loop() {
         };
 
         socket.onclose = function(ev) {
-            logView.innerHTML += makeLog("<b>CONNECTION CLOSED!</b> Reconnecting...");
-            switchView("log");
+            diagView.innerHTML = makeLog("<b>CONNECTION LOST!</b> Reconnecting...");
+            //switchView("log");
             reconnect = true;
         };
 
