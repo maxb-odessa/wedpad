@@ -19,5 +19,6 @@ type CarrierBankTransferT struct {
 func (evh *EventHandler) CarrierBankTransfer(eventData map[string]interface{}) {
     // ev := new(CarrierBankTransferT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 

@@ -21,5 +21,6 @@ type CarrierBuyT struct {
 func (evh *EventHandler) CarrierBuy(eventData map[string]interface{}) {
     // ev := new(CarrierBuyT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 

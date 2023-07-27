@@ -15,5 +15,6 @@ type CarrierJumpCancelledT struct {
 func (evh *EventHandler) CarrierJumpCancelled(eventData map[string]interface{}) {
     // ev := new(CarrierJumpCancelledT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 

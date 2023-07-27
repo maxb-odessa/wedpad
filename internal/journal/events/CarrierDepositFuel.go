@@ -17,5 +17,6 @@ type CarrierDepositFuelT struct {
 func (evh *EventHandler) CarrierDepositFuel(eventData map[string]interface{}) {
     // ev := new(CarrierDepositFuelT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 

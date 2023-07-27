@@ -3,6 +3,8 @@
 
 LIST=$(cat *.log *.json Journals-old/*.log | jq .event | sort | uniq | tr -d '"')
 
+mkdir -p events
+
 for EV in $LIST; do
 
     cat Journal*log | \

@@ -22,5 +22,6 @@ type CarrierFinanceT struct {
 func (evh *EventHandler) CarrierFinance(eventData map[string]interface{}) {
     // ev := new(CarrierFinanceT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 

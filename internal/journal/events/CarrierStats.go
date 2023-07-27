@@ -49,5 +49,6 @@ type CarrierStatsT struct {
 func (evh *EventHandler) CarrierStats(eventData map[string]interface{}) {
     // ev := new(CarrierStatsT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 

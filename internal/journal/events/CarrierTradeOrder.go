@@ -20,5 +20,6 @@ type CarrierTradeOrderT struct {
 func (evh *EventHandler) CarrierTradeOrder(eventData map[string]interface{}) {
     // ev := new(CarrierTradeOrderT)
     // mapstructure.Decode(eventData, ev)
+    // cs := evh.CurrentSystem()
 }
 
