@@ -153,7 +153,7 @@ func (evh *EventHandler) CarrierJump(eventData map[string]interface{}) {
 		Target: msg.TARGET_LOG,
 		Action: msg.ACTION_APPEND,
 		Type:   msg.TYPE_VIEW,
-		Data: fmt.Sprintf("Carrier jumped in sytem <u><b>%s</b></u>", ev.StarSystem)
+		Data:   fmt.Sprintf("Carrier arrived at system <u><b>%s</b></u>", ev.StarSystem),
 	}
 	m.Send()
 

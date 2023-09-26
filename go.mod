@@ -16,6 +16,7 @@ require (
 )
 
 require (
+	github.com/bendahl/uinput v1.6.2 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/hajimehoshi/oto v0.7.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect

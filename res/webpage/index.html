@@ -188,6 +188,29 @@ const capture = async () => {
 
 //capture();
 
+
+/* Based on this http://jsfiddle.net/brettwp/J4djY/*/
+function detectDoubleTapClosure() {
+  let lastTap = 0;
+  let timeout;
+  return function detectDoubleTap(event) {
+    const curTime = new Date().getTime();
+    const tapLen = curTime - lastTap;
+    if (tapLen < 500 && tapLen > 0) {
+      capture();
+      event.preventDefault();
+    } else {
+      timeout = setTimeout(() => {
+        clearTimeout(timeout);
+      }, 500);
+    }
+    lastTap = curTime;
+  };
+};
+
+//document.body.addEventListener('touchend', detectDoubleTapClosure(), { passive: false });
+document.body.ondblclick =  capture;
+
 </script>
 
 </body>

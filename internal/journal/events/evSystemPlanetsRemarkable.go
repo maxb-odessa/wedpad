@@ -323,10 +323,11 @@ func (cs *CurrentSystemT) closeBodies(body *ScanT) string {
 
 			if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
 				math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
-				return fmt.Sprintf("Close orbiting bodes%s: to '%s', SMA/Rad: %.2f",
+				return fmt.Sprintf("Close orbiting bodes%s: to '%s', SMA/Rad: %.2f, i: %+.0f&deg;",
 					byRings,
 					cs.BodyName(pBody.BodyName),
 					parentDistRatio,
+					body.OrbitalInclination,
 				)
 			}
 

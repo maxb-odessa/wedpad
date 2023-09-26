@@ -1,6 +1,8 @@
 package events
 
 import (
+	"fmt"
+	"strings"
 	"time"
 	"wedpad/internal/msg"
 
@@ -36,12 +38,26 @@ func (evh *EventHandler) CodexEntry(eventData map[string]interface{}) {
 	ev := new(CodexEntryT)
 	mapstructure.Decode(eventData, ev)
 
+	cs := evh.CurrentSystem()
+
 	isNew := ""
 	if !ev.IsNewEntry {
 		isNew = " (new)"
 	}
 
-	text := "Codex" + isNew + ": " + ev.SubCategoryLocalised + ": <b>" + ev.NameLocalised + "</b>, region: " + ev.RegionLocalised
+	valueCr := 0
+	bioName := strings.Split(ev.NameLocalised, " - ")
+	if b := cs.bios.getBio(bioName[0]); b != nil {
+		valueCr = b.ValueCr
+	}
+
+	text := fmt.Sprintf("Codex%s: %s: %s, region: %s, value: %.2fMCr",
+		isNew,
+		ev.SubCategoryLocalised,
+		ev.NameLocalised,
+		ev.RegionLocalised,
+		float32(valueCr/1_000_000.0),
+	)
 
 	m := &msg.Message{
 		Type:   msg.TYPE_VIEW,
