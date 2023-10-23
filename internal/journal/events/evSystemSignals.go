@@ -28,8 +28,7 @@ func (cs *CurrentSystemT) ShowSignals() {
 
 		// TODO for now: collect all sig.SignalName variants
 		if sig.IsStation {
-			// a carrier should have its sign at the end, eg: FANCY NAME X7Y-ZD9
-			if fnmatch.Match("* [A-Z0-9][A-Z0-9][A-Z0-9]-[A-Z0-9][A-Z0-9][A-Z0-9]", sig.SignalName, 0) {
+			if sig.Type == "FleetCarrier" {
 				s.Name = "&nabla;"
 				s.Type = `<font color="#FF6600">Carrier</font>`
 			} else {

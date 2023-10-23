@@ -1,2 +1,21 @@
 - runtime config: code and html
 - screenshots: see code in index.html
+- rings visibility, ex:
+    "Rings" : [
+        {
+            "InnerRad" : 119650000,
+            "OuterRad" : 459540000,
+            "MassMT" : 5879300000000,
+            "Name" : "Lyaireou PI-K d8-229 11 A Ring",
+            "RingClass" : "eRingClass_MetalRich"
+        },
+        {
+            "InnerRad" : 2521500000,
+            "OuterRad" : 6353700000,
+            "MassMT" : 1388700000000,
+            "Name" : "Lyaireou PI-K d8-229 11 B Ring",
+            "RingClass" : "eRingClass_Rocky"
+        }
+    ]
+    Here V = MassMT/(OuterRad^2 - InnerRad^2)*PI shows ring density (and visibility too)
+    For "A Ring", which is clearly visible: V ~= 9.0e-05 and for "Ring B", which is not visible at all: V ~= 1.2e-07

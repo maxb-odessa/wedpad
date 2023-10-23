@@ -18,6 +18,7 @@ type FSSSignalDiscoveredT struct {
 	SystemAddress            int       `mapstructure:"SystemAddress"`
 	ThreatLevel              int       `mapstructure:"ThreatLevel"`
 	TimeRemaining            float64   `mapstructure:"TimeRemaining"`
+	Type                     string    `mapstructure:"Type"`
 	UssType                  string    `mapstructure:"USSType"`
 	USSTypeLocalised         string    `mapstructure:"USSType_Localised"`
 	Event                    string    `mapstructure:"event"`
