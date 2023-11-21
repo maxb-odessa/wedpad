@@ -6,7 +6,6 @@ import (
 	"wedpad/internal/edsm"
 	"wedpad/internal/msg"
 
-	"github.com/maxb-odessa/slog"
 	"github.com/mitchellh/mapstructure"
 )
 
@@ -76,18 +75,21 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 	if ev.Destination.Body == 0 {
 		go func() {
 			edsmData := edsm.Query(ev.Destination.Name)
-			slog.Debug(5, "EDSM resp: %s", edsmData)
-			if edsmData != "" {
-				text := "Target system " + ev.Destination.Name + " is known to <b>EDSM</b>"
 
-				m := &msg.Message{
-					Type:   msg.TYPE_VIEW,
-					Target: msg.TARGET_LOG,
-					Action: msg.ACTION_APPEND,
-					Data:   text,
-				}
-				m.Send()
+			text := "Target system '" + ev.Destination.Name
+			if edsmData != "" {
+				text += "' <b>is known to EDSM</b>"
+			} else {
+				text += "' is uknown"
 			}
+
+			m := &msg.Message{
+				Type:   msg.TYPE_VIEW,
+				Target: msg.TARGET_LOG,
+				Action: msg.ACTION_APPEND,
+				Data:   text,
+			}
+			m.Send()
 		}()
 	}
 
