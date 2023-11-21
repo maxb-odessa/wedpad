@@ -11,6 +11,7 @@ type FSSSignalDiscoveredT struct {
 	IsStation                bool      `mapstructure:"IsStation"`
 	SignalName               string    `mapstructure:"SignalName"`
 	SignalNameLocalised      string    `mapstructure:"SignalName_Localised"`
+	SignalType               string    `mapstructure:"SignalType"`
 	SpawningFaction          string    `mapstructure:"SpawningFaction"`
 	SpawningFactionLocalised string    `mapstructure:"SpawningFaction_Localised"`
 	SpawningState            string    `mapstructure:"SpawningState"`
@@ -18,7 +19,6 @@ type FSSSignalDiscoveredT struct {
 	SystemAddress            int       `mapstructure:"SystemAddress"`
 	ThreatLevel              int       `mapstructure:"ThreatLevel"`
 	TimeRemaining            float64   `mapstructure:"TimeRemaining"`
-	Type                     string    `mapstructure:"Type"`
 	UssType                  string    `mapstructure:"USSType"`
 	USSTypeLocalised         string    `mapstructure:"USSType_Localised"`
 	Event                    string    `mapstructure:"event"`

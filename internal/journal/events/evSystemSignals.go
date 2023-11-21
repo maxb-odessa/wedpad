@@ -26,9 +26,28 @@ func (cs *CurrentSystemT) ShowSignals() {
 		sigName := utils.HTMLSafe(sig.SignalName)
 		sigNameLoc := utils.HTMLSafe(sig.SignalNameLocalised)
 
-		// TODO for now: collect all sig.SignalName variants
+		// TODO add those signal types // no Phenomena yet?
+		/*
+			"Combat"
+			"FleetCarrier"
+			"Generic"
+			"Installation"
+			"Megaship"
+			"NavBeacon"
+			"Outpost"
+			"ResourceExtraction"
+			"StationAsteroid"
+			"StationBernalSphere"
+			"StationCoriolis"
+			"StationMegaShip"
+			"StationONeilCylinder"
+			"StationONeilOrbis"
+			"Titan"
+			"TouristBeacon"
+			"USS"
+		*/
 		if sig.IsStation {
-			if sig.Type == "FleetCarrier" {
+			if sig.SignalType == "FleetCarrier" {
 				s.Name = "&nabla;"
 				s.Type = `<font color="#FF6600">Carrier</font>`
 			} else {

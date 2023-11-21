@@ -3,7 +3,10 @@ package events
 import (
 	"fmt"
 	"time"
+	"wedpad/internal/edsm"
+	"wedpad/internal/msg"
 
+	"github.com/maxb-odessa/slog"
 	"github.com/mitchellh/mapstructure"
 )
 
@@ -29,7 +32,7 @@ type StatusT struct {
 	Balance      int64   `mapstructure:"Balance"`
 	Destination  struct {
 		System string `mapstructure:"System"`
-		Body   string `mapstructure:"Body"`
+		Body   int    `mapstructure:"Body"`
 		Name   string `mapstructure:"Name"`
 	} `mapstructure:"Destination"`
 	Oxygen         float64   `mapstructure:"Oxygen"`
@@ -67,6 +70,25 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 		cs.alert.Alert("fuel", ALERT_LEVEL_WARN, fmt.Sprintf("Fuel Level: %.1ft", ev.Fuel.FuelMain))
 	} else {
 		cs.alert.Alert("fuel", ALERT_LEVEL_NONE, "")
+	}
+
+	// query star systems only
+	if ev.Destination.Body == 0 {
+		go func() {
+			edsmData := edsm.Query(ev.Destination.Name)
+			slog.Debug(5, "EDSM resp: %s", edsmData)
+			if edsmData != "" {
+				text := "Target system " + ev.Destination.Name + " is known to <b>EDSM</b>"
+
+				m := &msg.Message{
+					Type:   msg.TYPE_VIEW,
+					Target: msg.TARGET_LOG,
+					Action: msg.ACTION_APPEND,
+					Data:   text,
+				}
+				m.Send()
+			}
+		}()
 	}
 
 }
