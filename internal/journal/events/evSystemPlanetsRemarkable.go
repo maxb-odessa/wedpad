@@ -397,7 +397,7 @@ func (cs *CurrentSystemT) hotPlanet(body *ScanT) string {
 
 func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 	incl := math.Abs(body.OrbitalInclination)
-	ci := sconf.Float64Def("criteria", "min inclination", 70.0)
+	ci := sconf.Float64Def("criteria", "min body inclination", 70.0)
 	if incl >= ci && incl <= 180.0-ci {
 		return fmt.Sprintf("High orbit inclination: %+.1f&deg;", body.OrbitalInclination)
 	}
@@ -406,7 +406,7 @@ func (cs *CurrentSystemT) highInclination(body *ScanT) string {
 
 func (cs *CurrentSystemT) highEccentricity(body *ScanT) string {
 	ecc := math.Abs(body.Eccentricity)
-	ce := sconf.Float64Def("criteria", "min eccentricity", 0.80)
+	ce := sconf.Float64Def("criteria", "min body eccentricity", 0.80)
 	if ecc >= ce {
 		return fmt.Sprintf("High orbit eccentricity: %.2f", body.Eccentricity)
 	}

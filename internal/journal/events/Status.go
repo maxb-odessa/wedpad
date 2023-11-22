@@ -43,6 +43,8 @@ type StatusT struct {
 	Timestamp      time.Time `mapstructure:"timestamp"`
 }
 
+var lastQueried string
+
 // Status event handler
 func (evh *EventHandler) Status(eventData map[string]interface{}) {
 	ev := new(StatusT)
@@ -72,7 +74,8 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 	}
 
 	// query star systems only
-	if ev.Destination.Body == 0 {
+	if ev.Destination.Name != "" && lastQueried != ev.Destination.Name && ev.Destination.Body == 0 {
+		lastQueried = ev.Destination.Name
 		go func() {
 			edsmData := edsm.Query(ev.Destination.Name)
 
