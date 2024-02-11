@@ -202,8 +202,8 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 	body := cs.Planets()[id]
 
 	// close bodies or rings
-	if note := cs.closeBodies(body); note != "" {
-		notes = append(notes, note)
+	if note := cs.closeBodies(body); len(note) > 0 {
+		notes = append(notes, note...)
 	}
 
 	// shepherd moon
@@ -295,11 +295,12 @@ func findBodyByBaryCentreID(planets map[int]*ScanT, baryCentreID int, skipBodyID
 	return nil
 }
 
-func (cs *CurrentSystemT) closeBodies(body *ScanT) string {
+func (cs *CurrentSystemT) closeBodies(body *ScanT) []string {
 
 	ratioRequired := sconf.Float64Def("criteria", "close bodies ratio", 3.0)
+	res := make([]string, 0)
 
-	// check over parent barycentre
+	// check over barycentre
 	if pBary := findParentBarycentre(cs.BaryCentres(), body); pBary != nil {
 
 		if pBody := findBodyByBaryCentreID(cs.Planets(), pBary.BodyID, body.BodyID); pBody != nil {
@@ -323,48 +324,56 @@ func (cs *CurrentSystemT) closeBodies(body *ScanT) string {
 
 			if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
 				math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
-				return fmt.Sprintf("Close orbiting bodes%s: to '%s', SMA/Rad: %.2f, i: %+.0f&deg;",
+				res = append(res, fmt.Sprintf("Close (bar) body%s: to '%s', SMA/Rad:%.2f",
 					byRings,
 					cs.BodyName(pBody.BodyName),
 					parentDistRatio,
-					body.OrbitalInclination,
-				)
+				))
 			}
 
 		}
+	}
 
-		// check over parent body
-	} else if pPlanet := findParentBody(cs.Planets(), body); pPlanet != nil {
+	// check over parent body
+	if pPlanet := findParentBody(cs.Planets(), body); pPlanet != nil {
 
 		bodyRad := body.Radius
 		pPlanetRad := pPlanet.Radius
-		byRings := ""
+		byRings := false
 
 		if rn, rr := CalcRings(body); rn > 0 {
 			bodyRad += rr
-			byRings = " (rings)"
+			byRings = true
 		}
 
 		if rn, rr := CalcRings(pPlanet); rn > 0 {
 			pPlanetRad += rr
-			byRings = " (rings)"
+			byRings = true
 		}
 
 		bodyDistRatio := body.SemiMajorAxis / bodyRad
 		parentDistRatio := body.SemiMajorAxis / pPlanetRad
 
-		if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
-			math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
-			return fmt.Sprintf("Close orbiting body%s: to '%s', SMA/Rad: %.2f (%.2f)",
-				byRings,
-				cs.BodyName(pPlanet.BodyName),
-				bodyDistRatio,
-				parentDistRatio,
-			)
+		if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
+			if byRings && (bodyDistRatio < 1 || parentDistRatio < 1) {
+				res = append(res, fmt.Sprintf("Close (orb) body (rings): to '%s', SMA/Rad:%.2f (%.2f), i:%+.0f&deg;",
+					cs.BodyName(pPlanet.BodyName),
+					bodyDistRatio,
+					parentDistRatio,
+					body.OrbitalInclination,
+				))
+			} else if math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
+				res = append(res, fmt.Sprintf("Close (orb) body: to '%s', SMA/Rad:%.2f (%.2f)",
+					cs.BodyName(pPlanet.BodyName),
+					bodyDistRatio,
+					parentDistRatio,
+				))
+			}
 		}
+
 	}
 
-	return ""
+	return res
 }
 
 func (cs *CurrentSystemT) shepherdMoon(body *ScanT) string {
@@ -372,7 +381,7 @@ func (cs *CurrentSystemT) shepherdMoon(body *ScanT) string {
 	if parent := findParentBody(cs.Planets(), body); parent != nil {
 		if rn, rr := CalcRings(parent); rn > 0 {
 			if rr > body.SemiMajorAxis {
-				return fmt.Sprintf("Shepherd moon: for '%s', incl: %+.0f&deg;", cs.BodyName(parent.BodyName), body.OrbitalInclination)
+				return fmt.Sprintf("Shepherd moon: for '%s', i:%+.0f&deg;", cs.BodyName(parent.BodyName), body.OrbitalInclination)
 			}
 		}
 	}

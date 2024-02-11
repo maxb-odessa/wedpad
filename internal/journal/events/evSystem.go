@@ -34,6 +34,8 @@ type CurrentSystemT struct {
 	planetSignalsCount map[int]*FSSBodySignalsT
 	planetSignalsFound map[int]*SAASignalsFoundT
 
+	bodies, nonBodies int
+
 	bios *BiosT
 
 	alert *AlertT
@@ -211,6 +213,22 @@ func (cs *CurrentSystemT) PlanetSignalsFound() map[int]*SAASignalsFoundT {
 	return cs.planetSignalsFound
 }
 
+func (cs *CurrentSystemT) SetBodiesCount(n int) {
+	cs.bodies = n
+}
+
+func (cs *CurrentSystemT) SetNonBodiesCount(n int) {
+	cs.nonBodies = n
+}
+
+func (cs *CurrentSystemT) BodiesCount() int {
+	return cs.bodies
+}
+
+func (cs *CurrentSystemT) NonBodiesCount() int {
+	return cs.nonBodies
+}
+
 func (cs *CurrentSystemT) Reset() {
 
 	cs.name = "(somewhere in space)"
@@ -227,6 +245,9 @@ func (cs *CurrentSystemT) Reset() {
 	cs.planetsByName = make(map[string]*ScanT)
 	cs.baryCentres = make(map[int]*ScanBaryCentreT)
 	cs.signals = make(map[string]*FSSSignalDiscoveredT, 0)
+
+	cs.bodies = 0
+	cs.nonBodies = 0
 
 	// planet related
 	cs.planetSignalsCount = make(map[int]*FSSBodySignalsT)

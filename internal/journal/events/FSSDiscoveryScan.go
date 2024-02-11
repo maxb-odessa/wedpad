@@ -23,12 +23,20 @@ func (evh *EventHandler) FSSDiscoveryScan(eventData map[string]interface{}) {
 	ev := new(FSSDiscoveryScanT)
 	mapstructure.Decode(eventData, ev)
 
+	cs := evh.CurrentSystem()
+
+	cs.SetBodiesCount(ev.BodyCount)
+	cs.SetNonBodiesCount(ev.NonBodyCount)
+
 	type Bodies struct {
+		Stars     int
 		Bodies    int
 		NonBodies int
 	}
 
-	B := &Bodies{ev.BodyCount, ev.NonBodyCount}
+	starsCount := len(cs.Stars())
+
+	B := &Bodies{Stars: starsCount, Bodies: ev.BodyCount - starsCount, NonBodies: ev.NonBodyCount}
 
 	m := &msg.Message{
 		Target: msg.TARGET_STARS,

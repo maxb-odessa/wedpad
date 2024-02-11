@@ -79,11 +79,11 @@ func (evh *EventHandler) Status(eventData map[string]interface{}) {
 		go func() {
 			edsmData := edsm.Query(ev.Destination.Name)
 
-			text := "Target system '" + ev.Destination.Name
+			text := `Target system '<b>` + ev.Destination.Name + `</b>' `
 			if edsmData != "" {
-				text += "' <b>is known to EDSM</b>"
+				text += `<b><font color="yellow">is known to EDSM</font></b>`
 			} else {
-				text += "' is uknown"
+				text += `is uknown to EDSM`
 			}
 
 			m := &msg.Message{

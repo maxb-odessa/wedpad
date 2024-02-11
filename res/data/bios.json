@@ -272,7 +272,7 @@
       "B*"
     ],
     "OnBodies": [
-      "Rocky Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -282,9 +282,11 @@
     ],
     "TemperatureK": [
       200.0,
-      440.0
+      9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -295,7 +297,7 @@
       "B*"
     ],
     "OnBodies": [
-      "Rocky Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -305,9 +307,11 @@
     ],
     "TemperatureK": [
       200.0,
-      440.0
+      9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -317,8 +321,7 @@
       "O*"
     ],
     "OnBodies": [
-      "Icy Body",
-      "Rocky Ice Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -330,7 +333,9 @@
       65.0,
       860.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -340,7 +345,7 @@
       "B*"
     ],
     "OnBodies": [
-      "Rocky Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -350,9 +355,11 @@
     ],
     "TemperatureK": [
       200.0,
-      440.0
+      9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -362,8 +369,7 @@
       "B*"
     ],
     "OnBodies": [
-      "Metal Rich Body",
-      "High Metal Content Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -375,7 +381,9 @@
       220.0,
       9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 129900,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -386,8 +394,7 @@
       "B*"
     ],
     "OnBodies": [
-      "Metal Rich",
-      "High Metal Content Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -399,7 +406,9 @@
       160.0,
       9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -409,9 +418,7 @@
       "O*"
     ],
     "OnBodies": [
-      "Metal Rich",
-      "High Metal Content Body",
-      "Rocky Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -423,7 +430,9 @@
       1.0,
       9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 129900,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -433,8 +442,7 @@
       "B*"
     ],
     "OnBodies": [
-      "Metal Rich Body",
-      "High Metal Content Body"
+      "*"
     ],
     "BodiesRequired": [
       "*"
@@ -446,7 +454,9 @@
       200.0,
       9999.0
     ],
+    "Atmospheres" : [""],
     "ValueCr": 129900,
+    "ColonyRangeM": 100,
     "Notes": ""
   },
   {
@@ -462,7 +472,8 @@
       "*"
     ],
     "Volcanism": [
-      "*silicate*"
+      "*silicate*",
+      "*rocky magma*"
     ],
     "TemperatureK": [
       200.0,
@@ -1497,7 +1508,7 @@
     ],
     "TemperatureK": [
       1.0,
-      190.0
+      192.0
     ],
     "GravityG": [
       0.0,
@@ -1539,7 +1550,7 @@
     ],
     "TemperatureK": [
       1.0,
-      190.0
+      192.0
     ],
     "GravityG": [
       0.0,
@@ -1603,7 +1614,7 @@
     ],
     "TemperatureK": [
       1.0,
-      190.0
+      192.0
     ],
     "GravityG": [
       0.0,
@@ -1820,7 +1831,7 @@
     ],
     "OnBodies": [
       "High Metal Content Body",
-      " Rocky Body"
+      "Rocky Body"
     ],
     "TemperatureK": [
       1.0,
@@ -1842,7 +1853,7 @@
     ],
     "OnBodies": [
       "High Metal Content Body",
-      "Rocky Body"
+      "Rocky*Body"
     ],
     "TemperatureK": [
       1.0,
@@ -1954,6 +1965,7 @@
       "*Sul*ur dioxide*"
     ],
     "OnBodies": [
+      "Rocky Body",
       "Icy Body",
       "Rocky Ice Body"
     ],

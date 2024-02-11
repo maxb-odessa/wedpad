@@ -23,7 +23,11 @@ func (evh *EventHandler) FSDTarget(eventData map[string]interface{}) {
 
 	cs := evh.CurrentSystem()
 
-	showNavRoute(cs.Name(), cs.MainStarType(), ev.RemainingJumpsInRoute, ev.Name, ev.StarClass)
+	jumps := ev.RemainingJumpsInRoute
+	if jumps == 0 {
+		jumps = 1
+	}
+	showNavRoute(cs.Name(), cs.MainStarType(), jumps, ev.Name, ev.StarClass)
 
 	/*
 		cs.Reset()

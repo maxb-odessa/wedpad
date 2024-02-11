@@ -91,4 +91,32 @@ func (cs *CurrentSystemT) ShowStars() {
 	}
 
 	m.Send()
+
+	type Bodies struct {
+		Stars     int
+		Bodies    int
+		NonBodies int
+	}
+
+	starsCount := len(currStars)
+
+	B := &Bodies{Stars: starsCount, Bodies: cs.BodiesCount() - starsCount, NonBodies: cs.NonBodiesCount()}
+
+	m = &msg.Message{
+		Target: msg.TARGET_STARS,
+		Type:   msg.TYPE_BUTTON,
+		Action: msg.ACTION_REPLACE,
+		Data:   B,
+	}
+
+	m.Send()
+
+	m = &msg.Message{
+		Target: msg.TARGET_STARS,
+		Type:   msg.TYPE_BUTTON,
+		Action: msg.ACTION_ATTENTION,
+		Data:   "",
+	}
+
+	m.Send()
 }
