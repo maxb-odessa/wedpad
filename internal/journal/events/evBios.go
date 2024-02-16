@@ -27,6 +27,7 @@ type BioT struct {
 	Volcanism      []string   `mapstructure:"Volcanism"`
 	ValueCr        int        `mapstructure:"ValueCr"`
 	MinDistanceLs  int        `mapstructure:"MinDistanceLs"`
+	Special        bool       `mapstructure:"Special"`
 	Notes          string     `mapstructure:"Notes"`
 }
 
@@ -105,7 +106,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
 			bioFams[bio.Family] = true
 
-			if float32(bio.ValueCr/1_000_000.0) >= sconf.Float32Def("criteria", "min bio value", 0.0) {
+			if bio.Special || float32(bio.ValueCr/1_000_000.0) >= sconf.Float32Def("criteria", "min bio value", 0.0) {
 				bioHints = append(bioHints, makeHint(bio))
 			}
 

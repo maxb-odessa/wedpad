@@ -18,6 +18,7 @@
       1.0,
       9999.0
     ],
+    "Special": true,
     "ValueCr": 117900,
     "Notes": ""
   },
@@ -38,6 +39,7 @@
       1.0,
       9999.0
     ],
+    "Special": true,
     "ValueCr": 108900,
     "Notes": "Nebula requierd"
   },
@@ -67,6 +69,7 @@
       1.0,
       273.0
     ],
+    "Special": true,
     "ValueCr": 117900,
     "MinDistanceLs": 12000,
     "Notes": "Distance from arrival point > 12000 Ls"
@@ -90,6 +93,7 @@
       200.0,
       500.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -114,6 +118,7 @@
       200.0,
       300.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -139,6 +144,7 @@
       1.0,
       9999.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -163,6 +169,7 @@
       100.0,
       270.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -187,6 +194,7 @@
       300.0,
       500.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -212,6 +220,7 @@
       300.0,
       500.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -237,6 +246,7 @@
       300.0,
       500.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -262,6 +272,7 @@
       1.0,
       9999.0
     ],
+    "Special": true,
     "ValueCr": 115900,
     "Notes": "Confined to specific areas (Guardian)"
   },
@@ -284,6 +295,7 @@
       200.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
@@ -309,6 +321,7 @@
       200.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
@@ -333,6 +346,7 @@
       65.0,
       860.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
@@ -357,6 +371,7 @@
       200.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
@@ -381,6 +396,7 @@
       220.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
@@ -406,6 +422,7 @@
       160.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
@@ -430,6 +447,7 @@
       1.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
@@ -454,6 +472,7 @@
       200.0,
       9999.0
     ],
+    "Special": true,
     "Atmospheres" : [""],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
@@ -479,6 +498,7 @@
       200.0,
       500.0
     ],
+    "Special": true,
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
   },
