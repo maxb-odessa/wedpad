@@ -296,7 +296,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -322,7 +322,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -347,7 +347,7 @@
       860.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -372,7 +372,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -397,7 +397,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -423,7 +423,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -448,7 +448,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -473,7 +473,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [""],
+    "Atmospheres" : [],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -1417,7 +1417,8 @@
       "*Methane*"
     ],
     "OnBodies": [
-      "Icy Body"
+      "Icy Body",
+      "*Rocky Ice*"
     ],
     "TemperatureK": [
       1.0,
@@ -1438,7 +1439,8 @@
       "*Oxygen*"
     ],
     "OnBodies": [
-      "Icy Body"
+      "Icy Body",
+      "*Rocky Ice*"
     ],
     "TemperatureK": [
       1.0,
@@ -1481,7 +1483,8 @@
       "*Neon*"
     ],
     "OnBodies": [
-      "Icy Body"
+      "Icy Body",
+      "*Rocky Ice*"
     ],
     "TemperatureK": [
       1.0,
@@ -1499,7 +1502,7 @@
     "Name": "Fonticulua Upupam",
     "ValueCr": 5727600,
     "Atmospheres": [
-      "*Argon Rich*"
+      "*Argon*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -1779,6 +1782,7 @@
     "Name": "Fungoida Gelata",
     "ValueCr": 3330300,
     "Atmospheres": [
+      "*Methane*",
       "*Carbon dioxide*",
       "*Water*"
     ],
