@@ -667,7 +667,7 @@
     "Name": "Aleoida Arcus",
     "ValueCr": 7252500,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -689,7 +689,7 @@
     "Name": "Aleoida Coronamus",
     "ValueCr": 6284600,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -711,7 +711,7 @@
     "Name": "Aleoida Gravis",
     "ValueCr": 12934900,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -821,7 +821,7 @@
     "Name": "Bacterium Aurasus",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -866,7 +866,7 @@
     "Name": "Bacterium Cerbrus",
     "ValueCr": 1689800,
     "Atmospheres": [
-      "*Sul*ur dioxide*",
+      "*Sul*ur*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1074,7 +1074,7 @@
     "Name": "Cactoida Cortexum",
     "ValueCr": 3667600,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1140,7 +1140,7 @@
     "Name": "Cactoida Pullulanta",
     "ValueCr": 3667600,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1184,7 +1184,7 @@
     "Name": "Clypeus Lacrimam",
     "ValueCr": 8418000,
     "Atmospheres": [
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1206,7 +1206,7 @@
     "Name": "Clypeus Margaritus",
     "ValueCr": 11873200,
     "Atmospheres": [
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1228,7 +1228,7 @@
     "Name": "Clypeus Speculumi",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1294,7 +1294,7 @@
     "Name": "Concha Labiata",
     "ValueCr": 2352400,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1316,7 +1316,7 @@
     "Name": "Concha Renibus",
     "ValueCr": 4572400,
     "Atmospheres": [
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1524,7 +1524,7 @@
     "Name": "Frutexa Acus",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1545,7 +1545,7 @@
     "Name": "Frutexa Collum",
     "ValueCr": 1639800,
     "Atmospheres": [
-      "*Sul*ur dioxide*"
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1566,7 +1566,7 @@
     "Name": "Frutexa Fera",
     "ValueCr": 1632500,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -1630,7 +1630,7 @@
     "ValueCr": 1632500,
     "Atmospheres": [
       "*Ammonia*",
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body"
@@ -1783,7 +1783,7 @@
     "ValueCr": 3330300,
     "Atmospheres": [
       "*Methane*",
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1828,7 +1828,7 @@
     "Name": "Fungoida Stabitis",
     "ValueCr": 2680300,
     "Atmospheres": [
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -1851,7 +1851,7 @@
     "Name": "Osseus Cornibus",
     "ValueCr": 1483000,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1895,7 +1895,7 @@
     "Name": "Osseus Fractus",
     "ValueCr": 4027800,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1917,7 +1917,7 @@
     "Name": "Osseus Pellebantus",
     "ValueCr": 9739000,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -1986,7 +1986,7 @@
     "Name": "Recepta Conditivus",
     "ValueCr": 14313700,
     "Atmospheres": [
-      "*Sul*ur dioxide*"
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body",
@@ -2009,7 +2009,7 @@
     "Name": "Recepta Deltahedronix",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "*Sul*ur dioxide*"
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2032,7 +2032,7 @@
     "Name": "Recepta Umbrux",
     "ValueCr": 12934900,
     "Atmospheres": [
-      "*Sul*ur dioxide*"
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Icy Body",
@@ -2055,7 +2055,7 @@
     "Name": "Stratum Araneamus",
     "ValueCr": 2448900,
     "Atmospheres": [
-      "*Sul*ur dioxide*"
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2076,8 +2076,8 @@
     "Name": "Stratum Cucumisis",
     "ValueCr": 16202800,
     "Atmospheres": [
-      "*Carbon dioxide*",
-      "*Sul*ur dioxide*"
+      "*Carbon*dioxide*",
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2098,8 +2098,8 @@
     "Name": "Stratum Excutitus",
     "ValueCr": 2448900,
     "Atmospheres": [
-      "*Carbon dioxide*",
-      "*Sul*ur dioxide*"
+      "*Carbon*dioxide*",
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2120,8 +2120,8 @@
     "Name": "Stratum Frigus",
     "ValueCr": 2637500,
     "Atmospheres": [
-      "*Carbon dioxide*",
-      "*Sul*ur dioxide*"
+      "*Carbon*dioxide*",
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2163,8 +2163,8 @@
     "Name": "Stratum Limaxus",
     "ValueCr": 1362000,
     "Atmospheres": [
-      "*Carbon dioxide*",
-      "*Sul*ur dioxide*"
+      "*Carbon*dioxide*",
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2186,7 +2186,7 @@
     "ValueCr": 1362000,
     "Atmospheres": [
       "*Ammonia*",
-      "*Carbon dioxide*",
+      "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -2209,8 +2209,8 @@
     "ValueCr": 19010800,
     "Atmospheres": [
       "*Ammonia*",
-      "*Carbon dioxide*",
-      "*Sul*ur dioxide*",
+      "*Carbon*dioxide*",
+      "*Sul*ur*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
@@ -2232,7 +2232,7 @@
     "Name": "Tubus Cavas",
     "ValueCr": 11873200,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2253,7 +2253,7 @@
     "Name": "Tubus Compagibus",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2274,7 +2274,7 @@
     "Name": "Tubus Conifer",
     "ValueCr": 2415500,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2317,7 +2317,7 @@
     "ValueCr": 5727600,
     "Atmospheres": [
       "*Ammonia*",
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body"
@@ -2338,7 +2338,7 @@
     "Name": "Tussock Albata",
     "ValueCr": 3252500,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2382,7 +2382,7 @@
     "Name": "Tussock Caputus",
     "ValueCr": 3472400,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2470,7 +2470,7 @@
     "Name": "Tussock Ignis",
     "ValueCr": 1849000,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2492,7 +2492,7 @@
     "Name": "Tussock Pennata",
     "ValueCr": 5853800,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2514,7 +2514,7 @@
     "Name": "Tussock Pennatis",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2536,7 +2536,7 @@
     "Name": "Tussock Propagito",
     "ValueCr": 1000000,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2558,7 +2558,7 @@
     "Name": "Tussock Serrati",
     "ValueCr": 4447100,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2580,7 +2580,7 @@
     "Name": "Tussock Stigmasis",
     "ValueCr": 19010800,
     "Atmospheres": [
-      "*Sul*ur dioxide*"
+      "*Sul*ur*dioxide*"
     ],
     "OnBodies": [
       "Rocky Body"
@@ -2601,7 +2601,7 @@
     "Name": "Tussock Triticum",
     "ValueCr": 7774700,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
@@ -2623,7 +2623,7 @@
     "Name": "Tussock Ventusa",
     "ValueCr": 3227700,
     "Atmospheres": [
-      "*Carbon dioxide*"
+      "*Carbon*dioxide*"
     ],
     "OnBodies": [
       "High Metal Content Body",
