@@ -319,15 +319,26 @@ func (cs *CurrentSystemT) closeBodies(body *ScanT) []string {
 				byRings = " (rings)"
 			}
 
-			bodyDistRatio := body.SemiMajorAxis / bodyRad
-			parentDistRatio := pBody.SemiMajorAxis / pBodyRad
+			/*
+					bodyDistRatio := body.SemiMajorAxis / bodyRad
+					parentDistRatio := pBody.SemiMajorAxis / pBodyRad
 
-			if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
-				math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
-				res = append(res, fmt.Sprintf("Close (bar) body%s: to '%s', SMA/Rad:%.2f",
+				if (bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired) &&
+					math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
+					res = append(res, fmt.Sprintf("Close (bar) body%s: to '%s', SMA/Rad:%.2f",
+						byRings,
+						cs.BodyName(pBody.BodyName),
+						parentDistRatio,
+					))
+				}
+			*/
+
+			distRatio := (body.SemiMajorAxis + pBody.SemiMajorAxis) / (bodyRad + pBodyRad)
+			if distRatio < ratioRequired {
+				res = append(res, fmt.Sprintf("Close BARY body%s: to '%s', SMA/Rad:%.2f",
 					byRings,
 					cs.BodyName(pBody.BodyName),
-					parentDistRatio,
+					distRatio,
 				))
 			}
 
@@ -339,36 +350,48 @@ func (cs *CurrentSystemT) closeBodies(body *ScanT) []string {
 
 		bodyRad := body.Radius
 		pPlanetRad := pPlanet.Radius
-		byRings := false
+		byRings := ""
 
 		if rn, rr := CalcRings(body); rn > 0 {
 			bodyRad += rr
-			byRings = true
+			byRings = " (rings)"
 		}
 
 		if rn, rr := CalcRings(pPlanet); rn > 0 {
 			pPlanetRad += rr
-			byRings = true
+			byRings = " (rings)"
 		}
 
-		bodyDistRatio := body.SemiMajorAxis / bodyRad
-		parentDistRatio := body.SemiMajorAxis / pPlanetRad
+		/*
+			bodyDistRatio := body.SemiMajorAxis / bodyRad
+			parentDistRatio := body.SemiMajorAxis / pPlanetRad
 
-		if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
-			if byRings && (bodyDistRatio < 1 || parentDistRatio < 1) {
-				res = append(res, fmt.Sprintf("Close (orb) body (rings): to '%s', SMA/Rad:%.2f (%.2f), i:%+.0f&deg;",
-					cs.BodyName(pPlanet.BodyName),
-					bodyDistRatio,
-					parentDistRatio,
-					body.OrbitalInclination,
-				))
-			} else if math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
-				res = append(res, fmt.Sprintf("Close (orb) body: to '%s', SMA/Rad:%.2f (%.2f)",
-					cs.BodyName(pPlanet.BodyName),
-					bodyDistRatio,
-					parentDistRatio,
-				))
+			if bodyDistRatio < ratioRequired || parentDistRatio < ratioRequired {
+				if byRings && (bodyDistRatio < 1 || parentDistRatio < 1) {
+					res = append(res, fmt.Sprintf("Close (orb) body (rings): to '%s', SMA/Rad:%.2f (%.2f), i:%+.0f&deg;",
+						cs.BodyName(pPlanet.BodyName),
+						bodyDistRatio,
+						parentDistRatio,
+						body.OrbitalInclination,
+					))
+				} else if math.Abs(bodyDistRatio+parentDistRatio) < ratioRequired*3 {
+					res = append(res, fmt.Sprintf("Close (orb) body: to '%s', SMA/Rad:%.2f (%.2f)",
+						cs.BodyName(pPlanet.BodyName),
+						bodyDistRatio,
+						parentDistRatio,
+					))
+				}
 			}
+		*/
+
+		distRatio := body.SemiMajorAxis * 2.0 / (pPlanetRad + bodyRad)
+		if distRatio < ratioRequired {
+			res = append(res, fmt.Sprintf("Close ORBIT body%s: to '%s', SMA/Rad:%.2f, i:%+.0f&deg;",
+				byRings,
+				cs.BodyName(pPlanet.BodyName),
+				distRatio,
+				body.OrbitalInclination,
+			))
 		}
 
 	}

@@ -20,4 +20,5 @@ install:
 	cp -a conf/wedpad.conf ${CONFDIR}
 	cp -a wedpad.service ${HOME}/.config/systemd/user/
 	systemctl --user daemon-reload
+	systemctl --user restart wedpad
 
