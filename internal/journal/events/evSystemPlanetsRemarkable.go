@@ -241,6 +241,13 @@ func (cs *CurrentSystemT) notesOnBody(id int) []string {
 		notes = append(notes, note)
 	}
 
+	if cs.wantRings(id) {
+		for i, r := range body.Rings {
+			note := fmt.Sprintf("Ring %d, class %s, density %.2f", i, strings.Split(r.RingClass, "_")[1], RingDensity(body, i))
+			notes = append(notes, note)
+		}
+	}
+
 	slog.Debug(9, "Notes on body: %+v", notes)
 
 	return notes

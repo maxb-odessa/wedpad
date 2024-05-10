@@ -293,6 +293,17 @@ func (cs *CurrentSystemT) BodyName(bname string) string {
 	return strings.TrimPrefix(bname, sysname+" ")
 }
 
+// approx ring visibility, in kg/m3
+func RingDensity(ev *ScanT, i int) float64 {
+
+	if i < len(ev.Rings) {
+		r := ev.Rings[i]
+		return r.MassMt / 3.142 / (r.OuterRad*r.OuterRad - r.InnerRad*r.InnerRad) * 1_000_000
+	}
+
+	return 0.0
+}
+
 func CalcRings(ev *ScanT) (num int, rad float64) {
 
 	for _, r := range ev.Rings {

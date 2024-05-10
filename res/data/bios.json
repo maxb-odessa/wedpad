@@ -13,7 +13,7 @@
       "Gas giant with water based life",
       "Water giant"
     ],
-    "Volcanism": [],
+    "Volcanism": [""],
     "TemperatureK": [
       1.0,
       9999.0
@@ -296,7 +296,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -322,7 +322,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -347,7 +347,7 @@
       860.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -372,7 +372,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -397,7 +397,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -423,7 +423,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 110500,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -448,7 +448,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -473,7 +473,7 @@
       9999.0
     ],
     "Special": true,
-    "Atmospheres" : [],
+    "Atmospheres" : [""],
     "ValueCr": 129900,
     "ColonyRangeM": 100,
     "Notes": ""
@@ -499,6 +499,7 @@
       500.0
     ],
     "Special": true,
+    "Atmospheres" : [""],
     "ValueCr": 111300,
     "Notes": "Confined to specific areas"
   },
@@ -524,6 +525,8 @@
       500.0
     ],
     "ValueCr": 111300,
+    "Special": true,
+    "Atmospheres" : [""],
     "Notes": "Confined to specific areas"
   },
   {
@@ -546,6 +549,8 @@
       500.0
     ],
     "ValueCr": 111300,
+    "Special": true,
+    "Atmospheres" : [""],
     "Notes": "Confined to specific areas"
   },
   {
@@ -570,6 +575,8 @@
       500.0
     ],
     "ValueCr": 111300,
+    "Special": true,
+    "Atmospheres" : [""],
     "Notes": "Confined to specific areas"
   },
   {
@@ -593,6 +600,8 @@
       500.0
     ],
     "ValueCr": 111300,
+    "Special": true,
+    "Atmospheres" : [""],
     "Notes": "Confined to specific areas"
   },
   {
@@ -616,6 +625,8 @@
       500.0
     ],
     "ValueCr": 111300,
+    "Special": true,
+    "Atmospheres" : [""],
     "Notes": "Confined to specific areas"
   },
   {
@@ -638,6 +649,8 @@
       500.0
     ],
     "ValueCr": 111300,
+    "Special": true,
+    "Atmospheres" : [""],
     "Notes": "Confined to specific areas"
   },
   {
