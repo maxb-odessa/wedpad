@@ -473,12 +473,12 @@ var PlanetAtmospheres = map[string]TypeColorPair{
 	"Neon":              {"Ne", "#FF4500"},
 	"NeonRich":          {"Ne+", "#FF4500"},
 	"Nitrogen":          {"N" + small(2), "#87CEFA"},
-	"None":              {"", "#000000"},
 	"Oxygen":            {"O" + small(2), "#1E90FF"},
 	"SilicateVapour":    {"SiO" + small(4) + "+", "#D3D3D3"},
 	"SulphurDioxide":    {"SO" + small(2), "#CCCC00"},
 	"Water":             {"H" + small(2) + "O", "#00BFFF"},
 	"WaterRich":         {"H" + small(2) + "O+", "#00BFFF"},
+	"None":              {"", "#000000"},
 	"":                  {"", "#000000"},
 }
 

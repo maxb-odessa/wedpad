@@ -1,2693 +1,2850 @@
 [
-  {
-    "Family": "Amphora Plant",
-    "Name": "Amphora Plant",
-    "StarsRequired": [
-      "A*"
-    ],
-    "OnBodies": [
-      "Metal Rich"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [""],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Special": true,
-    "ValueCr": 117900,
-    "Notes": ""
-  },
-  {
-    "Family": "Bark Mounds",
-    "Name": "Bark Mounds",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": ["*"],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Special": true,
-    "ValueCr": 108900,
-    "Notes": "Nebula requierd"
-  },
-  {
-    "Family": "Crystalline Shards",
-    "Name": "Crystalline Shards",
-    "StarsRequired": [
-      "A*",
-      "F*",
-      "G*",
-      "K*",
-      "MS*",
-      "S*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Ammonia World",
-      "Water World",
-      "Gas giant with * based life",
-      "Water Giant"
-    ],
-    "Volcanism": ["*"],
-    "TemperatureK": [
-      1.0,
-      273.0
-    ],
-    "Special": true,
-    "ValueCr": 117900,
-    "MinDistanceLs": 12000,
-    "Notes": "Distance from arrival point > 12000 Ls"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Roseum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Gypseeum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      300.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Ostrinum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Metal Rich Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Viride Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Ice Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      100.0,
-      270.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Lividum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      300.0,
-      500.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Aureum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Metal Rich Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      300.0,
-      500.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Lindigoticum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      300.0,
-      500.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Brain Tree",
-    "Name": "Puniceum Brain Tree",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Metal Rich Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "Earthlike World",
-      "Gas giant with water based life",
-      "Water giant"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Special": true,
-    "ValueCr": 115900,
-    "Notes": "Confined to specific areas (Guardian)"
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Luteolum Anemone",
-    "StarsRequired": [
-      "B*",
-      "A*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 110500,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Croceum Anemone",
-    "StarsRequired": [
-      "A*",
-      "B*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 110500,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Puniceum Anemone",
-    "StarsRequired": [
-      "O*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      65.0,
-      860.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 110500,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Roseum Anemone",
-    "StarsRequired": [
-      "B*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 110500,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Blatteum Bioluminescent Anemone",
-    "StarsRequired": [
-      "B*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      220.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 129900,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Rubeum Bioluminescent Anemone",
-    "StarsRequired": [
-      "A*",
-      "B*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 110500,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Prasinum Bioluminescent Anemone",
-    "StarsRequired": [
-      "O*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 129900,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Anemone",
-    "Name": "Roseum Bioluminescent Anemone",
-    "StarsRequired": [
-      "B*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      9999.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 129900,
-    "ColonyRangeM": 100,
-    "Notes": ""
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Roseum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*silicate*",
-      "*rocky magma*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "Special": true,
-    "Atmospheres" : [""],
-    "ValueCr": 111300,
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Blatteum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "Metal Rich",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Special": true,
-    "Atmospheres" : [""],
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Lindigoticum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Special": true,
-    "Atmospheres" : [""],
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Violaceum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "Metal Rich Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Special": true,
-    "Atmospheres" : [""],
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Viride Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Special": true,
-    "Atmospheres" : [""],
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Prasinum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Metal Rich Body",
-      "High Metal Content Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Special": true,
-    "Atmospheres" : [""],
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Albidum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Special": true,
-    "Atmospheres" : [""],
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Sinuous Tubers",
-    "Name": "Caeruleum Sinuous Tubers",
-    "StarsRequired": [
-      "*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "BodiesRequired": [
-      "*"
-    ],
-    "Volcanism": [
-      "*"
-    ],
-    "TemperatureK": [
-      200.0,
-      500.0
-    ],
-    "ValueCr": 111300,
-    "Notes": "Confined to specific areas"
-  },
-  {
-    "Family": "Aleoida",
-    "Name": "Aleoida Arcus",
-    "ValueCr": 7252500,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      175.0,
-      180.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Aleoida",
-    "Name": "Aleoida Coronamus",
-    "ValueCr": 6284600,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      180.0,
-      190.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Aleoida",
-    "Name": "Aleoida Gravis",
-    "ValueCr": 12934900,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      190.0,
-      196.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Aleoida",
-    "Name": "Aleoida Laminiae",
-    "ValueCr": 3385200,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      152.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": "In Scutum-Centaurus Arm"
-  },
-  {
-    "Family": "Aleoida",
-    "Name": "Aleoida Spica",
-    "ValueCr": 3385200,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      170.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": "Except in Scutum-Centaurus Arm"
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Acies",
-    "ValueCr": 1000000,
-    "Atmospheres": [
-      "*Neon*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Alcyoneum",
-    "ValueCr": 1658500,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Aurasus",
-    "ValueCr": 1000000,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Bullaris",
-    "ValueCr": 1152500,
-    "Atmospheres": [
-      "*Methane*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Cerbrus",
-    "ValueCr": 1689800,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Informem",
-    "ValueCr": 8418000,
-    "Atmospheres": [
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Nebulus",
-    "ValueCr": 5289900,
-    "Atmospheres": [
-      "*Helium*"
-    ],
-    "OnBodies": [
-      "Icy Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Omentum",
-    "ValueCr": 4638900,
-    "Atmospheres": [
-      "*Argon*",
-      "*Methane*",
-      "*Neon*"
-    ],
-    "OnBodies": [
-      "Icy Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "Volcanism": ["*nitrogen*"],
-    "ColonyRangeM": 500,
-    "Notes": "Possibly Nitrogen-based vulcanism required"
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Scopulum",
-    "ValueCr": 4934500,
-    "Atmospheres": [
-      "*Argon*",
-      "*Methane*",
-      "*Neon*",
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "Icy Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "Volcanism": ["*carbon*"],
-    "ColonyRangeM": 500,
-    "Notes": "Possibly Carbon-based vulcanism required"
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Tela",
-    "ValueCr": 1949000,
-    "Atmospheres": [
-      "*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Verrata",
-    "ValueCr": 3897000,
-    "Atmospheres": [
-      "*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "Volcanism": ["*water*"],
-    "ColonyRangeM": 500,
-    "Notes": "Possibly Water-based vulcanism required"
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Vesicula",
-    "ValueCr": 1000000,
-    "Atmospheres": [
-      "*Argon*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Bacterium",
-    "Name": "Bacterium Volu",
-    "ValueCr": 7774700,
-    "Atmospheres": [
-      "*Oxygen*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Icy Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Cactoida",
-    "Name": "Cactoida Cortexum",
-    "ValueCr": 3667600,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      180.0,
-      195.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": "In Orion-Cygnus Arm"
-  },
-  {
-    "Family": "Cactoida",
-    "Name": "Cactoida Lapis",
-    "ValueCr": 2483600,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": "In Scutum-Centaurus Arm"
-  },
-  {
-    "Family": "Cactoida",
-    "Name": "Cactoida Peperatis",
-    "ValueCr": 2483600,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": "In Norma/Outer Arm"
-  },
-  {
-    "Family": "Cactoida",
-    "Name": "Cactoida Pullulanta",
-    "ValueCr": 3667600,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      180.0,
-      195.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": "In Perseus Arm"
-  },
-  {
-    "Family": "Cactoida",
-    "Name": "Cactoida Vermis",
-    "ValueCr": 16202800,
-    "Atmospheres": [
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      450.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": ""
-  },
-  {
-    "Family": "Clypeus",
-    "Name": "Clypeus Lacrimam",
-    "ValueCr": 8418000,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      190.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Clypeus",
-    "Name": "Clypeus Margaritus",
-    "ValueCr": 11873200,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "*High Metal*"
-    ],
-    "TemperatureK": [
-      189.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Clypeus",
-    "Name": "Clypeus Speculumi",
-    "ValueCr": 16202800,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      190.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "MinDistanceLs": 2500,
-    "Notes": "Distance to parent star > 2500 Ls"
-  },
-  {
-    "Family": "Concha",
-    "Name": "Concha Aureolas",
-    "ValueCr": 7774700,
-    "Atmospheres": [
-      "*Ammonia*",
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "*High Metal*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": "Possibly not in Nitrogen atmo"
-  },
-  {
-    "Family": "Concha",
-    "Name": "Concha Biconcavis",
-    "ValueCr": 19010800,
-    "Atmospheres": [
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "*High Metal*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Concha",
-    "Name": "Concha Labiata",
-    "ValueCr": 2352400,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "*High Metal*",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Concha",
-    "Name": "Concha Renibus",
-    "ValueCr": 4572400,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "*High Metal*",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Electricae",
-    "Name": "Electricae Pluma",
-    "ValueCr": 6284600,
-    "Atmospheres": [
-      "*Argon*"
-    ],
-    "OnBodies": [
-      "Icy Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 1000,
-    "StarsRequired": [
-      "O*",
-      "B*",
-      "A*",
-      "F*",
-      "D*",
-      "W*",
-      "N*"
-    ],
-    "Notes": "Around bright white stars (luminosity V+)"
-  },
-  {
-    "Family": "Electricae",
-    "Name": "Electricae Radialem",
-    "ValueCr": 6284600,
-    "Atmospheres": [
-      "*Argon*",
-      "*Neon*",
-      "*Helium*"
-    ],
-    "OnBodies": [
-      "Icy Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 1000,
-    "Notes": "Nebua required within range of 100 Ly"
-  },
-  {
-    "Family": "Fonticulua",
-    "Name": "Fonticulua Campestris",
-    "ValueCr": 1000000,
-    "Atmospheres": [
-      "*Argon*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Fonticulua",
-    "Name": "Fonticulua Digitos",
-    "ValueCr": 1804100,
-    "Special": true,
-    "Atmospheres": [
-      "*Methane*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "*Rocky Ice*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Fonticulua",
-    "Name": "Fonticulua Fluctus",
-    "ValueCr": 20000000,
-    "Special": true,
-    "Atmospheres": [
-      "*Oxygen*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "*Rocky Ice*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Fonticulua",
-    "Name": "Fonticulua Lapida",
-    "ValueCr": 3111000,
-    "Special": true,
-    "Atmospheres": [
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Fonticulua",
-    "Name": "Fonticulua Segmentatus",
-    "ValueCr": 19010800,
-    "Atmospheres": [
-      "*Neon*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "*Rocky Ice*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Fonticulua",
-    "Name": "Fonticulua Upupam",
-    "ValueCr": 5727600,
-    "Atmospheres": [
-      "*Argon*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Acus",
-    "ValueCr": 7774700,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      192.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": "In Orion-Cygnus Arm"
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Collum",
-    "ValueCr": 1639800,
-    "Special": true,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Fera",
-    "ValueCr": 1632500,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      192.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": "In Outer Arm"
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Flabellum",
-    "ValueCr": 1808900,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Flammasis",
-    "ValueCr": 10326000,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": "In Scutum-Centaurus Arm"
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Metallicum",
-    "ValueCr": 1632500,
-    "Atmospheres": [
-      "*Ammonia*",
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      192.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Frutexa",
-    "Name": "Frutexa Sponsae",
-    "ValueCr": 5988000,
-    "Atmospheres": [
-      "*Water*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Fumerola",
-    "Name": "Fumerola Aquatis",
-    "ValueCr": 6284600,
-    "Atmospheres": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "Volcanism": ["*water*"],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 100,
-    "Notes": "Possibly Water-based vulcanism required"
-  },
-  {
-    "Family": "Fumerola",
-    "Name": "Fumerola Carbosis",
-    "ValueCr": 6284600,
-    "Atmospheres": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "Volcanism": ["*carbon*"],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Volcanism": ["*"],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 100,
-    "Notes": "Possibly Carbon-based vulcanism required"
-  },
-  {
-    "Family": "Fumerola",
-    "Name": "Fumerola Extremus",
-    "ValueCr": 16202800,
-    "Atmospheres": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "Volcanism": ["*"],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 100,
-    "Notes": "Specific volcanism required"
-  },
-  {
-    "Family": "Fumerola",
-    "Name": "Fumerola Nitris",
-    "ValueCr": 7500900,
-    "Atmospheres": [
-      "*"
-    ],
-    "OnBodies": [
-      "*"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "Volcanism": ["*nitrogen*"],
-    "ColonyRangeM": 100,
-    "Notes": "Nitrogen-based vulcanism required"
-  },
-  {
-    "Family": "Fungoida",
-    "Name": "Fungoida Bullarum",
-    "ValueCr": 3703200,
-    "Special": true,
-    "Atmospheres": [
-      "*Argon*",
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "*High Metal*",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": ""
-  },
-  {
-    "Family": "Fungoida",
-    "Name": "Fungoida Gelata",
-    "ValueCr": 3330300,
-    "Atmospheres": [
-      "*Methane*",
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": ""
-  },
-  {
-    "Family": "Fungoida",
-    "Name": "Fungoida Setisis",
-    "ValueCr": 1670100,
-    "Special": true,
-    "Atmospheres": [
-      "*Ammonia*",
-      "*Methane*" 
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": ""
-  },
-  {
-    "Family": "Fungoida",
-    "Name": "Fungoida Stabitis",
-    "ValueCr": 2680300,
-    "Special": true,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal*",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      179.0,
-      186.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 300,
-    "Notes": "In Orion-Cygnus Arm"
-  },
-  {
-    "Family": "Osseus",
-    "Name": "Osseus Cornibus",
-    "ValueCr": 1483000,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "Found only in rocky areas; In Perseus Arm"
-  },
-  {
-    "Family": "Osseus",
-    "Name": "Osseus Discus",
-    "ValueCr": 12934900,
-    "Atmospheres": [
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky*Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "Found only in rocky areas"
-  },
-  {
-    "Family": "Osseus",
-    "Name": "Osseus Fractus",
-    "ValueCr": 4027800,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "Found only in rocky areas; Not in some Perseus Arm parts"
-  },
-  {
-    "Family": "Osseus",
-    "Name": "Osseus Pellebantus",
-    "ValueCr": 9739000,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "Found only in rocky areas; Not in some Perseus Arm parts"
-  },
-  {
-    "Family": "Osseus",
-    "Name": "Osseus Pumice",
-    "ValueCr": 3156300,
-    "Atmospheres": [
-      "*Argon*",
-      "*Methane*",
-      "*Nitrogen*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "Found only in rocky areas"
-  },
-  {
-    "Family": "Osseus",
-    "Name": "Osseus Spiralis",
-    "ValueCr": 2404700,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "Found only in rocky areas"
-  },
-  {
-    "Family": "Recepta",
-    "Name": "Recepta Conditivus",
-    "ValueCr": 14313700,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body",
-      "Icy Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      132.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Recepta",
-    "Name": "Recepta Deltahedronix",
-    "ValueCr": 16202800,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body",
-      "Icy Body"
-    ],
-    "TemperatureK": [
-      132.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Recepta",
-    "Name": "Recepta Umbrux",
-    "ValueCr": 12934900,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Icy Body",
-      "Rocky Body",
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      132.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 150,
-    "Notes": ""
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Araneamus",
-    "ValueCr": 2448900,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Cucumisis",
-    "ValueCr": 16202800,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      190.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": "In Sagittarius-Carina Arm"
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Excutitus",
-    "ValueCr": 2448900,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      190.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": "In Orion-Cygnus Arm"
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Frigus",
-    "ValueCr": 2637500,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      190.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": "In Perseus Arm"
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Laminamus",
-    "ValueCr": 2788300,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": "In Orion-Cygnus Arm"
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Limaxus",
-    "ValueCr": 1362000,
-    "Atmospheres": [
-      "*Carbon*dioxide*",
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      190.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": "In Scutum-Centaurus Arm except Galaxy Core"
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Paleas",
-    "ValueCr": 1362000,
-    "Atmospheres": [
-      "*Ammonia*",
-      "*Carbon*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Stratum",
-    "Name": "Stratum Tectonicas",
-    "ValueCr": 19010800,
-    "Atmospheres": [
-      "*Ammonia*",
-      "*Carbon*dioxide*",
-      "*Sul*ur*dioxide*",
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body"
-    ],
-    "TemperatureK": [
-      165.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      9999.0
-    ],
-    "ColonyRangeM": 500,
-    "Notes": ""
-  },
-  {
-    "Family": "Tubus",
-    "Name": "Tubus Cavas",
-    "ValueCr": 11873200,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.15
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "In Scutum-Centaurus Arm"
-  },
-  {
-    "Family": "Tubus",
-    "Name": "Tubus Compagibus",
-    "ValueCr": 7774700,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.15
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "In Sagittarius-Carina Arm"
-  },
-  {
-    "Family": "Tubus",
-    "Name": "Tubus Conifer",
-    "ValueCr": 2415500,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.15
-    ],
-    "ColonyRangeM": 800,
-    "Notes": "In Perseus Arm"
-  },
-  {
-    "Family": "Tubus",
-    "Name": "Tubus Rosarium",
-    "ValueCr": 2637500,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.15
-    ],
-    "ColonyRangeM": 800,
-    "Notes": ""
-  },
-  {
-    "Family": "Tubus",
-    "Name": "Tubus Sororibus",
-    "ValueCr": 5727600,
-    "Atmospheres": [
-      "*Ammonia*",
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal*"
-    ],
-    "TemperatureK": [
-      160.0,
-      190.0
-    ],
-    "GravityG": [
-      0.0,
-      0.15
-    ],
-    "ColonyRangeM": 800,
-    "Notes": ""
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Albata",
-    "ValueCr": 3252500,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      175.0,
-      180.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Capillum",
-    "ValueCr": 7025800,
-    "Atmospheres": [
-      "*Argon*",
-      "*Methane*"
-    ],
-    "OnBodies": [
-      "Rocky Ice Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": ""
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Caputus",
-    "ValueCr": 3472400,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      180.0,
-      190.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Catena",
-    "ValueCr": 1766600,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Scutum-Centaurus Arm except Galaxy Core"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Cultro",
-    "ValueCr": 1766600,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Orion-Cygnus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Divisa",
-    "ValueCr": 1766600,
-    "Atmospheres": [
-      "*Ammonia*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Ignis",
-    "ValueCr": 1849000,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      160.0,
-      170.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Pennata",
-    "ValueCr": 5853800,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      145.0,
-      155.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Pennatis",
-    "ValueCr": 1000000,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      196.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Outer Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Propagito",
-    "ValueCr": 1000000,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      196.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Scutum-Centaurus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Serrati",
-    "ValueCr": 4447100,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      170.0,
-      175.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Stigmasis",
-    "ValueCr": 19010800,
-    "Atmospheres": [
-      "*Sul*ur*dioxide*"
-    ],
-    "OnBodies": [
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": ""
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Triticum",
-    "ValueCr": 7774700,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      190.0,
-      196.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Ventusa",
-    "ValueCr": 3227700,
-    "Atmospheres": [
-      "*Carbon*dioxide*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      155.0,
-      160.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": "In Sagittarius-Carina Arm, Perseus Arm"
-  },
-  {
-    "Family": "Tussock",
-    "Name": "Tussock Virgam",
-    "ValueCr": 14313700,
-    "Atmospheres": [
-      "*Water*"
-    ],
-    "OnBodies": [
-      "High Metal Content Body",
-      "Rocky Body"
-    ],
-    "TemperatureK": [
-      1.0,
-      9999.0
-    ],
-    "GravityG": [
-      0.0,
-      0.27
-    ],
-    "ColonyRangeM": 200,
-    "Notes": ""
-  }
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Amphora",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Amphora Plant",
+      "Notes" : "",
+      "OnBodies" : [
+         "Metal Rich"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "A*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         ""
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Bark Mounds",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bark Mounds",
+      "Notes" : "Nebula requierd",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Ammonia World",
+         "Water World",
+         "Gas giant with * based life",
+         "Water Giant"
+      ],
+      "Family" : "Crystalline Shards",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "MinDistanceLs" : 12000,
+      "Name" : "Crystalline Shards",
+      "Notes" : "Distance from arrival point > 12000 Ls",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "A*",
+         "F*",
+         "G*",
+         "K*",
+         "MS*",
+         "S*"
+      ],
+      "TemperatureK" : [
+         1,
+         273
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Roseum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Gypseeum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         300
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Ostrinum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Metal Rich Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Viride Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Rocky Ice Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         100,
+         270
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Lividum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         300,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Aureum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Metal Rich Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         300,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Lindigoticum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Rocky Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         300,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "Earthlike World",
+         "Gas giant with water based life",
+         "Water giant"
+      ],
+      "Family" : "Brain Trees",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Puniceum Brain Tree",
+      "Notes" : "Confined to specific areas (Guardian)",
+      "OnBodies" : [
+         "Metal Rich Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Luteolum Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "B*",
+         "A*"
+      ],
+      "TemperatureK" : [
+         200,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Croceum Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "A*",
+         "B*"
+      ],
+      "TemperatureK" : [
+         200,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Puniceum Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "O*"
+      ],
+      "TemperatureK" : [
+         65,
+         860
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Roseum Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "B*"
+      ],
+      "TemperatureK" : [
+         200,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Blatteum Bioluminescent Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "B*"
+      ],
+      "TemperatureK" : [
+         220,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Rubeum Bioluminescent Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "A*",
+         "B*"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Prasinum Bioluminescent Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "O*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Anemone",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Roseum Bioluminescent Anemone",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "B*"
+      ],
+      "TemperatureK" : [
+         200,
+         9999
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Roseum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "*"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*silicate*",
+         "*rocky magma*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Blatteum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Rocky Body",
+         "Metal Rich",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Lindigoticum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Violaceum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Rocky Body",
+         "Metal Rich Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Viride Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Rocky Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Prasinum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Metal Rich Body",
+         "High Metal Content Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         ""
+      ],
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Albidum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "Special" : true,
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "BodiesRequired" : [
+         "*"
+      ],
+      "Family" : "Sinuous Tubers",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Caeruleum Sinuous Tubers",
+      "Notes" : "Confined to specific areas",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "StarsRequired" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         200,
+         500
+      ],
+      "ValueCr" : 1500000,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Aleoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Aleoida Arcus",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         175,
+         180
+      ],
+      "ValueCr" : 7252500
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Aleoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Aleoida Coronamus",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         180,
+         190
+      ],
+      "ValueCr" : 6284600
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Aleoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Aleoida Gravis",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         190,
+         196
+      ],
+      "ValueCr" : 12934900
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Aleoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Aleoida Laminiae",
+      "Notes" : "In Scutum-Centaurus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         152,
+         9999
+      ],
+      "ValueCr" : 3385200
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Aleoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Aleoida Spica",
+      "Notes" : "Except in Scutum-Centaurus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         170,
+         9999
+      ],
+      "ValueCr" : 3385200
+   },
+   {
+      "Atmospheres" : [
+         "*Neon*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Acies",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1000000
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Alcyoneum",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1658500
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Aurasus",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1000000
+   },
+   {
+      "Atmospheres" : [
+         "*Methane*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Bullaris",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1152500
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Cerbrus",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1689800
+   },
+   {
+      "Atmospheres" : [
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Informem",
+      "Notes" : "",
+      "OnBodies" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 8418000
+   },
+   {
+      "Atmospheres" : [
+         "*Helium*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Nebulus",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 5289900
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*",
+         "*Methane*",
+         "*Neon*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Omentum",
+      "Notes" : "Possibly Nitrogen-based vulcanism required",
+      "OnBodies" : [
+         "Icy Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 4638900,
+      "Volcanism" : [
+         "*nitrogen*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*",
+         "*Methane*",
+         "*Neon*",
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Scopulum",
+      "Notes" : "Possibly Carbon-based vulcanism required",
+      "OnBodies" : [
+         "Icy Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 4934500,
+      "Volcanism" : [
+         "*carbon*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Tela",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1949000
+   },
+   {
+      "Atmospheres" : [
+         "*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Verrata",
+      "Notes" : "Possibly Water-based vulcanism required",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 3897000,
+      "Volcanism" : [
+         "*water*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Vesicula",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1000000
+   },
+   {
+      "Atmospheres" : [
+         "*Oxygen*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Bacterium",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Bacterium Volu",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Icy Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 7774700
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Cactoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Cactoida Cortexum",
+      "Notes" : "In Orion-Cygnus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         180,
+         195
+      ],
+      "ValueCr" : 3667600
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Cactoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Cactoida Lapis",
+      "Notes" : "In Scutum-Centaurus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 2483600
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Cactoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Cactoida Peperatis",
+      "Notes" : "In Norma/Outer Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 2483600
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Cactoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Cactoida Pullulanta",
+      "Notes" : "In Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         180,
+         195
+      ],
+      "ValueCr" : 3667600
+   },
+   {
+      "Atmospheres" : [
+         "*Water*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Cactoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Cactoida Vermis",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         165,
+         450
+      ],
+      "ValueCr" : 16202800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Clypeus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Clypeus Lacrimam",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         190,
+         9999
+      ],
+      "ValueCr" : 8418000
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Clypeus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Clypeus Margaritus",
+      "Notes" : "",
+      "OnBodies" : [
+         "*High Metal*"
+      ],
+      "TemperatureK" : [
+         189,
+         9999
+      ],
+      "ValueCr" : 11873200
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Clypeus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "MinDistanceLs" : 2500,
+      "Name" : "Clypeus Speculumi",
+      "Notes" : "Distance to parent star > 2500 Ls",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         190,
+         9999
+      ],
+      "ValueCr" : 16202800
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*",
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Concha",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Concha Aureolas",
+      "Notes" : "Possibly not in Nitrogen atmo",
+      "OnBodies" : [
+         "Rocky Body",
+         "*High Metal*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 7774700
+   },
+   {
+      "Atmospheres" : [
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Concha",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Concha Biconcavis",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body",
+         "*High Metal*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 19010800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Concha",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Concha Labiata",
+      "Notes" : "",
+      "OnBodies" : [
+         "*High Metal*",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 2352400
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Concha",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Concha Renibus",
+      "Notes" : "",
+      "OnBodies" : [
+         "*High Metal*",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 4572400
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*"
+      ],
+      "ColonyRangeM" : 1000,
+      "Family" : "Electricae",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Electricae Pluma",
+      "Notes" : "Around bright white stars (luminosity V+)",
+      "OnBodies" : [
+         "Icy Body"
+      ],
+      "StarsRequired" : [
+         "O*",
+         "B*",
+         "A*",
+         "F*",
+         "D*",
+         "W*",
+         "N*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 6284600
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*",
+         "*Neon*",
+         "*Helium*"
+      ],
+      "ColonyRangeM" : 1000,
+      "Family" : "Electricae",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Electricae Radialem",
+      "Notes" : "Nebua required within range of 100 Ly",
+      "OnBodies" : [
+         "Icy Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 6284600
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Fonticulua",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fonticulua Campestris",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1000000
+   },
+   {
+      "Atmospheres" : [
+         "*Methane*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Fonticulua",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fonticulua Digitos",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "*Rocky Ice*"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1804100
+   },
+   {
+      "Atmospheres" : [
+         "*Oxygen*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Fonticulua",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fonticulua Fluctus",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "*Rocky Ice*"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 20000000
+   },
+   {
+      "Atmospheres" : [
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Fonticulua",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fonticulua Lapida",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Ice Body"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 3111000
+   },
+   {
+      "Atmospheres" : [
+         "*Neon*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Fonticulua",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fonticulua Segmentatus",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "*Rocky Ice*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 19010800
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Fonticulua",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fonticulua Upupam",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 5727600
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Acus",
+      "Notes" : "In Orion-Cygnus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         192
+      ],
+      "ValueCr" : 7774700
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Collum",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1639800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Fera",
+      "Notes" : "In Outer Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         192
+      ],
+      "ValueCr" : 1632500
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Flabellum",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1808900
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Flammasis",
+      "Notes" : "In Scutum-Centaurus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 10326000
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*",
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Metallicum",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body"
+      ],
+      "TemperatureK" : [
+         1,
+         192
+      ],
+      "ValueCr" : 1632500
+   },
+   {
+      "Atmospheres" : [
+         "*Water*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Frutexa",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Frutexa Sponsae",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 5988000
+   },
+   {
+      "Atmospheres" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Fumerola",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fumerola Aquatis",
+      "Notes" : "Possibly Water-based vulcanism required",
+      "OnBodies" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 6284600,
+      "Volcanism" : [
+         "*water*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Fumerola",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fumerola Carbosis",
+      "Notes" : "Possibly Carbon-based vulcanism required",
+      "OnBodies" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 6284600,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Fumerola",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fumerola Extremus",
+      "Notes" : "Specific volcanism required",
+      "OnBodies" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 16202800,
+      "Volcanism" : [
+         "*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*"
+      ],
+      "ColonyRangeM" : 100,
+      "Family" : "Fumerola",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fumerola Nitris",
+      "Notes" : "Nitrogen-based vulcanism required",
+      "OnBodies" : [
+         "*"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 7500900,
+      "Volcanism" : [
+         "*nitrogen*"
+      ]
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*",
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Fungoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fungoida Bullarum",
+      "Notes" : "",
+      "OnBodies" : [
+         "*High Metal*",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 3703200
+   },
+   {
+      "Atmospheres" : [
+         "*Methane*",
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Fungoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fungoida Gelata",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 3330300
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*",
+         "*Methane*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Fungoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fungoida Setisis",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1670100
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 300,
+      "Family" : "Fungoida",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Fungoida Stabitis",
+      "Notes" : "In Orion-Cygnus Arm",
+      "OnBodies" : [
+         "High Metal*",
+         "Rocky Body"
+      ],
+      "Special" : true,
+      "TemperatureK" : [
+         179,
+         186
+      ],
+      "ValueCr" : 2680300
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Osseus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Osseus Cornibus",
+      "Notes" : "Found only in rocky areas; In Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1483000
+   },
+   {
+      "Atmospheres" : [
+         "*Water*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Osseus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Osseus Discus",
+      "Notes" : "Found only in rocky areas",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky*Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 12934900
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Osseus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Osseus Fractus",
+      "Notes" : "Found only in rocky areas; Not in some Perseus Arm parts",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 4027800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Osseus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Osseus Pellebantus",
+      "Notes" : "Found only in rocky areas; Not in some Perseus Arm parts",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 9739000
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*",
+         "*Methane*",
+         "*Nitrogen*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Osseus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Osseus Pumice",
+      "Notes" : "Found only in rocky areas",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 3156300
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Osseus",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Osseus Spiralis",
+      "Notes" : "Found only in rocky areas",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 2404700
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Recepta",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Recepta Conditivus",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body",
+         "Icy Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         132,
+         9999
+      ],
+      "ValueCr" : 14313700
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Recepta",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Recepta Deltahedronix",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body",
+         "Icy Body"
+      ],
+      "TemperatureK" : [
+         132,
+         9999
+      ],
+      "ValueCr" : 16202800
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 150,
+      "Family" : "Recepta",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Recepta Umbrux",
+      "Notes" : "",
+      "OnBodies" : [
+         "Icy Body",
+         "Rocky Body",
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         132,
+         9999
+      ],
+      "ValueCr" : 12934900
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Araneamus",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         165,
+         9999
+      ],
+      "ValueCr" : 2448900
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Cucumisis",
+      "Notes" : "In Sagittarius-Carina Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         190,
+         9999
+      ],
+      "ValueCr" : 16202800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Excutitus",
+      "Notes" : "In Orion-Cygnus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         165,
+         190
+      ],
+      "ValueCr" : 2448900
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Frigus",
+      "Notes" : "In Perseus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         190,
+         9999
+      ],
+      "ValueCr" : 2637500
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Laminamus",
+      "Notes" : "In Orion-Cygnus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         165,
+         9999
+      ],
+      "ValueCr" : 2788300
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*",
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Limaxus",
+      "Notes" : "In Scutum-Centaurus Arm except Galaxy Core",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         165,
+         190
+      ],
+      "ValueCr" : 1362000
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*",
+         "*Carbon*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Paleas",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         165,
+         9999
+      ],
+      "ValueCr" : 1362000
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*",
+         "*Carbon*dioxide*",
+         "*Sul*ur*dioxide*",
+         "*Water*"
+      ],
+      "ColonyRangeM" : 500,
+      "Family" : "Stratum",
+      "GravityG" : [
+         0,
+         9999
+      ],
+      "Name" : "Stratum Tectonicas",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body"
+      ],
+      "TemperatureK" : [
+         165,
+         9999
+      ],
+      "ValueCr" : 19010800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Tubus",
+      "GravityG" : [
+         0,
+         0.15
+      ],
+      "Name" : "Tubus Cavas",
+      "Notes" : "In Scutum-Centaurus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 11873200
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Tubus",
+      "GravityG" : [
+         0,
+         0.15
+      ],
+      "Name" : "Tubus Compagibus",
+      "Notes" : "In Sagittarius-Carina Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 7774700
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Tubus",
+      "GravityG" : [
+         0,
+         0.15
+      ],
+      "Name" : "Tubus Conifer",
+      "Notes" : "In Perseus Arm",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 2415500
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Tubus",
+      "GravityG" : [
+         0,
+         0.15
+      ],
+      "Name" : "Tubus Rosarium",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         9999
+      ],
+      "ValueCr" : 2637500
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*",
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 800,
+      "Family" : "Tubus",
+      "GravityG" : [
+         0,
+         0.15
+      ],
+      "Name" : "Tubus Sororibus",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal*"
+      ],
+      "TemperatureK" : [
+         160,
+         190
+      ],
+      "ValueCr" : 5727600
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Albata",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         175,
+         180
+      ],
+      "ValueCr" : 3252500
+   },
+   {
+      "Atmospheres" : [
+         "*Argon*",
+         "*Methane*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Capillum",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Ice Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 7025800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Caputus",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         180,
+         190
+      ],
+      "ValueCr" : 3472400
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Catena",
+      "Notes" : "In Scutum-Centaurus Arm except Galaxy Core",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1766600
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Cultro",
+      "Notes" : "In Orion-Cygnus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1766600
+   },
+   {
+      "Atmospheres" : [
+         "*Ammonia*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Divisa",
+      "Notes" : "In Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 1766600
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Ignis",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         160,
+         170
+      ],
+      "ValueCr" : 1849000
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Pennata",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         145,
+         155
+      ],
+      "ValueCr" : 5853800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Pennatis",
+      "Notes" : "In Outer Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         196
+      ],
+      "ValueCr" : 1000000
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Propagito",
+      "Notes" : "In Scutum-Centaurus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         196
+      ],
+      "ValueCr" : 1000000
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Serrati",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         170,
+         175
+      ],
+      "ValueCr" : 4447100
+   },
+   {
+      "Atmospheres" : [
+         "*Sul*ur*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Stigmasis",
+      "Notes" : "",
+      "OnBodies" : [
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 19010800
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Triticum",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         190,
+         196
+      ],
+      "ValueCr" : 7774700
+   },
+   {
+      "Atmospheres" : [
+         "*Carbon*dioxide*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Ventusa",
+      "Notes" : "In Sagittarius-Carina Arm, Perseus Arm",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         155,
+         160
+      ],
+      "ValueCr" : 3227700
+   },
+   {
+      "Atmospheres" : [
+         "*Water*"
+      ],
+      "ColonyRangeM" : 200,
+      "Family" : "Tussock",
+      "GravityG" : [
+         0,
+         0.27
+      ],
+      "Name" : "Tussock Virgam",
+      "Notes" : "",
+      "OnBodies" : [
+         "High Metal Content Body",
+         "Rocky Body"
+      ],
+      "TemperatureK" : [
+         1,
+         9999
+      ],
+      "ValueCr" : 14313700
+   }
 ]

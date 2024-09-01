@@ -87,7 +87,7 @@ func (b *BiosT) Predict(cs *CurrentSystemT) map[string][2]string {
 
 			for _, accept := range acceptBios.Genuses {
 				for _, bio := range bios {
-					if accept.GenusLocalised == bio.Family {
+					if fnmatch.Match(accept.GenusLocalised, bio.Family, fnmatch.FNM_IGNORECASE) {
 						tempBios = append(tempBios, bio)
 						//break
 					}

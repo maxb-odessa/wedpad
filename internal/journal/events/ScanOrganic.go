@@ -34,8 +34,8 @@ func (evh *EventHandler) ScanOrganic(eventData map[string]interface{}) {
 		Type:   msg.TYPE_VIEW,
 		Target: msg.TARGET_LOG,
 		Action: msg.ACTION_APPEND,
-		Data: fmt.Sprintf("Biological "+ev.ScanType+": <b>"+ev.SpeciesLocalised+"</b>, diversity: <b>%d</b> meters, value: <b>%.1f</b> MCr",
-			bio.ColonyRangeM, float32(bio.ValueCr/1_000_000)),
+		Data: fmt.Sprintf("Biological "+ev.ScanType+": <b>"+ev.SpeciesLocalised+"</b>, diversity: <b>%d</b> meters, value: <b>%.2f</b> MCr",
+			bio.ColonyRangeM, float32(bio.ValueCr/1_000_000.0)),
 	}
 	m.Send()
 
