@@ -280,7 +280,8 @@
     "Family": "Anemone",
     "Name": "Luteolum Anemone",
     "StarsRequired": [
-      "B*"
+      "B*",
+      "A*"
     ],
     "OnBodies": [
       "*"
@@ -1223,10 +1224,10 @@
       "*Water*"
     ],
     "OnBodies": [
-      "High Metal Content Body"
+      "*High Metal*"
     ],
     "TemperatureK": [
-      190.0,
+      189.0,
       9999.0
     ],
     "GravityG": [
@@ -1268,7 +1269,8 @@
       "*Nitrogen*"
     ],
     "OnBodies": [
-      "Rocky Body"
+      "Rocky Body",
+      "*High Metal*"
     ],
     "TemperatureK": [
       1.0,
@@ -1289,7 +1291,8 @@
       "*Nitrogen*"
     ],
     "OnBodies": [
-      "Rocky Body"
+      "Rocky Body",
+      "*High Metal*"
     ],
     "TemperatureK": [
       1.0,
@@ -1310,7 +1313,7 @@
       "*Carbon*dioxide*"
     ],
     "OnBodies": [
-      "High Metal Content Body",
+      "*High Metal*",
       "Rocky Body"
     ],
     "TemperatureK": [
@@ -1333,7 +1336,7 @@
       "*Water*"
     ],
     "OnBodies": [
-      "High Metal Content Body",
+      "*High Metal*",
       "Rocky Body"
     ],
     "TemperatureK": [
@@ -1426,6 +1429,7 @@
     "Family": "Fonticulua",
     "Name": "Fonticulua Digitos",
     "ValueCr": 1804100,
+    "Special": true,
     "Atmospheres": [
       "*Methane*"
     ],
@@ -1448,6 +1452,7 @@
     "Family": "Fonticulua",
     "Name": "Fonticulua Fluctus",
     "ValueCr": 20000000,
+    "Special": true,
     "Atmospheres": [
       "*Oxygen*"
     ],
@@ -1470,6 +1475,7 @@
     "Family": "Fonticulua",
     "Name": "Fonticulua Lapida",
     "ValueCr": 3111000,
+    "Special": true,
     "Atmospheres": [
       "*Nitrogen*"
     ],
@@ -1557,6 +1563,7 @@
     "Family": "Frutexa",
     "Name": "Frutexa Collum",
     "ValueCr": 1639800,
+    "Special": true,
     "Atmospheres": [
       "*Sul*ur*dioxide*"
     ],
@@ -1773,10 +1780,14 @@
     "Family": "Fungoida",
     "Name": "Fungoida Bullarum",
     "ValueCr": 3703200,
+    "Special": true,
     "Atmospheres": [
-      "*Argon*"
+      "*Argon*",
+      "*Nitrogen*"
     ],
     "OnBodies": [
+      "*High Metal*",
+      "Rocky Body",
       "Rocky Ice Body"
     ],
     "TemperatureK": [
@@ -1818,12 +1829,15 @@
     "Family": "Fungoida",
     "Name": "Fungoida Setisis",
     "ValueCr": 1670100,
+    "Special": true,
     "Atmospheres": [
-      "*Ammonia*"
+      "*Ammonia*",
+      "*Methane*" 
     ],
     "OnBodies": [
       "High Metal Content Body",
-      "Rocky Body"
+      "Rocky Body",
+      "Rocky Ice Body"
     ],
     "TemperatureK": [
       1.0,
@@ -1840,17 +1854,18 @@
     "Family": "Fungoida",
     "Name": "Fungoida Stabitis",
     "ValueCr": 2680300,
+    "Special": true,
     "Atmospheres": [
       "*Carbon*dioxide*",
       "*Water*"
     ],
     "OnBodies": [
-      "High Metal Content Body",
+      "High Metal*",
       "Rocky Body"
     ],
     "TemperatureK": [
-      1.0,
-      9999.0
+      179.0,
+      186.0
     ],
     "GravityG": [
       0.0,
@@ -2333,11 +2348,11 @@
       "*Carbon*dioxide*"
     ],
     "OnBodies": [
-      "High Metal Content Body"
+      "High Metal*"
     ],
     "TemperatureK": [
       160.0,
-      9999.0
+      190.0
     ],
     "GravityG": [
       0.0,

@@ -342,10 +342,12 @@ func (cs *CurrentSystemT) closeBodies(body *ScanT) []string {
 
 			distRatio := (body.SemiMajorAxis + pBody.SemiMajorAxis) / (bodyRad + pBodyRad)
 			if distRatio < ratioRequired {
-				res = append(res, fmt.Sprintf("Close BARY body%s: to '%s', SMA/Rad:%.2f",
+				res = append(res, fmt.Sprintf("Close bodies%s: to '%s', S/R:%.2f, e:%.2f, P:%.2f d",
 					byRings,
 					cs.BodyName(pBody.BodyName),
 					distRatio,
+					math.Abs(body.Eccentricity),
+					(body.OrbitalPeriod/SECONDS_IN_DAY),
 				))
 			}
 
@@ -393,11 +395,13 @@ func (cs *CurrentSystemT) closeBodies(body *ScanT) []string {
 
 		distRatio := body.SemiMajorAxis * 2.0 / (pPlanetRad + bodyRad)
 		if distRatio < ratioRequired {
-			res = append(res, fmt.Sprintf("Close ORBIT body%s: to '%s', SMA/Rad:%.2f, i:%+.0f&deg;",
+			res = append(res, fmt.Sprintf("Close ORBITING body%s: to '%s', S/R:%.2f, i:%+.0f&deg;, e:%.2f, P:%.2f d",
 				byRings,
 				cs.BodyName(pPlanet.BodyName),
 				distRatio,
 				body.OrbitalInclination,
+				math.Abs(body.Eccentricity),
+				(body.OrbitalPeriod/SECONDS_IN_DAY),
 			))
 		}
 
@@ -411,7 +415,12 @@ func (cs *CurrentSystemT) shepherdMoon(body *ScanT) string {
 	if parent := findParentBody(cs.Planets(), body); parent != nil {
 		if rn, rr := CalcRings(parent); rn > 0 {
 			if rr > body.SemiMajorAxis {
-				return fmt.Sprintf("Shepherd moon: for '%s', i:%+.0f&deg;", cs.BodyName(parent.BodyName), body.OrbitalInclination)
+				return fmt.Sprintf("Shepherd moon: for '%s', i:%+.0f&deg;, e:%.2f, P:%.2f d",
+					cs.BodyName(parent.BodyName),
+					body.OrbitalInclination,
+					math.Abs(body.Eccentricity),
+					(body.OrbitalPeriod / SECONDS_IN_DAY),
+				)
 			}
 		}
 	}
